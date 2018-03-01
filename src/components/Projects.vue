@@ -1,11 +1,5 @@
 <template>
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-          </div>
-        </div>
+    <div class="navbar-spacer container">
         <div class="row">
           <div class="col-lg-12">
             <ul class="timeline">
@@ -83,3 +77,9 @@ export default {
   name: 'Projects'
 }
 </script>
+
+<style scoped>
+.navbar-spacer {
+  padding-top: 90px;
+}
+</style>

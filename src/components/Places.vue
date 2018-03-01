@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <div id="map" style="height: 500px;"></div>
-  </div>
+    <header class="masthead">
+      <div class="container">
+        <div id="map" style="width:100%; height: 500px;"></div>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -14,3 +16,23 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.navbar-spacer,
+.masthead {
+  height: 100%;
+}
+
+header.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  background-color: black;
+  background-image: url('/static/img/map-image.png')
+}
+
+.btn-xl {
+  margin-top: 10px;
+}
+</style>

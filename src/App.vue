@@ -1,9 +1,7 @@
 <template>
   <div id="app">
       <navbar/>
-      <div class="navbar-spacer">
       <router-view />
-      </div>
     </div>
 </template>
 
@@ -19,7 +17,14 @@ export default {
 </script>
 
 <style>
+html,
+body,
+#app,
 .navbar-spacer {
-  padding-top: 70px;
+height: 100%;
+}
+
+.navbar-spacer {
+  padding-top: 50px;
 }
 </style>
