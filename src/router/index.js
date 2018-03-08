@@ -10,21 +10,25 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      redirect: '/home'
+      path: '',
+      redirect: '/carles-capellas/home'
     },
     {
-      path: '/home',
+      path: '/carles-capellas',
+      redirect: '/carles-capellas/home'
+    },
+    {
+      path: '/carles-capellas/home',
       name: 'Home',
       component: Home
     },
     {
-      path: '/projects',
+      path: '/carles-capellas/projects',
       name: 'Projects',
       component: Projects
     },
     {
-      path: '/places',
+      path: '/carles-capellas/places',
       name: 'Places',
       component: Places
     }
