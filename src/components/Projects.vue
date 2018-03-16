@@ -3,33 +3,75 @@
         <div class="row">
           <div class="col-lg-12">
             <ul class="timeline">
-              <project 
-                date="2009-2011"
-                name="Our Humble Beginnings"
+              <project
+                date="Feburary 2018"
+                name="Vue personal page"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-              />
-              <project 
                 inverted="true"
-                date="March 2011"
-                name="Phase Two Expansion"
+              />
+              <project
+                date="June 2017"
+                name="Jokify"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
               />
-              <project 
-                date="December 2012"
-                name="An Agency is Born"
+              <project
+                date="April 2017"
+                name="Fractal Generator"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-              />
-              <project 
                 inverted="true"
-                date="July 2014"
-                name="Phase Two Expansion"
+              />
+              <project
+                date="September 2016"
+                name="Dragon Pong"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+              />
+              <project
+                date="March 2016"
+                name="Carniques Ausa"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                inverted="true"
+              />
+              <project
+                date="July 2015"
+                name="Vrokil"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+              />
+              <project
+                date="May 2015"
+                name="Angular personal page"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                inverted="true"
+              />
+              <project
+                date="March 2014"
+                name="Poliester Pelegrina"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+              />
+              <project
+                date="January 2014"
+                name="PHP personal page"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                inverted="true"
+              />
+              <project
+                date="September 2013"
+                name="D.O. Vic Responsive"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+              />
+              <project
+                date="April 2013"
+                name="D.O. Vic"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                inverted="true"
+              />
+              <project
+                date="2012-2013"
+                name="Desdecasa"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
               />
               <li>
                 <div class="timeline-image">
-                  <h4>Be Part
-                    <br>Of Our
-                    <br>Story!</h4>
+                  <h4>Beginning <br /> of the <br /> times</h4>
                 </div>
               </li>
             </ul>
