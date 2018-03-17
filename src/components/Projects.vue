@@ -7,7 +7,12 @@
                 date="Feburary 2018"
                 name="Vue personal page"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-                inverted="true"
+              />
+              <project
+                date="June 2017"
+                name="Modena (Express server)"
+                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                :inverted=true
               />
               <project
                 date="June 2017"
@@ -18,56 +23,65 @@
                 date="April 2017"
                 name="Fractal Generator"
                 description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-                inverted="true"
+                :inverted=true
               />
               <project
                 date="September 2016"
                 name="Dragon Pong"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="The company where I worked back then had a ping pong table but not a ranking system to track the scores. How could we possibly know who was the best player? I had to implement this website using Angular and PHP + Excel to find it out! (No, I wasn't working at Dragon Ball Inc. I have changed the name to avoid mentioning the company)"
+                url="/dragon-pong"
               />
               <project
                 date="March 2016"
                 name="Carniques Ausa"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-                inverted="true"
+                description="'It must have an interactive pig image!'. That was the sentence that convinced me to build this webpage. Pretty straightforward website with information from the Carniques Ausa company"
+                url="/carniques-ausa"
+                :inverted=true
               />
               <project
                 date="July 2015"
                 name="Vrokil"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="Failed attempt! A friend of mine had the idea to import Matterport 3D technology to Spain since back then it had not arrived yet. This website had to be the official webpage of the plane to success that we did not catch"
+                url="/vrokil"
               />
               <project
                 date="May 2015"
                 name="Angular personal page"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-                inverted="true"
+                description="Second round! My previous personal page was loading all the pages from server. Time to jump to the SPAs train. Same content than before, but in a single simple page and using the Angular data bindings"
+                url="/carles-capellas-second"
+                :inverted=true
               />
               <project
                 date="March 2014"
                 name="Poliester Pelegrina"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="Poliester Pelegrina SCP website, requested by one of the two company owners. Originally built in PHP (now migrated to Node.js). After trying many approaches the different views are managed with jQuery; no server page loads"
+                url="/poliester-pelegrina"
               />
               <project
                 date="January 2014"
                 name="PHP personal page"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-                inverted="true"
+                description="My first personal page! Originally built in PHP (now migrated to Node.js). I didn't know much about SPAs and front end development in general; every page is rendered from the server. Reloading needed to change the language"
+                url="/carles-capellas-first"
+                :inverted=true
               />
               <project
                 date="September 2013"
                 name="D.O. Vic Responsive"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="Responsive version of the D.O. Vic restaurant version. Unfortunately, the owner of the restaurant decided to close before finishing it"
+                url="/responsive-do-vic"
               />
               <project
                 date="April 2013"
                 name="D.O. Vic"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
-                inverted="true"
+                description="D.O. Vic restaurant website, requested by the owner of the establishment. Allowed consulting useful information of the restaurant, make reservations and download the menus of the local"
+                url="/do-vic"
+                :inverted=true
               />
               <project
                 date="2012-2013"
                 name="Desdecasa"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="PHP web page developed on own initiative (with Eudald Bover) that provided information of the bars and restaurants in Vic (city in Barcelona). Additionally, the members of the page could get discounts on the locals"
+                url="/desdecasa"
               />
               <li>
                 <div class="timeline-image">

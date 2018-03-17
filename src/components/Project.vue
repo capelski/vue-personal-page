@@ -1,8 +1,7 @@
 <template>
   <li :class="{'timeline-inverted': inverted}">
-    <div class="timeline-image">
-      <img class="rounded-circle img-fluid">
-    </div>
+    <a class="timeline-image" :href="url">
+    </a>
     <div class="timeline-panel">
       <div class="timeline-heading">
         <h4>{{date}}</h4>
@@ -30,6 +29,10 @@ export default {
       description: {
           type: String,
           default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+      },
+      url: {
+          type: String,
+          default: "#"
       },
       inverted: {
         type: Boolean,
