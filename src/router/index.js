@@ -7,28 +7,25 @@ import Places from '@/components/Places'
 Vue.use(Router)
 
 export default new Router({
+  base: process.env.baseUrl,
   mode: 'history',
   routes: [
     {
       path: '',
-      redirect: '/carles-capellas/home'
+      redirect: 'home'
     },
     {
-      path: '/carles-capellas',
-      redirect: '/carles-capellas/home'
-    },
-    {
-      path: '/carles-capellas/home',
+      path: '/home',
       name: 'Home',
       component: Home
     },
     {
-      path: '/carles-capellas/projects',
+      path: '/projects',
       name: 'Projects',
       component: Projects
     },
     {
-      path: '/carles-capellas/places',
+      path: '/places',
       name: 'Places',
       component: Places
     }
