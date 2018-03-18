@@ -1,3 +1,7 @@
 {
-	"assetsFolder": "dist"
+	"assetsFolder": "dist",
+	"publicDomains": [
+		"carlescapellas.xyz",
+		"carlescapellas.cat"
+	]
 }
