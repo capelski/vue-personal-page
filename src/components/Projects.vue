@@ -6,23 +6,23 @@
               <project
                 date="Feburary 2018"
                 name="Vue personal page"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="After discovering that my previous Angular.js personal page was actually boring (no one visiting my webpage cares about my education/work experience) I decided to build a new one. Before I was only using Angular as an external library for the data bindings. This time I had to do it the right way: webpack, client routing, components, etc. First step: replace Angular with Vue!"
               />
               <project
-                date="June 2017"
-                name="Modena (Express server)"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                date="2017-2018"
+                name="Modena"
+                description="After having built many web applications with Node.js and Express, I got fed up of configuring the express server again and again. Also, I needed to find a way to host the web apps in Azure without spending a fortune. The combination of both led me to develop this multi tenant express server which I currently use to host this webpage :)"
                 :inverted=true
               />
               <project
                 date="June 2017"
                 name="Jokify"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="This website was the combination of two motivations: On one hand I felt I had to make available to everyone all the twitter jokes I was receiving on whatsapp. On the other hand, I wanted to play around with CSS3 animations in order to build some nice UI without using jQuery easings. Here is the result!"
               />
               <project
                 date="April 2017"
                 name="Fractal Generator"
-                description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+                description="When I was in college I was asked to write an algorithm in C++ to generate fractal pictures. After many hours of coding I was really proud about the result, but the output looked so miserably on a command line that years later I rescued the code and transformed it to a webpage to make it presentable for everyone"
                 :inverted=true
               />
               <project
@@ -46,7 +46,7 @@
               />
               <project
                 date="May 2015"
-                name="Angular personal page"
+                name="Angular.js personal page"
                 description="Second round! My previous personal page was loading all the pages from server. Time to jump to the SPAs train. Same content than before, but in a single simple page and using the Angular data bindings"
                 url="/carles-capellas-second"
                 :inverted=true
@@ -85,7 +85,7 @@
               />
               <li>
                 <div class="timeline-image">
-                  <h4>Beginning <br /> of the <br /> times</h4>
+                  <h4>VB <br /> dark <br /> period</h4>
                 </div>
               </li>
             </ul>
