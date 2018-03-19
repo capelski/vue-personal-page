@@ -60,7 +60,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../static/carles-capellas'),
+        from: path.resolve(__dirname, '../static/vue-personal-page'),
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }

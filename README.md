@@ -1,4 +1,4 @@
-# carles-capellas
+# vue-personal-page
 
 > A Vue.js project
 

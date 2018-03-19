@@ -11,7 +11,7 @@ export default {
   name: 'Places',
   created() {
     let places = document.createElement('script');
-    places.setAttribute('src',"/carles-capellas/js/places.js");
+    places.setAttribute('src',"/vue-personal-page/js/places.js");
     document.head.appendChild(places);
   }
 }
@@ -29,7 +29,7 @@ header.masthead {
   justify-content: center;
   color: black;
   background-color: black;
-  background-image: url('/carles-capellas/img/map-image.png')
+  background-image: url('/vue-personal-page/img/map-image.png')
 }
 
 .btn-xl {

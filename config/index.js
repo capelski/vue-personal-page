@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: '',
-    assetsPublicPath: '/carles-capellas',
+    assetsPublicPath: '/vue-personal-page',
     proxyTable: {},
 
     // Various Dev Server settings
@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: '',
-    assetsPublicPath: '/carles-capellas',
+    assetsPublicPath: '/vue-personal-page',
 
     /**
      * Source Maps
