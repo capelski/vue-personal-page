@@ -12,15 +12,15 @@
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
               <!--<a class="nav-link js-scroll-trigger" href="#services">Projects</a>-->
-              <router-link to="home" class="nav-link">Home</router-link>
+              <router-link to="/" class="nav-link">Home</router-link>
             </li>
             <li class="nav-item">
               <!--<a class="nav-link js-scroll-trigger" href="#services">Projects</a>-->
-              <router-link to="projects" class="nav-link">Projects</router-link>
+              <router-link to="/projects" class="nav-link">Projects</router-link>
             </li>
             <li class="nav-item">
               <!--<a class="nav-link js-scroll-trigger" href="#portfolio">Places</a>-->
-              <router-link to="places" class="nav-link">Places</router-link>
+              <router-link to="/places" class="nav-link">Places</router-link>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>

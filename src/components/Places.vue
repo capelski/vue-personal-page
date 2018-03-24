@@ -76,7 +76,7 @@ header.masthead {
   justify-content: center;
   color: black;
   background-color: black;
-  background-image: url('/vue-personal-page/img/map-image.png')
+  background-image: url('/static/img/map-image.png?namespace=vue-personal-page')
 }
 
 .btn-xl {

@@ -167,7 +167,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("/vue-personal-page/img/header-bg.jpg");
+  background-image: url("/static/img/header-bg.jpg?namespace=vue-personal-page");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -593,7 +593,7 @@ header.masthead .intro-text .intro-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("/vue-personal-page/img/map-image.png");
+  background-image: url("/static/img/map-image.png?namespace=vue-personal-page");
   background-repeat: no-repeat;
   background-position: center;
 }

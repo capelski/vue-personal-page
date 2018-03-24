@@ -48,7 +48,7 @@
                 date="May 2015"
                 name="Angular.js personal page"
                 description="Second round! My previous personal page was loading all the pages from server. Time to jump to the SPAs train. Same content than before, but in a single simple page and using the Angular data bindings"
-                url="/vue-personal-page-second"
+                url="/angularjs-personal-page"
                 :inverted=true
               />
               <project
@@ -61,7 +61,7 @@
                 date="January 2014"
                 name="PHP personal page"
                 description="My first personal page! Originally built in PHP (now migrated to Node.js). I didn't know much about SPAs and front end development in general; every page is rendered from the server. Reloading needed to change the language"
-                url="/vue-personal-page-first"
+                url="/php-personal-page"
                 :inverted=true
               />
               <project
