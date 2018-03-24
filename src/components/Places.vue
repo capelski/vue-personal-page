@@ -17,6 +17,7 @@ export default {
       ['Beijing, May 2017, 4 days', 39.9042, 116.4073963],
       ['Shanghai, May 2017, 3 days', 31.2303904, 121.47370209999997],
       ['Hong Kong, May 2017, 5 days', 22.396428, 114.10949700000003],
+      ['Montpellier, March 2017, 3 days', 43.610769, 3.87671599],
       ['Lisbon, September 2016, 4 days', 38.7222524, -9.139336599999979],
       ['Bengaluru, July 2016, 2 days', 12.9715987, 77.59456269999998],
       ['Mahabalipuram, July 2016, 2 weeks', 12.626927, 80.19271090000007],

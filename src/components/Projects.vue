@@ -18,11 +18,13 @@
                 date="June 2017"
                 name="Jokify"
                 description="This website was the combination of two motivations: On one hand I felt I had to make available to everyone all the twitter jokes I was receiving on whatsapp. On the other hand, I wanted to play around with CSS3 animations in order to build some nice UI without using jQuery easings. Here is the result!"
+                url="/jokify"
               />
               <project
                 date="April 2017"
                 name="Fractal Generator"
                 description="When I was in college I was asked to write an algorithm in C++ to generate fractal pictures. After many hours of coding I was really proud about the result, but the output looked so miserably on a command line that years later I rescued the code and transformed it to a webpage to make it presentable for everyone"
+                url="/fractal-generator"
                 :inverted=true
               />
               <project

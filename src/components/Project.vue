@@ -1,7 +1,10 @@
 <template>
   <li :class="{'timeline-inverted': inverted}">
-    <a class="timeline-image" :href="url">
-    </a>
+    <div class="timeline-image" style="display: flex; justify-content: center; align-items: center;">
+      <a v-if="url" :href="url" style="color: white;">
+        <i class="fa fa-external-link fa-2x"></i>
+      </a>
+    </div>
     <div class="timeline-panel">
       <div class="timeline-heading">
         <h4>{{date}}</h4>
@@ -31,8 +34,7 @@ export default {
           default: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
       },
       url: {
-          type: String,
-          default: "#"
+          type: String
       },
       inverted: {
         type: Boolean,
