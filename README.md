@@ -1,21 +1,5 @@
-# vue-personal-page
+# Vue personal page
 
-> A Vue.js project
+After discovering that my previous Angular.js personal page was actually boring (no one visiting my webpage cares about my education/work experience) I decided to build a new one. Before I was only using Angular as an external library for the data bindings. This time I had to do it the right way: webpack, client routing, components, etc. First step: replace Angular with Vue!
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+This app can run on [modena](https://github.com/L3bowski/modena) multi tenancy Node.js server
