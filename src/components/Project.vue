@@ -7,8 +7,8 @@
     </div>
     <div class="timeline-panel">
       <div class="timeline-heading">
-        <h4>{{date}}</h4>
-        <h4 class="subheading">{{name}}</h4>
+        <h4>{{name}}</h4>
+        <h5 class="subheading">{{date}}</h5>
       </div>
       <div class="timeline-body">
         <p class="text-muted">{{description}}</p>
@@ -52,3 +52,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .subheading {
+    font-weight: normal;
+  }
+</style>

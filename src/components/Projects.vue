@@ -4,6 +4,14 @@
           <div class="col-lg-12">
             <ul class="timeline">
               <project
+                date="April 2018"
+                name="Webjack & Webjack-ui"
+                description="Seems that blackJack has been my programatic fetish since I first learned to code! I've built it as a desktop application in Visual Basic, as a command line application in Java and, finally, in the format of a nice UI (webjack-ui vue front end) online multiplayer web application"
+                githubUrl="https://github.com/L3bowski/webjack"
+                url="/webjack"
+                :inverted=true
+              />
+              <project
                 date="Feburary 2018"
                 name="Vue personal page"
                 description="You are in it! After discovering that my previous Angular.js personal page was actually boring (no one visiting my webpage cares about my education/work experience) I decided to build a new one. Before I was only using Angular as an external library for the data bindings. This time I had to do it the right way: webpack, client routing, components, etc. First step: replace Angular with Vue!"
