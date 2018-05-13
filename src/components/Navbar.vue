@@ -22,6 +22,9 @@
               <!--<a class="nav-link js-scroll-trigger" href="#portfolio">Places</a>-->
               <router-link to="/places" class="nav-link">Places</router-link>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="/static/pdf/cv.pdf?namespace=vue-personal-page">CV</a>
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
