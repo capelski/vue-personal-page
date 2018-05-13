@@ -27,9 +27,15 @@ export default {
       ['Antalya, August 2015, 3 days', 36.8968908, 30.713323299999956],
       ['Cappadocia, August 2015, 3 days', 38.641842, 34.83140300000002],
       ['Helsinki, April 2015, 3 days', 60.16985569999999, 24.93837910000002],
-      // Erasmus
+      ['Budapest, Feburary 2015, 2 days', 47.497912, 19.04023499999994],
+      ['Zagreb, Feburary 2015, 2 days', 45.8150108, 15.981918899999982],
+      ['Viena, Feburary 2015, 2 days', 48.2081743, 16.37381890000006],
+      ['Zakopane, January 2015, 3 days', 49.299181, 19.949562000000014],
+      ['Berlin, December 2014, 3 days', 52.52000659999999, 13.404953999999975],
+      ['Gdánsk, December 2014, 4 days', 54.35202520000001, 18.64663840000003],
+      ['Wroclaw, November 2014, 2 days', 51.1078852, 17.03853760000004],
+      ['Krakow, October 2014, 3 days', 50.06465009999999, 19.94497990000002],
       ['Warsaw, September 2014 - February 2015, 5 months', 52.2296756, 21.012228700000037],
-      // Erasmus
       ['Maó, August 2014, 3 days', 39.885845563187374, 4.261535748437495],
       ['Prague, Feburary 2014, 3 days', 50.0755381, 14.43780049999998],
       ['Eindhoven, November 2013, 3 days', 51.44164199999999, 5.469722499999989],
