@@ -105,18 +105,18 @@ export default {
           githubUrl: "https://github.com/L3bowski/angularjs-personal-page"
       },
       {
+          date: "January 2015",
+          name: "PHP personal page",
+          description: "My first personal page! Originally built in PHP (now migrated to Node.js). I didn't know much about SPAs and front end development in general; every page is rendered from the server. Reloading needed to change the language",
+          url: "/php-personal-page",
+          githubUrl: "https://github.com/L3bowski/php-personal-page"
+      },
+      {
           date: "March 2014",
           name: "Poliester Pelegrina",
           description: "Poliester Pelegrina SCP website, requested by one of the two company owners. Originally built in PHP (now migrated to Node.js). After trying many approaches the different views are managed with jQuery; no server page loads",
           url: "/poliester-pelegrina",
           githubUrl: "https://github.com/L3bowski/poliester-pelegrina",
-      },
-      {
-          date: "January 2014",
-          name: "PHP personal page",
-          description: "My first personal page! Originally built in PHP (now migrated to Node.js). I didn't know much about SPAs and front end development in general; every page is rendered from the server. Reloading needed to change the language",
-          url: "/php-personal-page",
-          githubUrl: "https://github.com/L3bowski/php-personal-page"
       },
       {
           date: "September 2013",
