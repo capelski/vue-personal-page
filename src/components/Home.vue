@@ -34,7 +34,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: white;
+        color: #333;
         background-image: url("/static/img/header-bg.jpg?namespace=vue-personal-page");
         background-repeat: no-repeat;
         background-attachment: scroll;
