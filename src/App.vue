@@ -1,16 +1,34 @@
 <template>
     <div id="app">
         <navbar/>
+        <loader :display="loading"/>
         <router-view />
     </div>
 </template>
 
 <script>
     import Navbar from './components/Navbar.vue'
+    import Loader from './components/Loader.vue'
+    import router from './router'
 
     export default {
-        components: { Navbar },
-        name: 'App'
+        components: { Navbar, Loader },
+        name: 'App',
+        data() {
+            return {
+                loading: false
+            };
+        },
+        created() {
+            router.beforeEach((to, from, next) => {
+                this.loading = true
+                next()
+            })
+
+            router.afterEach((to, from) => {
+                setTimeout(() => this.loading = false, 800)
+            })
+        }
     }
 </script>
 
