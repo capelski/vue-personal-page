@@ -1,9 +1,8 @@
 <template>
-    <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink">
+    <nav id="main-nav" class="navbar navbar-expand-md navbar-dark fixed-top navbar-shrink">
         <div class="container">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-bars fa-2x"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
@@ -30,6 +29,11 @@
         background-color: #212529;
     }
 
+    #main-nav.navbar {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
     #main-nav .navbar-toggler {
         font-size: 12px;
         right: 0;
@@ -37,8 +41,6 @@
         text-transform: uppercase;
         color: white;
         border: 0;
-        background-color: #fed136;
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
     #main-nav .navbar-brand {
@@ -63,7 +65,7 @@
         color: #fed136;
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
         #main-nav {
             padding-top: 25px;
             padding-bottom: 25px;

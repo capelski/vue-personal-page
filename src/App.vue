@@ -82,7 +82,7 @@
 
     .btn-xl {
         font-size: 18px;
-        padding: 20px 40px;
+        padding: 10px 30px;
         margin-top: 10px;
     }
 

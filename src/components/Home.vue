@@ -2,15 +2,17 @@
     <div class="navbar-spacer">
         <header class="masthead">
             <div class="intro-text">
-                <div class="intro-lead-in">Get to know something about me</div>
                 <div class="intro-heading text-uppercase">Carles Capellas</div>
+                <div class="intro-subheading">Get to know something about me</div>
 
-                <router-link to="projects" class="btn btn-primary btn-xl text-uppercase">
-                    What have I built?
-                </router-link>
-                <router-link to="places" class="btn btn-primary btn-xl text-uppercase">
-                    Where have I been?
-                </router-link>
+                <div class="hidden-xs">
+                    <router-link to="projects" class="btn btn-primary btn-xl text-uppercase">
+                        What have I built?
+                    </router-link>
+                    <router-link to="places" class="btn btn-primary btn-xl text-uppercase">
+                        Where have I been?
+                    </router-link>
+                </div>
             </div>
         </header>
     </div>
@@ -40,19 +42,7 @@
         background-size: cover;
     }
 
-    header.masthead .intro-text {
-        padding: 0;  
-    }
-
-    header.masthead .intro-text .intro-lead-in {
-        font-size: 22px;
-        font-style: italic;
-        line-height: 22px;
-        margin-bottom: 25px;
-        font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    }
-
-    header.masthead .intro-text .intro-heading {
+    header.masthead .intro-heading {
         font-size: 50px;
         font-weight: 700;
         line-height: 50px;
@@ -60,20 +50,32 @@
         font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
+    header.masthead .intro-subheading {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 25px;
+    }
+
     @media (min-width: 768px) {
-        header.masthead .intro-text .intro-lead-in {
-            font-size: 40px;
-            font-style: italic;
-            line-height: 40px;
-            margin-bottom: 25px;
-            font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        header.masthead .intro-text .intro-heading {
+        header.masthead .intro-heading {
             font-size: 75px;
-            font-weight: 700;
             line-height: 75px;
-            margin-bottom: 50px;
-            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        header.masthead .intro-subheading {
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .hidden-xs {
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        .hidden-xs {
+            display: block;
         }
     }
 </style>
