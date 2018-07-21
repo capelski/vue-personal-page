@@ -13,6 +13,12 @@
                         Where have I been?
                     </router-link>
                 </div>
+
+                <div class="technologies">
+                    <img src="/static/img/node.png?namespace=vue-personal-page"/>
+                    <img src="/static/img/docker.png?namespace=vue-personal-page"/>
+                    <img src="/static/img/azure.png?namespace=vue-personal-page"/>
+                </div>
             </div>
         </header>
     </div>
@@ -46,7 +52,7 @@
         font-size: 50px;
         font-weight: 700;
         line-height: 50px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
@@ -65,7 +71,7 @@
         header.masthead .intro-subheading {
             font-size: 40px;
             line-height: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
     }
 
@@ -77,5 +83,14 @@
         .hidden-xs {
             display: block;
         }
+    }
+
+    .technologies {
+        padding-top: 100px;
+    }
+
+    .technologies img {
+        height: 70px;
+        padding: 0 10px;
     }
 </style>
