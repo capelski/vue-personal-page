@@ -72,6 +72,7 @@
                     date: "February 2017 - March 2018",
                     name: "Modena",
                     description: "After having built many web applications with Node.js and Express, I got fed up of configuring the express server again and again. Also, I needed to find a way to host the web apps in Azure without spending a fortune. The combination of both led me to develop this multi tenant express server which I currently use to host this webpage :)",
+                    url: "https://www.npmjs.com/package/modena",
                     githubUrl: "https://github.com/L3bowski/modena"
                 },
                 {
