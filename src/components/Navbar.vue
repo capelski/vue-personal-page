@@ -16,7 +16,7 @@
                         <router-link to="/places" class="nav-link">Places</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="/static/pdf/cv.pdf?namespace=vue-personal-page">CV</a>
+                        <a class="nav-link" target="_blank" href="/static/pdf/cv.pdf?$modena=vue-personal-page">CV</a>
                     </li>
                 </ul>
             </div>

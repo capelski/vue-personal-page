@@ -81,6 +81,6 @@
         justify-content: center;
         color: white;
         background-color: white;
-        background-image: url('/static/img/cross.png?namespace=vue-personal-page');
+        background-image: url('/static/img/cross.png?$modena=vue-personal-page');
     }
 </style>
