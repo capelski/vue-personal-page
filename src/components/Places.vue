@@ -13,12 +13,15 @@
         name: 'Places',
         mounted() {
             var locations = [
+                ['Funchal, August 2018, 9 days', 32.6669328, -16.9240554],
                 ['Zurich, December 2017, 3 days', 47.3768866, 8.541694000000007],
                 ['Malta, September 2017, 6 days, ', 35.937496, 14.375416],
                 ['Hvar, July 2017, 4 days', 43.1541875, 16.6527099],
                 ['Beijing, May 2017, 4 days', 39.9042, 116.4073963],
                 ['Shanghai, May 2017, 3 days', 31.2303904, 121.47370209999997],
+                ['Shenzhen, May 2017, 2 days', 22.5329876, 114.0142231],
                 ['Hong Kong, May 2017, 5 days', 22.396428, 114.10949700000003],
+                ['Guilin/Yangshuo, May 2017, 2 days', 25.2945755, 110.2088946],
                 ['Montpellier, March 2017, 3 days', 43.610769, 3.87671599],
                 ['Lisbon, September 2016, 4 days', 38.7222524, -9.139336599999979],
                 ['Bengaluru, July 2016, 2 days', 12.9715987, 77.59456269999998],
@@ -82,5 +85,8 @@
         color: white;
         background-color: white;
         background-image: url('/static/img/cross.png?$modena=vue-personal-page');
+    }
+    header.masthead #map {
+        color: black;
     }
 </style>
