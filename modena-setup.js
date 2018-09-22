@@ -1,12 +1,7 @@
-const { express } = require('modena');
-var router = express.Router();
-var { join } = require('path');
+const { configureEndpoints } = require('modena');
+const { join } = require('path');
 
-const configureRouter = (middleware) => {
-	router.get(['/', '/home', '/projects', '/places'], function (req, res, next) {
-	  res.sendFile(join(__dirname, 'dist', 'index.html'));
-	});
-	return router;
-}
-
-module.exports = { configureRouter };
+module.exports = configureEndpoints(router => {
+	router.get(['/', '/home', '/projects', '/places'], (req, res, next) =>
+        res.sendFile(join(__dirname, 'dist', 'index.html')));
+});
