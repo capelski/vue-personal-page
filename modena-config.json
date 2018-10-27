@@ -3,7 +3,7 @@
 	"publicDomains": [
 		"carlescapellas.xyz",
 		"www.carlescapellas.xyz",
-		"carlescapellas.cat"
+		"carlescapellas.cat",
 		"www.carlescapellas.cat"
 	],
 	"allowNamespaceTraversal": true

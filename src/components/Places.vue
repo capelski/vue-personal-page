@@ -13,8 +13,11 @@
         name: 'Places',
         mounted() {
             var locations = [
+                ['New York, October 2018, 7 days', 40.741895, -73.989308],
+                ['Washington, October 2018, 1 day', 38.9071923, -77.0368707],
+                ['Philadelphia, October 2018, 1 day', 39.9525839, -75.1652215],
                 ['Funchal, August 2018, 9 days', 32.6669328, -16.9240554],
-                ['Zurich, December 2017, 3 days', 47.3768866, 8.541694000000007],
+                ['Zurich, December 2017, 3 days', 47.3768866, 8.541694],
                 ['Malta, September 2017, 6 days, ', 35.937496, 14.375416],
                 ['Hvar, July 2017, 4 days', 43.1541875, 16.6527099],
                 ['Beijing, May 2017, 4 days', 39.9042, 116.4073963],
