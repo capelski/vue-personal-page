@@ -2,9 +2,7 @@
 	"assetsFolder": "dist",
 	"publicDomains": [
 		"carlescapellas.xyz",
-		"www.carlescapellas.xyz",
-		"carlescapellas.cat",
-		"www.carlescapellas.cat"
+		"carlescapellas.cat"
 	],
 	"allowNamespaceTraversal": true
 }
