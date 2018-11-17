@@ -11,10 +11,10 @@
                 <h5 class="subheading">{{date}}</h5>
             </div>
             <div class="timeline-body">
-                <p class="text-muted">{{description}}</p>
+                <p class="text-muted" v-html="description"></p>
                 <p v-if="githubUrl">
+                    <i class="fa fa-github"></i>
                     <a :href="githubUrl" target="_blank">
-                        <i class="fa fa-github"></i>
                         {{githubUrl}}
                     </a>
                 </p>
