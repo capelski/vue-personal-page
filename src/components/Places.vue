@@ -13,6 +13,7 @@ export default {
   name: "Places",
   mounted() {
     var locations = [
+      ["Bucharest, April 2019, 3 days", 44.4361414, 26.1027202],
       ["Tunis, March 2019, 3 days", 36.800108, 10.184794],
       ["Tozeur, March 2019, 2 days", 33.920364, 8.13384],
       ["New York, October 2018, 7 days", 40.741895, -73.989308],

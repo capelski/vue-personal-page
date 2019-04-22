@@ -30,13 +30,19 @@
         data() {
             return {
                 projects: [{
+                    date: 'February 2019',
+                    name: 'Vue Server Side Rendering',
+                    description: 'After assisting to many <a href="https://www.meetup.com/VueJS-BCN/">VueJS Barcelona</a> meetups I felt I had to contribute back to the community. I investigated how the Server Side Rendering can be done with Vue and explained my findings in this talk',
+                    githubUrl: 'https://github.com/L3bowski/vue-ssr-tutorial',
+                    url: 'https://www.youtube.com/watch?v=uWsAFV14Svw'
+                },{
                     date: 'November 2018',
                     name: 'Michael Page',
                     description: 'Tribute page to all the Michaels of the world. Who doesn\'t have a Micheal in their life? It was once uploaded to <a href="https://michael.page">https://michael.page</a>, but the domain name is exclusive and expensive...',
                     githubUrl: 'https://github.com/L3bowski/michael',
                     url: '/michael'
                 }, {
-                    date: 'April 2018 - September 2018',
+                    date: 'April 2018 - Present',
                     name: 'Webjack & Webjack-ui',
                     description: 'Seems that blackJack has been my programatic fetish since I first learned to code! I\'ve built it as a desktop application in Visual Basic, as a command line application in Java and, finally, in the format of a nice UI (webjack-ui vue front end) online multiplayer web application',
                     githubUrl: 'https://github.com/L3bowski?tab=repositories&q=webjack',
