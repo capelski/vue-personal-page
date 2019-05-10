@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="author" content="Carles Capellas" />
     <meta name="description" content="Personal page where you can get to know a bit more about me" />
+    <meta name="theme-color" content="#000000" />
+    
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js', {
+                    scope: '/'
+                });
+            });
+        }
+    </script>
+    <link rel="manifest" href="/manifest.json">
+
     <link rel="icon" type="image/png" href="/static/favicon.png?$modena=vue-personal-page">
 
     <!-- Bootstrap core CSS -->
@@ -21,6 +34,11 @@
     <link href="/static/css/app.css?$modena=vue-personal-page" rel=stylesheet>
 </head>
 <body id="page-top">
+    <noscript>
+        <h1>Carles Capellas</h1>
+        <p>JavaScript is required to load my page</p>
+    </noscript>
+
     <div id="app"></div>
 
     <!-- Bootstrap core JavaScript -->

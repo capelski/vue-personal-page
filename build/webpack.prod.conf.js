@@ -122,12 +122,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '..', 'static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      },
-      {
-        from: path.resolve(__dirname, '..', 'google-search-console'),
+        from: path.resolve(__dirname, '..', 'assets'),
         to: config.build.assetsRoot,
       }
     ])

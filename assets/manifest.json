@@ -1,0 +1,14 @@
+{
+    "short_name": "cc.xyz",
+    "name": "Carles Capellas",
+    "icons": [{
+        "src": "/static/favicon.png",
+        "sizes": "72x72 96x96 128x128 256x256 512x512",
+        "type": "image/png"
+    }],
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#FFFFFF"
+} 
