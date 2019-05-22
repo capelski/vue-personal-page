@@ -11,13 +11,13 @@
     <script type="text/javascript">
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/sw.js', {
+                navigator.serviceWorker.register('/sw.js?$modena=vue-personal-page', {
                     scope: '/'
                 });
             });
         }
     </script>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/manifest.json?$modena=vue-personal-page">
 
     <link rel="icon" type="image/png" href="/static/favicon.png?$modena=vue-personal-page">
 

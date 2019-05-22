@@ -15,6 +15,12 @@ export default new Router({
       name: 'Home',
       component: Home
     },
+    // The following route is necessary to resolve the home component at carlescapellas.xyz/vue-personal-page
+    {
+      path: '/vue-personal-page',
+      name: 'Home',
+      component: Home
+    },
     {
       path: '/projects',
       name: 'Projects',
