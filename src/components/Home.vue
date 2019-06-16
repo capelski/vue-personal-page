@@ -15,9 +15,9 @@
                 </div>
 
                 <div class="technologies">
-                    <img src="/static/img/node.png?$modena=vue-personal-page"/>
-                    <img src="/static/img/docker.png?$modena=vue-personal-page"/>
-                    <img src="/static/img/azure.png?$modena=vue-personal-page"/>
+                    <img src="/img/node.png?$modena=vue-personal-page"/>
+                    <img src="/img/docker.png?$modena=vue-personal-page"/>
+                    <img src="/img/azure.png?$modena=vue-personal-page"/>
                 </div>
             </div>
         </header>
@@ -38,7 +38,7 @@
         justify-content: center;
         text-align: center;
         color: #333;
-        background-image: url("/static/img/header-bg.jpg?$modena=vue-personal-page");
+        background-image: url('/img/header-bg.jpg?$modena=vue-personal-page');
         background-repeat: no-repeat;
         background-attachment: scroll;
         background-position: center center;

@@ -104,7 +104,7 @@
         justify-content: center;
         color: white;
         background-color: white;
-        background-image: url("/static/img/cross.png?$modena=vue-personal-page");
+        background-image: url('/img/cross.png?$modena=vue-personal-page');
     }
     header.masthead #map {
         color: black;
