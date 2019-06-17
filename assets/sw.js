@@ -2,8 +2,8 @@ const cacheName = 'CARLES_CAPELLAS_CACHE';
 const filesToCache = [
     '/',
     '/blog',
-    '/places',
     '/projects',
+    '/trips'
 ];
 
 function handleStaticResourceRequests(requestCopy, event) {

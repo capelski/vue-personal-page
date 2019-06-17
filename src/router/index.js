@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Projects from '@/components/Projects'
-import Places from '@/components/Places'
+import Trips from '@/components/Trips'
 import Blog from '@/components/Blog'
 
 Vue.use(Router)
@@ -22,9 +22,9 @@ export default new Router({
       component: Blog
     },
     {
-      path: '/places',
-      name: 'Places',
-      component: Places
+      path: '/trips',
+      name: 'Trips',
+      component: Trips
     },
     {
       path: '/projects',

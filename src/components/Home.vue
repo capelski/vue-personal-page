@@ -4,16 +4,6 @@
             <div class="intro-text">
                 <div class="intro-heading text-uppercase">Carles Capellas</div>
                 <div class="intro-subheading">Get to know something about me</div>
-
-                <div class="hidden-xs">
-                    <router-link to="projects" class="btn btn-primary btn-xl text-uppercase">
-                        What have I built?
-                    </router-link>
-                    <router-link to="places" class="btn btn-primary btn-xl text-uppercase">
-                        Where have I been?
-                    </router-link>
-                </div>
-
                 <div class="technologies">
                     <img src="/img/node.png?$modena=vue-personal-page"/>
                     <img src="/img/docker.png?$modena=vue-personal-page"/>
