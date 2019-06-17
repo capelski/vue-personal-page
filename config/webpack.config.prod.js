@@ -71,7 +71,7 @@ const webpackConfig = merge(commonConfig, {
         new webpack.HashedModuleIdsPlugin(),
         new PrerenderSpaPlugin({
             staticDir: path.join(__dirname, '..', 'dist'),
-            routes: [ '/', '/projects', '/places' ],
+            routes: [ '/', '/blog', '/places', '/projects' ],
         })
     ]
 });
