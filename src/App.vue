@@ -40,8 +40,10 @@
         height: 100%;
     }
 
-    .navbar-spacer {
-        padding-top: 53px;
+    @media(min-width: 768px) {
+        .navbar-spacer {
+            padding-top: 53px;
+        }
     }
 
     .m-top-40 {
