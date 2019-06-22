@@ -41,7 +41,11 @@
     }
 
     .navbar-spacer {
-        padding-top: 50px;
+        padding-top: 53px;
+    }
+
+    .m-top-40 {
+        margin-top: 40px;
     }
 
     body {

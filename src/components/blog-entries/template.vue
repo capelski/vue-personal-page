@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog-entry">
         <h4>Title</h4>
         <p>Date</p>
         <p>
@@ -7,7 +7,7 @@
         </p>
         <p class="text-center">
             <br />
-            <img class="responsive-image" src="image_url" />
+            <img src="/img/blog/image_name?$modena=vue-personal-page" />
             <br />
             <br />
         </p>

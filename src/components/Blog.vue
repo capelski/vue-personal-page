@@ -1,6 +1,6 @@
 <template>
     <div class="navbar-spacer container">
-        <div class="row">
+        <div class="row m-top-40">
             <div class="col-lg-12">
                 <article_2019_06_18 />
             </div>
@@ -19,13 +19,12 @@
     }
 </script>
 
-<style scoped>
-    .navbar-spacer {
-        padding-top: 90px;
+<style>
+    .blog-entry {
+        margin-bottom: 20px;
     }
 
-    .responsive-image {
+    .blog-entry img {
         max-width: 100%;
-        text-align: center;
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="navbar-spacer container">
-        <div class="row">
+        <div class="row m-top-40">
             <div class="col-lg-12">
                 <ul class="timeline">
                     <project v-for="(project, index) in projects" v-bind:key="project.name"
@@ -156,10 +156,6 @@
 </script>
 
 <style scoped>
-    .navbar-spacer {
-        padding-top: 90px;
-    }
-
     .timeline {
         position: relative;
         padding: 0;

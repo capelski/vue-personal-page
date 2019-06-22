@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="blog-entry">
         <h4>Agility... rocks?</h4>
         <p>2019-06-17</p>
         <p>
@@ -13,7 +13,7 @@
         </p>
         <p class="text-center">
             <br />
-            <img class="responsive-image" src="/img/blog/2019-06-17_agile_exercise.png?$modena=vue-personal-page" />
+            <img src="/img/blog/2019-06-17_agile_exercise.png?$modena=vue-personal-page" />
             <br />
             <br />
         </p>
@@ -28,6 +28,6 @@
 
 <script>
     export default {
-        name: '20190618'
+        name: 'article-2019-06-18'
     };
 </script>
