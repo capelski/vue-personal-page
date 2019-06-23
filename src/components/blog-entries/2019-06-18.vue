@@ -21,7 +21,7 @@
             In short, the exercise consist of any even number of people (4 at least) standing in a circle facing inward. All the participants will first hold the left hand of the participant in front of them with their left hand and hold any other participant's right hand with their right hand, thus forming an interlaced closed circle. The goal of the team is to undo the interlaces without letting go of anyone's hands.
         </p>
         <p>
-            We took 15 minutes to get to a "better situation" but in fact we never managed to solve the problem. The trainer insisted that it is possible and that probably we have someone in the group who isn't very familiar with the right and left concepts. In my opinion, if it hadn't have been for the duty calls of the training, we would still be stuck in that room trying to figure it out. On a final note, the exercise is worth giving it a shot and is totally fit for drinking games purposes.
+            We took 15 minutes to get to a "better situation" but in fact we never managed to solve the problem. The trainer insisted that it is possible and that probably we have someone in the group who isn't very familiar with the right and left concepts. In my opinion, if it hadn't have been for the duty calls of the training, we would still be stuck in that room trying to figure it out. On a final note, the exercise is worth giving it a shot and is totally fit for drinking game purposes.
         </p>
     </div>
 </template>
