@@ -7,7 +7,7 @@
         </p>
         <p class="text-center">
             <br />
-            <img class="google-mail-img" src="/img/blog/2019-06-23_google_mail.jpg?$modena=vue-personal-page" />
+            <img class="google-mail-img" src="/img/blog/2019-06-23_google_mail.png?$modena=vue-personal-page" />
             <br />
             <br />
         </p>
@@ -111,14 +111,6 @@ if (envConfig.error || !envConfig.parsed.MAPS_API_KEY) {
 </script>
 
 <style scoped>
-    .google-mail-img {
-        width: 100%;
-    }
-    @media(min-width: 768px) {
-        .google-mail-img {
-            width: 60%;
-        }
-    }
     .code-editor {
         width: 100%;
     }

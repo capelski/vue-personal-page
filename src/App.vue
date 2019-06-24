@@ -40,6 +40,10 @@
         height: 100%;
     }
 
+    .navbar-spacer {
+        padding-top: 50px;
+    }
+
     @media(min-width: 768px) {
         .navbar-spacer {
             padding-top: 53px;
