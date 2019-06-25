@@ -1,31 +1,53 @@
 <template>
     <nav id="main-nav" class="navbar navbar-expand-md navbar-dark fixed-top navbar-shrink">
         <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+                ref="menuButton"
+                class="navbar-toggler navbar-toggler-right"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
                 <i class="fa fa-bars fa-2x"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item">
-                        <router-link to="/" class="nav-link">Home</router-link>
+                        <router-link to="/" class="nav-link" @click.native="closeMenu">Home</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/blog" class="nav-link">Blog</router-link>
+                        <router-link to="/blog" class="nav-link" @click.native="closeMenu">Blog</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/projects" class="nav-link">Projects</router-link>
+                        <router-link to="/projects" class="nav-link" @click.native="closeMenu">Projects</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/trips" class="nav-link">Trips</router-link>
+                        <router-link to="/trips" class="nav-link" @click.native="closeMenu">Trips</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="/pdf/cv.pdf?$modena=vue-personal-page">CV</a>
+                        <a class="nav-link" target="_blank" @click="closeMenu" href="/pdf/cv.pdf?$modena=vue-personal-page">CV</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </template>
+
+<script>
+    export default {
+        name: 'Navbar',
+        methods: {
+            closeMenu() {
+                if(!window.matchMedia('(min-width: 768px)').matches) {
+                    this.$refs.menuButton.click();
+                }
+            }
+        }
+    }
+</script>
 
 <style>
     #main-nav {
