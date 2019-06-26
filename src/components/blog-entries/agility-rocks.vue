@@ -13,7 +13,7 @@
         </p>
         <p class="text-center">
             <br />
-            <img src="/img/blog/2019-06-17_agile_exercise.png?$modena=vue-personal-page" />
+            <img src="/img/blog/agility-rocks_agile_exercise.png?$modena=vue-personal-page" />
             <br />
             <br />
         </p>
@@ -28,6 +28,6 @@
 
 <script>
     export default {
-        name: 'article-2019-06-18'
+        name: 'agility-rocks'
     };
 </script>

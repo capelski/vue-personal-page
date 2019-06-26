@@ -2,22 +2,22 @@
     <div class="navbar-spacer container">
         <div class="row m-top-40">
             <div class="col-lg-12">
-                <article_2019_06_23 />
-                <article_2019_06_18 />
+                <leaked_api_key />
+                <agility_rocks />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import article_2019_06_18 from './blog-entries/2019-06-18';
-    import article_2019_06_23 from './blog-entries/2019-06-23';
+    import agility_rocks from './blog-entries/agility-rocks';
+    import leaked_api_key from './blog-entries/leaked-api-key';
 
     export default {
         name: 'Blog',
         components: {
-            article_2019_06_18,
-            article_2019_06_23
+            agility_rocks,
+            leaked_api_key
         }
     }
 </script>
@@ -33,5 +33,9 @@
 
     .blog-entry ul li {
         margin-top: 10px;
+    }
+
+    .blog-entry .code-editor {
+        width: 100%;
     }
 </style>
