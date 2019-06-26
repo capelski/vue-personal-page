@@ -4,6 +4,8 @@ import Home from '@/components/Home'
 import Projects from '@/components/Projects'
 import Trips from '@/components/Trips'
 import Blog from '@/components/Blog'
+import AgilityRocks from '@/components/blog-entries/agility-rocks'
+import LeakedApiKey from '@/components/blog-entries/leaked-api-key'
 
 Vue.use(Router)
 
@@ -20,6 +22,16 @@ export default new Router({
       path: '/blog',
       name: 'Blog',
       component: Blog
+    },
+    {
+      path: '/blog/agility-rocks',
+      name: 'Agility rocks',
+      component: AgilityRocks
+    },
+    {
+      path: '/blog/leaked-api-key',
+      name: 'The leaked API key',
+      component: LeakedApiKey
     },
     {
       path: '/trips',

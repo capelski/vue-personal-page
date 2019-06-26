@@ -1,11 +1,7 @@
 <template>
-    <div class="navbar-spacer container">
-        <div class="row m-top-40">
-            <div class="col-lg-12">
-                <leaked_api_key />
-                <agility_rocks />
-            </div>
-        </div>
+    <div class="container navbar-spacer m-top-40">
+        <leaked_api_key :renderedInList="true" />
+        <agility_rocks :renderedInList="true" />
     </div>
 </template>
 
