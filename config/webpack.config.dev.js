@@ -14,14 +14,17 @@ const webpackConfig = merge(commonConfig, {
         path: path.resolve(__dirname, '..', 'dist'),
         publicPath: '/',
         filename: 'js/[name].bundle.js',
-        chunkFilename: 'js/[id].chunk.js'
+        // Chunks optimization seem to break monaco editor
+        // chunkFilename: 'js/[id].chunk.js',
+        // Necessary for monaco editor
+        globalObject: 'self'
     },
-    optimization: {
-        runtimeChunk: 'single',
-        splitChunks: {
-            chunks: 'all'
-        }
-    },
+    // optimization: {
+    //     runtimeChunk: 'single',
+    //     splitChunks: {
+    //         chunks: 'all'
+    //     }
+    // },
     plugins: [
         new webpack.EnvironmentPlugin(environment),
         new webpack.HotModuleReplacementPlugin(),

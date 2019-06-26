@@ -46,13 +46,14 @@
 
     const monacoOptions = {
         autoIndent: true,
-        contextmenu: false,
         automaticLayout: true,
+        contextmenu: false,
         minimap: { enabled: false },
+        readOnly: true,
         renderLineHighlight: 'none',
-        wordWrap: 'on',
         scrollBeyondLastLine: false,
-        readOnly: true
+        theme: 'vs',
+        wordWrap: 'on'
     };
 
     export default {

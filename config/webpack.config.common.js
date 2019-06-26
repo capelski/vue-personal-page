@@ -15,9 +15,14 @@ if (envConfig.error || !envConfig.parsed.MAPS_API_KEY) {
 const webpackConfig = {
     entry: {
         index: path.resolve(__dirname, '..', 'src', 'main'),
+		'editor.worker': 'monaco-editor/esm/vs/editor/editor.worker.js',
+		'json.worker': 'monaco-editor/esm/vs/language/json/json.worker',
+		'css.worker': 'monaco-editor/esm/vs/language/css/css.worker',
+		'html.worker': 'monaco-editor/esm/vs/language/html/html.worker',
+		'ts.worker': 'monaco-editor/esm/vs/language/typescript/ts.worker',
     },
     resolve: {
-        extensions: [ '.js', '.vue' ],
+        extensions: [ '.js', '.vue', '.worker' ],
         alias: {
             'vue$': isDev ? 'vue/dist/vue.runtime.js' : 'vue/dist/vue.runtime.min.js',
             '@': path.resolve(__dirname, '..', 'src')
@@ -73,7 +78,7 @@ const webpackConfig = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new HtmlPlugin({ template: 'index.html', chunksSortMode: 'dependency' }),
+        new HtmlPlugin({ template: 'index.html' /*, chunksSortMode: 'dependency' */ }),
         new CopyWebpackPlugin([
             {
               from: path.resolve(__dirname, '..', 'assets'),

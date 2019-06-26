@@ -17,11 +17,15 @@ const webpackConfig = merge(commonConfig, {
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
         publicPath: '/',
-        filename: 'js/[hash].js?$modena=vue-personal-page',
-        chunkFilename: 'js/[id].[hash].chunk.js?$modena=vue-personal-page',
+        filename: 'js/[name].bundle.js?$modena=vue-personal-page',
+        // Chunks optimization seem to break monaco editor
+        // filename: 'js/[hash].js?$modena=vue-personal-page',
+        // chunkFilename: 'js/[id].[hash].chunk.js?$modena=vue-personal-page',
+        // Necessary for monaco editor
+        globalObject: 'self'
     },
     optimization: {
-        runtimeChunk: 'single',
+        // runtimeChunk: 'single',
         minimizer: [
             new OptimizeCSSAssetsPlugin({
                 cssProcessorPluginOptions: {
@@ -34,32 +38,33 @@ const webpackConfig = merge(commonConfig, {
                 sourceMap: !isProd
             })
         ],
-        splitChunks: {
-            chunks: 'all',
-            maxInitialRequests: Infinity,
-            minSize: 0,
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name (module) {
-                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-                        return `npm.${packageName.replace('@', '')}`;
-                    }
-                },
-                styles: {
-                    test: /\.css$/,
-                    name: 'styles',
-                    chunks: 'all',
-                    enforce: true
-                }
-            }
-        }
+        // splitChunks: {
+        //     chunks: 'all',
+        //     maxInitialRequests: Infinity,
+        //     minSize: 0,
+        //     cacheGroups: {
+        //         vendor: {
+        //             test: /[\\/]node_modules[\\/]/,
+        //             name (module) {
+        //                 const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+        //                 return `npm.${packageName.replace('@', '')}`;
+        //             }
+        //         },
+        //         styles: {
+        //             test: /\.css$/,
+        //             name: 'styles',
+        //             chunks: 'all',
+        //             enforce: true
+        //         }
+        //     }
+        // }
     },
     plugins: [
         new webpack.EnvironmentPlugin(environment),
         new MiniCSSExtractPlugin({
-            filename: 'css/[name].[hash].css?$modena=vue-personal-page',
-            chunkFilename: 'css/[id].[hash].css?$modena=vue-personal-page'
+            filename: 'css/[name].css?$modena=vue-personal-page',
+            // filename: 'css/[name].[hash].css?$modena=vue-personal-page',
+            // chunkFilename: 'css/[id].[hash].css?$modena=vue-personal-page'
         }),
         new CompressionPlugin({
             filename: '[path].gz[query]',
@@ -68,7 +73,7 @@ const webpackConfig = merge(commonConfig, {
             threshold: 10240,
             minRatio: 0.8
         }),
-        new webpack.HashedModuleIdsPlugin(),
+        // new webpack.HashedModuleIdsPlugin(),
         new PrerenderSpaPlugin({
             staticDir: path.join(__dirname, '..', 'dist'),
             routes: [ '/', '/blog', '/projects', '/trips' ],
