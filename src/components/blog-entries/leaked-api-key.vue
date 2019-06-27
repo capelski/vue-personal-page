@@ -9,7 +9,7 @@
             Few days ago I received the following email from Google Cloud Platform. Apparently, I was publishing my Google Maps API key to a public Github repository (for the non-technical audience, I was uploading some kind of password to a social network profile), allowing any smartass clever enough to find it to spend my Google Maps quota on his behalf.
         </p>
         <p class="text-center">
-            <img src="/img/blog/leaked-api-key_google_mail.png?$modena=vue-personal-page" />
+            <img src="/img/blog/leaked-api-key_google_mail.png?$modena=vue-personal-page" alt="Mail received from Google Cloud Platform" />
         </p>
         <div v-if="!isRenderedFromList">
             <p>

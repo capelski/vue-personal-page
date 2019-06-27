@@ -2,12 +2,12 @@
     <div class="navbar-spacer">
         <header class="masthead">
             <div class="intro-text">
-                <div class="intro-heading text-uppercase">Carles Capellas</div>
-                <div class="intro-subheading">Get to know something about me</div>
+                <h1 class="intro-heading text-uppercase">Carles Capellas</h1>
+                <h2 class="intro-subheading">Get to know something about me</h2>
                 <div class="technologies">
-                    <img src="/img/node.png?$modena=vue-personal-page"/>
-                    <img src="/img/docker.png?$modena=vue-personal-page"/>
-                    <img src="/img/azure.png?$modena=vue-personal-page"/>
+                    <img src="/img/node.png?$modena=vue-personal-page" alt="Node.js logo"/>
+                    <img src="/img/docker.png?$modena=vue-personal-page" alt="Docker logo"/>
+                    <img src="/img/azure.png?$modena=vue-personal-page" alt="Windows Azure logo"/>
                 </div>
             </div>
         </header>
@@ -50,6 +50,7 @@
         font-size: 30px;
         line-height: 30px;
         margin-bottom: 25px;
+        font-weight: normal;
     }
 
     @media (min-width: 768px) {
