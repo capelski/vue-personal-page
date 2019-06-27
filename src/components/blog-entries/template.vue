@@ -1,10 +1,7 @@
 <template>
     <div :class="{'container navbar-spacer m-top-40': !isRenderedFromList}">
         <div class="blog-entry">
-            <h4>
-                <router-link v-if="isRenderedFromList" to="/blog/article-name">{{ title }}</router-link>
-                <span v-if="!isRenderedFromList">{{ title }}</span>
-            </h4>
+            <h4>Article title</h4>
             <p>Date</p>
             <p>
                 Main paragraph
@@ -20,6 +17,9 @@
                     <br />
                 </p>
             </div>
+            <router-link v-if="isRenderedFromList" to="/blog/article-id">
+                <div class="faded"></div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -28,10 +28,5 @@
     export default {
         name: 'article_name',
         props: ['isRenderedFromList'],
-        data() {
-            return {
-                title: 'Article title'
-            };
-        },
     };
 </script>

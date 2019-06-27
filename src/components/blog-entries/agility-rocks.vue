@@ -1,10 +1,7 @@
 <template>
     <div :class="{'container navbar-spacer m-top-40': !isRenderedFromList}">
         <div class="blog-entry">
-            <h4>
-                <router-link v-if="isRenderedFromList" to="/blog/agility-rocks">{{ title }}</router-link>
-                <span v-if="!isRenderedFromList">{{ title }}</span>
-            </h4>
+            <h4>Agility... rocks?</h4>
             <p>2019-06-17</p>
             <p>
                 Last week we had an Agile Training in my company (Sage, in the Barcelona office). Usually I feel lazy about this kind of trainings because they focus on very abstract topics and also because the theory and practice of project management are as different as chalk and cheese, so I was expecting a boring couple of days sitting all together in a room stating the obvious and agreeing on how useful those methodologies are.
@@ -29,6 +26,9 @@
                     We took 15 minutes to get to a "better situation" but in fact we never managed to solve the problem. The trainer insisted that it is possible and that probably we have someone in the group who isn't very familiar with the right and left concepts. In my opinion, if it hadn't have been for the duty calls of the training, we would still be stuck in that room trying to figure it out. On a final note, the exercise is worth giving it a shot and is totally fit for drinking game purposes.
                 </p>
             </div>
+            <router-link v-if="isRenderedFromList" to="/blog/agility-rocks">
+                <div class="faded"></div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -36,11 +36,6 @@
 <script>
     export default {
         name: 'agility-rocks',
-        props: ['isRenderedFromList'],
-        data() {
-            return {
-                title: 'Agility... rocks?'
-            };
-        }
+        props: ['isRenderedFromList']
     };
 </script>

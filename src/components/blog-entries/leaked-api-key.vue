@@ -1,10 +1,7 @@
 <template>
     <div :class="{'container navbar-spacer m-top-40': !isRenderedFromList}">
         <div class="blog-entry">
-            <h4>
-                <router-link v-if="isRenderedFromList" to="/blog/leaked-api-key">{{ title }}</router-link>
-                <span v-if="!isRenderedFromList">{{ title }}</span>
-            </h4>
+            <h4>The leaked API key</h4>
             <p>2019-06-23</p>
             <p>
                 Few days ago I received the following email from Google Cloud Platform. Apparently, I was publishing my Google Maps API key to a public Github repository (for the non-technical audience, I was uploading some kind of password to a social network profile), allowing any smartass clever enough to find it to spend my Google Maps quota on his behalf.
@@ -44,6 +41,9 @@
                     And that's how to remove google maps hardcoded API keys from public repositories and keep Google happy. Please contact me at <b>capellas.carles@gmail.com</b> or check <a href="https://github.com/L3bowski/vue-personal-page/commit/fcf068af000ad02b5a38583e44b104edeaeb25cc" target="_blank">this Github commit</a> if you have any doubts on specific details (other than how does Google detect that their API keys are being uploaded to public repositories... isn't it a bit scary?). See you in the next post!
                 </p>
             </div>
+            <router-link v-if="isRenderedFromList" to="/blog/leaked-api-key">
+                <div class="faded"></div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -66,11 +66,6 @@
     export default {
         name: 'leaked-api-key',
         props: ['isRenderedFromList'],
-        data() {
-            return {
-                title: 'The leaked API key'
-            };
-        },
         mounted() {
             monaco.editor.create(this.$refs.initialIndex, {
                 ...monacoOptions,
