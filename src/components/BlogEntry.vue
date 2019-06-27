@@ -16,10 +16,20 @@
         name: 'agility-rocks',
         props: [
             'date',
+            'description',
             'id',
             'isRenderedFromList',
             'title'
-        ]
+        ],
+        metaInfo () {
+            return this.isRenderedFromList ? {} :
+                {
+                    title: this.title,
+                    meta: [{
+                        vmid: 'description', name: 'description', content: this.description
+                    }]
+                };
+        }
     };
 </script>
 

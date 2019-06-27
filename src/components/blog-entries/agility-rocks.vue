@@ -1,6 +1,7 @@
 <template>
     <BlogEntry
         date="2019-06-17"
+        description="TODO"
         id="agility-rocks"
         :isRenderedFromList="isRenderedFromList"
         title="Agility... rocks?"
@@ -36,9 +37,6 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
-        metaInfo: {
-            title: `Agility... rocks?`,
-        }
+        props: ['isRenderedFromList']
     };
 </script>

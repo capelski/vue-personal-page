@@ -1,6 +1,7 @@
 <template>
     <BlogEntry
         date="2019-06-23"
+        description="TODO"
         id="leaked-api-key"
         :isRenderedFromList="isRenderedFromList"
         title="The leaked API key"
@@ -63,9 +64,6 @@
             BlogEntry
         },
         props: ['isRenderedFromList'],
-        metaInfo: {
-            title: `The leaked API key`,
-        },
         mounted() {
             monaco.editor.create(this.$refs.initialIndex, {
                 ...monacoOptions,

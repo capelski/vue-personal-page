@@ -24,9 +24,6 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
-        metaInfo: {
-            title: 'Title',
-        }
+        props: ['isRenderedFromList']
     };
 </script>
