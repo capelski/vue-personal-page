@@ -1,17 +1,25 @@
 <template>
-    <div :class="{'container navbar-spacer m-top-40': !renderedInList}">
+    <div :class="{'container navbar-spacer m-top-40': !isRenderedFromList}">
         <div class="blog-entry">
-            <h4>Title</h4>
+            <h4>
+                <router-link v-if="isRenderedFromList" to="/blog/article-name">{{ title }}</router-link>
+                <span v-if="!isRenderedFromList">{{ title }}</span>
+            </h4>
             <p>Date</p>
             <p>
-                Paragraph
+                Main paragraph
             </p>
-            <p class="text-center">
-                <br />
-                <img src="/img/blog/image_name?$modena=vue-personal-page" />
-                <br />
-                <br />
-            </p>
+            <div v-if="!isRenderedFromList">
+                <p>
+                    Other paragraphs
+                </p>
+                <p class="text-center">
+                    <br />
+                    <img src="/img/blog/image_name?$modena=vue-personal-page" />
+                    <br />
+                    <br />
+                </p>
+            </div>
         </div>
     </div>
 </template>
@@ -19,6 +27,11 @@
 <script>
     export default {
         name: 'article_name',
-        props: ['renderedInList']
+        props: ['isRenderedFromList'],
+        data() {
+            return {
+                title: 'Article title'
+            };
+        },
     };
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="container navbar-spacer m-top-40">
-        <leaked_api_key :renderedInList="true" />
-        <agility_rocks :renderedInList="true" />
+        <leaked_api_key :isRenderedFromList="true" />
+        <agility_rocks :isRenderedFromList="true" />
     </div>
 </template>
 
