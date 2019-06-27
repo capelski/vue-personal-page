@@ -28,6 +28,10 @@
             router.afterEach((to, from) => {
                 setTimeout(() => this.loading = false, 800)
             })
+        },
+        metaInfo: {
+            title: 'Home',
+            titleTemplate: '%s | Carles Capellas'
         }
     }
 </script>

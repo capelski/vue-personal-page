@@ -14,6 +14,9 @@
         components: {
             agility_rocks,
             leaked_api_key
-        }
+        },
+        metaInfo: {
+            title: 'Blog',
+        },
     }
 </script>

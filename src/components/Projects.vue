@@ -27,6 +27,9 @@
     export default {
         name: 'Projects',
         components: { Project },
+        metaInfo: {
+            title: 'Projects',
+        },
         data() {
             return {
                 projects: [{

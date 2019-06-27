@@ -36,6 +36,9 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList']
+        props: ['isRenderedFromList'],
+        metaInfo: {
+            title: `Agility... rocks?`,
+        }
     };
 </script>

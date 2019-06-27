@@ -1,11 +1,15 @@
 import 'expose-loader?$!jquery';
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
+
+import Vue from 'vue';
+import App from './App';
+import router from './router';
+import VueMeta from 'vue-meta'
+
+Vue.use(VueMeta, {
+  	refreshOnceOnNavigation: true
+});
 
 // Monaco configuration. The self object is defined in the webpack configuration files
 self.MonacoEnvironment = {
@@ -24,13 +28,13 @@ self.MonacoEnvironment = {
 		}
 		return './js/editor.worker.bundle.js';
 	}
-}
+};
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  render: createElement => createElement(App),
-  router
-})
+	el: '#app',
+	render: createElement => createElement(App),
+	router
+});

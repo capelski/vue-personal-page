@@ -23,6 +23,9 @@
 
     export default {
         name: 'Trips',
+        metaInfo: {
+            title: 'Trips',
+        },
         mounted() {
             const markers = [
                 {

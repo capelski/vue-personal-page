@@ -63,6 +63,9 @@
             BlogEntry
         },
         props: ['isRenderedFromList'],
+        metaInfo: {
+            title: `The leaked API key`,
+        },
         mounted() {
             monaco.editor.create(this.$refs.initialIndex, {
                 ...monacoOptions,
