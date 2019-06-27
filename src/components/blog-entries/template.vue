@@ -1,32 +1,29 @@
 <template>
-    <div :class="{'container navbar-spacer m-top-40': !isRenderedFromList}">
-        <div class="blog-entry">
-            <h4>Article title</h4>
-            <p>Date</p>
+    <BlogEntry
+        date="date"
+        id="id"
+        :isRenderedFromList="isRenderedFromList"
+        title="title"
+    >
+        <p>
+            Main paragraphs
+        </p>
+        <div v-if="!isRenderedFromList">
             <p>
-                Main paragraph
+                Other paragraphs
             </p>
-            <div v-if="!isRenderedFromList">
-                <p>
-                    Other paragraphs
-                </p>
-                <p class="text-center">
-                    <br />
-                    <img src="/img/blog/image_name?$modena=vue-personal-page" />
-                    <br />
-                    <br />
-                </p>
-            </div>
-            <router-link v-if="isRenderedFromList" to="/blog/article-id">
-                <div class="faded"></div>
-            </router-link>
         </div>
-    </div>
+    </BlogEntry>
 </template>
 
 <script>
+    import BlogEntry from '../BlogEntry';
+
     export default {
-        name: 'article_name',
-        props: ['isRenderedFromList'],
+        name: 'entry-name',
+        components: {
+            BlogEntry
+        },
+        props: ['isRenderedFromList']
     };
 </script>
