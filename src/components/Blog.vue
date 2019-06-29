@@ -17,6 +17,9 @@
         },
         metaInfo: {
             title: 'Blog',
+            meta: [{
+                name: 'description', content: 'Blog with the worth sharing thoughts that cross my mind as well as some software development articles'
+            }]
         },
     }
 </script>

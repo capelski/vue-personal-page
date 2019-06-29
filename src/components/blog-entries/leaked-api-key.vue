@@ -1,7 +1,7 @@
 <template>
     <BlogEntry
         date="2019-06-23"
-        description="TODO"
+        description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
         id="leaked-api-key"
         :isRenderedFromList="isRenderedFromList"
         title="The leaked API key"

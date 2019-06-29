@@ -26,7 +26,7 @@
                 {
                     title: this.title,
                     meta: [{
-                        vmid: 'description', name: 'description', content: this.description
+                        name: 'description', content: this.description
                     }]
                 };
         }

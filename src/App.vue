@@ -30,7 +30,6 @@
             })
         },
         metaInfo: {
-            title: 'Home',
             titleTemplate: '%s | Carles Capellas'
         }
     }
