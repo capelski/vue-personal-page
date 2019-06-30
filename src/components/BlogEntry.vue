@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'container navbar-spacer m-top-40': !isRenderedFromList}">
+    <div :class="{'container navbar-spacer': !isRenderedFromList}">
         <div class="blog-entry">
             <h4>{{ title }}</h4>
             <p>{{ date }}</p>

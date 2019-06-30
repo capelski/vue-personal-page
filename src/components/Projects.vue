@@ -1,24 +1,20 @@
 <template>
-    <div class="navbar-spacer container">
-        <div class="row m-top-40">
-            <div class="col-lg-12">
-                <ul class="timeline">
-                    <project v-for="(project, index) in projects" v-bind:key="project.name"
-                        :date="project.date"
-                        :name="project.name"
-                        :description="project.description"
-                        :githubUrl="project.githubUrl"
-                        :url="project.url"
-                        :inverted="(index % 2 == 0)"
-                    />
-                    <li>
-                        <div class="timeline-image">
-                            <h4>VB <br /> dark <br /> period</h4>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div class="container navbar-spacer">
+        <ul class="timeline">
+            <project v-for="(project, index) in projects" v-bind:key="project.name"
+                :date="project.date"
+                :name="project.name"
+                :description="project.description"
+                :githubUrl="project.githubUrl"
+                :url="project.url"
+                :inverted="(index % 2 == 0)"
+            />
+            <li>
+                <div class="timeline-image">
+                    <h4>VB <br /> dark <br /> period</h4>
+                </div>
+            </li>
+        </ul>
     </div>
 </template>
 

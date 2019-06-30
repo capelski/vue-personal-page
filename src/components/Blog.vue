@@ -1,5 +1,5 @@
 <template>
-    <div class="container navbar-spacer m-top-40">
+    <div class="container navbar-spacer">
         <leaked_api_key :isRenderedFromList="true" />
         <agility_rocks :isRenderedFromList="true" />
     </div>

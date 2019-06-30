@@ -1,6 +1,6 @@
 <template>
-    <div class="navbar-spacer">
-        <header class="masthead">
+    <div class="navbar-spacer narrow">
+        <header class="home">
             <div class="intro-text">
                 <h1 class="intro-heading text-uppercase">Carles Capellas</h1>
                 <h2 class="intro-subheading">Get to know something about me</h2>
@@ -27,7 +27,7 @@
 </script>
 
 <style scoped>
-    header.masthead {
+    header.home {
         height: 100%;
         display: flex;
         align-items: center;
@@ -44,7 +44,7 @@
         background-size: cover;
     }
 
-    header.masthead .intro-heading {
+    header.home .intro-heading {
         font-size: 50px;
         font-weight: 700;
         line-height: 50px;
@@ -52,7 +52,7 @@
         font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
-    header.masthead .intro-subheading {
+    header.home .intro-subheading {
         font-size: 30px;
         line-height: 30px;
         margin-bottom: 25px;
@@ -60,12 +60,12 @@
     }
 
     @media (min-width: 768px) {
-        header.masthead .intro-heading {
+        header.home .intro-heading {
             font-size: 75px;
             line-height: 75px;
         }
 
-        header.masthead .intro-subheading {
+        header.home .intro-subheading {
             font-size: 40px;
             line-height: 40px;
             margin-bottom: 50px;
