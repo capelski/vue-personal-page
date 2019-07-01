@@ -36,6 +36,30 @@
 </script>
 
 <style>
+    @font-face {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        src: url('/fonts/montserrat/Montserrat-Bold.ttf?$modena=vue-personal-page');
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        src: url('/fonts/montserrat/Montserrat-Regular.ttf?$modena=vue-personal-page');
+    }
+
+    @font-face {
+        font-family: 'Roboto Slab';
+        font-weight: 700;
+        src: url('/fonts/roboto-slab/RobotoSlab-Bold.ttf?$modena=vue-personal-page');
+    }
+
+    @font-face {
+        font-family: 'Roboto Slab';
+        font-weight: 400;
+        src: url('/fonts/roboto-slab/RobotoSlab-Regular.ttf?$modena=vue-personal-page');
+    }
+
     html,
     body,
     #app,

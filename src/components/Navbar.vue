@@ -68,15 +68,6 @@
         border: 0;
     }
 
-    #main-nav .navbar-brand {
-        color: #fed136;
-        font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
-    }
-
-    #main-nav .navbar-brand.active, #main-nav .navbar-brand:active, #main-nav .navbar-brand:focus, #main-nav .navbar-brand:hover {
-        color: #fec503;
-    }
-
     #main-nav .navbar-nav .nav-item .nav-link {
         font-size: 90%;
         font-weight: 400;
@@ -100,12 +91,6 @@
             border: none;
             background-color: transparent;
         }
-        #main-nav .navbar-brand {
-            font-size: 1.75em;
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            transition: all 0.3s;
-        }
         #main-nav .navbar-nav .nav-item .nav-link {
             padding: 1.1em 1em !important;
         }
@@ -113,10 +98,6 @@
             padding-top: 0;
             padding-bottom: 0;
             background-color: #212529;
-        }
-        #main-nav.navbar-shrink .navbar-brand {
-            font-size: 1.25em;
-            padding: 12px 0;
         }
     }
 </style>
