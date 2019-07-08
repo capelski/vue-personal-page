@@ -1,6 +1,7 @@
 <template>
     <BlogEntry
         date="date"
+        description="description meta tag"
         id="id"
         :isRenderedFromList="isRenderedFromList"
         title="title"

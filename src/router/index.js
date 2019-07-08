@@ -6,6 +6,7 @@ import Trips from '@/components/Trips';
 import Blog from '@/components/Blog';
 import AgilityRocks from '@/components/blog-entries/agility-rocks';
 import LeakedApiKey from '@/components/blog-entries/leaked-api-key';
+import MeaningOfLife from '@/components/blog-entries/meaning-of-life';
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ const router = new Router({
             path: '/blog/leaked-api-key',
             name: 'The leaked API key',
             component: LeakedApiKey
+        },
+        {
+            path: '/blog/meaning-of-life',
+            name: 'Meaning of life',
+            component: MeaningOfLife
         },
         {
             path: '/trips',
