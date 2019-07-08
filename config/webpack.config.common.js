@@ -8,8 +8,8 @@ const path                 = require('path');
 const isDev                = process.env.NODE_ENV === 'development';
 
 const envConfig = require('dotenv').config();
-if (envConfig.error || !envConfig.parsed.MAPS_API_KEY) {
-    throw 'The Google Maps API key must be provided through a .env file to build/start the app';
+if (envConfig.error || !envConfig.parsed.MAPS_API_KEY || !envConfig.parsed.ANALYTICS_TRACKING_ID) {
+    throw 'Google Maps API key and Google Analytics Tracking ID must be provided through a .env file to build/start the app';
 }
 
 const webpackConfig = {

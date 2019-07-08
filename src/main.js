@@ -6,10 +6,22 @@ import 'font-awesome/css/font-awesome.min.css';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import VueMeta from 'vue-meta'
+import VueMeta from 'vue-meta';
+import VueAnalytics from 'vue-analytics';
 
 Vue.use(VueMeta, {
   	refreshOnceOnNavigation: true
+});
+
+const isProd = process.env.NODE_ENV === 'production';
+
+Vue.use(VueAnalytics, {
+	debug: {
+		enabled: !isProd,
+		sendHitTask: isProd
+	},
+	id: process.env.ANALYTICS_TRACKING_ID,
+	router
 });
 
 // Monaco configuration. The self object is defined in the webpack configuration files
