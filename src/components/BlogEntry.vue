@@ -1,12 +1,20 @@
 <template>
     <div :class="{'container navbar-spacer': !isRenderedFromList}">
         <div class="blog-entry">
-            <h4>{{ title }}</h4>
-            <p>{{ date }}</p>
-            <slot />
-            <router-link v-if="isRenderedFromList" :to="`/blog/${id}`">
-                <div class="faded"></div>
+            <router-link v-if="isRenderedFromList" class="heading blog-link" :to="`/blog/${id}`">
+                <h4>{{ title }}</h4>
+                <p>{{ date }}</p>
             </router-link>
+
+            <div class="heading" v-if="!isRenderedFromList">
+                <h4>{{ title }}</h4>
+                <p>{{ date }}</p>
+            </div>
+
+            <div :class="{'article-container' : true, 'faded-wrapper': isRenderedFromList}">
+                <slot />
+                <div v-if="isRenderedFromList" class="faded" v-on:click="navigate"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -29,6 +37,11 @@
                         name: 'description', content: this.description
                     }]
                 };
+        },
+        methods: {
+            navigate() {
+                this.$router.push(`/blog/${this.id}`);
+            }
         }
     };
 </script>
@@ -36,12 +49,15 @@
 <style>
     .blog-entry {
         margin-bottom: 20px;
-        position: relative;
     }
 
-    .blog-entry .faded {
+    .blog-entry .faded-wrapper {
+        position: relative
+    }
+
+    .blog-entry .faded-wrapper .faded {
         cursor: pointer;
-        background: linear-gradient(to bottom, rgba(255, 255, 255 ,0) 0%, white 95%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255 ,0) 0%, white 90%);
         top: 0;
         bottom: 0;
         left:0;
@@ -61,5 +77,11 @@
 
     .blog-entry .code-editor {
         width: 100%;
+    }
+
+    .blog-entry a.blog-link {
+        display: block;
+        color: black;
+        text-decoration: none;
     }
 </style>
