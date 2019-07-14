@@ -57,7 +57,7 @@
 
     .blog-entry .faded-wrapper .faded {
         cursor: pointer;
-        background: linear-gradient(to bottom, rgba(255, 255, 255 ,0) 0%, white 90%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 90%);
         top: 0;
         bottom: 0;
         left:0;
