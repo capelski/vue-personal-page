@@ -1,7 +1,7 @@
 <template>
     <li :class="{'timeline-inverted': inverted}">
         <div class="timeline-image justified">
-            <a v-if="url" :href="url" style="color: white;" target="_blank">
+            <a v-if="url" :href="url" v-on:click="linkClicked" style="color: white;" target="_blank">
                 <i class="fa fa-external-link fa-2x"></i>
             </a>
         </div>
@@ -48,6 +48,15 @@
             inverted: {
                 type: Boolean,
                 default: false
+            }
+        },
+        methods: {
+            linkClicked() {
+                this.$ga.event({
+                    eventCategory: 'Projects',
+                    eventAction: 'link-clicked',
+                    eventLabel: this.name
+                });
             }
         }
     }
