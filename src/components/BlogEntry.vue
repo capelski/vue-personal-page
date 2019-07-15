@@ -14,14 +14,13 @@
             <div :class="{'article-container' : true, 'faded-wrapper': isRenderedFromList}">
                 <slot />
                 <div v-if="isRenderedFromList" class="faded" v-on:click="navigate"></div>
+                <a
+                    v-if="!isRenderedFromList && window.orientation !== undefined"
+                    :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + id"
+                    data-action="share/whatsapp/share">
+                    <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
+                </a>
             </div>
-
-            <a
-                v-if="window.orientation !== undefined"
-                :href="'whatsapp://send?text=https://carlescapellas.xyz/' + id"
-                data-action="share/whatsapp/share">
-                <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
-            </a>
         </div>
     </div>
 </template>
