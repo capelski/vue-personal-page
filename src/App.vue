@@ -67,6 +67,14 @@
         height: 100%;
     }
 
+    body {
+      scrollbar-width: none; /* Firefox 64 */
+      -ms-overflow-style: none; /* IE 11 */
+    }
+    body::-webkit-scrollbar { /** Webkit */
+        display: none;
+    }
+
     .navbar-spacer {
         padding-top: 80px;
     }
