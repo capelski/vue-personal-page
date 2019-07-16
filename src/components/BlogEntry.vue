@@ -14,8 +14,10 @@
             <div :class="{'article-container' : true, 'faded-wrapper': isRenderedFromList}">
                 <slot />
                 <div v-if="isRenderedFromList" class="faded" v-on:click="navigate"></div>
+                <!-- TODO ¿Extract the domain name into config? -->
                 <a
                     v-if="!isRenderedFromList && window.orientation !== undefined"
+                    v-on:click="articleShared"
                     :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + id"
                     data-action="share/whatsapp/share">
                     <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
@@ -52,6 +54,13 @@
         methods: {
             navigate() {
                 this.$router.push(`/blog/${this.id}`);
+            },
+            articleShared() {
+                this.$ga.event({
+                    eventCategory: 'Blog',
+                    eventAction: 'article-shared',
+                    eventLabel: this.title
+                });
             }
         }
     };
