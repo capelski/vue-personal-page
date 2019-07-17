@@ -10,7 +10,9 @@ const path                     = require('path');
 const commonConfig             = require('./webpack.config.common');
 const isProd                   = process.env.NODE_ENV === 'production';
 const environment              = require('./env/prod.env');
-const PrerenderSpaPlugin       = require('prerender-spa-plugin')
+const PrerenderSpaPlugin       = require('prerender-spa-plugin');
+
+const blogEntriesIds = require('../src/components/blog-entries/ids');
 
 const webpackConfig = merge(commonConfig, {
     mode: 'production',
@@ -79,9 +81,9 @@ const webpackConfig = merge(commonConfig, {
             routes: [
                 '/',
                 '/blog',
-                '/blog/agility-rocks',
-                '/blog/leaked-api-key',
-                '/blog/meaning-of-life',
+                `/blog/${blogEntriesIds['agility-rocks']}`,
+                `/blog/${blogEntriesIds['leaked-api-key']}`,
+                `/blog/${blogEntriesIds['meaning-of-life']}`,
                 '/projects',
                 '/trips'
             ],

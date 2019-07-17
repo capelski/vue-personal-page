@@ -49,8 +49,9 @@
 
 <script>
     import BlogEntry from '../BlogEntry';
+    import ids from './ids';
 
-    const id = 'meaning-of-life';
+    const id = ids['meaning-of-life'];
     const title = 'The meaning of life';
 
     export default {

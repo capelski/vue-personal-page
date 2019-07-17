@@ -45,8 +45,9 @@
 <script>
     import * as monaco from 'monaco-editor';
     import BlogEntry from '../BlogEntry';
+    import ids from './ids';
 
-    const id = 'leaked-api-key';
+    const id = ids['leaked-api-key'];
     const title = 'The leaked API key';
     const monacoOptions = {
         autoIndent: true,

@@ -31,8 +31,9 @@
 
 <script>
     import BlogEntry from '../BlogEntry';
+    import ids from './ids';
 
-    const id = 'agility-rocks';
+    const id = ids['agility-rocks'];
     const title = 'Agility... rocks?';
 
     export default {

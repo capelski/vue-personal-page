@@ -19,8 +19,9 @@
 
 <script>
     import BlogEntry from '../BlogEntry';
+    import ids from './ids';
 
-    const id = 'id';
+    const id = ids['id'];
     const title = 'title';
 
     export default {
