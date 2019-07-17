@@ -10,7 +10,7 @@
             From time to time I used to wonder about the meaning of life. Or more exactly which is the goal of life. Why are we here for? If you have wondered about it too without getting to any satisfactory conclusion, I'm sorry to tell you that I don't have an specific answer. However, as the time goes by, I am less worried about finding it. <b>Yes, this is going to be a dense post.</b>
         </p>
         <p class="text-center">
-            <img src="/img/blog/meaning-of-life-crazy.gif?$modena=vue-personal-page" alt="You have lost your damn mind gif" />
+            <img :src="`/img/blog/${id}-crazy.gif?$modena=vue-personal-page`" alt="You have lost your damn mind gif" />
         </p>
         <div v-if="!isRenderedFromList">
             <p>
@@ -20,7 +20,7 @@
                 If life had a goal, it would be simpler and we wouldn't feel so lost sometimes, but it would have a downside too because we wouldn't explore as many possibilites as we do now (e.g. to quota an extravagant experiment, we sent a Tesla across the universe, can you believe it!?).
             </p>
             <p class="text-center">
-                <img src="/img/blog/meaning-of-life-tesla-in-space.jpg?$modena=vue-personal-page" alt="Tesla car in space" />
+                <img :src="`/img/blog/${id}-tesla-in-space.jpg?$modena=vue-personal-page`" alt="Tesla car in space" />
             </p>
             <p>
                 We can discuss whether having a specific goal would make life better or worst, but possibly you don't care about it neither I have the reflective skills to come up with a comparison. Let's just assume the wide range of possibilities that life offers and that sometimes we will feel lost and overwhelmed. If you are still reading, at this point you are probably thinking "Where are you going with this, Paulo Coelho? All of us have similar thoughts about existence but we don't write about it in a blog".
@@ -32,7 +32,7 @@
                 The latter question is then easier to answer but the answer becomes subjective, so you are again left alone in dark and you will have to find it for yourself. It would be unfair however to leave you empty-handed, given that you have read all along this post, so I want to leave you with an answer candidate, which might or might not fit your expectations: <b>Learning</b>.
             </p>
             <p class="text-center">
-                <img src="/img/blog/meaning-of-life-string-theory.jpg?$modena=vue-personal-page" alt="String theory representation" />
+                <img :src="`/img/blog/${id}-string-theory.jpg?$modena=vue-personal-page`" alt="String theory representation" />
             </p>
             <p>
                 <b>Learning what</b>? Doesn't matter. Learning anything new or learning more about something you already know but you can do better. Specially practial things (e.g. martial arts, cooking, salsa, play an instrument, a langauge, etc.) which can easily be practiced on a daily basis and might eventually turn useful. Learning about the <a href="https://en.wikipedia.org/wiki/String_theory" target="_blank">string theory</a> might be very interesting for the intricate minds, but is a different kind of learning and it doesn't provide the sense of accomplishment that I am trying to explain.
@@ -54,7 +54,7 @@
     const title = 'The meaning of life';
 
     export default {
-        name: 'entry-name',
+        name: id,
         components: {
             BlogEntry
         },

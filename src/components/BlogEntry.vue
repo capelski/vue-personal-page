@@ -29,7 +29,7 @@
 
 <script>
     export default {
-        name: 'agility-rocks',
+        name: 'blog-entry',
         props: [
             'date',
             'description',

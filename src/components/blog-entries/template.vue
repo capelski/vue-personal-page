@@ -24,7 +24,7 @@
     const title = 'title';
 
     export default {
-        name: 'entry-name',
+        name: id,
         components: {
             BlogEntry
         },

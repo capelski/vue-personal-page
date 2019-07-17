@@ -17,7 +17,7 @@
                 In the end the exercise was fun and I felt it was a good excuse to start writing the blog I have been think of lately and that was worth sharing it with any eventual reader I might have. So, without further ado, here is a graphical representation of the exercise (a picture is worth a thousand words) drastically limited by my drawing skills on GIMP (so I should be happy if its worth anything more than two hundred):
             </p>
             <p class="text-center">
-                <img src="/img/blog/agility-rocks_agile_exercise.png?$modena=vue-personal-page" alt="Agility exercise representation" />
+                <img :src="`/img/blog/${id}_agile_exercise.png?$modena=vue-personal-page`" alt="Agility exercise representation" />
             </p>
             <p>
                 In short, the exercise consist of any even number of people (4 at least) standing in a circle facing inward. All the participants will first hold the left hand of the participant in front of them with their left hand and hold any other participant's right hand with their right hand, thus forming an interlaced closed circle. The goal of the team is to undo the interlaces without letting go of anyone's hands.
@@ -36,7 +36,7 @@
     const title = 'Agility... rocks?';
 
     export default {
-        name: 'agility-rocks',
+        name: id,
         components: {
             BlogEntry
         },
