@@ -25,18 +25,18 @@ const router = new Router({
             component: Blog
         },
         {
-            path: '/blog/agility-rocks',
-            name: 'Agility rocks',
+            path: `/blog/${AgilityRocks.data().id}` ,
+            name: AgilityRocks.data().title,
             component: AgilityRocks
         },
         {
-            path: '/blog/leaked-api-key',
-            name: 'The leaked API key',
+            path: `/blog/${LeakedApiKey.data().id}` ,
+            name: LeakedApiKey.data().title,
             component: LeakedApiKey
         },
         {
-            path: '/blog/meaning-of-life',
-            name: 'Meaning of life',
+            path: `/blog/${MeaningOfLife.data().id}` ,
+            name: MeaningOfLife.data().title,
             component: MeaningOfLife
         },
         {

@@ -2,9 +2,9 @@
     <BlogEntry
         date="date"
         description="description meta tag"
-        id="id"
+        :id="id"
         :isRenderedFromList="isRenderedFromList"
-        title="title"
+        :title="title"
     >
         <p>
             Main paragraphs
@@ -20,11 +20,20 @@
 <script>
     import BlogEntry from '../BlogEntry';
 
+    const id = 'id';
+    const title = 'title';
+
     export default {
         name: 'entry-name',
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList']
+        props: ['isRenderedFromList'],
+        data() {
+            return {
+                id,
+                title
+            };
+        }
     };
 </script>

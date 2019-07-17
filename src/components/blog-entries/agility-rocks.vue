@@ -2,9 +2,9 @@
     <BlogEntry
         date="2019-06-17"
         description="Ice breaking exercise for groups of people applied in the context of an Agility training"
-        id="agility-rocks"
+        :id="id"
         :isRenderedFromList="isRenderedFromList"
-        title="Agility... rocks?"
+        :title="title"
     >
         <p>
             Last week we had an Agile Training in my company (Sage, in the Barcelona office). Usually I feel lazy about this kind of trainings because they focus on very abstract topics and also because the theory and practice of project management are as different as chalk and cheese, so I was expecting a boring couple of days sitting all together in a room stating the obvious and agreeing on how useful those methodologies are.
@@ -32,11 +32,20 @@
 <script>
     import BlogEntry from '../BlogEntry';
 
+    const id = 'agility-rocks';
+    const title = 'Agility... rocks?';
+
     export default {
         name: 'agility-rocks',
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList']
+        props: ['isRenderedFromList'],
+        data() {
+            return {
+                id,
+                title
+            };
+        }
     };
 </script>

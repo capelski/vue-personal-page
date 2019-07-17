@@ -2,9 +2,9 @@
     <BlogEntry
         date="2019-06-23"
         description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
-        id="leaked-api-key"
+        :id="id"
         :isRenderedFromList="isRenderedFromList"
-        title="The leaked API key"
+        :title="title"
     >
         <p>
             Few days ago I received the following email from Google Cloud Platform. Apparently, I was publishing my Google Maps API key to a public Github repository (for the non-technical audience, I was uploading some kind of password to a social network profile), allowing any smartass clever enough to find it to spend my Google Maps quota on his behalf.
@@ -46,6 +46,8 @@
     import * as monaco from 'monaco-editor';
     import BlogEntry from '../BlogEntry';
 
+    const id = 'leaked-api-key';
+    const title = 'The leaked API key';
     const monacoOptions = {
         autoIndent: true,
         automaticLayout: true,
@@ -64,6 +66,12 @@
             BlogEntry
         },
         props: ['isRenderedFromList'],
+        data() {
+            return {
+                id,
+                title
+            };
+        },
         mounted() {
             if (!this.isRenderedFromList) {
                 monaco.editor.create(this.$refs.initialIndex, {

@@ -2,9 +2,9 @@
     <BlogEntry
         date="2019-07-08"
         description="Reflection on how the meaning of life is not that relevant and what could we focus on instead"
-        id="meaning-of-life"
+        :id="id"
         :isRenderedFromList="isRenderedFromList"
-        title="The meaning of life"
+        :title="title"
     >
         <p>
             From time to time I used to wonder about the meaning of life. Or more exactly which is the goal of life. Why are we here for? If you have wondered about it too without getting to any satisfactory conclusion, I'm sorry to tell you that I don't have an specific answer. However, as the time goes by, I am less worried about finding it. <b>Yes, this is going to be a dense post.</b>
@@ -50,11 +50,20 @@
 <script>
     import BlogEntry from '../BlogEntry';
 
+    const id = 'meaning-of-life';
+    const title = 'The meaning of life';
+
     export default {
         name: 'entry-name',
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList']
+        props: ['isRenderedFromList'],
+        data() {
+            return {
+                id,
+                title
+            };
+        }
     };
 </script>
