@@ -13,6 +13,15 @@ const environment              = require('./env/prod.env');
 const PrerenderSpaPlugin       = require('prerender-spa-plugin');
 
 const blogEntriesIds = require('../src/components/blog-entries/ids');
+const prerenderRoutes = [
+    '/',
+    '/blog',
+    '/projects',
+    '/trips'
+];
+Object.values(blogEntriesIds).forEach(entryId => {
+    prerenderRoutes.push(`/blog/${entryId}`);
+});
 
 const webpackConfig = merge(commonConfig, {
     mode: 'production',
@@ -78,15 +87,7 @@ const webpackConfig = merge(commonConfig, {
         // new webpack.HashedModuleIdsPlugin(),
         new PrerenderSpaPlugin({
             staticDir: path.join(__dirname, '..', 'dist'),
-            routes: [
-                '/',
-                '/blog',
-                `/blog/${blogEntriesIds['agility-rocks']}`,
-                `/blog/${blogEntriesIds['leaked-api-key']}`,
-                `/blog/${blogEntriesIds['meaning-of-life']}`,
-                '/projects',
-                '/trips'
-            ],
+            routes: prerenderRoutes,
         })
     ]
 });
