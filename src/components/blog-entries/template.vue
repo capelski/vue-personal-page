@@ -1,17 +1,17 @@
 <template>
     <BlogEntry
-        date="date"
-        description="description meta tag"
+        date="TODO"
+        description="TODO"
         :id="id"
         :isRenderedFromList="isRenderedFromList"
         :title="title"
     >
         <p>
-            Main paragraphs
+            TODO
         </p>
         <div v-if="!isRenderedFromList">
             <p>
-                Other paragraphs
+                TODO
             </p>
         </div>
     </BlogEntry>
@@ -21,8 +21,8 @@
     import BlogEntry from '../BlogEntry';
     import ids from './ids';
 
-    const id = ids['id'];
-    const title = 'title';
+    const id = ids['TODO'];
+    const title = 'TODO';
 
     export default {
         name: id,

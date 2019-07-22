@@ -19,8 +19,11 @@
                     v-if="!isRenderedFromList && window.orientation !== undefined"
                     v-on:click="articleShared"
                     :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + id"
-                    data-action="share/whatsapp/share">
+                    data-action="share/whatsapp/share"
+                    class="whatsapp-link"
+                >
                     <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
+                    Share on whatsapp
                 </a>
             </div>
         </div>
@@ -66,42 +69,48 @@
     };
 </script>
 
-<style>
+<style lang="scss">
     .blog-entry {
         margin-bottom: 20px;
-    }
 
-    .blog-entry .faded-wrapper {
-        position: relative
-    }
+        .faded-wrapper {
+            position: relative;
 
-    .blog-entry .faded-wrapper .faded {
-        cursor: pointer;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 90%);
-        top: 0;
-        bottom: 0;
-        left:0;
-        right: 0;
-        position: absolute;
-    }
+            .faded {
+                cursor: pointer;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 90%);
+                top: 0;
+                bottom: 0;
+                left:0;
+                right: 0;
+                position: absolute;
+            }
+        }
 
-    .blog-entry img {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        max-width: 100%;
-    }
+        img {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            max-width: 100%;
+        }
 
-    .blog-entry ul li {
-        margin-top: 10px;
-    }
+        ul li {
+            margin-top: 10px;
+        }
 
-    .blog-entry .code-editor {
-        width: 100%;
-    }
+        .code-editor {
+            width: 100%;
+        }
 
-    .blog-entry a.blog-link {
-        display: block;
-        color: black;
-        text-decoration: none;
+        a.blog-link {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        a.whatsapp-link {
+            display: flex;
+            align-items: center;
+            color: black;
+        }
     }
 </style>
