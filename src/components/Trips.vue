@@ -40,6 +40,51 @@
                 markers: [
                     {
                         label: {
+                            city: 'Brussels',
+                            date: 'July 2019',
+                            duration: '1 day'
+                        },
+                        lat: 50.8505,
+                        lng: 4.34878
+                    },
+                    {
+                        label: {
+                            city: 'Antwerp',
+                            date: 'July 2019',
+                            duration: '1 day'
+                        },
+                        lat: 51.22111,
+                        lng: 4.399708
+                    },
+                    {
+                        label: {
+                            city: 'Boom',
+                            date: 'July 2019',
+                            duration: '1 day'
+                        },
+                        lat: 51.088712,
+                        lng: 4.377515
+                    },
+                    {
+                        label: {
+                            city: 'Ghent',
+                            date: 'July 2019',
+                            duration: '1 day'
+                        },
+                        lat: 51.053829,
+                        lng: 3.725012
+                    },
+                    {
+                        label: {
+                            city: 'Bruges',
+                            date: 'July 2019',
+                            duration: '1 day'
+                        },
+                        lat: 51.208553,
+                        lng: 3.226772
+                    },
+                    {
+                        label: {
                             city: 'London',
                             date: 'May 2019',
                             duration: '4 days'
