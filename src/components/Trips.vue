@@ -1,15 +1,15 @@
 <template>
     <div class="container navbar-spacer trips">
         <h1>Trips</h1>
-        <div class="map-wrapper">
-            <div id="map" style="width:100%; height: 500px;"></div>
-        </div>
-        <div class="cities-list">
-            <div class="row text-center" v-for="marker of markers" :key="marker.label.city">
-                <div class="col-sm-4 order-1 order-sm-2"><b>{{marker.label.city}}</b></div>
-                <div class="col-sm-4 order-2 order-sm-1">{{marker.label.date}}</div>
-                <div class="col-sm-4 order-3">{{marker.label.duration}}</div>
-            </div>
+        <div id="map"></div>
+        <div
+            v-for="marker of markers"
+            :key="marker.label.city"
+            :class="{'row spaced text-center': true, 'trip-start': marker.tripStart}"
+        >
+            <div class="col-sm-4 order-1 order-sm-2"><b>{{marker.label.city}}</b></div>
+            <div class="col-sm-4 order-2 order-sm-1">{{marker.label.date}}</div>
+            <div class="col-sm-4 order-3">{{marker.label.duration}}</div>
         </div>
     </div>
 </template>
@@ -45,7 +45,8 @@
                             duration: '1 day'
                         },
                         lat: 50.8505,
-                        lng: 4.34878
+                        lng: 4.34878,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -54,7 +55,8 @@
                             duration: '1 day'
                         },
                         lat: 51.22111,
-                        lng: 4.399708
+                        lng: 4.399708,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -63,7 +65,8 @@
                             duration: '1 day'
                         },
                         lat: 51.088712,
-                        lng: 4.377515
+                        lng: 4.377515,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -72,7 +75,8 @@
                             duration: '1 day'
                         },
                         lat: 51.053829,
-                        lng: 3.725012
+                        lng: 3.725012,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -81,7 +85,8 @@
                             duration: '1 day'
                         },
                         lat: 51.208553,
-                        lng: 3.226772
+                        lng: 3.226772,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -90,7 +95,8 @@
                             duration: '4 days'
                         },
                         lat: 51.5073219,
-                        lng: -0.1276474
+                        lng: -0.1276474,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -99,7 +105,8 @@
                             duration: '3 days'
                         },
                         lat: 44.4361414,
-                        lng: 26.1027202
+                        lng: 26.1027202,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -108,7 +115,8 @@
                             duration: '3 days'
                         },
                         lat: 36.800108,
-                        lng: 10.184794
+                        lng: 10.184794,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -117,7 +125,8 @@
                             duration: '2 days'
                         },
                         lat: 33.920364,
-                        lng: 8.13384
+                        lng: 8.13384,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -126,7 +135,8 @@
                             duration: '7 days'
                         },
                         lat: 40.741895,
-                        lng: -73.989308
+                        lng: -73.989308,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -135,7 +145,8 @@
                             duration: '1 day'
                         },
                         lat: 38.9071923,
-                        lng: -77.0368707
+                        lng: -77.0368707,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -144,7 +155,8 @@
                             duration: '1 day'
                         },
                         lat: 39.9525839,
-                        lng: -75.1652215
+                        lng: -75.1652215,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -153,7 +165,8 @@
                             duration: '9 days'
                         },
                         lat: 32.6669328,
-                        lng: -16.9240554
+                        lng: -16.9240554,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -162,7 +175,8 @@
                             duration: '3 days'
                         },
                         lat: 47.3768866,
-                        lng: 8.541694
+                        lng: 8.541694,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -171,7 +185,8 @@
                             duration: '6 days'
                         },
                         lat: 35.937496,
-                        lng: 14.375416
+                        lng: 14.375416,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -180,7 +195,8 @@
                             duration: '4 days'
                         },
                         lat: 43.1541875,
-                        lng: 16.6527099
+                        lng: 16.6527099,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -189,7 +205,8 @@
                             duration: '4 days'
                         },
                         lat: 39.9042,
-                        lng: 116.4073963
+                        lng: 116.4073963,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -198,7 +215,8 @@
                             duration: '3 days'
                         },
                         lat: 31.2303904,
-                        lng: 121.47370209999997
+                        lng: 121.47370209999997,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -207,7 +225,8 @@
                             duration: '2 days'
                         },
                         lat: 22.5329876,
-                        lng: 114.0142231
+                        lng: 114.0142231,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -216,7 +235,8 @@
                             duration: '5 days'
                         },
                         lat: 22.396428,
-                        lng: 114.10949700000003
+                        lng: 114.10949700000003,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -225,7 +245,8 @@
                             duration: '2 days'
                         },
                         lat: 25.2945755,
-                        lng: 110.2088946
+                        lng: 110.2088946,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -234,7 +255,8 @@
                             duration: '3 days'
                         },
                         lat: 43.610769,
-                        lng: 3.87671599
+                        lng: 3.87671599,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -243,7 +265,8 @@
                             duration: '4 days'
                         },
                         lat: 38.7222524,
-                        lng: -9.139336599999979
+                        lng: -9.139336599999979,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -252,7 +275,8 @@
                             duration: '2 days'
                         },
                         lat: 12.9715987,
-                        lng: 77.59456269999998
+                        lng: 77.59456269999998,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -261,7 +285,8 @@
                             duration: '2 weeks'
                         },
                         lat: 12.626927,
-                        lng: 80.19271090000007
+                        lng: 80.19271090000007,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -270,7 +295,8 @@
                             duration: '1 day'
                         },
                         lat: 27.1766701,
-                        lng: 78.00807450000002
+                        lng: 78.00807450000002,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -279,7 +305,8 @@
                             duration: '4 days'
                         },
                         lat: 41.0082376,
-                        lng: 28.97835889999999
+                        lng: 28.97835889999999,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -288,7 +315,8 @@
                             duration: '3 days'
                         },
                         lat: 38.423734,
-                        lng: 27.142826000000014
+                        lng: 27.142826000000014,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -297,7 +325,8 @@
                             duration: '3 days'
                         },
                         lat: 36.8968908,
-                        lng: 30.713323299999956
+                        lng: 30.713323299999956,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -306,7 +335,8 @@
                             duration: '3 days'
                         },
                         lat: 38.641842,
-                        lng: 34.83140300000002
+                        lng: 34.83140300000002,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -315,7 +345,8 @@
                             duration: '3 days'
                         },
                         lat: 60.16985569999999,
-                        lng: 24.93837910000002
+                        lng: 24.93837910000002,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -324,7 +355,8 @@
                             duration: '2 days'
                         },
                         lat: 47.497912,
-                        lng: 19.04023499999994
+                        lng: 19.04023499999994,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -333,7 +365,8 @@
                             duration: '2 days'
                         },
                         lat: 45.8150108,
-                        lng: 15.981918899999982
+                        lng: 15.981918899999982,
+                        tripStart: false
                     },
                     {
                         label: {
@@ -342,7 +375,8 @@
                             duration: '2 days'
                         },
                         lat: 48.2081743,
-                        lng: 16.37381890000006
+                        lng: 16.37381890000006,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -351,7 +385,8 @@
                             duration: '3 days'
                         },
                         lat: 49.299181,
-                        lng: 19.949562000000014
+                        lng: 19.949562000000014,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -360,7 +395,8 @@
                             duration: '3 days'
                         },
                         lat: 52.52000659999999,
-                        lng: 13.404953999999975
+                        lng: 13.404953999999975,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -369,7 +405,8 @@
                             duration: '4 days'
                         },
                         lat: 54.35202520000001,
-                        lng: 18.64663840000003
+                        lng: 18.64663840000003,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -378,7 +415,8 @@
                             duration: '2 days'
                         },
                         lat: 51.1078852,
-                        lng: 17.03853760000004
+                        lng: 17.03853760000004,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -387,7 +425,8 @@
                             duration: '3 days'
                         },
                         lat: 50.06465009999999,
-                        lng: 19.94497990000002
+                        lng: 19.94497990000002,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -396,7 +435,8 @@
                             duration: '5 months'
                         },
                         lat: 52.2296756,
-                        lng: 21.012228700000037
+                        lng: 21.012228700000037,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -405,7 +445,8 @@
                             duration: '3 days'
                         },
                         lat: 39.885845563187374,
-                        lng: 4.261535748437495
+                        lng: 4.261535748437495,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -414,7 +455,8 @@
                             duration: '3 days'
                         },
                         lat: 50.0755381,
-                        lng: 14.43780049999998
+                        lng: 14.43780049999998,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -423,7 +465,8 @@
                             duration: '3 days'
                         },
                         lat: 51.44164199999999,
-                        lng: 5.469722499999989
+                        lng: 5.469722499999989,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -432,7 +475,8 @@
                             duration: '2 weeks'
                         },
                         lat: 45.5306402,
-                        lng: 10.017148499999962
+                        lng: 10.017148499999962,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -441,7 +485,8 @@
                             duration: '2 weeks'
                         },
                         lat: 50.719164,
-                        lng: -1.8807689999999866
+                        lng: -1.8807689999999866,
+                        tripStart: true
                     },
                     {
                         label: {
@@ -450,7 +495,8 @@
                             duration: '5 days'
                         },
                         lat: 39.5059889,
-                        lng: 2.530710099999964
+                        lng: 2.530710099999964,
+                        tripStart: true
                     }
                 ]
             };
@@ -485,18 +531,25 @@
     };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .trips {
         color: black;
-    }
-    .trips .map-wrapper {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .trips .cities-list {
-        margin-bottom: 20px;
-    }
-    .trips .cities-list .row {
-        margin-bottom: 20px;
+
+        #map {
+            height: 500px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .row.spaced {
+            margin-left: 0;
+            margin-right: 0;
+            padding-bottom: 10px;
+            padding-top: 10px;
+
+            &.trip-start {
+                border-bottom: 1px solid #fed136;
+            }
+        }
     }
 </style>
