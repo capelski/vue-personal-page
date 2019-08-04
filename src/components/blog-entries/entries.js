@@ -8,9 +8,9 @@ const entries = [
 const linkedEntries = entries
     .map((entry, index) => {
         return {
-            followingEntry: index < entries.length - 1 ? entries[index + 1] : undefined,
+            following: index < entries.length - 1 ? entries[index + 1] : undefined,
             id: entry,
-            previousEntry: index > 0 ? entries[index - 1] : undefined,
+            previous: index > 0 ? entries[index - 1] : undefined,
         };
     })
     .reduce((reducedEntries, next) => ({

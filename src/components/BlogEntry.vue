@@ -28,15 +28,15 @@
                 <div class="navigation-buttons" v-if="!isRenderedFromList">
                     <button
                         type="button"
-                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.followingEntry }"
-                        v-on:click="navigateFollowingEntry"
+                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.following }"
+                        v-on:click="navigateFollowing"
                     >
                         Following
                     </button>
                     <button
                         type="button"
-                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.previousEntry }"
-                        v-on:click="navigatePreviousEntry"
+                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.previous }"
+                        v-on:click="navigatePrevious"
                     >
                         Previous
                     </button>
@@ -81,14 +81,14 @@
             navigate() {
                 this.$router.push(`/blog/${this.entry.id}`);
             },
-            navigateFollowingEntry() {
-                if (this.entry.followingEntry) {
-                    this.$router.push(`/blog/${this.entry.followingEntry}`);
+            navigateFollowing() {
+                if (this.entry.following) {
+                    this.$router.push(`/blog/${this.entry.following}`);
                 }
             },
-            navigatePreviousEntry() {
-                if (this.entry.previousEntry) {
-                    this.$router.push(`/blog/${this.entry.previousEntry}`);
+            navigatePrevious() {
+                if (this.entry.previous) {
+                    this.$router.push(`/blog/${this.entry.previous}`);
                 }
             }
         }
