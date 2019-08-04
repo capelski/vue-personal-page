@@ -32,16 +32,14 @@
                 <img :src="`/img/blog/${entry.id}/solution-${solutionStep > 9 ? solutionStep : '0' + solutionStep}.jpg?$modena=vue-personal-page`" alt="4-coin challenge solution" />
                 <button
                     type="button"
-                    class="btn btn-primary btn-lg spaced"
-                    :disabled="!isPreviousEnabled"
+                    :class="{'btn btn-primary btn-lg coins spaced': true, 'btn-disabled': !isPreviousEnabled }"
                     v-on:click="previousStep"
                 >
                     Back
                 </button>
                 <button
                     type="button"
-                    class="btn btn-primary btn-lg"
-                    :disabled="!isNextEnabled"
+                    :class="{'btn btn-primary btn-lg coins': true, 'btn-disabled': !isNextEnabled }"
                     v-on:click="nextStep"
                 >
                     Next
@@ -97,14 +95,34 @@
     };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .spaced {
         margin-right: 20px;
     }
 
-    .btn.btn-primary:disabled {
-        color: #fff;
-        background-color: #fec810;
-        border-color: #fec810;
+    .btn.btn-primary.coins {
+        background-color: #019829;
+        border-color: #019829;
+
+        &:active,
+        &:focus {
+            background-color: #019829 !important;
+            box-shadow: none !important;
+        }
+
+        &:hover {
+            background-color: #005b18 !important;
+        }
+
+        &.btn-disabled {
+            background-color: #b2e0be;
+            border-color: #b2e0be;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #b2e0be !important;
+            }
+        }
     }
 </style>
