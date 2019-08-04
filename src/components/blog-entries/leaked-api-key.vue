@@ -2,8 +2,10 @@
     <BlogEntry
         date="2019-06-23"
         description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
+        :followingEntry="followingEntry"
         :id="id"
         :isRenderedFromList="isRenderedFromList"
+        :previousEntry="previousEntry"
         :title="title"
     >
         <p>
@@ -47,7 +49,9 @@
     import BlogEntry from '../BlogEntry';
     import ids from './ids';
 
+    const followingEntry = ids['meaning-of-life'];
     const id = ids['leaked-api-key'];
+    const previousEntry = ids['agility-rocks'];
     const title = 'The leaked API key';
     const monacoOptions = {
         autoIndent: true,
@@ -69,7 +73,9 @@
         props: ['isRenderedFromList'],
         data() {
             return {
+                followingEntry,
                 id,
+                previousEntry,
                 title
             };
         },

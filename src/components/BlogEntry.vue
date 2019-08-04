@@ -25,6 +25,22 @@
                     <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
                     Share on whatsapp
                 </a>
+                <div class="navigation-buttons" v-if="!isRenderedFromList">
+                    <button
+                        type="button"
+                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !followingEntry }"
+                        v-on:click="navigateFollowingEntry"
+                    >
+                        Following
+                    </button>
+                    <button
+                        type="button"
+                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !previousEntry }"
+                        v-on:click="navigatePreviousEntry"
+                    >
+                        Previous
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -36,9 +52,11 @@
         props: [
             'date',
             'description',
+            'followingEntry',
             'id',
             'isRenderedFromList',
-            'title'
+            'previousEntry',
+            'title',
         ],
         data() {
             return {
@@ -55,15 +73,25 @@
                 };
         },
         methods: {
-            navigate() {
-                this.$router.push(`/blog/${this.id}`);
-            },
             articleShared() {
                 this.$ga.event({
                     eventCategory: 'Blog',
                     eventAction: 'article-shared',
                     eventLabel: this.title
                 });
+            },
+            navigate() {
+                this.$router.push(`/blog/${this.id}`);
+            },
+            navigateFollowingEntry() {
+                if (this.followingEntry) {
+                    this.$router.push(`/blog/${this.followingEntry}`);
+                }
+            },
+            navigatePreviousEntry() {
+                if (this.previousEntry) {
+                    this.$router.push(`/blog/${this.previousEntry}`);
+                }
             }
         }
     };
@@ -105,12 +133,39 @@
             display: block;
             color: black;
             text-decoration: none;
+
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+            }
         }
 
         a.whatsapp-link {
             display: flex;
             align-items: center;
             color: black;
+
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+            }
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+
+            .btn-disabled,
+            .btn-disabled:focus,
+            .btn-disabled:active,
+            .btn-disabled:hover {
+                background-color: #feeeb7 !important;
+                border-color: #feeeb7 !important;
+                box-shadow: none !important;
+                cursor: default;
+            }
         }
     }
 </style>

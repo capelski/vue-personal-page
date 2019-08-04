@@ -2,8 +2,10 @@
     <BlogEntry
         date="2019-07-08"
         description="Reflection on how the meaning of life is not that relevant and what could we focus on instead"
+        :followingEntry="followingEntry"
         :id="id"
-        :isRenderedFromList="isRenderedFromList"
+        :isRenderedFromList="isRenderedFromList"        
+        :previousEntry="previousEntry"
         :title="title"
     >
         <p>
@@ -51,7 +53,9 @@
     import BlogEntry from '../BlogEntry';
     import ids from './ids';
 
+    const followingEntry = ids['four-coin-challenge'];
     const id = ids['meaning-of-life'];
+    const previousEntry = ids['leaked-api-key'];
     const title = 'The meaning of life';
 
     export default {
@@ -62,7 +66,9 @@
         props: ['isRenderedFromList'],
         data() {
             return {
+                followingEntry,
                 id,
+                previousEntry,
                 title
             };
         }

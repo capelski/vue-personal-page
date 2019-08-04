@@ -5,6 +5,7 @@
         :id="id"
         :isRenderedFromList="isRenderedFromList"
         :title="title"
+        :previousEntry="previousEntry"
     >
         <p>
             In contrast to my abstract esoteric last post on the <router-link :to="`/blog/meaning-of-life`">meaning of life</router-link>, today I bring a light and enjoyable post that will make you think in a different manner; you will need to find a way to lay four coins in a row. Doesn't sound complicated, does it? Just let me add a couple of restrictions so that the word <b>challenge</b> on the title is not used in vain and in order for you to feel proud of yourself if you are able to find out a solution.
@@ -59,6 +60,7 @@
     import ids from './ids';
 
     const id = ids['four-coin-challenge'];
+    const previousEntry = ids['meaning-of-life'];
     const title = '4-coin challenge';
 
     export default {
@@ -70,6 +72,7 @@
         data() {
             return {
                 id,
+                previousEntry,
                 title,
                 solutionStep: 1
             };

@@ -2,6 +2,7 @@
     <BlogEntry
         date="2019-06-17"
         description="Ice breaking exercise for groups of people applied in the context of an Agility training"
+        :followingEntry="followingEntry"
         :id="id"
         :isRenderedFromList="isRenderedFromList"
         :title="title"
@@ -33,6 +34,7 @@
     import BlogEntry from '../BlogEntry';
     import ids from './ids';
 
+    const followingEntry = ids['leaked-api-key'];
     const id = ids['agility-rocks'];
     const title = 'Agility... rocks?';
 
@@ -44,6 +46,7 @@
         props: ['isRenderedFromList'],
         data() {
             return {
+                followingEntry,
                 id,
                 title
             };
