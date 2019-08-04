@@ -1,7 +1,7 @@
 <template>
     <div :class="{'container navbar-spacer': !isRenderedFromList}">
         <div class="blog-entry">
-            <router-link v-if="isRenderedFromList" class="heading blog-link" :to="`/blog/${id}`">
+            <router-link v-if="isRenderedFromList" class="heading blog-link" :to="`/blog/${entry.id}`">
                 <h4>{{ title }}</h4>
                 <p>{{ date }}</p>
             </router-link>
@@ -18,7 +18,7 @@
                 <a
                     v-if="!isRenderedFromList && window.orientation !== undefined"
                     v-on:click="articleShared"
-                    :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + id"
+                    :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + entry.id"
                     data-action="share/whatsapp/share"
                     class="whatsapp-link"
                 >
@@ -28,14 +28,14 @@
                 <div class="navigation-buttons" v-if="!isRenderedFromList">
                     <button
                         type="button"
-                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !followingEntry }"
+                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.followingEntry }"
                         v-on:click="navigateFollowingEntry"
                     >
                         Following
                     </button>
                     <button
                         type="button"
-                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !previousEntry }"
+                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.previousEntry }"
                         v-on:click="navigatePreviousEntry"
                     >
                         Previous
@@ -52,10 +52,8 @@
         props: [
             'date',
             'description',
-            'followingEntry',
-            'id',
+            'entry',
             'isRenderedFromList',
-            'previousEntry',
             'title',
         ],
         data() {
@@ -81,16 +79,16 @@
                 });
             },
             navigate() {
-                this.$router.push(`/blog/${this.id}`);
+                this.$router.push(`/blog/${this.entry.id}`);
             },
             navigateFollowingEntry() {
-                if (this.followingEntry) {
-                    this.$router.push(`/blog/${this.followingEntry}`);
+                if (this.entry.followingEntry) {
+                    this.$router.push(`/blog/${this.entry.followingEntry}`);
                 }
             },
             navigatePreviousEntry() {
-                if (this.previousEntry) {
-                    this.$router.push(`/blog/${this.previousEntry}`);
+                if (this.entry.previousEntry) {
+                    this.$router.push(`/blog/${this.entry.previousEntry}`);
                 }
             }
         }

@@ -2,17 +2,15 @@
     <BlogEntry
         date="2019-06-23"
         description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
-        :followingEntry="followingEntry"
-        :id="id"
+        :entry="entry"
         :isRenderedFromList="isRenderedFromList"
-        :previousEntry="previousEntry"
         :title="title"
     >
         <p>
             Few days ago I received the following email from Google Cloud Platform. Apparently, I was publishing my Google Maps API key to a public Github repository (for the non-technical audience, I was uploading some kind of password to a social network profile), allowing any smartass clever enough to find it to spend my Google Maps quota on his behalf.
         </p>
         <p class="text-center">
-            <img :src="`/img/blog/${id}_google_mail.png?$modena=vue-personal-page`" alt="Mail received from Google Cloud Platform" />
+            <img :src="`/img/blog/${entry.id}_google_mail.png?$modena=vue-personal-page`" alt="Mail received from Google Cloud Platform" />
         </p>
         <div v-if="!isRenderedFromList">
             <p>
@@ -47,11 +45,9 @@
 <script>
     import * as monaco from 'monaco-editor';
     import BlogEntry from '../BlogEntry';
-    import ids from './ids';
+    import entries from './entries';
 
-    const followingEntry = ids['meaning-of-life'];
-    const id = ids['leaked-api-key'];
-    const previousEntry = ids['agility-rocks'];
+    const entry = entries['leaked-api-key'];
     const title = 'The leaked API key';
     const monacoOptions = {
         autoIndent: true,
@@ -66,16 +62,14 @@
     };
 
     export default {
-        name: id,
+        name: entry.id,
         components: {
             BlogEntry
         },
         props: ['isRenderedFromList'],
         data() {
             return {
-                followingEntry,
-                id,
-                previousEntry,
+                entry,
                 title
             };
         },

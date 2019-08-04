@@ -12,15 +12,15 @@ const isProd                   = process.env.NODE_ENV === 'production';
 const environment              = require('./env/prod.env');
 const PrerenderSpaPlugin       = require('prerender-spa-plugin');
 
-const blogEntriesIds = require('../src/components/blog-entries/ids');
+const blogEntries = require('../src/components/blog-entries/entries');
 const prerenderRoutes = [
     '/',
     '/blog',
     '/projects',
     '/trips'
 ];
-Object.values(blogEntriesIds).forEach(entryId => {
-    prerenderRoutes.push(`/blog/${entryId}`);
+Object.values(blogEntries).forEach(entry => {
+    prerenderRoutes.push(`/blog/${entry.id}`);
 });
 
 const webpackConfig = merge(commonConfig, {

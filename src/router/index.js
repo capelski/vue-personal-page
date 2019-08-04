@@ -39,7 +39,7 @@ const routes = [
 
 Object.values(BlogEntries).forEach(blogEntry => {
     routes.push({
-        path: `/blog/${blogEntry.data().id}` ,
+        path: `/blog/${blogEntry.data().entry.id}` ,
         name: blogEntry.data().title,
         component: blogEntry
     });

@@ -2,7 +2,7 @@
     <BlogEntry
         date="TODO"
         description="TODO"
-        :id="id"
+        :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :title="title"
     >
@@ -19,20 +19,20 @@
 
 <script>
     import BlogEntry from '../BlogEntry';
-    import ids from './ids';
+    import entries from './entries';
 
-    const id = ids['TODO'];
+    const entry = entries['TODO'];
     const title = 'TODO';
 
     export default {
-        name: id,
+        name: entry.id,
         components: {
             BlogEntry
         },
         props: ['isRenderedFromList'],
         data() {
             return {
-                id,
+                entry,
                 title
             };
         }
