@@ -16,7 +16,7 @@
             <p>
                 And indeed, I was! Truth to be told, I was aware of that. When I first built my website I wanted to get it done as quick as possible and I imported the Google Maps code through the lazy way; the good old script tags. Given that almost nobody would visit my website and, even less, take a look at the source code, the strategy was decent enough and I got the job done. This is what my index.html file look like at the time Google sent me the email (note line 26):
             </p>
-            <div ref="initialIndex" class="code-editor" style="height: 540px;"></div>
+            <div ref="initialIndex" class="code-editor"></div>
             <p>
                 The sharp readers will have realized that I did harcode the API key as a query string parameter in the Google Maps script tag. Now, even though I like to think of myself as a generous kind person, sharing an API key with an unknown non thanks giving anonymous crowd is not how I want to demonstrate it. Also, the fact that Google knows that I am doing it makes me feel embarrassed, so let's try to do it better!
             </p>
@@ -30,11 +30,11 @@
             <p>
                 Having run out of luck on npm, it was time to do some field research on Google. It didn't take me long to find this <a href="https://medium.com/@paw145/using-the-google-maps-api-with-webpack-npm-and-a-handy-promise-returning-helper-19c9312971b0" target="_blank">Medium article</a> which explains exactly what I needed; how to use the Google Maps API with Webpack and NPM. In short, I had to install the <b>load-google-maps-api</b> module and use the function it exports to asynchronously load the Google Maps API, providing the API key in the configuration parameter. When the promise returning function gets resolved, I can then use the object it returns in the usual fashion:
             </p>
-            <div ref="googleMapsCode" class="code-editor" style="height: 500px;"></div>
+            <div ref="googleMapsCode" class="code-editor"></div>
             <p>
                 Almost there! The last missing piece was to use <b>dotenv</b> (or any similar tool) to define the API key as an environment variable and keep it away from Github. If you have never used it before, it allows you to define properties in a <b>.env</b> file (which must be excluded from Github) and then load them to the <b>process.env</b> nodejs global object. Finally, to be sure that I don't break my website by forgetting to define the key in the .env file (or more exactly, to create the whole .env file), I added the following check to the webpack configuration file:
             </p>
-            <div ref="webpackCode" class="code-editor" style="height: 100px;"></div>
+            <div ref="webpackCode" class="code-editor"></div>
             <p>
                 And that's how to remove google maps hardcoded API keys from public repositories and keep Google happy. Please contact me at <b>capellas.carles@gmail.com</b> or check <a href="https://github.com/L3bowski/vue-personal-page/commit/fcf068af000ad02b5a38583e44b104edeaeb25cc" target="_blank">this Github commit</a> if you have any doubts on specific details (other than how does Google detect that their API keys are being uploaded to public repositories... isn't it a bit scary?). See you in the next post!
             </p>
@@ -43,23 +43,12 @@
 </template>
 
 <script>
-    import * as monaco from 'monaco-editor';
     import BlogEntry from '../BlogEntry';
     import entries from './entries';
+    import { createMonacoEditor } from './monaco-utils';
 
     const entry = entries['leaked-api-key'];
     const title = 'The leaked API key';
-    const monacoOptions = {
-        autoIndent: true,
-        automaticLayout: true,
-        contextmenu: false,
-        minimap: { enabled: false },
-        readOnly: true,
-        renderLineHighlight: 'none',
-        scrollBeyondLastLine: false,
-        theme: 'vs',
-        wordWrap: 'on'
-    };
 
     export default {
         name: entry.id,
@@ -75,16 +64,16 @@
         },
         mounted() {
             if (!this.isRenderedFromList) {
-                monaco.editor.create(this.$refs.initialIndex, {
-                    ...monacoOptions,
+                createMonacoEditor(
+                    this.$refs.initialIndex,
+                    'html',
                     // In order that webpack doesn't complain because of unresolvable scripts the Html must be encoded
-                    value: atob('PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KICAgIDx0aXRsZT5DYXJsZXMgQ2FwZWxsYXM8L3RpdGxlPgogICAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiIC8+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCwgbWF4aW11bS1zY2FsZT0xLjAsIHVzZXItc2NhbGFibGU9bm8iIC8+CgogICAgPCEtLSAuLi4gLS0+CgogICAgPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CiAgICA8bGluayBocmVmPSIvcGx1Z2lucy9ib290c3RyYXAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKICAgIDwhLS0gQ3VzdG9tIGZvbnRzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgogICAgPGxpbmsgaHJlZj0iL3BsdWdpbnMvZm9udC1hd2Vzb21lL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0IiB0eXBlPSJ0ZXh0L2NzcyI+CiAgICA8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9TW9udHNlcnJhdDo0MDAsNzAwIiByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIj4KICAgIDxsaW5rIGhyZWY9J2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1LYXVzaGFuK1NjcmlwdCcgcmVsPSdzdHlsZXNoZWV0JyB0eXBlPSd0ZXh0L2Nzcyc+CiAgICA8bGluayBocmVmPSdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9Um9ib3RvK1NsYWI6NDAwLDEwMCwzMDAsNzAwJyByZWw9J3N0eWxlc2hlZXQnIHR5cGU9J3RleHQvY3NzJz4KPC9oZWFkPgo8Ym9keSBpZD0icGFnZS10b3AiPgogICAgPGRpdiBpZD0iYXBwIj48L2Rpdj4KCiAgICA8IS0tIEJvb3RzdHJhcCBjb3JlIEphdmFTY3JpcHQgLS0+CiAgICA8c2NyaXB0IHNyYz0iL3BsdWdpbnMvanF1ZXJ5L2pxdWVyeS5taW4uanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Ii9wbHVnaW5zL2Jvb3RzdHJhcC9qcy9ib290c3RyYXAuYnVuZGxlLm1pbi5qcyI+PC9zY3JpcHQ+CgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vbWFwcy5nb29nbGUuY29tL21hcHMvYXBpL2pzP2tleT1BSXphU3lDT3VGR0s0RHB0b1VwLWg5RW9qYjNIblZRUFdYaXZfRW8iIHR5cGU9InRleHQvamF2YXNjcmlwdCI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPg=='),
-                    language: 'html'
-                });
+                    atob('PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KICAgIDx0aXRsZT5DYXJsZXMgQ2FwZWxsYXM8L3RpdGxlPgogICAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgiIC8+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCwgbWF4aW11bS1zY2FsZT0xLjAsIHVzZXItc2NhbGFibGU9bm8iIC8+CgogICAgPCEtLSAuLi4gLS0+CgogICAgPCEtLSBCb290c3RyYXAgY29yZSBDU1MgLS0+CiAgICA8bGluayBocmVmPSIvcGx1Z2lucy9ib290c3RyYXAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiByZWw9InN0eWxlc2hlZXQiPgoKICAgIDwhLS0gQ3VzdG9tIGZvbnRzIGZvciB0aGlzIHRlbXBsYXRlIC0tPgogICAgPGxpbmsgaHJlZj0iL3BsdWdpbnMvZm9udC1hd2Vzb21lL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgcmVsPSJzdHlsZXNoZWV0IiB0eXBlPSJ0ZXh0L2NzcyI+CiAgICA8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9TW9udHNlcnJhdDo0MDAsNzAwIiByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIj4KICAgIDxsaW5rIGhyZWY9J2h0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1LYXVzaGFuK1NjcmlwdCcgcmVsPSdzdHlsZXNoZWV0JyB0eXBlPSd0ZXh0L2Nzcyc+CiAgICA8bGluayBocmVmPSdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9Um9ib3RvK1NsYWI6NDAwLDEwMCwzMDAsNzAwJyByZWw9J3N0eWxlc2hlZXQnIHR5cGU9J3RleHQvY3NzJz4KPC9oZWFkPgo8Ym9keSBpZD0icGFnZS10b3AiPgogICAgPGRpdiBpZD0iYXBwIj48L2Rpdj4KCiAgICA8IS0tIEJvb3RzdHJhcCBjb3JlIEphdmFTY3JpcHQgLS0+CiAgICA8c2NyaXB0IHNyYz0iL3BsdWdpbnMvanF1ZXJ5L2pxdWVyeS5taW4uanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Ii9wbHVnaW5zL2Jvb3RzdHJhcC9qcy9ib290c3RyYXAuYnVuZGxlLm1pbi5qcyI+PC9zY3JpcHQ+CgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vbWFwcy5nb29nbGUuY29tL21hcHMvYXBpL2pzP2tleT1BSXphU3lDT3VGR0s0RHB0b1VwLWg5RW9qYjNIblZRUFdYaXZfRW8iIHR5cGU9InRleHQvamF2YXNjcmlwdCI+PC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPg==')
+                );
 
-                monaco.editor.create(this.$refs.googleMapsCode, {
-                    ...monacoOptions,
-                    value:
+                createMonacoEditor(
+                    this.$refs.googleMapsCode,
+                    'javascript',
 `import loadGoogleMapsApi from 'load-google-maps-api';
 
 loadGoogleMapsApi({ key: process.env.MAPS_API_KEY })
@@ -109,19 +98,17 @@ loadGoogleMapsApi({ key: process.env.MAPS_API_KEY })
                 }
             );
         }
-    });`,
-                language: 'javascript'
-            });
+    });`
+                );
 
-                monaco.editor.create(this.$refs.webpackCode, {
-                    ...monacoOptions,
-                    value: 
+                createMonacoEditor(
+                    this.$refs.webpackCode,
+                    'javascript',
 `const envConfig = require('dotenv').config();
 if (envConfig.error || !envConfig.parsed.MAPS_API_KEY) {
     throw 'The Google Maps API key must be provided through a .env file to build/start the app';
-}`,
-                    language: 'javascript'
-                });
+}`
+                );
             }
         }
     };

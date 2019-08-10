@@ -125,6 +125,7 @@
 
         .code-editor {
             width: 100%;
+            margin-bottom: 1rem;
         }
 
         a.blog-link {
