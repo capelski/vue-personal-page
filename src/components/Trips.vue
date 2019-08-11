@@ -40,7 +40,7 @@
                 markers: [
                     {
                         label: {
-                            city: 'Brussels',
+                            city: 'Waterloo',
                             date: 'July 2019',
                             duration: '1 day'
                         },
@@ -52,30 +52,10 @@
                         label: {
                             city: 'Antwerp',
                             date: 'July 2019',
-                            duration: '1 day'
+                            duration: '2 days'
                         },
                         lat: 51.22111,
                         lng: 4.399708,
-                        tripStart: false
-                    },
-                    {
-                        label: {
-                            city: 'Boom',
-                            date: 'July 2019',
-                            duration: '1 day'
-                        },
-                        lat: 51.088712,
-                        lng: 4.377515,
-                        tripStart: false
-                    },
-                    {
-                        label: {
-                            city: 'Ghent',
-                            date: 'July 2019',
-                            duration: '1 day'
-                        },
-                        lat: 51.053829,
-                        lng: 3.725012,
                         tripStart: false
                     },
                     {
