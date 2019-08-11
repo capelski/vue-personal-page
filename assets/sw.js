@@ -3,13 +3,6 @@ const myCache = 'CARLES_CAPELLAS_CACHE';
 self.addEventListener('install', (event) => {
     event.waitUntil(async function() {
         const cache = await caches.open(myCache);
-        // Non required on start assets
-        cache.addAll([
-            '/blog',
-            '/projects',
-            '/trips'
-        ]);
-        // Required on start assets
         await cache.addAll([
             '/'
         ]);

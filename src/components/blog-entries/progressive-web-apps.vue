@@ -1,6 +1,6 @@
 <template>
     <BlogEntry
-        date="2019-08-11"
+        date="2019-08-12"
         description="Quick guide on how to turn a single page application into a progressive web app"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
@@ -24,17 +24,17 @@
                 The register method tells the browser to search for a service worker in the <b>sw.js</b> file and will start the install step in the background. Thus the next thing to be done is to tell the service worker what to do during the install step which, typically, will consist in caching some static assets.
             </p>
             <p>
-                If all the files are cached successfully, then the service worker becomes installed and we get those static assets available in the cache. If any of the files fail to download and cache, then the install step will fail and the service worker won't activate (not the end of the world though, it will try to install again the next time the page is loaded).
-            </p>
-            <p>
                 There are multiple caching strategies to choose from when it comes to service workers and they are all very well explained in <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#serving-suggestions" _target="blank">the offline cookbook</a>. Take a look at them to know which patterns there are and which ones suit better your application needs (you might apply different strategies depending on the type of resource being cached and how often they get updated). I chose the <b>Network falling back to cache</b> strategy for my webpage for the following reasons:
             </p>
             <ul>
                 <li><b>Simplicity</b>. There are better performing strategies (e.g. <b>Cache then network</b> or <b>Cache & network race</b>) but they add more complexity to the service worker implementation. Let's keep in mind that the only goal of this exercise is to make the website available offline, not to optimize the time to content</li>
-                <li>I first started with <b>cache falling back to network</b> for better performance but, given I frequently update the application, I was getting errors due to old versions of static assets being cached. Feel free to dedicate some time to solve those errors but, again, the purpose of this tutorial is to just make the website available offline</li>
+                <li>I first started with <b>cache falling back to network</b> for better performance but, given I frequently update the application, I was getting errors due to old versions of static assets being cached. Feel free to dedicate some time to solve those errors but, again, the purpose of this tutorial is just to make the website available offline</li>
             </ul>
             <p>
-                So, without further ado, let's implement the service worker. First we tell the cache to add a specific set of pages during installation. This will add any required asset (e.g. images, style sheets, javascript files, etc.) to the cache. Notice that we only await for the main page to be added to the cache in order to keep the installation as quick as possible. The rest of pages will be added in the background.
+                So, without further ado, let's implement the service worker. First we need to add a specific set of files to the cache during installation. If all the files are cached successfully, then the service worker becomes installed and we get those static assets available in the cache. If any of the files fail to download and cache, then the install step will fail and the service worker won't activate (not the end of the world though, it will try to install again the next time the page is loaded).
+            </p>
+            <P>
+                The shorter the list is the least chances the installation has to fail (and the rest of assets can be cached later on anyway). In my case, I am only caching the landing page of my site. The <a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self">self property</a> is a reference to the WorkerGlobalScope (available only in service worker threads):
             </p>
             <div ref="serviceWorker" class="code-editor"></div>
             <p>
@@ -44,7 +44,7 @@
                 Optionally, an <b>activate</b> listener can also be defined in order to run some tasks each time the service worker is successfully installed. This feature comes handy to clear the application cache every time the service worker is updated. You don't need to do this but remember the <b>universe tends to disorder</b> and is our duty to keep the application clean and tidy; remove the files you are no longer going to need and make the users happier by freeing space up in their devices.
             </p>
             <p>
-                Once the server worker is put into place the browser will start caching the specified assets. You can have a look at the contents of your application cache in the <b>Application</b> tab of the Chrome <b>Developer Tools</b>. Once all the content you need has been cached, you can also test the application offline behaviour by checking the <b>Offline</b> box and refreshing the page. Notice how the network requests fail and the assets are served from the service worker:
+                Once the server worker is put into place the browser will start caching every network request. You can have a look at the contents of your application cache in the <b>Application</b> tab of the Chrome <b>Developer Tools</b>. Once all the content you need has been cached, you can also test the application offline behaviour by checking the <b>Offline</b> box and refreshing the page. Notice how the network requests fail and the assets are served from the service worker:
             </p>
             <p class="text-center">
                 <img :src="`/img/blog/${entry.id}-cache-content.png?$modena=vue-personal-page`" alt="Service worker cache content" />
@@ -53,7 +53,7 @@
                 <img :src="`/img/blog/${entry.id}-offline-desktop.png?$modena=vue-personal-page`" alt="Service worker cache content" />
             </p>
             <p>
-                Congratulations &#127881; Your application just turned offline friendly! You are free to go playing now but if you stick around I still have something cool to show you. See that <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" _target="blank">manifest.json file</a> inside the head tag of the HTML page? It has nothing to do with the service worker, but it will make your application installable in mobile devices for free and it only takes a few mintues to add it. It's content is self-explanatory:
+                Congratulations &#127881; Your application just turned offline friendly! You are free to go playing now but stick around because I still have something cool to show you. See that <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" _target="blank">manifest.json file</a> inside the head tag of the HTML page? It has nothing to do with the service worker, but it will make your application installable in mobile devices for free and it only takes a few mintues to add it. It's content is self-explanatory and here are some screenshots of how professional your app will look like when installed in a mobile device:
             </p>
             <div ref="manifest" class="code-editor"></div>    
             <p class="text-center">
@@ -117,13 +117,6 @@
 self.addEventListener('install', (event) => {
     event.waitUntil(async function() {
         const cache = await caches.open(myCache);
-        // Non required on start assets
-        cache.addAll([
-            '/blog',
-            '/projects',
-            '/trips'
-        ]);
-        // Required on start assets
         await cache.addAll([
             '/'
         ]);
