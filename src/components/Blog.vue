@@ -1,5 +1,6 @@
 <template>
     <div class="container navbar-spacer">
+        <progressive_web_apps :isRenderedFromList="true" />
         <four_coin_challenge :isRenderedFromList="true" />
         <meaning_of_life :isRenderedFromList="true" />
         <leaked_api_key :isRenderedFromList="true" />
@@ -8,18 +9,20 @@
 </template>
 
 <script>
-    import agility_rocks from './blog-entries/agility-rocks';
-    import leaked_api_key from './blog-entries/leaked-api-key';
-    import meaning_of_life from './blog-entries/meaning-of-life';
+    import progressive_web_apps from './blog-entries/progressive-web-apps';
     import four_coin_challenge from './blog-entries/four-coin-challenge';
+    import meaning_of_life from './blog-entries/meaning-of-life';
+    import leaked_api_key from './blog-entries/leaked-api-key';
+    import agility_rocks from './blog-entries/agility-rocks';
 
     export default {
         name: 'Blog',
         components: {
-            agility_rocks,
-            leaked_api_key,
+            progressive_web_apps,
+            four_coin_challenge,
             meaning_of_life,
-            four_coin_challenge
+            leaked_api_key,
+            agility_rocks
         },
         metaInfo: {
             title: 'Blog',

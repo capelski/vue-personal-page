@@ -2,7 +2,8 @@ const entries = [
     'agility-rocks',
     'leaked-api-key',
     'meaning-of-life',
-    'four-coin-challenge'
+    'four-coin-challenge',
+    'progressive-web-apps'
 ];
 
 const linkedEntries = entries
