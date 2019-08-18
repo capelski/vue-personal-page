@@ -1,15 +1,21 @@
 <template>
     <div :class="{'container navbar-spacer': !isRenderedFromList}">
         <div class="blog-entry">
-            <router-link v-if="isRenderedFromList" class="heading blog-link" :to="`/blog/${entry.id}`">
+            <BlogEntryHeader
+                :id="entry.id"
+                :isRenderedFromList="isRenderedFromList"
+            >
                 <h4>{{ title }}</h4>
-                <p>{{ date }}</p>
-            </router-link>
-
-            <div class="heading" v-if="!isRenderedFromList">
-                <h4>{{ title }}</h4>
-                <p>{{ date }}</p>
-            </div>
+                <p>
+                    <span>{{ date }}</span>
+                    <span
+                        v-for="tag in tags" :key="tag.text"
+                        :class="{'blog-tag': true, [tag.className]: true }"
+                    >
+                        {{ tag.text }}
+                    </span>
+                </p>
+            </BlogEntryHeader>
 
             <div :class="{'article-container' : true, 'faded-wrapper': isRenderedFromList}">
                 <slot />
@@ -47,13 +53,19 @@
 </template>
 
 <script>
+    import BlogEntryHeader from './BlogEntryHeader';
+
     export default {
         name: 'blog-entry',
+        components: {
+            BlogEntryHeader
+        },
         props: [
             'date',
             'description',
             'entry',
             'isRenderedFromList',
+            'tags',
             'title',
         ],
         data() {
@@ -110,6 +122,29 @@
                 left:0;
                 right: 0;
                 position: absolute;
+            }
+        }
+
+        .blog-tag {
+            margin-left: 10px;
+            padding: .25em .4em;
+            border-radius: .25rem;
+            color: white;
+
+            &.dissemination-tag {
+                background-color: #28a745;
+            }
+
+            &.entertainment-tag {
+                background-color: #ffc107;
+            }
+
+            &.thoughts-tag {
+                background-color: #563d7c;
+            }
+
+            &.web-development-tag {
+                background-color: #007bff;
             }
         }
 

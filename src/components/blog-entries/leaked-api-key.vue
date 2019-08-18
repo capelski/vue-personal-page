@@ -4,6 +4,7 @@
         description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :tags="[tags.WebDevelopment]"
         :title="title"
     >
         <p>
@@ -46,6 +47,7 @@
     import BlogEntry from '../BlogEntry';
     import entries from './entries';
     import { createMonacoEditor } from './monaco-utils';
+    import { tags } from './tags';
 
     const entry = entries['leaked-api-key'];
     const title = 'The leaked API key';
@@ -59,6 +61,7 @@
         data() {
             return {
                 entry,
+                tags,
                 title
             };
         },

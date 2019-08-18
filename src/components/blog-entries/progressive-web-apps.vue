@@ -4,6 +4,7 @@
         description="Quick guide on how to turn a single page application into a progressive web app"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :tags="[tags.WebDevelopment]"
         :title="title"
     >
         <p>
@@ -84,6 +85,7 @@
     import BlogEntry from '../BlogEntry';
     import entries from './entries';
     import { createMonacoEditor } from './monaco-utils';
+    import { tags } from './tags';
 
     const entry = entries['progressive-web-apps'];
     const title = 'PWA: Make your website available offline';
@@ -97,6 +99,7 @@
         data() {
             return {
                 entry,
+                tags,
                 title
             };
         },

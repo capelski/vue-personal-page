@@ -4,6 +4,7 @@
         description="Ice breaking exercise for groups of people applied in the context of an Agility training"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :tags="[tags.Dissemination]"
         :title="title"
     >
         <p>
@@ -32,6 +33,7 @@
 <script>
     import BlogEntry from '../BlogEntry';
     import entries from './entries';
+    import { tags } from './tags';
 
     const entry = entries['agility-rocks'];
     const title = 'Agility... rocks?';
@@ -45,6 +47,7 @@
         data() {
             return {
                 entry,
+                tags,
                 title
             };
         }

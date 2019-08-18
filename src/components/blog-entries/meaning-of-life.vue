@@ -4,6 +4,7 @@
         description="Reflection on how the meaning of life is not that relevant and what could we focus on instead"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"        
+        :tags="[tags.Thoughts]"
         :title="title"
     >
         <p>
@@ -50,6 +51,7 @@
 <script>
     import BlogEntry from '../BlogEntry';
     import entries from './entries';
+    import { tags } from './tags';
 
     const entry = entries['meaning-of-life'];
     const title = 'The meaning of life';
@@ -63,6 +65,7 @@
         data() {
             return {
                 entry,
+                tags,
                 title
             };
         }

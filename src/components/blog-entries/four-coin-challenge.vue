@@ -4,6 +4,7 @@
         description="Challenge which consists in laying 4 coins in a row, with some restrictions to make it interesting, and how to solve it"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :tags="[tags.Entertainment]"
         :title="title"
     >
         <p>
@@ -55,6 +56,7 @@
 <script>
     import BlogEntry from '../BlogEntry';
     import entries from './entries';
+    import { tags } from './tags';
 
     const entry = entries['four-coin-challenge'];
     const title = '4-coin challenge';
@@ -69,6 +71,7 @@
             return {
                 entry,
                 solutionStep: 1,
+                tags,
                 title
             };
         },
