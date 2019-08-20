@@ -48,6 +48,14 @@
                     </button>
                 </div>
             </div>
+            <ins
+                class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-3020023783009364"
+                data-ad-slot="9819874498"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+            ></ins>
         </div>
     </div>
 </template>
@@ -72,6 +80,9 @@
             return {
                 window
             };
+        },
+        created() {
+            (adsbygoogle = window.adsbygoogle || []).push({});
         },
         metaInfo () {
             return this.isRenderedFromList ? {} :
