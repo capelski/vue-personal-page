@@ -81,9 +81,6 @@
                 window
             };
         },
-        created() {
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        },
         metaInfo () {
             return this.isRenderedFromList ? {} :
                 {
