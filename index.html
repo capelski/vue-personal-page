@@ -33,18 +33,26 @@
     </script>
 </head>
 <body id="page-top">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-3020023783009364",
-              enable_page_level_ads: true
-         });
-    </script>
     <noscript>
         <h1>Carles Capellas</h1>
         <p>JavaScript is required to load my page</p>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+        // Hack to avoid pre-rendering AdSense
+        setTimeout(() => {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            document.getElementsByTagName('body')[0].appendChild(script);
+            script.onload = function() {
+                (adsbygoogle = window.adsbygoogle || []).push({
+                    google_ad_client: 'ca-pub-3020023783009364',
+                    enable_page_level_ads: true
+                });
+            };
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+        }, 4000);
+   </script>
 </body>
 </html>
