@@ -50,8 +50,7 @@
             </div>
 
             <Adsense
-                v-if="!isRenderedFromList"
-                :data-ad-client="adSenseClientId"
+                data-ad-client="ca-pub-3020023783009364"
                 data-ad-slot="9819874498"
                 data-ad-format="auto"
                 :data-full-width-responsive="true">
@@ -78,8 +77,7 @@
         ],
         data() {
             return {
-                window,
-                adSenseClientId: process.env.ADSENSE_CLIENT_ID
+                window
             };
         },
         metaInfo () {
