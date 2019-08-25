@@ -4,6 +4,8 @@
         description="TODO"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :selectedTags="selectedTags"
+        :tags="[tags.WebDevelopment]"
         :title="title"
     >
         <p>
@@ -20,6 +22,7 @@
 <script>
     import BlogEntry from '../BlogEntry';
     import entries from './entries';
+    import { tags } from './tags';
 
     const entry = entries['TODO'];
     const title = 'TODO';
@@ -29,10 +32,11 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
+        props: ['isRenderedFromList', 'selectedTags'],
         data() {
             return {
                 entry,
+                tags,
                 title
             };
         }

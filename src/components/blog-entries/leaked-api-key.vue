@@ -4,6 +4,7 @@
         description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :selectedTags="selectedTags"
         :tags="[tags.WebDevelopment]"
         :title="title"
     >
@@ -57,7 +58,7 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
+        props: ['isRenderedFromList', 'selectedTags'],
         data() {
             return {
                 entry,

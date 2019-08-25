@@ -4,6 +4,7 @@
         description="Challenge which consists in laying 4 coins in a row, with some restrictions to make it interesting, and how to solve it"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :selectedTags="selectedTags"
         :tags="[tags.Entertainment]"
         :title="title"
     >
@@ -66,7 +67,7 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
+        props: ['isRenderedFromList', 'selectedTags'],
         data() {
             return {
                 entry,

@@ -3,7 +3,8 @@
         date="2019-07-08"
         description="Reflection on how the meaning of life is not that relevant and what could we focus on instead"
         :entry="entry"
-        :isRenderedFromList="isRenderedFromList"        
+        :isRenderedFromList="isRenderedFromList"
+        :selectedTags="selectedTags"  
         :tags="[tags.Thoughts]"
         :title="title"
     >
@@ -61,7 +62,7 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
+        props: ['isRenderedFromList', 'selectedTags'],
         data() {
             return {
                 entry,

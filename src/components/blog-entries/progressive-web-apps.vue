@@ -4,6 +4,7 @@
         description="Quick guide on how to turn a single page application into a progressive web app"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :selectedTags="selectedTags"
         :tags="[tags.WebDevelopment]"
         :title="title"
     >
@@ -95,7 +96,7 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
+        props: ['isRenderedFromList', 'selectedTags'],
         data() {
             return {
                 entry,

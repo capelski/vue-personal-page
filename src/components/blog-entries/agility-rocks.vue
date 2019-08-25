@@ -4,6 +4,7 @@
         description="Ice breaking exercise for groups of people applied in the context of an Agility training"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :selectedTags="selectedTags"
         :tags="[tags.Dissemination]"
         :title="title"
     >
@@ -43,7 +44,7 @@
         components: {
             BlogEntry
         },
-        props: ['isRenderedFromList'],
+        props: ['isRenderedFromList', 'selectedTags'],
         data() {
             return {
                 entry,

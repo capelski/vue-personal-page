@@ -1,5 +1,8 @@
 <template>
-    <div :class="{'container navbar-spacer': !isRenderedFromList}">
+    <div
+        v-if="isVisible"
+        :class="{'container navbar-spacer': !isRenderedFromList}"
+    >
         <div class="blog-entry">
             <BlogEntryHeader
                 :id="entry.id"
@@ -65,6 +68,7 @@
             'description',
             'entry',
             'isRenderedFromList',
+            'selectedTags',
             'tags',
             'title',
         ],
@@ -72,6 +76,14 @@
             return {
                 window
             };
+        },
+        computed: {
+            isVisible() {
+                return this.tags.reduce((reducedTags, tag) => {
+                    return reducedTags || this.selectedTags.reduce((reduced, selectedTag) =>
+                        reduced || selectedTag === tag, false);
+                }, false);
+            }
         },
         metaInfo () {
             return this.isRenderedFromList ? {} :
@@ -122,29 +134,6 @@
                 left:0;
                 right: 0;
                 position: absolute;
-            }
-        }
-
-        .blog-tag {
-            margin-left: 10px;
-            padding: .25em .4em;
-            border-radius: .25rem;
-            color: white;
-
-            &.dissemination-tag {
-                background-color: #28a745;
-            }
-
-            &.entertainment-tag {
-                background-color: #ffc107;
-            }
-
-            &.thoughts-tag {
-                background-color: #563d7c;
-            }
-
-            &.web-development-tag {
-                background-color: #007bff;
             }
         }
 
