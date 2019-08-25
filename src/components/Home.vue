@@ -28,7 +28,7 @@
 
 <style scoped>
     header.home {
-        height: 100%;
+        height: calc(100vh - 50px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -42,6 +42,12 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+    }
+
+    @media (min-width: 768px) {
+        header.home {
+            height: calc(100vh - 53px);
+        }
     }
 
     header.home .intro-heading {

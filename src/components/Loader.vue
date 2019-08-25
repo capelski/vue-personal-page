@@ -16,12 +16,18 @@
 
 <style scoped>
     .loader {
-        height: 100%;
+        height: calc(100vh - 50px);
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         background-color: white;
+    }
+
+    @media (min-width: 768px) {
+        .loader {
+            height: calc(100vh - 53px);
+        }
     }
 
     .spinner {
