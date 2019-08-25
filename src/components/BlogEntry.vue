@@ -48,13 +48,6 @@
                     </button>
                 </div>
             </div>
-
-            <Adsense
-                data-ad-client="ca-pub-3020023783009364"
-                data-ad-slot="9819874498"
-                data-ad-format="auto"
-                :data-full-width-responsive="true">
-            </Adsense>
         </div>
     </div>
 </template>

@@ -4,15 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 import Vue from 'vue';
-import VueAnalytics from 'vue-analytics';
-import Ads from 'vue-google-adsense';
-import VueMeta from 'vue-meta';
-import * as VueScript from 'vue-script2';
 import App from './App';
 import router from './router';
- 
-Vue.use(VueScript);
-Vue.use(Ads.Adsense);
+import VueMeta from 'vue-meta';
+import VueAnalytics from 'vue-analytics';
 
 Vue.use(VueMeta, {
   	refreshOnceOnNavigation: true
