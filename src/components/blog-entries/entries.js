@@ -3,7 +3,11 @@ const entries = [
     'leaked-api-key',
     'meaning-of-life',
     'four-coin-challenge',
-    'progressive-web-apps'
+    'progressive-web-apps',
+];
+
+const hiddenEntries = [
+    'injusticia-existencial'
 ];
 
 const linkedEntries = entries
@@ -14,6 +18,7 @@ const linkedEntries = entries
             previous: index > 0 ? entries[index - 1] : undefined,
         };
     })
+    .concat(hiddenEntries.map(entry => ({ id: entry })))
     .reduce((reducedEntries, next) => ({
         ...reducedEntries,
         [next.id]: next

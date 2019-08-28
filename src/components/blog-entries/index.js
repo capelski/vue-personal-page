@@ -3,11 +3,13 @@ import LeakedApiKey from './leaked-api-key';
 import MeaningOfLife from './meaning-of-life';
 import FourCoinChallenge from './four-coin-challenge';
 import ProgressiveWebApps from './progressive-web-apps';
+import InjusticiaExistencial from './injusticia-existencial';
 
 export default {
     AgilityRocks,
     LeakedApiKey,
     MeaningOfLife,
     FourCoinChallenge,
-    ProgressiveWebApps
+    ProgressiveWebApps,
+    InjusticiaExistencial
 };

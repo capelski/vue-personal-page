@@ -1,5 +1,5 @@
 <template>
-    <div
+    <section
         v-if="isVisible"
         :class="{'container navbar-spacer': !isRenderedFromList}"
     >
@@ -34,7 +34,7 @@
                     <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
                     Share on whatsapp
                 </a>
-                <div class="navigation-buttons" v-if="!isRenderedFromList">
+                <div class="navigation-buttons" v-if="!isRenderedFromList && !hideNavigation">
                     <button
                         type="button"
                         :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.following }"
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -67,6 +67,7 @@
             'date',
             'description',
             'entry',
+            'hideNavigation',
             'isRenderedFromList',
             'selectedTags',
             'tags',
@@ -79,7 +80,7 @@
         },
         computed: {
             isVisible() {
-                return this.tags.reduce((reducedTags, tag) => {
+                return !this.isRenderedFromList || this.tags.reduce((reducedTags, tag) => {
                     return reducedTags || this.selectedTags.reduce((reduced, selectedTag) =>
                         reduced || selectedTag === tag, false);
                 }, false);
