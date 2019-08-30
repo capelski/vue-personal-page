@@ -4,6 +4,7 @@ const entries = [
     'meaning-of-life',
     'four-coin-challenge',
     'progressive-web-apps',
+    'existential-injustice'
 ];
 
 const hiddenEntries = [

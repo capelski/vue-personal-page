@@ -4,6 +4,7 @@ import MeaningOfLife from './meaning-of-life';
 import FourCoinChallenge from './four-coin-challenge';
 import ProgressiveWebApps from './progressive-web-apps';
 import InjusticiaExistencial from './injusticia-existencial';
+import ExistentialInjustice from './existential-injustice';
 
 export default {
     AgilityRocks,
@@ -11,5 +12,6 @@ export default {
     MeaningOfLife,
     FourCoinChallenge,
     ProgressiveWebApps,
-    InjusticiaExistencial
+    InjusticiaExistencial,
+    ExistentialInjustice
 };

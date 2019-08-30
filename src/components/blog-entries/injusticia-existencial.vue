@@ -9,6 +9,9 @@
         :tags="[tags.Thoughts]"
         :title="title"
     >
+        <div v-if="!isRenderedFromList" class="alert alert-warning text-center" role="alert">
+            També pots llegit aquesta entrada en <router-link :to="`/blog/existential-injustice`">anglès</router-link>
+        </div>
         <p>
             Has quedat amb algú. Potser uns amics. Potser una cita. Potser la teva parella. Potser un grup de gent que fa poc que coneixes. Les primeres hores flueixen i t'ho passes bé. Arriba un punt que la situació es refreda una mica. El grau de connexió amb les altres persones baixa. Encara parleu i rieu, però notes que no t'omple de la mateixa manera que altres vegades.
         </p>
@@ -38,25 +41,33 @@
                 Ja n'hi ha prou! T'has de centrar, et dius una vegada més. Durant la setmana següent començaràs a donar formar a alguna mesura dràstica per recuperar el control de la teva vida. Potser cancelar la subscripció de Netflix. Potser desapuntar-te de les classes de taekwondo. Potser deixar la teva parella. Sigui el que sigui, trobaràs un responsable de la teva falta d'organització.
             </p>
             <p class="text-center">
-                <img :src="`/img/blog/existencial-injustice-enough.gif?$modena=vue-personal-page`" alt="Enough meme" />
+                <img :src="`/img/blog/existential-injustice-enough.gif?$modena=vue-personal-page`" alt="Enough meme" />
             </p>
             <p>
                 Si mai t'has sentit així, benvingut al món real. Tots tenim dies en que la procrastinació  s'apodera de nosaltres i no trobem ganes de fer res. Acabo l'entrada analitzant algunes de les sensacions que he descrit. Potser en recordaràs alguna cosa en el teu proper episodi d'injusticia existencial i t'ajudarà a restar importancia a la situació. Potser te n'oblidaràs demà. Potser ja fa estona que has deixat de llegir. En qualsevol cas, aquí van les reflexions.
             </p>
             <p>
-                <b>1) Fins i tot si ara poguessis dedicar una estona al teu projecte, no podries avançar prou</b>. No et precoupis per l'objectiu final. Sigui quin sigui el teu projecte, l'has triat perquè t'agrada o perquè aprens mentre hi treballes. Potser no arribaràs a ser el proper Michael Phelps, però si disfrutes nedant, vés a fer piscines quan puguis i oblida't de la resta. "Un objectiu no sempre es marca per aconseguir-lo, sovint serveix només per tenir una direcció cap on apuntar".
+                <b>1) Fins i tot si ara poguessis dedicar una estona al teu projecte, no podries avançar prou</b>. No et precoupis per l'objectiu final. Sigui quin sigui el teu projecte, l'has triat perquè t'agrada o perquè aprens mentre hi treballes. Potser no arribaràs a ser el proper Michael Phelps, però si disfrutes nedant, vés a fer piscines quan puguis i oblida't de la resta.
             </p>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <br />
+                    <h4>&#x275D;Un objectiu no sempre es marca per aconseguir-lo, sovint serveix només per tenir una direcció cap on apuntar&#x275E;</h4>
+                    <h4>- Bruce Lee</h4>
+                    <br />
+                </div>
+            </div>
             <p>
                 També pots fer l'exercici de rebaixar les expectatives que hi tens posades. Assumir que completaràs el projecte per sota del estàndards que t'havies proposat. Sovint la sensació de no poder avançar prou apareix quan l'objectiu sembla estar massa lluny. Busca una manera de completar-lo en una forma més simple (deixa les cançons de Metallica per més endavant, i comença amb una base senzilla dels U2).
             </p>
             <p>
-                Potser aconseguiràs acabar-lo en una forma simplificada. Després, si encara no en tens prou amb el resultat, sempre pots seguir-hi treballant per arribar a la meta original. També pot ser que t'adonis que no necessites el nivell d'excel·lència que havies imaginat en un primer moment. De totes maneres, completar un objectiu encara que sigui petit et donarà una bona dosi de motivació i et farà sentir millor.
+                Potser aconseguiràs acabar-lo en una forma simplificada. Després, si encara no en tens prou amb el resultat, sempre pots seguir-hi treballant per arribar a la meta original. També pot ser que t'adonis que no necessites el nivell d'excel·lència que havies imaginat en un primer moment. De totes maneres, completar un objectiu encara que sigui petit et donarà una bona dosi de motivació i et farà sentir bé.
             </p>
             <p>
                 <b>2) Estàs a un nivell energètic molt inferior del que necessites per progressar</b>. Ningú és constant. Potser la feina que facis avui no serà la millor, però t'ajudarà a desbloquejar una etapa de l'objectiu que et provoca més mandra que la resta (si no, no estaries ara mateix mirant el sostre i esperant que et baixin del cel les ganes de treballar-hi). Segueix avançant en el projecte i, si fa falta, ja faràs les correccions pertinents el dia que estiguis inspirat.
             </p>
             <p>
-                <b>3) Notes que el temps se t'escapa de les mans i no aconsegueixes fer res trascendental amb la teva vida</b>. A vegades aquesta sensació està causada més per no tenir clar quins objectius son realment trascendentals que no pas per no poder progressar amb un objectiu concret. Pensa si de veritat t'omple treballar en el projecte que tens en ment, si realment et fa feliç. Surt a passejar tot sol i no tornis a casa fins que no tinguis una resposta. O al menys, fins que t'hagis desfet d'aquesta sensació.
+                <b>3) Notes que el temps se t'escapa de les mans i no aconsegueixes fer res trascendental amb la teva vida</b>. A vegades aquesta sensació està causada més per no tenir clar quins objectius son realment trascendentals que no pas per no poder progressar amb un objectiu concret. Pensa si de veritat t'omple treballar en el projecte que tens en ment, si et fa feliç. Surt a passejar tot sol i no tornis a casa fins que no tinguis una resposta. O, al menys, fins que t'hagis desfet d'aquesta sensació.
             </p>
             <p>
                 Aixo es tot per avui 👍 Fins al proper post!

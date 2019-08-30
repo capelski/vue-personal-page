@@ -1,18 +1,21 @@
 <template>
     <div class="container navbar-spacer">
-        <div class="selected-tags">
-            <h5>Tags</h5>
-            <span>
-                <span
-                    v-for="tag in availableTags" :key="tag.text"
-                    :class="{'blog-tag clickable filter': true, [tag.className]: true, 'unselected': !tag.selected }"
-                    @click="selectTag(tag)"
-                >
-                    {{ tag.text }}
+        <div class="alert alert-info" role="alert">
+            <div class="selected-tags">
+                <h5>Tags</h5>
+                <span>
+                    <span
+                        v-for="tag in availableTags" :key="tag.text"
+                        :class="{'blog-tag clickable filter': true, [tag.className]: true, 'unselected': !tag.selected }"
+                        @click="selectTag(tag)"
+                    >
+                        {{ tag.text }}
+                    </span>
                 </span>
-            </span>
+            </div>
         </div>
 
+        <existential_injustice :isRenderedFromList="true" :selectedTags="selectedTags" />
         <progressive_web_apps :isRenderedFromList="true" :selectedTags="selectedTags" />
         <four_coin_challenge :isRenderedFromList="true" :selectedTags="selectedTags" />
         <meaning_of_life :isRenderedFromList="true" :selectedTags="selectedTags" />
@@ -29,6 +32,7 @@
 </template>
 
 <script>
+    import existential_injustice from './blog-entries/existential-injustice';
     import progressive_web_apps from './blog-entries/progressive-web-apps';
     import four_coin_challenge from './blog-entries/four-coin-challenge';
     import meaning_of_life from './blog-entries/meaning-of-life';
@@ -39,6 +43,7 @@
     export default {
         name: 'Blog',
         components: {
+            existential_injustice,
             progressive_web_apps,
             four_coin_challenge,
             meaning_of_life,
@@ -80,10 +85,9 @@
 <style lang="scss">
     .selected-tags {
         text-align: right;
-        margin-bottom: 40px;
         display: flex;
         align-items: baseline;
-        justify-content: flex-end;
+        justify-content: space-between;
     }
 
     .clickable {
