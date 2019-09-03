@@ -10,7 +10,8 @@
             >
                 <h4>{{ title }}</h4>
                 <p>
-                    <span>{{ date }}</span>
+                    <span class="blog-date">{{ date }}</span>
+                    <span class="blog-duration">&#x1F550; {{ duration }}</span>
                     <span
                         v-for="tag in tags" :key="tag.text"
                         :class="{'blog-tag': true, [tag.className]: true }"
@@ -66,6 +67,7 @@
         props: [
             'date',
             'description',
+            'duration',
             'entry',
             'hideNavigation',
             'isRenderedFromList',
@@ -136,6 +138,10 @@
                 right: 0;
                 position: absolute;
             }
+        }
+
+        .blog-duration {
+            margin-left: 10px;
         }
 
         img {

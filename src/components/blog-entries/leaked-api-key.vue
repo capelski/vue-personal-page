@@ -2,6 +2,7 @@
     <BlogEntry
         date="2019-06-23"
         description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
+        duration="10"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :selectedTags="selectedTags"

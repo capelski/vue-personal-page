@@ -2,6 +2,7 @@
     <BlogEntry
         date="28-08-2019"
         description="Thoughts about the lack of life purpose that we feel sometimes"
+        duration="15"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :selectedTags="selectedTags"

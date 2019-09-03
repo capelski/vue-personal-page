@@ -2,6 +2,7 @@
     <BlogEntry
         date="2019-07-22"
         description="Challenge which consists in laying 4 coins in a row, with some restrictions to make it interesting, and how to solve it"
+        duration="5"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :selectedTags="selectedTags"

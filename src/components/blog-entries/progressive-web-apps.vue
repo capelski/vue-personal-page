@@ -2,6 +2,7 @@
     <BlogEntry
         date="2019-08-12"
         description="Quick guide on how to turn a single page application into a progressive web app"
+        duration="10"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :selectedTags="selectedTags"

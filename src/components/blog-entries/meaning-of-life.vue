@@ -2,6 +2,7 @@
     <BlogEntry
         date="2019-07-08"
         description="Reflection on how the meaning of life is not that relevant and what could we focus on instead"
+        duration="10"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :selectedTags="selectedTags"  

@@ -2,6 +2,7 @@
     <BlogEntry
         date="2019-06-17"
         description="Ice breaking exercise for groups of people applied in the context of an Agility training"
+        duration="5"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :selectedTags="selectedTags"

@@ -2,6 +2,7 @@
     <BlogEntry
         date="TODO"
         description="TODO"
+        duration="TODO"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :selectedTags="selectedTags"
