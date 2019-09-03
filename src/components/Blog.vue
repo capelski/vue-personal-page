@@ -1,18 +1,16 @@
 <template>
     <div class="container navbar-spacer">
-        <div class="alert alert-info m-b-40" role="alert">
-            <div class="selected-tags">
-                <h5>Tags</h5>
-                <span>
-                    <span
-                        v-for="tag in availableTags" :key="tag.text"
-                        :class="{'blog-tag clickable filter': true, [tag.className]: true, 'unselected': !tag.selected }"
-                        @click="selectTag(tag)"
-                    >
-                        {{ tag.text }}
-                    </span>
+        <div class="selected-tags">
+            <h5>Tags</h5>
+            <span>
+                <span
+                    v-for="tag in availableTags" :key="tag.text"
+                    :class="{'blog-tag clickable filter': true, [tag.className]: true, 'unselected': !tag.selected }"
+                    @click="selectTag(tag)"
+                >
+                    {{ tag.text }}
                 </span>
-            </div>
+            </span>
         </div>
 
         <existential_injustice :isRenderedFromList="true" :selectedTags="selectedTags" />
@@ -88,9 +86,6 @@
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-    }
-
-    .m-b-40 {
         margin-bottom: 40px;
     }
 
@@ -104,40 +99,41 @@
         border-radius: .25rem;
         color: white;
         display: inline-block;
+        font-weight: bold;
 
         &.dissemination-tag {
-            background-color: #28a745;
-
+            border: 2px solid #28a745;
+            color: #28a745;
+            
             &.filter {
-                border: 2px solid #28a745;
-                color: #28a745;
+                background-color: #28a745;
             }
         }
 
         &.entertainment-tag {
-            background-color: #ffc107;
+            border: 2px solid #ffc107;
+            color: #ffc107;
 
             &.filter {
-                border: 2px solid #ffc107;
-                color: #ffc107;
+                background-color: #ffc107;
             }
         }
 
         &.thoughts-tag {
-            background-color: #563d7c;
+            border: 2px solid #563d7c;
+            color: #563d7c;
 
             &.filter {
-                border: 2px solid #563d7c;
-                color: #563d7c;
+                background-color: #563d7c;
             }
         }
 
         &.web-development-tag {
-            background-color: #007bff;
+            border: 2px solid #007bff;
+            color: #007bff;
 
             &.filter {
-                border: 2px solid #007bff;
-                color: #007bff;
+                background-color: #007bff;                
             }
         }
 
@@ -145,12 +141,13 @@
             margin-top: 5px;
             margin-bottom: 5px;
             padding: 3px 5px;
-            font-weight: bold;
-            background-color: white;
+            font-weight: normal;
+            color: white;
 
             &.unselected {
-                border: 2px solid #e3e3e3;
-                color: #e3e3e3;
+                border: 2px solid #cccccc;
+                color: #cccccc;
+                background-color: white;
             }
         }
     }
