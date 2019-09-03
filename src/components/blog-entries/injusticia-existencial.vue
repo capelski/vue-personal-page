@@ -2,6 +2,7 @@
     <BlogEntry
         date="28-08-2019"
         description="Reflexió sobre la sensació de falta de propòsit que sentim a vegades"
+        duration="15"
         :entry="entry"
         :hideNavigation="true"
         :isRenderedFromList="isRenderedFromList"
