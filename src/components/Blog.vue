@@ -1,6 +1,6 @@
 <template>
     <div class="container navbar-spacer">
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info m-b-40" role="alert">
             <div class="selected-tags">
                 <h5>Tags</h5>
                 <span>
@@ -88,6 +88,10 @@
         display: flex;
         align-items: baseline;
         justify-content: space-between;
+    }
+
+    .m-b-40 {
+        margin-bottom: 40px;
     }
 
     .clickable {
