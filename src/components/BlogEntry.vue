@@ -11,7 +11,7 @@
                 <h4>{{ title }}</h4>
                 <p>
                     <span class="blog-date">{{ date }}</span>
-                    <span class="blog-duration">&#x1F550; {{ duration }}</span>
+                    <span class="blog-duration">&#x1F550; {{ duration }} mins</span>
                     <span
                         v-for="tag in tags" :key="tag.text"
                         :class="{'blog-tag': true, [tag.className]: true }"
@@ -38,17 +38,17 @@
                 <div class="navigation-buttons" v-if="!isRenderedFromList && !hideNavigation">
                     <button
                         type="button"
-                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.following }"
-                        v-on:click="navigateFollowing"
-                    >
-                        Following
-                    </button>
-                    <button
-                        type="button"
                         :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.previous }"
                         v-on:click="navigatePrevious"
                     >
                         Previous
+                    </button>
+                    <button
+                        type="button"
+                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.following }"
+                        v-on:click="navigateFollowing"
+                    >
+                        Following
                     </button>
                 </div>
             </div>
@@ -124,7 +124,7 @@
 
 <style lang="scss">
     .blog-entry {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
 
         .faded-wrapper {
             position: relative;

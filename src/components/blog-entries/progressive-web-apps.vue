@@ -12,10 +12,10 @@
         <p>
             If you are visiting this website from a mobile device, you might have seen the following message at the bottom of the screen. No, I am not trying to hack you. I have made my website a <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank">progressive web app</a> and, as such, it can be installed in Android and iOS devices and it can be accessed offline. Keep reading if you want to turn your website in a PWA in less than 15 minutes!
         </p>
-        <p class="text-center">
-            <img :src="`/img/blog/${entry.id}-add-home.png?$modena=vue-personal-page`" alt="Add PWA to home screen prompt" />
-        </p>
         <div v-if="!isRenderedFromList">
+            <p class="text-center">
+                <img :src="`/img/blog/${entry.id}-add-home.png?$modena=vue-personal-page`" alt="Add PWA to home screen prompt" />
+            </p>
             <p>
                 The magic behind the progressive web apps are the <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" _target="blank">service workers</a>. To cut a long story short, a service worker is a script that the browser runs in the background, in a separate thread from the UI, providing additional features such as the ability to intercept and handle network requests as well as managing a cache of responses. In fact, this is the only feature we will need to make our website available offline.
             </p>

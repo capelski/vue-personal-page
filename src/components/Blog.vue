@@ -100,7 +100,7 @@
 
     .blog-tag {
         margin-left: 10px;
-        padding: .25em .4em;
+        padding: 1px 7px;
         border-radius: .25rem;
         color: white;
         display: inline-block;

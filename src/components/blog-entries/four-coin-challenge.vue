@@ -12,10 +12,10 @@
         <p>
             In contrast to my abstract esoteric last post on the <router-link :to="`/blog/meaning-of-life`">meaning of life</router-link>, today I bring a light and enjoyable post that will make you think in a different manner; you will need to find a way to lay four coins in a row. Doesn't sound complicated, does it? Just let me add a couple of restrictions so that the word <b>challenge</b> on the title is not used in vain and in order for you to feel proud of yourself if you are able to find out a solution.
         </p>
-        <p class="text-center">
-            <img :src="`/img/blog/${entry.id}/initial-position.jpg?$modena=vue-personal-page`" alt="4-coin challenge initial position" />
-        </p>
         <div v-if="!isRenderedFromList">
+            <p class="text-center">
+                <img :src="`/img/blog/${entry.id}/initial-position.jpg?$modena=vue-personal-page`" alt="4-coin challenge initial position" />
+            </p>
             <p>
                 To start with the coins must placed in the <b>initial position</b> displayed above. I will use the bitcoin logo to cause confusion and get some more views by mistake (catching the attention of the distracted minds), but you can use any kind of coin as long as they have the same size.
             </p>

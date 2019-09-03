@@ -15,10 +15,10 @@
         <p>
             You are meeting somebody. Maybe some friends. Maybe a date. Maybe your partner. Maybe a group of people you have recently started to hang out with. The first hours go by and you are having fun. You get to a point where the situation cools down. The connection level with the others decreases. You are still talking and laughing, but it doesn't fill you in the same way past occasions did.
         </p>
-        <p>
-            You start feeling you could be doing something else, that you could be making better use of your time. Dedicate a couple of hours to that personal project you are postponing or unnecessary extending over time. Maybe finish the book you are reading. Maybe go to gym. Maybe start your novelist career. You try to forget about the feeling and focus in the moment. You put a bit more emphasis in restoring the synergy between you and the people who you are with.
-        </p>
         <div v-if="!isRenderedFromList">
+            <p>
+                You start feeling you could be doing something else, that you could be making better use of your time. Dedicate a couple of hours to that personal project you are postponing or unnecessary extending over time. Maybe finish the book you are reading. Maybe go to gym. Maybe start your novelist career. You try to forget about the feeling and focus in the moment. You put a bit more emphasis in restoring the synergy between you and the people who you are with.
+            </p>
             <p>
                 Another hour goes by and you realize that all of you are tired or your minds are somewhere else. This is not the way you had pictured the afternoon. You decide to go back home and make use of the rest of the day. It is 19:00 on a Saturday. Maybe there is much time left before it gets dark. Maybe the sun has already set a while ago. Anyway, you are on time to focus and start the good work.
             </p>

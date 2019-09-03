@@ -12,10 +12,10 @@
         <p>
             Last week we had an Agile Training in my company (Sage, in the Barcelona office). Usually I feel lazy about this kind of trainings because they focus on very abstract topics and also because the theory and practice of project management are as different as chalk and cheese, so I was expecting a boring couple of days sitting all together in a room stating the obvious and agreeing on how useful those methodologies are.
         </p>
-        <p>
-            Aware of the scepticism he would find between the training audience, the trainer was wise enough to show up with an ice-breaker exercise to catch our very transient attention and make room for the highly necessary open mindset to face the topics we were about to discuss. In an attempt to make the training as quick as possible and not without a certain feeling of being about to waste our time, I volunteered when he asked for 8 people to complete the ice-breaker.
-        </p>
-        <div v-if="!isRenderedFromList">
+        <div v-if="!isRenderedFromList">    
+            <p>
+                Aware of the scepticism he would find between the training audience, the trainer was wise enough to show up with an ice-breaker exercise to catch our very transient attention and make room for the highly necessary open mindset to face the topics we were about to discuss. In an attempt to make the training as quick as possible and not without a certain feeling of being about to waste our time, I volunteered when he asked for 8 people to complete the ice-breaker.
+            </p>
             <p>
                 In the end the exercise was fun and I felt it was a good excuse to start writing the blog I have been think of lately and that was worth sharing it with any eventual reader I might have. So, without further ado, here is a graphical representation of the exercise (a picture is worth a thousand words) drastically limited by my drawing skills on GIMP (so I should be happy if its worth anything more than two hundred):
             </p>

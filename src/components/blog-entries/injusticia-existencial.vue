@@ -16,10 +16,10 @@
         <p>
             Has quedat amb algú. Potser uns amics. Potser una cita. Potser la teva parella. Potser un grup de gent que fa poc que coneixes. Les primeres hores flueixen i t'ho passes bé. Arriba un punt que la situació es refreda una mica. El grau de connexió amb les altres persones baixa. Encara parleu i rieu, però notes que no t'omple de la mateixa manera que altres vegades.
         </p>
-        <p>
-            Comences a sentir que podries estar fent alguna altra cosa, aprofitar millor el temps d'una altra manera. Dedicar-te unes hores a aquell projecte personal que estas ajornant o allargant. Potser acabar el llibre que estas llegint. Poster anar al gimnàs. Potser començar la teva carrera com a novelista. Intentes descartar la idea i centrar-te en el moment. Poses una mica més d'èmfasi en recuperar la sinergia amb les persones que estas.
-        </p>
         <div v-if="!isRenderedFromList">
+            <p>
+                Comences a sentir que podries estar fent alguna altra cosa, aprofitar millor el temps d'una altra manera. Dedicar-te unes hores a aquell projecte personal que estas ajornant o allargant. Potser acabar el llibre que estas llegint. Poster anar al gimnàs. Potser començar la teva carrera com a novelista. Intentes descartar la idea i centrar-te en el moment. Poses una mica més d'èmfasi en recuperar la sinergia amb les persones que estas.
+            </p>
             <p>
                 Passa una altra hora i t'adones que esteu cansats o que teniu el cap a una altra banda. Així no és com t'havies imaginat que aniria la tarda. Decideixes tornar a casa i treure profit al que queda de dia. És dissabte a les 19. Potser encara falta estona per què es faci fosc. Potser ja fa estona que el sol s'ha post. De totes maneres, tens temps de posar-t'hi.
             </p>

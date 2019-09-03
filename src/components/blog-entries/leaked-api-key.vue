@@ -12,10 +12,10 @@
         <p>
             Few days ago I received the following email from Google Cloud Platform. Apparently, I was publishing my Google Maps API key to a public Github repository (for the non-technical audience, I was uploading some kind of password to a social network profile), allowing any smartass clever enough to find it to spend my Google Maps quota on his behalf.
         </p>
-        <p class="text-center">
-            <img :src="`/img/blog/${entry.id}_google_mail.png?$modena=vue-personal-page`" alt="Mail received from Google Cloud Platform" />
-        </p>
         <div v-if="!isRenderedFromList">
+            <p class="text-center">
+                <img :src="`/img/blog/${entry.id}_google_mail.png?$modena=vue-personal-page`" alt="Mail received from Google Cloud Platform" />
+            </p>
             <p>
                 And indeed, I was! Truth to be told, I was aware of that. When I first built my website I wanted to get it done as quick as possible and I imported the Google Maps code through the lazy way; the good old script tags. Given that almost nobody would visit my website and, even less, take a look at the source code, the strategy was decent enough and I got the job done. This is what my index.html file look like at the time Google sent me the email (note line 26):
             </p>
