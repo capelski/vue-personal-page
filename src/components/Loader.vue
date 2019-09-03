@@ -24,6 +24,10 @@
         background-color: white;
     }
 
+    .dark .loader {
+        background-color: #212529;
+    }
+
     @media (min-width: 768px) {
         .loader {
             height: calc(100vh - 53px);

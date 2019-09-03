@@ -513,8 +513,6 @@
 
 <style lang="scss" scoped>
     .trips {
-        color: black;
-
         #map {
             height: 500px;
             margin-top: 20px;

@@ -161,7 +161,7 @@
 
         a.blog-link {
             display: block;
-            color: black;
+            color: #212529;
             text-decoration: none;
 
             &:hover,
@@ -174,7 +174,7 @@
         a.whatsapp-link {
             display: flex;
             align-items: center;
-            color: black;
+            color: #212529;
 
             &:hover,
             &:focus,
@@ -195,6 +195,24 @@
                 border-color: #feeeb7 !important;
                 box-shadow: none !important;
                 cursor: default;
+            }
+        }
+    }
+
+    .dark {
+        .blog-entry {
+            .faded-wrapper {
+                .faded {
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #212529 90%);
+                }
+            }
+
+            a.blog-link {
+                color: #aaaaaa;
+            }
+
+            a.whatsapp-link {
+                color: #aaaaaa;
             }
         }
     }

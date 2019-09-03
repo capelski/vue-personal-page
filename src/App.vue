@@ -138,13 +138,16 @@
         border-color: #fed136;
     }
 
-    .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    .btn-primary:active,
+    .btn-primary:focus,
+    .btn-primary:hover {
         background-color: #fec810 !important;
         border-color: #fec810 !important;
         color: white;
     }
 
-    .btn-primary:active, .btn-primary:focus {
+    .btn-primary:active,
+    .btn-primary:focus {
         box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
     }
 
@@ -164,5 +167,10 @@
 
     img::-moz-selection {
         background: transparent;
+    }
+
+    .dark {
+        background-color: #212529;
+        color: #aaaaaa;
     }
 </style>

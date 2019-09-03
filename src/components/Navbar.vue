@@ -54,6 +54,10 @@
         background-color: #212529;
     }
 
+    .dark #main-nav {
+        border-bottom: 1px solid white;
+    }
+
     #main-nav.navbar {
         padding-top: 0;
         padding-bottom: 0;

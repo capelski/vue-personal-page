@@ -151,4 +151,14 @@
             }
         }
     }
+
+    .dark {
+        .blog-tag {
+            &.filter {
+                &.unselected {
+                    background-color: #212529;
+                }
+            }
+        }
+    }
 </style>
