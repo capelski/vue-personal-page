@@ -15,6 +15,7 @@ Vue.use(VueMeta, {
 
 const isProd = process.env.NODE_ENV === 'production';
 
+// TODO Only use Google Analytics if domain is not "me."
 Vue.use(VueAnalytics, {
 	debug: {
 		enabled: !isProd,

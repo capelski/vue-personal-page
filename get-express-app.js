@@ -12,7 +12,7 @@ module.exports = () => {
 				req.url === '/vue-personal-page'
 			)
 		) {
-			res.sendFile(join(__dirname, 'me.html'));
+			res.sendFile(join(__dirname, 'dist', 'me.html'));
 		}
 		else {
 			next();

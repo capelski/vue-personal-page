@@ -10,6 +10,7 @@ const path                     = require('path');
 const commonConfig             = require('./webpack.config.common');
 const isProd                   = process.env.NODE_ENV === 'production';
 const environment              = require('./env/prod.env');
+const HtmlPlugin               = require('html-webpack-plugin');
 const PrerenderSpaPlugin       = require('prerender-spa-plugin');
 
 const blogEntries = require('../src/components/blog-entries/entries');
@@ -83,6 +84,11 @@ const webpackConfig = merge(commonConfig, {
             test: new RegExp('\\.(js|css)$'),
             threshold: 10240,
             minRatio: 0.8
+        }),
+        new HtmlPlugin({
+            filename: 'me.html',
+            template: 'me.html'
+            /* chunksSortMode: 'dependency' */
         }),
         // new webpack.HashedModuleIdsPlugin(),
         new PrerenderSpaPlugin({

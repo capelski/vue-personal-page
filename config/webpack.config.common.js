@@ -70,7 +70,11 @@ const webpackConfig = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new HtmlPlugin({ template: 'index.html' /*, chunksSortMode: 'dependency' */ }),
+        new HtmlPlugin({
+            filename: 'index.html',
+            template: 'index.html'
+            /*chunksSortMode: 'dependency' */
+        }),
         new CopyWebpackPlugin([
             {
               from: path.resolve(__dirname, '..', 'assets'),
