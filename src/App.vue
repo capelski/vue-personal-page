@@ -87,7 +87,7 @@
             padding-top: 93px;
         }
         .navbar-spacer.narrow {
-            padding-top: 53px;
+            padding-top: 55px;
         }
     }
 
@@ -134,6 +134,7 @@
     }
 
     .btn-primary {
+        color: white;
         background-color: #fed136;
         border-color: #fed136;
     }
@@ -141,10 +142,17 @@
     .btn-primary:active,
     .btn-primary:focus,
     .btn-primary:hover {
+        color: white;
         background-color: #fec810 !important;
         border-color: #fec810 !important;
-        color: white;
     }
+
+    .dark .btn-primary,
+    .dark .btn-primary:active,
+    .dark .btn-primary:focus,
+    .dark .btn-primary:hover {
+        color: #212529;
+    }    
 
     .btn-primary:active,
     .btn-primary:focus {
@@ -171,6 +179,6 @@
 
     .dark {
         background-color: #212529;
-        color: #aaaaaa;
+        color: #D2D3D4;
     }
 </style>

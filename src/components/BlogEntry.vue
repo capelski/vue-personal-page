@@ -208,11 +208,11 @@
             }
 
             a.blog-link {
-                color: #aaaaaa;
+                color: #D2D3D4;
             }
 
             a.whatsapp-link {
-                color: #aaaaaa;
+                color: #D2D3D4;
             }
         }
     }

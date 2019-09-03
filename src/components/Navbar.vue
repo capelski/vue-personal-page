@@ -16,6 +16,14 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item">
+                        <a
+                            class="clickable"
+                            @click="switchTheme"
+                        >
+                            <span class="theme-switcher">&#127767;</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <router-link to="/" class="nav-link" @click.native="closeMenu">Home</router-link>
                     </li>
                     <li class="nav-item">
@@ -39,11 +47,21 @@
 <script>
     export default {
         name: 'Navbar',
+        data() {
+            return {
+                theme: ''
+            };
+        },
         methods: {
             closeMenu() {
                 if(!window.matchMedia('(min-width: 768px)').matches) {
                     this.$refs.menuButton.click();
                 }
+            },
+            switchTheme() {
+                this.theme = this.theme === '' ? 'dark' : '';
+                window.document.querySelector('html').className = this.theme; 
+                window.document.querySelector('body').className = this.theme; 
             }
         }
     }
@@ -55,7 +73,20 @@
     }
 
     .dark #main-nav {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid #D2D3D4;
+    }
+
+    .theme-switcher {
+        padding: 0.6em 0.4em;
+        font-size: 20px;
+        display: inline-block;
+        transition-duration: 0.8s;
+        transition-property: transform;
+    }
+
+    .dark .theme-switcher {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
     }
 
     #main-nav.navbar {
@@ -73,7 +104,7 @@
     }
 
     #main-nav .navbar-nav .nav-item .nav-link {
-        font-size: 90%;
+        font-size: 15px;
         font-weight: 400;
         padding: 0.75em 0;
         letter-spacing: 1px;
