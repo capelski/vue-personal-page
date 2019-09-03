@@ -11,6 +11,8 @@ Vue.use(Router);
 const routes = [
     {
         path: '/',
+        // The following alias is necessary to resolve the home route in personal-server
+        alias: '/vue-personal-page',
         name: 'Home',
         component: Home
     },
@@ -28,12 +30,6 @@ const routes = [
         path: '/projects',
         name: 'Projects',
         component: Projects
-    },
-    // The following route is necessary to resolve the home component at carlescapellas.xyz/vue-personal-page
-    {
-        path: '/vue-personal-page',
-        name: 'Home',
-        component: Home
     }
 ];
 

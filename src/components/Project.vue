@@ -1,7 +1,13 @@
 <template>
     <li :class="{'timeline-inverted': inverted}">
         <div class="timeline-image justified">
-            <a v-if="url" :href="url" v-on:click="linkClicked" style="color: white;" target="_blank">
+            <a
+                v-if="url"
+                :href="url"
+                v-on:click="linkClicked"
+                rel="nofollow"
+                target="_blank"
+            >
                 <i class="fa fa-external-link fa-2x"></i>
             </a>
         </div>
@@ -116,6 +122,10 @@
         border: 7px solid #e9ecef;
         border-radius: 100%;
         background-color: #fed136;
+    }
+
+    .timeline > li .timeline-image > a {
+        color: white;
     }
 
     .timeline > li .timeline-image.justified {
