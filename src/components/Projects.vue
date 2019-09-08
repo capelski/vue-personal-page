@@ -35,7 +35,8 @@
                     date: 'April 2019 - July 2019',
                     name: 'Cucumber steps parser',
                     description: 'Part of the platform testing automation we did at Sage consists in a set of cucumber.js step definitions for platform users to write their own integration tests. Using this project we retrieve the existing cucumber.js sentences from the step definition files and provide them to platform users',
-                    githubUrl: 'https://github.com/L3bowski/cucumber-steps-parser'
+                    githubUrl: 'https://github.com/L3bowski/cucumber-steps-parser',
+                    url: 'https://www.npmjs.com/package/cucumber-steps-parser'
                 },
                 {
                     date: 'February 2019',
