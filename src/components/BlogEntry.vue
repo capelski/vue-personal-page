@@ -24,32 +24,38 @@
             <div :class="{'article-container' : true, 'faded-wrapper': isRenderedFromList}">
                 <slot />
                 <div v-if="isRenderedFromList" class="faded" v-on:click="navigate"></div>
-                <!-- TODO ¿Extract the domain name into config? -->
-                <a
-                    v-if="!isRenderedFromList && window.orientation !== undefined"
-                    v-on:click="articleShared"
-                    :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + entry.id"
-                    data-action="share/whatsapp/share"
-                    class="whatsapp-link"
-                >
-                    <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
-                    Share on whatsapp
-                </a>
-                <div class="navigation-buttons" v-if="!isRenderedFromList && !hideNavigation">
-                    <button
-                        type="button"
-                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.previous }"
-                        v-on:click="navigatePrevious"
+
+                <div v-if="!isRenderedFromList">
+                    <NewsletterForm :hasBorderBottom="true" />
+
+                    <!-- TODO ¿Extract the domain name into config? -->
+                    <a
+                        v-if="window.orientation !== undefined"
+                        v-on:click="articleShared"
+                        :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + entry.id"
+                        data-action="share/whatsapp/share"
+                        class="whatsapp-link"
                     >
-                        Previous
-                    </button>
-                    <button
-                        type="button"
-                        :class="{'btn btn-primary btn-md': true, 'btn-disabled': !entry.following }"
-                        v-on:click="navigateFollowing"
-                    >
-                        Following
-                    </button>
+                        <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
+                        Share on whatsapp
+                    </a>
+                    
+                    <div class="navigation-buttons" v-if="!hideNavigation">
+                        <button
+                            type="button"
+                            :class="{'btn btn-primary': true, 'btn-disabled': !entry.previous }"
+                            v-on:click="navigatePrevious"
+                        >
+                            Previous
+                        </button>
+                        <button
+                            type="button"
+                            :class="{'btn btn-primary': true, 'btn-disabled': !entry.following }"
+                            v-on:click="navigateFollowing"
+                        >
+                            Following
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,11 +64,13 @@
 
 <script>
     import BlogEntryHeader from './BlogEntryHeader';
+    import NewsletterForm from './NewsletterForm';
 
     export default {
         name: 'blog-entry',
         components: {
-            BlogEntryHeader
+            BlogEntryHeader,
+            NewsletterForm
         },
         props: [
             'date',
@@ -145,8 +153,8 @@
         }
 
         img {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+            margin-top: 15px;
+            margin-bottom: 15px;
             max-width: 100%;
         }
 
@@ -156,7 +164,7 @@
 
         .code-editor {
             width: 100%;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
 
         a.blog-link {
@@ -175,11 +183,16 @@
             display: flex;
             align-items: center;
             color: #212529;
+            margin: 15px 0;
 
             &:hover,
             &:focus,
             &:active {
                 text-decoration: none;
+            }
+
+            img {
+                margin: 0;
             }
         }
 

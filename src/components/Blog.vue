@@ -26,6 +26,8 @@
             </h3>
             <p>Go ahead and select some. It shouldn't be that bad</p>
         </div>
+
+        <NewsletterForm />
     </div>
 </template>
 
@@ -36,6 +38,7 @@
     import meaning_of_life from './blog-entries/meaning-of-life';
     import leaked_api_key from './blog-entries/leaked-api-key';
     import agility_rocks from './blog-entries/agility-rocks';
+    import NewsletterForm from './NewsletterForm';
     import { tags } from './blog-entries/tags';
 
     export default {
@@ -46,7 +49,8 @@
             four_coin_challenge,
             meaning_of_life,
             leaked_api_key,
-            agility_rocks
+            agility_rocks,
+            NewsletterForm
         },
         metaInfo: {
             title: 'Blog',
