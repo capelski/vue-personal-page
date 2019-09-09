@@ -1,7 +1,7 @@
 <template>
     <section
         v-if="isVisible"
-        :class="{'container navbar-spacer': !isRenderedFromList}"
+        :class="{'container navbar-spacer': !isRenderedFromList, 'extra-space': isRenderedFromList}"
     >
         <div class="blog-entry">
             <BlogEntryHeader
@@ -131,9 +131,13 @@
 </script>
 
 <style lang="scss">
-    .blog-entry {
-        margin-bottom: 40px;
+    @import '../scss/globals.scss';
 
+    .extra-space {
+        margin-bottom: 40px;
+    }
+
+    .blog-entry {
         .faded-wrapper {
             position: relative;
 
@@ -169,7 +173,7 @@
 
         a.blog-link {
             display: block;
-            color: #212529;
+            color: $primary-dark;
             text-decoration: none;
 
             &:hover,
@@ -182,7 +186,7 @@
         a.whatsapp-link {
             display: flex;
             align-items: center;
-            color: #212529;
+            color: $primary-dark;
             margin: 15px 0;
 
             &:hover,
@@ -216,16 +220,16 @@
         .blog-entry {
             .faded-wrapper {
                 .faded {
-                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #212529 90%);
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, $primary-dark 90%);
                 }
             }
 
             a.blog-link {
-                color: #D2D3D4;
+                color: $primary-grey;
             }
 
             a.whatsapp-link {
-                color: #D2D3D4;
+                color: $primary-grey;
             }
         }
     }

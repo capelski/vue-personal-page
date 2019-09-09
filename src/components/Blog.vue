@@ -85,6 +85,8 @@
 </script>
 
 <style lang="scss">
+    @import '../scss/globals.scss';
+
     .selected-tags {
         text-align: right;
         display: flex;
@@ -160,7 +162,7 @@
         .blog-tag {
             &.filter {
                 &.unselected {
-                    background-color: #212529;
+                    background-color: $primary-dark;
                 }
             }
         }

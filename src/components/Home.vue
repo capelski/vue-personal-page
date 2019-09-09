@@ -1,14 +1,12 @@
 <template>
-    <div class="navbar-spacer narrow">
-        <header class="home">
-            <div class="intro-text">
-                <h1 class="intro-heading text-uppercase">Carles Capellas</h1>
-                <h2 class="intro-subheading">Get to know something about me</h2>
-                <div class="technologies">
-                    <img src="/img/node.png?$modena=vue-personal-page" alt="Node.js logo"/>
-                    <img src="/img/docker.png?$modena=vue-personal-page" alt="Docker logo"/>
-                    <img src="/img/azure.png?$modena=vue-personal-page" alt="Windows Azure logo"/>
-                </div>
+    <div class="navbar-spacer full-screen">
+        <header class="full-screen-content home-header">
+            <h1 class="intro-heading text-uppercase">Carles Capellas</h1>
+            <h2 class="intro-subheading">Get to know something about me</h2>
+            <div class="technologies">
+                <img src="/img/node.png?$modena=vue-personal-page" alt="Node.js logo"/>
+                <img src="/img/docker.png?$modena=vue-personal-page" alt="Docker logo"/>
+                <img src="/img/azure.png?$modena=vue-personal-page" alt="Windows Azure logo"/>
             </div>
         </header>
     </div>
@@ -26,14 +24,13 @@
     }
 </script>
 
-<style scoped>
-    header.home {
-        height: calc(100vh - 50px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+<style lang="scss" scoped>
+    @import '../scss/globals.scss';
+
+    .home-header {
         text-align: center;
-        color: #333;
+        flex-direction: column;
+        color: $primary-dark;
         background-image: url('/img/header-bg.jpg?$modena=vue-personal-page');
         background-repeat: no-repeat;
         background-attachment: scroll;
@@ -42,58 +39,40 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-    }
 
-    @media (min-width: 768px) {
-        header.home {
-            height: calc(100vh - 55px);
+        .intro-heading {
+            font-size: 50px;
+            line-height: 50px;
+            margin-bottom: 15px;
         }
-    }
-
-    header.home .intro-heading {
-        font-size: 50px;
-        font-weight: 700;
-        line-height: 50px;
-        margin-bottom: 15px;
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    }
-
-    header.home .intro-subheading {
-        font-size: 30px;
-        line-height: 30px;
-        margin-bottom: 25px;
-        font-weight: normal;
-    }
-
-    @media (min-width: 768px) {
-        header.home .intro-heading {
-            font-size: 75px;
-            line-height: 75px;
+        
+        .intro-subheading {
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: normal;
+            margin-bottom: 25px;
         }
 
-        header.home .intro-subheading {
-            font-size: 40px;
-            line-height: 40px;
-            margin-bottom: 50px;
+        .technologies {
+            padding-top: 100px;
+
+            img {
+                height: 70px;
+                padding: 0 10px;
+            }
         }
-    }
 
-    .hidden-xs {
-        display: none;
-    }
-
-    @media (min-width: 768px) {
-        .hidden-xs {
-            display: block;
+        @media (min-width: $medium) {
+            .intro-heading {
+                font-size: 75px;
+                line-height: 75px;
+            }
+            
+            .intro-subheading {
+                font-size: 40px;
+                line-height: 40px;
+                margin-bottom: 50px;
+            }
         }
-    }
-
-    .technologies {
-        padding-top: 100px;
-    }
-
-    .technologies img {
-        height: 70px;
-        padding: 0 10px;
     }
 </style>

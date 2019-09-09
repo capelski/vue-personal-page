@@ -46,44 +46,48 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../scss/globals.scss';
+
     #mc_embed_signup {
-        margin: 40px 0;
-        padding: 30px 0;
-        border-top: 1px solid #212529;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid $primary-dark;
 
         &.has-border-bottom {
-            border-bottom: 1px solid #212529;
-        }
-    }
-
-    .inputs-wrapper {
-        display: flex;
-        flex-direction: column;
-
-        .email {
-            padding: 8px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid $primary-dark;
         }
 
-        input:last-child {
-            margin: 10px 0 0 0;
-        }
-    }
-
-    @media (min-width: 768px) {
         .inputs-wrapper {
-            flex-direction: row;
+            display: flex;
+            flex-direction: column;
+
+            .email {
+                padding: 8px;
+            }
 
             input:last-child {
-                margin: 0 0 0 10px;
+                margin: 10px 0 0 0;
+            }
+        }
+
+        @media (min-width: $medium) {
+            .inputs-wrapper {
+                flex-direction: row;
+
+                input:last-child {
+                    margin: 0 0 0 10px;
+                }
             }
         }
     }
 
     .dark #mc_embed_signup {
-        border-top: 1px solid #D2D3D4;
+        border-top: 1px solid $primary-grey;
         
         &.has-border-bottom {
-            border-bottom: 1px solid #D2D3D4;
+            border-bottom: 1px solid $primary-grey;
         }
     }
 </style>

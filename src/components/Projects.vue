@@ -9,7 +9,7 @@
                 :url="project.url"
                 :inverted="(index % 2 == 0)"
             />
-            <li>
+            <li class="timeline-item">
                 <div class="timeline-image">
                     <h4>VB <br /> dark <br /> period</h4>
                 </div>
@@ -166,27 +166,27 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import '../scss/globals.scss';
+
     .timeline {
         position: relative;
         padding: 0;
         list-style: none;
-    }
 
-    .timeline:before {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 40px;
-        width: 2px;
-        margin-left: -1.5px;
-        content: '';
-        background-color: #e9ecef;
-    }
+        &:before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 40px;
+            width: 2px;
+            margin-left: -1.5px;
+            content: '';
+            background-color: #e9ecef;
 
-    @media (min-width: 768px) {
-        .timeline:before {
-            left: 50%;
+            @media (min-width: $medium) {
+                left: 50%;
+            }
         }
     }
 </style>

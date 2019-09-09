@@ -1,5 +1,5 @@
 <template>
-    <nav id="main-nav" class="navbar navbar-expand-md navbar-dark fixed-top navbar-shrink">
+    <nav id="main-nav" class="navbar navbar-expand-md fixed-top navbar-shrink">
         <div class="container">
             <button
                 ref="menuButton"
@@ -17,10 +17,10 @@
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item">
                         <a
-                            class="clickable"
+                            class="theme-switcher clickable"
                             @click="switchTheme"
                         >
-                            <span class="theme-switcher">&#127767;</span>
+                            <span>&#127767;</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -67,72 +67,59 @@
     }
 </script>
 
-<style>
-    #main-nav {
-        background-color: #212529;
-    }
-
-    .dark #main-nav {
-        border-bottom: 1px solid #D2D3D4;
-    }
-
-    .theme-switcher {
-        padding: 0.6em 0.4em;
-        font-size: 20px;
-        display: inline-block;
-        transition-duration: 0.8s;
-        transition-property: transform;
-    }
-
-    .dark .theme-switcher {
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-    }
+<style lang="scss">
+    @import '../scss/globals.scss';
 
     #main-nav.navbar {
         padding-top: 0;
         padding-bottom: 0;
-    }
+        background-color: $primary-dark;
 
-    #main-nav .navbar-toggler {
-        font-size: 12px;
-        right: 0;
-        padding: 13px;
-        text-transform: uppercase;
-        color: white;
-        border: 0;
-    }
+        .theme-switcher {
+            display: block;
+            padding: 10px;
+            font-size: 19px;
 
-    #main-nav .navbar-nav .nav-item .nav-link {
-        font-size: 15px;
-        font-weight: 400;
-        padding: 0.75em 0;
-        letter-spacing: 1px;
-        color: white;
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    }
-
-    #main-nav .navbar-nav .nav-item .nav-link.active, #main-nav .navbar-nav .nav-item .nav-link:hover {
-        color: #fed136;
-    }
-
-    @media (min-width: 768px) {
-        #main-nav {
-            padding-top: 25px;
-            padding-bottom: 25px;
-            -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-            -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-            transition: padding-top 0.3s, padding-bottom 0.3s;
-            border: none;
-            background-color: transparent;
+            span {
+                display: inline-block;
+                transition-duration: 0.8s;
+                transition-property: transform;
+            }
         }
-        #main-nav .navbar-nav .nav-item .nav-link {
-            padding: 1.1em 1em !important;
+
+        .navbar-toggler {
+            font-size: 12px;
+            right: 0;
+            padding: 13px;
+            text-transform: uppercase;
+            color: white;
+            border: 0;
         }
-        #main-nav.navbar-shrink {
-            padding-top: 0;
-            padding-bottom: 0;
-            background-color: #212529;
+
+        .navbar-nav .nav-item .nav-link {
+            font-size: 15px;
+            line-height: 24px;
+            font-weight: 400;
+            padding: 13px;
+            letter-spacing: 1px;
+            color: white;
+            font-family: $font-secondary;
+
+            &.router-link-exact-active,
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .dark {
+        #main-nav.navbar {
+            border-bottom: 1px solid $primary-grey;
+
+            .theme-switcher span {
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+            }
         }
     }
 </style>

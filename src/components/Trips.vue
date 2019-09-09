@@ -512,6 +512,8 @@
 </script>
 
 <style lang="scss" scoped>
+    @import '../scss/globals.scss';
+    
     .trips {
         #map {
             height: 500px;
@@ -526,7 +528,7 @@
             padding-top: 10px;
 
             &.trip-start {
-                border-bottom: 1px solid #fed136;
+                border-bottom: 1px solid $primary;
             }
         }
     }

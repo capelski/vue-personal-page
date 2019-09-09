@@ -35,30 +35,13 @@
     }
 </script>
 
-<style>
-    @font-face {
-        font-family: 'Montserrat';
-        font-weight: 700;
-        src: url('/fonts/montserrat/Montserrat-Bold.ttf?$modena=vue-personal-page');
-    }
+<style lang="scss">
+    @import './scss/globals.scss';
 
-    @font-face {
-        font-family: 'Montserrat';
-        font-weight: 400;
-        src: url('/fonts/montserrat/Montserrat-Regular.ttf?$modena=vue-personal-page');
-    }
-
-    @font-face {
-        font-family: 'Roboto Slab';
-        font-weight: 700;
-        src: url('/fonts/roboto-slab/RobotoSlab-Bold.ttf?$modena=vue-personal-page');
-    }
-
-    @font-face {
-        font-family: 'Roboto Slab';
-        font-weight: 400;
-        src: url('/fonts/roboto-slab/RobotoSlab-Regular.ttf?$modena=vue-personal-page');
-    }
+    @include fontFace('Montserrat', 700, 'montserrat/Montserrat-Bold.ttf');
+    @include fontFace('Montserrat', 400, 'montserrat/Montserrat-Regular.ttf');
+    @include fontFace('Roboto Slab', 700, 'roboto-slab/RobotoSlab-Bold.ttf');
+    @include fontFace('Roboto Slab', 400, 'roboto-slab/RobotoSlab-Regular.ttf');
 
     html,
     body,
@@ -68,48 +51,17 @@
     }
 
     body {
-      scrollbar-width: none; /* Firefox 64 */
-      -ms-overflow-style: none; /* IE 11 */
-    }
-    body::-webkit-scrollbar { /** Webkit */
-        display: none;
-    }
+        font-family: $font-primary;
+        scrollbar-width: none; /* Firefox 64 */
+        -ms-overflow-style: none; /* IE 11 */
 
-    .navbar-spacer {
-        padding-top: 80px;
-    }
-    .navbar-spacer.narrow {
-        padding-top: 50px;
-    }
-
-    @media(min-width: 768px) {
-        .navbar-spacer {
-            padding-top: 93px;
-        }
-        .navbar-spacer.narrow {
-            padding-top: 55px;
+        &::-webkit-scrollbar { /** Webkit */
+            display: none;
         }
     }
-
-    body {
-        overflow-x: hidden;
-        font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    }
-
+    
     p {
         line-height: 1.75;
-    }
-
-    a {
-        color: #fed136;
-    }
-
-    a:hover {
-        color: #fec503;
-    }
-
-    .text-primary {
-        color: #fed136 !important;
     }
 
     h1,
@@ -117,14 +69,33 @@
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    .btn {
+        font-family: $font-secondary;
         font-weight: 700;
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
-    .btn {
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 700;
+    a,
+    a:hover {
+        color: $primary;
+    }
+
+    .navbar-spacer {
+        padding-top: 80px;
+        padding-bottom: 50px;
+
+        &.full-screen {
+            padding-top: 50px;
+            padding-bottom: 0;
+            height: calc(100vh - 50px);
+
+            .full-screen-content {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     }
 
     .btn-xl {
@@ -135,8 +106,8 @@
 
     .btn-primary {
         color: white;
-        background-color: #fed136;
-        border-color: #fed136;
+        background-color: $primary;
+        border-color: $primary;
     }
 
     .btn-primary:active,
@@ -147,25 +118,18 @@
         border-color: #fec810 !important;
     }
 
-    .dark .btn-primary,
-    .dark .btn-primary:active,
-    .dark .btn-primary:focus,
-    .dark .btn-primary:hover {
-        color: #212529;
-    }    
-
     .btn-primary:active,
     .btn-primary:focus {
         box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
     }
 
     ::-moz-selection {
-        background: #fed136;
+        background: $primary;
         text-shadow: none;
     }
 
     ::selection {
-        background: #fed136;
+        background: $primary;
         text-shadow: none;
     }
 
@@ -178,7 +142,14 @@
     }
 
     .dark {
-        background-color: #212529;
-        color: #D2D3D4;
+        background-color: $primary-dark;
+        color: $primary-grey;
+
+        .btn-primary,
+        .btn-primary:active,
+        .btn-primary:focus,
+        .btn-primary:hover {
+            color: $primary-dark;
+        }
     }
 </style>
