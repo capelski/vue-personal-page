@@ -73,9 +73,50 @@
                 },
                 {
                     date: 'June 2017 - December 2017',
-                    name: 'Skills matrix',
-                    description: 'Serie of projects to reflect the evolution of web development; starting with a .NET Core MVC pattern + jQuery views and finishing with a .NET Core Web API + a Vue webpack front end UI. The application is pretty self explanatory',
-                    githubUrl: 'https://github.com/L3bowski?tab=repositories&q=skills-matrix'
+                    name: 'Skills matrix VII: Typescript',
+                    description: '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting from the Vue.js version, adding type safety through Typescript. Never get an exception in run time again!',
+                    githubUrl: 'https://github.com/L3bowski/skills-matrix-client-typescript',
+                    url: '/skills-matrix-client-typescript'
+                },
+                {
+                    date: 'June 2017 - December 2017',
+                    name: 'Skills matrix VI: Vue.js',
+                    description: '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting from scratch, new version of the web application based on the Vue.js framework, which implements all of the previous concepts plus efficient DOM elements manipulation and allowing to split the HTML code in multiple files',
+                    githubUrl: 'https://github.com/L3bowski/skills-matrix-client-vue',
+                    url: '/skills-matrix-client-vue'
+                },
+                {
+                    date: 'June 2017 - December 2017',
+                    name: 'Skills matrix V: Webpack',
+                    description: '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting off from the Redux version, adding Webpack to manage the dependencies through import statements rather than relying on the order sensitive index.html script tags',
+                    githubUrl: 'https://github.com/L3bowski/skills-matrix-client-webpack',
+                    url: '/skills-matrix-client-webpack'
+                },
+                {
+                    date: 'June 2017 - December 2017',
+                    name: 'Skills matrix IV: Redux',
+                    description: '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting off from the jQuery version, I introudce ECMA Script 6 and add Redux to manage the application state (as the excuse to justify the usage of ECMA 6). Don\'t miss the time travel debbuging!',
+                    githubUrl: 'https://github.com/L3bowski/skills-matrix-client-redux',
+                    url: '/skills-matrix-client-redux'
+                },
+                {
+                    date: 'June 2017 - December 2017',
+                    name: 'Skills matrix III: jQuery',
+                    description: '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Implementation of the Single Page Application concept using only jQuery, having all the application HTML in a single file',
+                    githubUrl: 'https://github.com/L3bowski/skills-matrix-client-jquery',
+                    url: '/skills-matrix-client-jquery'
+                },
+                {
+                    date: 'June 2017 - December 2017',
+                    name: 'Skills matrix II: Web API',
+                    description: '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />In order to bring the Single Page Application concept into play a web API is required. I implemented one in .NET Core and another in Node.js to compare the two frameworks in the process',
+                    githubUrl: 'https://github.com/L3bowski?tab=repositories&q=skills-matrix-api'
+                },
+                {
+                    date: 'June 2017 - December 2017',
+                    name: 'Skills matrix I',
+                    description: '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />The first version consists in a .NET Core MVC + WebAPI patterns along with static HTML pages controlled through jQuery (very common architecture when I started working in .NET, 2014)',
+                    githubUrl: 'https://github.com/L3bowski/skills-matrix-mvc'
                 },
                 {
                     date: 'April 2017',
