@@ -1,4 +1,8 @@
 export const tags = {
+    Business: {
+        text: 'Business',
+        className: 'business-tag'
+    },
     Dissemination: {
         text: 'Dissemination',
         className: 'dissemination-tag'

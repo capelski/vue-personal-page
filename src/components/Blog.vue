@@ -13,6 +13,7 @@
             </span>
         </div>
 
+        <subscribers_list :isRenderedFromList="true" :selectedTags="selectedTags" />
         <existential_injustice :isRenderedFromList="true" :selectedTags="selectedTags" />
         <progressive_web_apps :isRenderedFromList="true" :selectedTags="selectedTags" />
         <four_coin_challenge :isRenderedFromList="true" :selectedTags="selectedTags" />
@@ -32,6 +33,7 @@
 </template>
 
 <script>
+    import subscribers_list from './blog-entries/subscribers-list';
     import existential_injustice from './blog-entries/existential-injustice';
     import progressive_web_apps from './blog-entries/progressive-web-apps';
     import four_coin_challenge from './blog-entries/four-coin-challenge';
@@ -44,6 +46,7 @@
     export default {
         name: 'Blog',
         components: {
+            subscribers_list,
             existential_injustice,
             progressive_web_apps,
             four_coin_challenge,
@@ -106,6 +109,15 @@
         color: white;
         display: inline-block;
         font-weight: bold;
+
+        &.business-tag {
+            border: 2px solid #dc3545;
+            color: #dc3545;
+
+            &.filter {
+                background-color: #dc3545;                
+            }
+        }
 
         &.dissemination-tag {
             border: 2px solid #28a745;

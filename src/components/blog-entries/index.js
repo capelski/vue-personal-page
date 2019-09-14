@@ -5,6 +5,7 @@ import FourCoinChallenge from './four-coin-challenge';
 import ProgressiveWebApps from './progressive-web-apps';
 import InjusticiaExistencial from './injusticia-existencial';
 import ExistentialInjustice from './existential-injustice';
+import SubscribersList from './subscribers-list';
 
 export default {
     AgilityRocks,
@@ -13,5 +14,6 @@ export default {
     FourCoinChallenge,
     ProgressiveWebApps,
     InjusticiaExistencial,
-    ExistentialInjustice
+    ExistentialInjustice,
+    SubscribersList
 };
