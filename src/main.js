@@ -1,17 +1,15 @@
 import 'expose-loader?$!jquery';
+
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'vue-cal/dist/vuecal.css'
 
 import Vue from 'vue';
+import VueAnalytics from 'vue-analytics';
+import VueMeta from 'vue-meta';
 import App from './App';
 import router from './router';
-import VueMeta from 'vue-meta';
-import VueAnalytics from 'vue-analytics';
-
-Vue.use(VueMeta, {
-  	refreshOnceOnNavigation: true
-});
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -23,6 +21,10 @@ Vue.use(VueAnalytics, {
 	},
 	id: process.env.ANALYTICS_TRACKING_ID,
 	router
+});
+
+Vue.use(VueMeta, {
+	refreshOnceOnNavigation: true
 });
 
 // Monaco configuration. The self object is defined in the webpack configuration files

@@ -18,7 +18,8 @@
         metaInfo: {
             title: 'Home',
             meta: [{
-                name: 'description', content: 'Personal page where you can get to know a bit more about me. Read my blog entries, find out about my personal projects or nose around the countries I have been'
+                name: 'description',
+                content: 'Personal page where you can get to know a bit more about me. Read my blog entries, find out about my personal projects or nose around the countries I have been'
             }]
         }
     }

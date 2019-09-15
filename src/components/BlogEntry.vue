@@ -1,6 +1,6 @@
 <template>
     <section
-        v-if="isVisible"
+        v-if="!isRenderedFromList || isVisible"
         :class="{'container navbar-spacer': !isRenderedFromList, 'extra-space': isRenderedFromList}"
     >
         <div class="blog-entry">
@@ -73,13 +73,13 @@
             NewsletterForm
         },
         props: [
+            'allTags',
             'date',
             'description',
             'duration',
             'entry',
             'hideNavigation',
             'isRenderedFromList',
-            'selectedTags',
             'tags',
             'title',
         ],
@@ -90,9 +90,9 @@
         },
         computed: {
             isVisible() {
-                return !this.isRenderedFromList || this.tags.reduce((reducedTags, tag) => {
-                    return reducedTags || this.selectedTags.reduce((reduced, selectedTag) =>
-                        reduced || selectedTag === tag, false);
+                return this.allTags.reduce((reducedTags, tag) => {
+                    return reducedTags || this.tags.reduce((reduced, ownTag) =>
+                        reduced || (tag === ownTag && tag.isSelected), false);
                 }, false);
             }
         },

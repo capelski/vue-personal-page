@@ -141,6 +141,10 @@
         background: transparent;
     }
 
+    .clickable {
+        cursor: pointer;
+    }
+
     .dark {
         background-color: $primary-dark;
         color: $primary-grey;

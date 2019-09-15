@@ -32,7 +32,8 @@
         metaInfo: {
             title: 'Trips',
             meta: [{
-                name: 'description', content: 'The list of places I have proudly travelled to along with an iteractive map. In constant expansion :D'
+                name: 'description',
+                content: 'The list of places I have proudly travelled to along with an iteractive map. In constant expansion :D'
             }]
         },
         data() {

@@ -11,7 +11,7 @@
         >
             <div id="mc_embed_signup_scroll">
                 <h4>Join the newsletter</h4>
-                <p>Subscribe to get emails every time I post a new blog entry. You can unsubscribe at any time</p>
+                <p>Subscribe to get email notifications every time I post a new entry. Unsubscribe at any time</p>
                 <div class="inputs-wrapper">
                     <input
                         type="email"

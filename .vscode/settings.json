@@ -1,0 +1,16 @@
+{
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "vetur.format.options.tabSize": 4,
+    "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+            "bracketSpacing": true,
+            "printWidth": 100,
+            "semi": true,
+            "singleQuote": true,
+            "tabWidth": 4,
+            "trailingComma": "none"
+        }
+    }
+}

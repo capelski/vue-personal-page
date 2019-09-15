@@ -1,22 +1,27 @@
 export const tags = {
     Business: {
-        text: 'Business',
-        className: 'business-tag'
+        className: 'business-tag',
+        isSelected: true,
+        text: 'Business'
     },
     Dissemination: {
-        text: 'Dissemination',
-        className: 'dissemination-tag'
+        className: 'dissemination-tag',
+        isSelected: true,
+        text: 'Dissemination'
     },
     Entertainment: {
-        text: 'Entertainment',
-        className: 'entertainment-tag'
+        className: 'entertainment-tag',
+        isSelected: true,
+        text: 'Entertainment'
     },
     Thoughts: {
-        text: 'Thoughts',
-        className: 'thoughts-tag'
+        className: 'thoughts-tag',
+        isSelected: true,
+        text: 'Thoughts'
     },
     WebDevelopment: {
-        text: 'Web development',
         className: 'web-development-tag',
+        isSelected: true,
+        text: 'Web development'
     }
 };

@@ -1,0 +1,211 @@
+<template>
+    <div>
+        <div class="blog-gear-container">
+            <span class="blog-gear clickable" @click="toggleOptions">&#9881;&#65039;</span>
+        </div>
+        <div class="row" v-if="isVisible">
+            <div class="col-md-6 blog-options-column">
+                <h5>Calendar view</h5>
+                <VueCal
+                    xsmall
+                    style="height: 300px; max-width: 400px;"
+                    :time="false"
+                    :hide-view-selector="true"
+                    default-view="month"
+                    :disable-views="['years', 'year', 'week']"
+                    :events="events"
+                    :on-event-click="goToEntry"
+                />
+            </div>
+            <div class="col-md-6 blog-options-column">
+                <h5>Selected tags</h5>
+                <div>
+                    <span
+                        v-for="tag in allTags"
+                        :key="tag.text"
+                        :class="{'blog-tag clickable filter': true, [tag.className]: true, 'unselected': !tag.isSelected }"
+                        @click="selectTag(tag)"
+                    >{{ tag.text }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import VueCal from 'vue-cal';
+import { tags } from './blog-entries/tags';
+import BlogEntries from './blog-entries';
+
+export default {
+    name: 'BlogOptions',
+    components: {
+        VueCal
+    },
+    data() {
+        return {
+            allTags: Object.values(tags),
+            events: Object.values(BlogEntries).map(blogEntry => {
+                const blogEntryData = blogEntry.data();
+                return {
+                    id: blogEntryData.entry.id,
+                    end: blogEntryData.date,
+                    start: blogEntryData.date,
+                    title: blogEntryData.title
+                };
+            }),
+            isVisible: false
+        };
+    },
+    methods: {
+        goToEntry(event) {
+            this.$router.push(`/blog/${event.id}`);
+        },
+        selectTag(targetTag) {
+            targetTag.isSelected = !targetTag.isSelected;
+        },
+        toggleOptions() {
+            this.isVisible = !this.isVisible;
+        }
+    }
+};
+</script>
+
+<style lang="scss">
+@import '../scss/globals.scss';
+
+.blog-options-column {
+    margin-bottom: 40px;
+}
+
+.blog-gear-container {
+    display: flex;
+    justify-content: flex-end;
+
+    .blog-gear {
+        font-size: 24px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+}
+
+.vuecal__title-bar,
+.vuecal__cell.selected {
+    background: transparent;
+}
+
+.vuecal__cell-events-count {
+    display: none;
+}
+
+.vuecal__cell--has-events,
+.vuecal__cell--has-events.selected {
+    background-color: $primary;
+}
+
+.vuecal__event {
+    background-color: $primary;
+    color: $primary-dark;
+    margin-bottom: 10px;
+}
+
+.vuecal__event-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.blog-tag {
+    margin-left: 10px;
+    padding: 1px 7px;
+    border-radius: 0.25rem;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+
+    &.business-tag {
+        border: 2px solid #dc3545;
+        color: #dc3545;
+
+        &.filter {
+            background-color: #dc3545;
+        }
+    }
+
+    &.dissemination-tag {
+        border: 2px solid #28a745;
+        color: #28a745;
+
+        &.filter {
+            background-color: #28a745;
+        }
+    }
+
+    &.entertainment-tag {
+        border: 2px solid #ffc107;
+        color: #ffc107;
+
+        &.filter {
+            background-color: #ffc107;
+        }
+    }
+
+    &.thoughts-tag {
+        border: 2px solid #563d7c;
+        color: #563d7c;
+
+        &.filter {
+            background-color: #563d7c;
+        }
+    }
+
+    &.web-development-tag {
+        border: 2px solid #007bff;
+        color: #007bff;
+
+        &.filter {
+            background-color: #007bff;
+        }
+    }
+
+    &.filter {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 3px 5px;
+        font-weight: normal;
+        color: white;
+
+        &.unselected {
+            border: 2px solid #cccccc;
+            color: #cccccc;
+            background-color: white;
+        }
+    }
+}
+
+.dark {
+    .vuecal__arrow {
+        color: $primary-grey;
+    }
+
+    .vuecal__cell--has-events {
+        color: $primary-dark;
+    }
+
+    .vuecal__flex.vuecal__title button {
+        color: $primary-grey;
+    }
+
+    .vuecal__event-title {
+        color: white;
+    }
+
+    .blog-tag {
+        &.filter {
+            &.unselected {
+                background-color: $primary-dark;
+            }
+        }
+    }
+}
+</style>

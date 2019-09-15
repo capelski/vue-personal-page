@@ -26,7 +26,8 @@
         metaInfo: {
             title: 'Projects',
             meta: [{
-                name: 'description', content: 'The list of personal web projects I have developed over the years: node.js, typescript, webpack, Vue, SASS, etc.'
+                name: 'description',
+                content: 'The list of personal web projects I have developed over the years: node.js, typescript, webpack, Vue, SASS, etc.'
             }]
         },
         data() {
