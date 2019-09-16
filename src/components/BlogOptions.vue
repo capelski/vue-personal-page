@@ -29,12 +29,15 @@
                 </div>
             </div>
         </div>
+        <div v-if="noTagsSelected">
+            <h3>No tags selected</h3>
+            <p>Go ahead and select some. It shouldn't be that bad</p>
+        </div>
     </div>
 </template>
 
 <script>
 import VueCal from 'vue-cal';
-import { tags } from './blog-entries/tags';
 import BlogEntries from './blog-entries';
 
 export default {
@@ -42,9 +45,9 @@ export default {
     components: {
         VueCal
     },
+    props: ['allTags'],
     data() {
         return {
-            allTags: Object.values(tags),
             events: Object.values(BlogEntries).map(blogEntry => {
                 const blogEntryData = blogEntry.data();
                 return {
@@ -54,7 +57,8 @@ export default {
                     title: blogEntryData.title
                 };
             }),
-            isVisible: false
+            isVisible: false,
+            noTagsSelected: false
         };
     },
     methods: {
@@ -63,6 +67,7 @@ export default {
         },
         selectTag(targetTag) {
             targetTag.isSelected = !targetTag.isSelected;
+            this.noTagsSelected = this.allTags.filter(tag => tag.isSelected).length === 0;
         },
         toggleOptions() {
             this.isVisible = !this.isVisible;
