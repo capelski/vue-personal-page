@@ -19,7 +19,7 @@
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}-add-home.png?$modena=vue-personal-page`"
+                    :src="`${images.addHome}?$modena=vue-personal-page`"
                     alt="Add PWA to home screen prompt"
                 />
             </p>
@@ -85,13 +85,13 @@
             </p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}-cache-content.png?$modena=vue-personal-page`"
+                    :src="`${images.cacheContent}?$modena=vue-personal-page`"
                     alt="Service worker cache content"
                 />
             </p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}-offline-desktop.png?$modena=vue-personal-page`"
+                    :src="`${images.offlineDesktop}?$modena=vue-personal-page`"
                     alt="Service worker cache content"
                 />
             </p>
@@ -105,17 +105,17 @@
             <div ref="manifest" class="code-editor"></div>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}-installed.png?$modena=vue-personal-page`"
+                    :src="`${images.installed}?$modena=vue-personal-page`"
                     alt="PWA installed notification"
                     style="width: 350px;"
                 />
                 <img
-                    :src="`/img/blog/${entry.id}-starting.png?$modena=vue-personal-page`"
+                    :src="`${images.starting}?$modena=vue-personal-page`"
                     alt="Starting PWA"
                     style="width: 350px; border: 1px solid beige;"
                 />
                 <img
-                    :src="`/img/blog/${entry.id}-offline-mobile.png?$modena=vue-personal-page`"
+                    :src="`${images.offlineMobile}?$modena=vue-personal-page`"
                     alt="Offline PWA in mobile device"
                     style="width: 350px;"
                 />
@@ -129,13 +129,19 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { createMonacoEditor } from './monaco-utils';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import { createMonacoEditor } from '../monaco-utils';
+import entriesRegistry from '../registry';
+import addHome from './add-home.png';
+import cacheContent from './cache-content.png';
+import installed from './installed.png';
+import offlineDesktop from './offline-desktop.png';
+import offlineMobile from './offline-mobile.png';
+import starting from './starting.png';
 
 const date = '2019-08-12';
-const entry = entries['progressive-web-apps'];
+const entry = entriesRegistry['progressive-web-apps'];
 const title = 'PWA: Make your website available offline';
 
 export default {
@@ -148,6 +154,14 @@ export default {
         return {
             date,
             entry,
+            images: {
+                addHome,
+                cacheContent,
+                installed,
+                offlineDesktop,
+                offlineMobile,
+                starting
+            },
             tags,
             title
         };

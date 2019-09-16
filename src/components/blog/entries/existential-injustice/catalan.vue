@@ -30,10 +30,7 @@
             <p>Truques a un restaurant amb servei a domicili i demanes que et portin el sopar. Si aquest és l'únic temps lliure que tindràs no te'l penses passar cuinant i rentant plats. Et miraràs un capitol més de la serie mentre esperes la pizza. El sopar triga a arribar. Hi ha més gent en la mateixa situació que tu i els restaurants no donen l'abast. Acabes ficant-ne al llit més tard del que voldries i preguntant-te on coi han anat totes les hores lliures que tenies.</p>
             <p>Ja n'hi ha prou! T'has de centrar, et dius una vegada més. Durant la setmana següent començaràs a donar formar a alguna mesura dràstica per recuperar el control de la teva vida. Potser cancelar la subscripció de Netflix. Potser desapuntar-te de les classes de taekwondo. Potser deixar la teva parella. Sigui el que sigui, trobaràs un responsable de la teva falta d'organització.</p>
             <p class="text-center">
-                <img
-                    :src="`/img/blog/existential-injustice-enough.gif?$modena=vue-personal-page`"
-                    alt="Enough meme"
-                />
+                <img :src="`${images.enough}?$modena=vue-personal-page`" alt="Enough meme" />
             </p>
             <p>Si mai t'has sentit així, benvingut al món real. Tots tenim dies en que la procrastinació s'apodera de nosaltres i no trobem ganes de fer res. Acabo l'entrada analitzant algunes de les sensacions que he descrit. Potser en recordaràs alguna cosa en el teu proper episodi d'injusticia existencial i t'ajudarà a restar importancia a la situació. Potser te n'oblidaràs demà. Potser ja fa estona que has deixat de llegir. En qualsevol cas, aquí van les reflexions.</p>
             <p>
@@ -61,12 +58,13 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import entriesRegistry from '../registry';
+import enough from './enough.gif';
 
 const date = '2019-08-28';
-const entry = entries['injusticia-existencial'];
+const entry = entriesRegistry['injusticia-existencial'];
 const title = 'Injusticia existencial';
 
 export default {
@@ -78,6 +76,9 @@ export default {
         return {
             date,
             entry,
+            images: {
+                enough
+            },
             isRenderedFromList: false,
             tags,
             title

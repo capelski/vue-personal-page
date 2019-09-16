@@ -15,16 +15,16 @@
 </template>
 
 <script>
-import subscribers_list from './blog-entries/subscribers-list';
-import existential_injustice from './blog-entries/existential-injustice';
-import progressive_web_apps from './blog-entries/progressive-web-apps';
-import four_coin_challenge from './blog-entries/four-coin-challenge';
-import meaning_of_life from './blog-entries/meaning-of-life';
-import leaked_api_key from './blog-entries/leaked-api-key';
-import agility_rocks from './blog-entries/agility-rocks';
+import subscribers_list from './entries/subscribers-list/subscribers-list';
+import existential_injustice from './entries/existential-injustice/english';
+import progressive_web_apps from './entries/progressive-web-apps/progressive-web-apps';
+import four_coin_challenge from './entries/four-coin-challenge/four-coin-challenge';
+import meaning_of_life from './entries/meaning-of-life/meaning-of-life';
+import leaked_api_key from './entries/leaked-api-key/leaked-api-key';
+import agility_rocks from './entries/agility-rocks/agility-rocks';
 import BlogOptions from './BlogOptions';
 import NewsletterForm from './NewsletterForm';
-import { tags } from './blog-entries/tags';
+import { tags } from './tags';
 
 export default {
     name: 'Blog',

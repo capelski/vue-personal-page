@@ -13,7 +13,7 @@
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}_google_mail.png?$modena=vue-personal-page`"
+                    :src="`${images.googleMail}?$modena=vue-personal-page`"
                     alt="Mail received from Google Cloud Platform"
                 />
             </p>
@@ -68,13 +68,14 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { createMonacoEditor } from './monaco-utils';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import { createMonacoEditor } from '../monaco-utils';
+import entriesRegistry from '../registry';
+import googleMail from './google-mail.png';
 
 const date = '2019-06-23';
-const entry = entries['leaked-api-key'];
+const entry = entriesRegistry['leaked-api-key'];
 const title = 'The leaked API key';
 
 export default {
@@ -87,6 +88,9 @@ export default {
         return {
             date,
             entry,
+            images: {
+                googleMail
+            },
             tags,
             title
         };

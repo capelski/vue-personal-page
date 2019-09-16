@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import entriesRegistry from '../registry';
 
 const date = 'TODO';
-const entry = entries['TODO'];
+const entry = entriesRegistry['TODO'];
 const title = 'TODO';
 
 export default {
@@ -35,6 +35,7 @@ export default {
         return {
             date,
             entry,
+            images: {},
             tags,
             title
         };

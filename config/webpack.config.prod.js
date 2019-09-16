@@ -13,7 +13,7 @@ const environment              = require('./env/prod.env');
 const HtmlPlugin               = require('html-webpack-plugin');
 const PrerenderSpaPlugin       = require('prerender-spa-plugin');
 
-const blogEntries = require('../src/components/blog-entries/entries');
+const blogEntries = require('../src/components/blog/entries/registry');
 const prerenderRoutes = [
     '/',
     '/blog',

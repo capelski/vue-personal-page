@@ -3,8 +3,8 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import Projects from '@/components/Projects';
 import Trips from '@/components/Trips';
-import Blog from '@/components/Blog';
-import BlogEntries from '@/components/blog-entries';
+import Blog from '@/components/blog/Blog';
+import BlogEntries from '@/components/blog/entries/components';
 
 Vue.use(Router);
 

@@ -56,10 +56,17 @@ const webpackConfig = {
                 ]
             },
             {
-                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 100000,
+                },
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
                 },
             },
             {

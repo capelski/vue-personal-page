@@ -17,7 +17,7 @@
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}/initial-position.jpg?$modena=vue-personal-page`"
+                    :src="`${images.initialPosition}?$modena=vue-personal-page`"
                     alt="4-coin challenge initial position"
                 />
             </p>
@@ -28,20 +28,20 @@
             <p>The goal of the challenge is to put the coins on a row by moving just one coin at a time, not lifting it from the surface where they are laying. The tricky part that will make you struggle with the challenge is that each time you move a coin, it can only be left in a position where it touches at least two other coins. A picture is worth a thousand words: the first movement is invalid while the second one is perfectly accepted.</p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}/invalid-movement.jpg?$modena=vue-personal-page`"
+                    :src="`${images.invalidMovement}?$modena=vue-personal-page`"
                     alt="4-coin challenge invalid movement"
                 />
             </p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}/valid-movement.jpg?$modena=vue-personal-page`"
+                    :src="`${images.validMovement}?$modena=vue-personal-page`"
                     alt="4-coin challenge valid movement"
                 />
             </p>
             <p>That's all you need to know! So go get some coins and don't come back until you have a solution or the closest thing you can get before you get tired of trying. Regardless what happens first, here you will find the solution when the moment arrives:</p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}/solution-${solutionStep > 9 ? solutionStep : '0' + solutionStep}.jpg?$modena=vue-personal-page`"
+                    :src="`${images['solution' + (solutionStep > 9 ? solutionStep : '0' + solutionStep)]}?$modena=vue-personal-page`"
                     alt="4-coin challenge solution"
                 />
                 <button
@@ -61,12 +61,28 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import entriesRegistry from '../registry';
+import initialPosition from './initial-position.jpg';
+import invalidMovement from './invalid-movement.jpg';
+import validMovement from './valid-movement.jpg';
+import solution01 from './solution-01.jpg';
+import solution02 from './solution-02.jpg';
+import solution03 from './solution-03.jpg';
+import solution04 from './solution-04.jpg';
+import solution05 from './solution-05.jpg';
+import solution06 from './solution-06.jpg';
+import solution07 from './solution-07.jpg';
+import solution08 from './solution-08.jpg';
+import solution09 from './solution-09.jpg';
+import solution10 from './solution-10.jpg';
+import solution11 from './solution-11.jpg';
+import solution12 from './solution-12.jpg';
+import solution13 from './solution-13.jpg';
 
 const date = '2019-07-22';
-const entry = entries['four-coin-challenge'];
+const entry = entriesRegistry['four-coin-challenge'];
 const title = '4-coin challenge';
 
 export default {
@@ -79,6 +95,24 @@ export default {
         return {
             date,
             entry,
+            images: {
+                initialPosition,
+                invalidMovement,
+                validMovement,
+                solution01,
+                solution02,
+                solution03,
+                solution04,
+                solution05,
+                solution06,
+                solution07,
+                solution08,
+                solution09,
+                solution10,
+                solution11,
+                solution12,
+                solution13
+            },
             solutionStep: 1,
             tags,
             title

@@ -30,10 +30,7 @@
             <p>You call a takeaway and order dinner. If this is the only free time you will have, you will not spend it cooking and doing the dishes. You watch another episode of the TV show while you wait for the pizza. The food takes it's time. There is a bunch of people out there in the same situation you are, and restaurants can't handle it. You end up going to bed later than you expected and wondering where have all your free hours gone.</p>
             <p>That is enough! You need to focus, you tell yourself again. Over next week you will start shaping some drastic measures to get the control of your life back. Maybe canceling the Netflix subscription. Maybe unrolling the taekwondo lessons. Maybe dumping your partner. Whatever it is, you will find a responsible for your lack of organization.</p>
             <p class="text-center">
-                <img
-                    :src="`/img/blog/existential-injustice-enough.gif?$modena=vue-personal-page`"
-                    alt="Enough meme"
-                />
+                <img :src="`${images.enough}?$modena=vue-personal-page`" alt="Enough meme" />
             </p>
             <p>If you've ever felt like this, welcome to the real world. All of us have days in which procrastination takes over and we don't find the energy to do anything. I'm finishing the post by analizing some of the sensations I've described. Maybe you will remember something in your next existential injustice episode and it will help you to worry less about it. Maybe you will have forgotten everything by tomorrow. Maybe you have stopped reading a while ago. In any case, here come the thoughts.</p>
             <p>
@@ -61,12 +58,13 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import entriesRegistry from '../registry';
+import enough from './enough.gif';
 
 const date = '2019-08-28';
-const entry = entries['existential-injustice'];
+const entry = entriesRegistry['existential-injustice'];
 const title = 'Existential injustice';
 
 export default {
@@ -79,6 +77,9 @@ export default {
         return {
             date,
             entry,
+            images: {
+                enough
+            },
             tags,
             title
         };

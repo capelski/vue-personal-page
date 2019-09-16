@@ -15,7 +15,7 @@
                 <div class="inputs-wrapper">
                     <input
                         type="email"
-                        value=""
+                        value
                         name="EMAIL"
                         class="email"
                         id="mce-EMAIL"
@@ -31,7 +31,12 @@
                     />
                 </div>
                 <div style="display: none;" aria-hidden="true">
-                    <input type="text" name="b_1268a6ca6cbf3464a492cbc92_06423c24b8" tabindex="-1" value="" />
+                    <input
+                        type="text"
+                        name="b_1268a6ca6cbf3464a492cbc92_06423c24b8"
+                        tabindex="-1"
+                        value
+                    />
                 </div>
             </div>
         </form>
@@ -39,55 +44,55 @@
 </template>
 
 <script>
-    export default {
-        name: 'NewsletterForm',
-        props: [ 'hasBorderBottom' ]
-    }
+export default {
+    name: 'NewsletterForm',
+    props: ['hasBorderBottom']
+};
 </script>
 
 <style lang="scss" scoped>
-    @import '../scss/globals.scss';
+@import '../../scss/globals.scss';
 
-    #mc_embed_signup {
-        margin-top: 40px;
-        padding-top: 30px;
-        border-top: 1px solid $primary-dark;
+#mc_embed_signup {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid $primary-dark;
 
-        &.has-border-bottom {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid $primary-dark;
+    &.has-border-bottom {
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $primary-dark;
+    }
+
+    .inputs-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .email {
+            padding: 8px;
         }
 
-        .inputs-wrapper {
-            display: flex;
-            flex-direction: column;
+        input:last-child {
+            margin: 10px 0 0 0;
+        }
+    }
 
-            .email {
-                padding: 8px;
-            }
+    @media (min-width: $medium) {
+        .inputs-wrapper {
+            flex-direction: row;
 
             input:last-child {
-                margin: 10px 0 0 0;
-            }
-        }
-
-        @media (min-width: $medium) {
-            .inputs-wrapper {
-                flex-direction: row;
-
-                input:last-child {
-                    margin: 0 0 0 10px;
-                }
+                margin: 0 0 0 10px;
             }
         }
     }
+}
 
-    .dark #mc_embed_signup {
-        border-top: 1px solid $primary-grey;
-        
-        &.has-border-bottom {
-            border-bottom: 1px solid $primary-grey;
-        }
+.dark #mc_embed_signup {
+    border-top: 1px solid $primary-grey;
+
+    &.has-border-bottom {
+        border-bottom: 1px solid $primary-grey;
     }
+}
 </style>

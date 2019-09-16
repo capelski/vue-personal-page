@@ -16,7 +16,7 @@
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}-crazy.gif?$modena=vue-personal-page`"
+                    :src="`${images.crazy}?$modena=vue-personal-page`"
                     alt="You have lost your damn mind gif"
                 />
             </p>
@@ -24,7 +24,7 @@
             <p>If life had a goal, it would be simpler and we wouldn't feel so lost sometimes, but it would have a downside too because we wouldn't explore as many possibilites as we do now (e.g. to quota an extravagant experiment, we sent a Tesla across the universe, can you believe it!?).</p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}-tesla-in-space.jpg?$modena=vue-personal-page`"
+                    :src="`${images.teslaInSpace}?$modena=vue-personal-page`"
                     alt="Tesla car in space"
                 />
             </p>
@@ -36,7 +36,7 @@
             </p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}-string-theory.jpg?$modena=vue-personal-page`"
+                    :src="`${images.stringTheory}?$modena=vue-personal-page`"
                     alt="String theory representation"
                 />
             </p>
@@ -56,12 +56,15 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import entriesRegistry from '../registry';
+import crazy from './crazy.gif';
+import stringTheory from './string-theory.jpg';
+import teslaInSpace from './tesla-in-space.jpg';
 
 const date = '2019-07-08';
-const entry = entries['meaning-of-life'];
+const entry = entriesRegistry['meaning-of-life'];
 const title = 'The meaning of life';
 
 export default {
@@ -74,6 +77,11 @@ export default {
         return {
             date,
             entry,
+            images: {
+                crazy,
+                stringTheory,
+                teslaInSpace
+            },
             tags,
             title
         };

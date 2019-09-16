@@ -15,7 +15,7 @@
             <p>In the end the exercise was fun and I felt it was a good excuse to start writing the blog I have been think of lately and that was worth sharing it with any eventual reader I might have. So, without further ado, here is a graphical representation of the exercise (a picture is worth a thousand words) drastically limited by my drawing skills on GIMP (so I should be happy if its worth anything more than two hundred):</p>
             <p class="text-center">
                 <img
-                    :src="`/img/blog/${entry.id}_agile_exercise.png?$modena=vue-personal-page`"
+                    :src="`${images.agileExercise}?$modena=vue-personal-page`"
                     alt="Agility exercise representation"
                 />
             </p>
@@ -26,12 +26,13 @@
 </template>
 
 <script>
-import BlogEntry from '../BlogEntry';
-import entries from './entries';
-import { tags } from './tags';
+import BlogEntry from '../../BlogEntry';
+import { tags } from '../../tags';
+import entriesRegistry from '../registry';
+import agileExercise from './agile-exercise.png';
 
 const date = '2019-06-17';
-const entry = entries['agility-rocks'];
+const entry = entriesRegistry['agility-rocks'];
 const title = 'Agility... rocks?';
 
 export default {
@@ -44,6 +45,9 @@ export default {
         return {
             date,
             entry,
+            images: {
+                agileExercise
+            },
             tags,
             title
         };

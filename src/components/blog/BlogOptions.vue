@@ -38,7 +38,7 @@
 
 <script>
 import VueCal from 'vue-cal';
-import BlogEntries from './blog-entries';
+import BlogEntries from './entries/components';
 
 export default {
     name: 'BlogOptions',
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../scss/globals.scss';
+@import '../../scss/globals.scss';
 
 .blog-options-column {
     margin-bottom: 40px;
