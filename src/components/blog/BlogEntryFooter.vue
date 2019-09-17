@@ -6,7 +6,7 @@
         <a
             v-if="window.orientation !== undefined"
             v-on:click="articleShared"
-            :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + entry.id"
+            :href="`whatsapp://send?text=${baseUrl}/blog/${entry.id}`"
             data-action="share/whatsapp/share"
             class="whatsapp-link"
         >
@@ -40,16 +40,18 @@ export default {
     props: ['entry', 'hideNavigation'],
     data() {
         return {
-            window
+            window,
+            baseUrl: process.env.PRODUCTION_URL
         };
     },
     methods: {
         articleShared() {
-            this.$ga.event({
-                eventCategory: 'Blog',
-                eventAction: 'article-shared',
-                eventLabel: this.title
-            });
+            this.$ga &&
+                this.$ga.event({
+                    eventCategory: 'Blog',
+                    eventAction: 'article-shared',
+                    eventLabel: this.title
+                });
         },
         navigate() {
             this.$router.push(`/blog/${this.entry.id}`);

@@ -19,17 +19,6 @@
     </script>
     <link rel="manifest" href="/manifest.json?$modena=vue-personal-page">
     <link rel="icon" type="image/png" href="/favicon.png?$modena=vue-personal-page">
-
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:1458533,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
 </head>
 <body id="page-top">
     <noscript>
@@ -38,20 +27,5 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-    <script>
-        // Hack to avoid pre-rendering AdSense
-        setTimeout(() => {
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            document.getElementsByTagName('body')[0].appendChild(script);
-            script.onload = function() {
-                (adsbygoogle = window.adsbygoogle || []).push({
-                    google_ad_client: 'ca-pub-3020023783009364',
-                    enable_page_level_ads: true
-                });
-            };
-            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-        }, 6000);
-   </script>
 </body>
 </html>
