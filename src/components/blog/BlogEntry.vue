@@ -17,42 +17,12 @@
                 </p>
             </BlogEntryHeader>
 
-            <!-- TODO Extract to blog entry footer -->
             <div :class="{'article-container' : true, 'faded-wrapper': isRenderedFromList}">
                 <slot />
                 <div v-if="isRenderedFromList" class="faded" v-on:click="navigate"></div>
 
                 <div v-if="!isRenderedFromList">
-                    <NewsletterForm :hasBorderBottom="true" />
-
-                    <!-- TODO ¿Extract the domain name into config? -->
-                    <a
-                        v-if="window.orientation !== undefined"
-                        v-on:click="articleShared"
-                        :href="'whatsapp://send?text=https://carlescapellas.xyz/blog/' + entry.id"
-                        data-action="share/whatsapp/share"
-                        class="whatsapp-link"
-                    >
-                        <img
-                            src="/img/whatsapp-icon.png?$modena=vue-personal-page"
-                            width="50px"
-                            height="50px"
-                        />
-                        Share on whatsapp
-                    </a>
-
-                    <div class="navigation-buttons" v-if="!hideNavigation">
-                        <button
-                            type="button"
-                            :class="{'btn btn-primary': true, 'btn-disabled': !entry.previous }"
-                            v-on:click="navigatePrevious"
-                        >Previous</button>
-                        <button
-                            type="button"
-                            :class="{'btn btn-primary': true, 'btn-disabled': !entry.following }"
-                            v-on:click="navigateFollowing"
-                        >Following</button>
-                    </div>
+                    <BlogEntryFooter :entry="entry" :hideNavigation="hideNavigation" />
                 </div>
             </div>
         </div>
@@ -60,14 +30,14 @@
 </template>
 
 <script>
+import BlogEntryFooter from './BlogEntryFooter';
 import BlogEntryHeader from './BlogEntryHeader';
-import NewsletterForm from './NewsletterForm';
 
 export default {
-    name: 'blog-entry',
+    name: 'BlogEntry',
     components: {
-        BlogEntryHeader,
-        NewsletterForm
+        BlogEntryFooter,
+        BlogEntryHeader
     },
     props: [
         'allTags',
@@ -80,11 +50,6 @@ export default {
         'tags',
         'title'
     ],
-    data() {
-        return {
-            window
-        };
-    },
     computed: {
         isVisible() {
             return this.allTags.reduce((reducedTags, tag) => {
@@ -112,25 +77,8 @@ export default {
               };
     },
     methods: {
-        articleShared() {
-            this.$ga.event({
-                eventCategory: 'Blog',
-                eventAction: 'article-shared',
-                eventLabel: this.title
-            });
-        },
         navigate() {
             this.$router.push(`/blog/${this.entry.id}`);
-        },
-        navigateFollowing() {
-            if (this.entry.following) {
-                this.$router.push(`/blog/${this.entry.following}`);
-            }
-        },
-        navigatePrevious() {
-            if (this.entry.previous) {
-                this.$router.push(`/blog/${this.entry.previous}`);
-            }
         }
     }
 };
@@ -189,23 +137,6 @@ export default {
         }
     }
 
-    a.whatsapp-link {
-        display: flex;
-        align-items: center;
-        color: $primary-dark;
-        margin: 15px 0;
-
-        &:hover,
-        &:focus,
-        &:active {
-            text-decoration: none;
-        }
-
-        img {
-            margin: 0;
-        }
-    }
-
     .navigation-buttons {
         display: flex;
         justify-content: space-between;
@@ -235,10 +166,6 @@ export default {
         }
 
         a.blog-link {
-            color: $primary-grey;
-        }
-
-        a.whatsapp-link {
             color: $primary-grey;
         }
     }
