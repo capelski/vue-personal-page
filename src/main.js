@@ -11,31 +11,11 @@ import VueMeta from 'vue-meta';
 import App from './App';
 import router from './router';
 
-if (window.location.href === process.env.PRODUCTION_URL) {
+if (process.env.NODE_ENV === 'production') {
     Vue.use(VueAnalytics, {
         id: process.env.ANALYTICS_TRACKING_ID,
         router
     });
-
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1458533,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    document.getElementsByTagName('body')[0].appendChild(script);
-    script.onload = function() {
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: 'ca-pub-3020023783009364',
-            enable_page_level_ads: true
-        });
-    };
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
 }
 
 Vue.use(VueMeta, {
