@@ -6,6 +6,7 @@ import ProgressiveWebApps from './progressive-web-apps/progressive-web-apps';
 import InjusticiaExistencial from './existential-injustice/catalan';
 import ExistentialInjustice from './existential-injustice/english';
 import SubscribersList from './subscribers-list/subscribers-list';
+import KanbanGoalsTracking from './kanban-goals-tracking/kanban-goals-tracking';
 
 export default {
     AgilityRocks,
@@ -15,5 +16,6 @@ export default {
     ProgressiveWebApps,
     InjusticiaExistencial,
     ExistentialInjustice,
-    SubscribersList
+    SubscribersList,
+    KanbanGoalsTracking
 };

@@ -2,6 +2,7 @@
     <div class="container navbar-spacer">
         <BlogOptions :allTags="allTags" />
 
+        <kanban_goals_tracking :isRenderedFromList="true" :allTags="allTags" />
         <subscribers_list :isRenderedFromList="true" :allTags="allTags" />
         <existential_injustice :isRenderedFromList="true" :allTags="allTags" />
         <progressive_web_apps :isRenderedFromList="true" :allTags="allTags" />
@@ -15,6 +16,7 @@
 </template>
 
 <script>
+import kanban_goals_tracking from './entries/kanban-goals-tracking/kanban-goals-tracking';
 import subscribers_list from './entries/subscribers-list/subscribers-list';
 import existential_injustice from './entries/existential-injustice/english';
 import progressive_web_apps from './entries/progressive-web-apps/progressive-web-apps';
@@ -29,6 +31,7 @@ import { tags } from './tags';
 export default {
     name: 'Blog',
     components: {
+        kanban_goals_tracking,
         subscribers_list,
         existential_injustice,
         progressive_web_apps,
