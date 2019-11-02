@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         description="How to efficiently manage your personal goals using Kanban strategy"
-        duration="4"
+        duration="3"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :allTags="allTags"
