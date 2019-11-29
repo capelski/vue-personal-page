@@ -160,15 +160,25 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../../scss/globals.scss';
+
 .kanban-board {
     text-align: center;
     margin: 40px 0;
 
     .header {
         font-weight: bold;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+        border-top: 1px solid $light-main-color;
+        border-bottom: 1px solid $light-main-color;
         margin: 10px 0;
+    }
+}
+
+.dark {
+    .kanban-board {
+        .header {
+            border-color: $dark-main-color;
+        }
     }
 }
 </style>

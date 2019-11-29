@@ -580,7 +580,7 @@ export default {
         padding-top: 10px;
 
         &.trip-start {
-            border-bottom: 1px solid $primary;
+            border-bottom: 1px solid $primary-color;
         }
     }
 }

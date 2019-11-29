@@ -56,12 +56,12 @@ export default {
 #mc_embed_signup {
     margin-top: 40px;
     padding-top: 30px;
-    border-top: 1px solid $primary-dark;
+    border-top: 1px solid $light-main-color;
 
     &.has-border-bottom {
         margin-bottom: 40px;
         padding-bottom: 30px;
-        border-bottom: 1px solid $primary-dark;
+        border-bottom: 1px solid $light-main-color;
     }
 
     .inputs-wrapper {
@@ -89,10 +89,10 @@ export default {
 }
 
 .dark #mc_embed_signup {
-    border-top: 1px solid $primary-grey;
+    border-top: 1px solid $dark-main-color;
 
     &.has-border-bottom {
-        border-bottom: 1px solid $primary-grey;
+        border-bottom: 1px solid $dark-main-color;
     }
 }
 </style>

@@ -77,7 +77,7 @@ export default {
     a.whatsapp-link {
         display: flex;
         align-items: center;
-        color: $primary-dark;
+        color: $light-main-color;
         margin: 15px 0;
 
         &:hover,
@@ -95,7 +95,7 @@ export default {
 .dark {
     .blog-entry {
         a.whatsapp-link {
-            color: $primary-grey;
+            color: $dark-main-color;
         }
     }
 }

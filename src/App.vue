@@ -105,7 +105,7 @@ h6,
 
 a,
 a:hover {
-    color: $primary;
+    color: $primary-color;
 }
 
 .navbar-spacer {
@@ -134,8 +134,8 @@ a:hover {
 
 .btn-primary {
     color: white;
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $primary-color;
+    border-color: $primary-color;
 }
 
 .btn-primary:active,
@@ -152,12 +152,12 @@ a:hover {
 }
 
 ::-moz-selection {
-    background: $primary;
+    background: $primary-color;
     text-shadow: none;
 }
 
 ::selection {
-    background: $primary;
+    background: $primary-color;
     text-shadow: none;
 }
 
@@ -174,14 +174,14 @@ img::-moz-selection {
 }
 
 .dark {
-    background-color: $primary-dark;
-    color: $primary-grey;
+    background-color: $light-main-color;
+    color: $dark-main-color;
 
     .btn-primary,
     .btn-primary:active,
     .btn-primary:focus,
     .btn-primary:hover {
-        color: $primary-dark;
+        color: $light-main-color;
     }
 }
 </style>

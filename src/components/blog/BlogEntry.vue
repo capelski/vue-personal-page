@@ -127,7 +127,7 @@ export default {
 
     a.blog-link {
         display: block;
-        color: $primary-dark;
+        color: $light-main-color;
         text-decoration: none;
 
         &:hover,
@@ -160,13 +160,13 @@ export default {
                 background: linear-gradient(
                     to bottom,
                     rgba(255, 255, 255, 0) 0%,
-                    $primary-dark 90%
+                    $light-main-color 90%
                 );
             }
         }
 
         a.blog-link {
-            color: $primary-grey;
+            color: $dark-main-color;
         }
     }
 }

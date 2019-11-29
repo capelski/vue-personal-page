@@ -104,13 +104,14 @@ export default {
 }
 
 .vuecal__cell--has-events,
-.vuecal__cell--has-events.selected {
-    background-color: $primary;
+.vuecal__cell--has-events.selected,
+.vuecal__cell--has-events.today {
+    background-color: $primary-color;
 }
 
 .vuecal__event {
-    background-color: $primary;
-    color: $primary-dark;
+    background-color: $primary-color;
+    color: $light-main-color;
     margin-bottom: 10px;
 }
 
@@ -190,15 +191,15 @@ export default {
 
 .dark {
     .vuecal__arrow {
-        color: $primary-grey;
+        color: $dark-main-color;
     }
 
     .vuecal__cell--has-events {
-        color: $primary-dark;
+        color: $light-main-color;
     }
 
     .vuecal__flex.vuecal__title button {
-        color: $primary-grey;
+        color: $dark-main-color;
     }
 
     .vuecal__event-title {
@@ -208,7 +209,7 @@ export default {
     .blog-tag {
         &.filter {
             &.unselected {
-                background-color: $primary-dark;
+                background-color: $light-main-color;
             }
         }
     }
