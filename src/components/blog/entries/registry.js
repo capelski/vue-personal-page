@@ -6,7 +6,8 @@ const entries = [
     'progressive-web-apps',
     'existential-injustice',
     'subscribers-list',
-    'kanban-goals-tracking'
+    'kanban-goals-tracking',
+    'trecember'
 ];
 
 const hiddenEntries = [

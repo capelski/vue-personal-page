@@ -116,8 +116,15 @@ export default {
         max-width: 100%;
     }
 
-    ul li {
-        margin-top: 10px;
+    ul {
+        &.numbered {
+            list-style-type: decimal;
+        }
+
+        li {
+            line-height: 1.75;
+            margin-top: 10px;
+        }
     }
 
     .code-editor {
