@@ -20,10 +20,10 @@
                     <b>Different number of days in every month</b>. It makes the month an unreliable time unit. Who in his god damned mind creates a measurement system with non-constant units? Imagine than on odd weeks a meter would equal 100cm but on even weeks a meter would only equal 98cm. Good luck managing distances my friend!
                 </li>
                 <li>
-                    <b>No straight way of telling the week day of a day in a month</b>. This happens because months don't contain an entire number of weeks and because each month starts the week day immediatley after the previous month ends. It leads to situations like: "There is this huge party next month the 13th! Do you feel like going?", "Wait! What week day is that"
+                    <b>Unpredictable week day for a day in a month</b>. This happens because months don't contain an entire number of weeks and because each month starts the week day immediatley after the previous month ends. It leads to situations like: "Are you up for skiing next month 14th to 16th?", "I don't know. Let me check the calendar first".
                 </li>
                 <li>
-                    <b>No straight way of telling the week day of a day in a year</b>. This happens because years don't contain an entire number of weeks and because each year starts the week day immediately after the previous year ends. It leads to situations like: "Are you up for skiing February 14th to 16th?", "I don't know. Let me check the calendar first".
+                    <b>Unpredictable week day for a day in a year</b>. This happens because years don't contain an entire number of weeks and because each year starts the week day immediately after the previous year ends. It leads to public holidays taking place in a different week day every year (e.g. wasted holidays when Christmas takes place on a Sunday).
                 </li>
             </ul>
             <p class="text-center">
