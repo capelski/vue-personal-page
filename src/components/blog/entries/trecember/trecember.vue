@@ -76,7 +76,7 @@ import entriesRegistry from '../registry';
 import notCrazy from './not-crazy.gif';
 import Year from './year';
 
-const date = '2019-01-12';
+const date = '2019-12-01';
 const entry = entriesRegistry['trecember'];
 const title = 'Trecember';
 
