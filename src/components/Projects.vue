@@ -43,7 +43,15 @@ export default {
         return {
             projects: [
                 {
-                    date: 'September 2019 - November 2019',
+                    date: 'December 2019 - January 2020',
+                    name: 'Bachata science',
+                    description:
+                        'Website for myself to remember bachata steps when I go to the clubs, made out of videos from dance classes. Built with React function components and nicely tested with Cucumber.js. husky, prettier and ts-lint also invited to the party',
+                    githubUrl: 'https://github.com/L3bowski/bachata-science',
+                    url: '/bachata-science'
+                },
+                {
+                    date: 'September 2019 - December 2019',
                     name: 'Skills matrix VIII: GraphQL',
                     description:
                         '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting from the previous Node.js version of the Api, I am replacing the traditional REST Api with a GraphQL schema. Also migrating from mysql to postgresql',
@@ -51,7 +59,7 @@ export default {
                     url: '/skills-matrix-api-graphql'
                 },
                 {
-                    date: 'April 2019 - July 2019',
+                    date: 'April 2019 - January 2020',
                     name: 'Cucumber steps parser',
                     description:
                         'Part of the platform testing automation we did at Sage consists in a set of cucumber.js step definitions for platform users to write their own integration tests. Using this project we retrieve the existing cucumber.js sentences from the step definition files and provide them to platform users',
