@@ -2,24 +2,15 @@
     <div class="blog-entry-footer">
         <NewsletterForm :hasBorderBottom="true" />
 
-        <!-- TODO ¿Extract the domain name into config? -->
-        <a
-            v-if="window.orientation !== undefined"
-            v-on:click="articleShared"
-            :href="`whatsapp://send?text=${baseUrl}/blog/${entry.id}`"
-            data-action="share/whatsapp/share"
-            class="whatsapp-link"
-        >
-            <img src="/img/whatsapp-icon.png?$modena=vue-personal-page" width="50px" height="50px" />
-            Share on whatsapp
-        </a>
-
         <div class="navigation-buttons" v-if="!hideNavigation">
             <button
                 type="button"
                 :class="{'btn btn-primary': true, 'btn-disabled': !entry.previous }"
                 v-on:click="navigatePrevious"
             >Previous</button>
+            <a v-if="isShareAvailable" v-on:click="sharePost" class="share-link">
+                <img src="/img/share.png?$modena=vue-personal-page" width="40px" height="40px" />
+            </a>
             <button
                 type="button"
                 :class="{'btn btn-primary': true, 'btn-disabled': !entry.following }"
@@ -37,21 +28,28 @@ export default {
     components: {
         NewsletterForm
     },
-    props: ['entry', 'hideNavigation'],
+    props: ['description', 'entry', 'hideNavigation', 'title'],
     data() {
         return {
-            window,
-            baseUrl: process.env.PRODUCTION_URL
+            isShareAvailable: 'share' in navigator
         };
     },
     methods: {
-        articleShared() {
-            this.$ga &&
+        sharePost() {
+            if ('share' in navigator) {
+                navigator.share({
+                    text: this.description,
+                    title: this.title,
+                    url: `${process.env.PRODUCTION_URL}/blog/${this.entry.id}`
+                });
+            }
+            if (this.$ga) {
                 this.$ga.event({
                     eventCategory: 'Blog',
                     eventAction: 'article-shared',
                     eventLabel: this.title
                 });
+            }
         },
         navigate() {
             this.$router.push(`/blog/${this.entry.id}`);
@@ -74,11 +72,10 @@ export default {
 @import '../../scss/globals.scss';
 
 .blog-entry {
-    a.whatsapp-link {
+    a.share-link {
         display: flex;
         align-items: center;
         color: $light-main-color;
-        margin: 15px 0;
 
         &:hover,
         &:focus,
@@ -94,7 +91,7 @@ export default {
 
 .dark {
     .blog-entry {
-        a.whatsapp-link {
+        a.share-link {
             color: $dark-main-color;
         }
     }

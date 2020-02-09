@@ -22,7 +22,12 @@
                 <div v-if="isRenderedFromList" class="faded" v-on:click="navigate"></div>
 
                 <div v-if="!isRenderedFromList">
-                    <BlogEntryFooter :entry="entry" :hideNavigation="hideNavigation" />
+                    <BlogEntryFooter
+                        :description="description"
+                        :entry="entry"
+                        :hideNavigation="hideNavigation"
+                        :title="title"
+                    />
                 </div>
             </div>
         </div>
