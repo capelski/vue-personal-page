@@ -8,6 +8,7 @@ import ExistentialInjustice from './existential-injustice/english';
 import SubscribersList from './subscribers-list/subscribers-list';
 import KanbanGoalsTracking from './kanban-goals-tracking/kanban-goals-tracking';
 import Trecember from './trecember/trecember';
+import GreatWebDevelopment from './great-web-development/great-web-development';
 
 export default {
     AgilityRocks,
@@ -19,5 +20,6 @@ export default {
     ExistentialInjustice,
     SubscribersList,
     KanbanGoalsTracking,
-    Trecember
+    Trecember,
+    GreatWebDevelopment
 };
