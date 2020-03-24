@@ -29,8 +29,6 @@
 
             <h4 class="feature">Type safety</h4>
 
-            <h5 class="why">Why?</h5>
-
             <p>JavaScript was designed in 10 days. There are some things that make it a great language but it also has some flaws: e.g. not being able to detect certain common errors before runtime. Given that you already have to transpile your code, adding a build process to your development pipline, why not investing a bit more effort and enjoy the safeness only a statically typed language can provide?</p>
             <p></p>
             <p>
@@ -76,8 +74,6 @@
 
             <h4 class="feature">Formatting</h4>
 
-            <h5 class="why">Why?</h5>
-
             <p>Don't lose a single minute more writing semicolons, replacing double quotes with single quotes or arguing with your collegues about how to format ternary expressions and lines maximum length. Put a formatter that integrates with your IDE in place and it will save you priceless amounts of time while enforcing a standard code guideline.</p>
 
             <p>
@@ -117,8 +113,6 @@
             </ul>
 
             <h4 class="feature">Linting</h4>
-
-            <h5 class="why">Why?</h5>
 
             <p>
                 Static code analysis that will catch suspicious code (e.g. floating promises) and will enforce the best practices (e.g. functions maximum number of lines).
@@ -178,8 +172,6 @@
             </ul>
 
             <h4 class="feature">Spell checking</h4>
-
-            <h5 class="why">Why?</h5>
 
             <p>
                 So far, words are the most useful concept when it comes to communication between humans. If you want your code to be descriptive, you must avoid variable names such as
@@ -439,10 +431,6 @@ h4.feature {
     margin-top: 64px;
     padding-bottom: 10px;
     border-bottom: 1px solid $light-main-color;
-}
-
-.why {
-    margin-top: 24px;
 }
 
 .conclusions {
