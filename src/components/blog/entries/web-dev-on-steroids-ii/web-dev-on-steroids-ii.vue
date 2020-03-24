@@ -42,29 +42,53 @@
                 This kind of test structure is mixing the what (the behavior we want to test) with the how (the test implementation itself). Now, I must make clear than
                 <b>the test implementation is essential</b>. No magical framework will avoid us having to declare and initialize the component properties, rendering the component and writing an expression to verify the component behaves in the expected way.
             </p>
-            <p>The advantage of using natural language is that tests will focus on describing the software behavior, leaving the implementation as a secondary aspect, that will only be accessed when having to fix a failing test or when extending the product functionalities. This is what a natural language version of the previous test could look like:</p>
+            <p>
+                The advantage of using natural language is that tests will focus on describing the software behavior, leaving the implementation as a secondary aspect, that will only be accessed when having to fix a failing test or when extending the product functionalities. This is what a natural language version of the previous test could look like (e.g.
+                <i>text-component.feature</i>):
+            </p>
             <div ref="gherkinTestExample" class="code-editor"></div>
             <p>
                 Under the hood, the implementation of the test would be very similar to the one depicted above. The only tricky part of it is that the test code needs to me mapped to the natural sentences.
                 <a
                     href="https://www.npmjs.com/package/cucumber"
                     target="_blank"
-                >Cucumber.js</a> is a popular gherkin library that helps as doing so. This is how the previous sentences can be defined through cucumber:
+                >Cucumber.js</a> is a popular gherkin library that helps as doing so. This is how the previous sentences can be defined through cucumber (e.g.
+                <i>text-component.step.tsx</i>):
             </p>
             <div ref="cucumberTestExample" class="code-editor"></div>
             <p>As you can see, the test logic remains the same, but wrapped inside a natural language sentence that summarizes it's intention and which can later be used in any number of test cases. It requires some practice to learn how to split a test case into multiple sentences and how to make those sentences as reusable as possible but, once you get used to it, you will not want to test in any other way 💘</p>
 
             <h5>Steps</h5>
 
-            <ul>TODO</ul>
-
-            <p>
-                Example commit:
-                <a
-                    href="https://github.com/L3bowski/bachata-science/commit/6aa49f102622ff5d0495cff5af1dfddfb34de407"
-                    target="_blank"
-                >feat: setup cucumber testing</a>
-            </p>
+            <ul>
+                <li>
+                    Install cucumber
+                    <div ref="cucumberInstall" class="code-editor"></div>
+                </li>
+                <li>
+                    Create a
+                    <b>cucumber.js</b> file in the root of the project with the following content:
+                    <div ref="cucumberConfig" class="code-editor"></div>
+                </li>
+                <li>
+                    If the project is meant to run in the browser, we will need to mock the document. We can do that with
+                    <b>jsdom</b> and a similar intialization code that we will require from the test npm script (e.g.
+                    <i>cucumber-environment.ts</i>):
+                    <div ref="jsdomInstall" class="code-editor"></div>
+                    <div ref="jsdomConfig" class="code-editor"></div>
+                </li>
+                <li>
+                    Finally, add a test npm script to package.json that will run cucumber, requiring the jsdom initialization file, the
+                    <b>step definition</b> files and the
+                    <b>feature</b> files. You might want to modify the require globs according to your project structure:
+                    <div ref="javascriptTest" class="code-editor"></div>
+                </li>
+                <li>
+                    If using typescript, install the corresponding types and ts-node, and adapt the test npm script to require ts-node too:
+                    <div ref="cucumberTypescriptInstall" class="code-editor"></div>
+                    <div ref="typescriptTest" class="code-editor"></div>
+                </li>
+            </ul>
 
             <h4 class="feature">Code Coverage</h4>
 
@@ -200,6 +224,79 @@ Then('the text component contains a helper text element', () => {
     expect(textComponent.find('[data-element="helper-text"]')).toHaveLength(1);
 });
 `
+        );
+
+        createMonacoEditor(this.$refs.cucumberInstall, 'bash', `npm install --save-dev cucumber`);
+
+        createMonacoEditor(
+            this.$refs.cucumberConfig,
+            'javascript',
+            `module.exports = {
+    default: \`--format-options '{"snippetInterface": "synchronous"}'\`
+};`
+        );
+
+        createMonacoEditor(this.$refs.jsdomInstall, 'bash', `npm install --save-dev jsdom`);
+        createMonacoEditor(
+            this.$refs.jsdomConfig,
+            'typescript',
+            `import { Before } from 'cucumber';
+import { DOMWindow, JSDOM } from 'jsdom';
+
+const parsedGlobal = (global as unknown) as {
+    window: DOMWindow;
+    document: Document;
+    navigator: Navigator;
+};
+
+const mockDocument = () => {
+    const testingDocument = new JSDOM(\`
+        <!doctype html>
+        <html>
+            <head></head>
+            <body></body>
+        </html>\`);
+
+    parsedGlobal.window = testingDocument.window;
+    parsedGlobal.document = testingDocument.window.document;
+    parsedGlobal.navigator = testingDocument.window.navigator;
+};
+
+// Cucumber fails to run all tests if the global document is not initialized here,
+// before start running any scenario
+mockDocument();
+
+Before(mockDocument);`
+        );
+
+        createMonacoEditor(
+            this.$refs.cucumberTypescriptInstall,
+            'bash',
+            `npm install --save-dev @types/cucumber @types/jsdom ts-node`
+        );
+
+        createMonacoEditor(
+            this.$refs.javascriptTest,
+            'json',
+            `{
+    // ...
+    "scripts": {
+        // ...
+        "test": "cucumber-js --require cucumber-environment.js --require src/**/__step-definitions__/*.step.{js,jsx} src/**/feature/*.feature",
+    },
+}`
+        );
+
+        createMonacoEditor(
+            this.$refs.typescriptTest,
+            'json',
+            `{
+    // ...
+    "scripts": {
+        // ...
+        "test": "cucumber-js --require-module ts-node/register --require cucumber-environment.ts --require src/**/__step-definitions__/*.step.{ts,tsx} src/**/feature/*.feature",
+    },
+}`
         );
     }
 };
