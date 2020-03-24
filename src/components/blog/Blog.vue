@@ -2,6 +2,7 @@
     <div class="container navbar-spacer">
         <BlogOptions :allTags="allTags" />
 
+        <WebDevOnSteroidsII :isRenderedFromList="true" :allTags="allTags" />
         <WebDevOnSteroidsI :isRenderedFromList="true" :allTags="allTags" />
         <Trecember :isRenderedFromList="true" :allTags="allTags" />
         <KanbanGoalsTracking :isRenderedFromList="true" :allTags="allTags" />
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import WebDevOnSteroidsII from './entries/web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 import WebDevOnSteroidsI from './entries/web-dev-on-steroids-i/web-dev-on-steroids-i';
 import Trecember from './entries/trecember/trecember';
 import KanbanGoalsTracking from './entries/kanban-goals-tracking/kanban-goals-tracking';
@@ -35,6 +37,7 @@ import { tags } from './tags';
 export default {
     name: 'Blog',
     components: {
+        WebDevOnSteroidsII,
         WebDevOnSteroidsI,
         Trecember,
         KanbanGoalsTracking,

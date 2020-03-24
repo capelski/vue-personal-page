@@ -9,6 +9,7 @@ import SubscribersList from './subscribers-list/subscribers-list';
 import KanbanGoalsTracking from './kanban-goals-tracking/kanban-goals-tracking';
 import Trecember from './trecember/trecember';
 import WebDevOnSteroidsI from './web-dev-on-steroids-i/web-dev-on-steroids-i';
+import WebDevOnSteroidsII from './web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 
 export default {
     AgilityRocks,
@@ -21,5 +22,6 @@ export default {
     SubscribersList,
     KanbanGoalsTracking,
     Trecember,
-    WebDevOnSteroidsI
+    WebDevOnSteroidsI,
+    WebDevOnSteroidsII
 };
