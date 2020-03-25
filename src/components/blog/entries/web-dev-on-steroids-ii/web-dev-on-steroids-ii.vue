@@ -92,17 +92,47 @@
 
             <h4 class="feature">Code Coverage</h4>
 
-            <p>Next natural step after adding tests to your code base is wanting to know which parts of the code are effectively tested and which are the lines that are going unnoticed and will result in production critical bugs. Choose some code coverage tool and never miss testing an important line again.</p>
-
-            <p>Istanbul</p>
-
+            <p>Next natural step after adding tests to your code is making sure that you test all the parts that need to be tested. I don't advice to cover 100% of the lines, but you definitely need to address the business critical logic that might turn in production critical bugs. There is a variety of test coverage tools that will instrument your code before running the tests and will keep track of the lines that are being executed during the tests execution.</p>
             <p>
-                Example commit:
+                Personally, I have only worked with
                 <a
-                    href="https://github.com/L3bowski/bachata-science/commit/20e3d3fbb46da05ba56148c4d8800c1ca50cfa2d"
+                    href="https://istanbul.js.org/"
                     target="_blank"
-                >test: add nyc test coverage reporter</a>
+                >istanbul.js</a>. It is easy to run (you only need to add a new npm script) and provides helpful Html reports, highlighting the lines that are going unnoticed in the code files. Feel free to explore alterantives, but this is the horse I am betting on.
             </p>
+            <p class="text-center">
+                <img
+                    :src="`${images.coverageReport}?$modena=vue-personal-page`"
+                    alt="istanbul.js coverage report"
+                />
+            </p>
+
+            <h5>Steps</h5>
+
+            <ul>
+                <li>
+                    Install istanbul (for some reason, they named the npm package
+                    <b>nyc</b>):
+                    <div ref="nycInstall" class="code-editor"></div>
+                </li>
+                <li>
+                    Create a
+                    <b>.nycrc</b> istanbul configuration file with the following contents (you might need to adapt the configuration to your needs):
+                    <div ref="nycConfig" class="code-editor"></div>
+                </li>
+                <li>
+                    Add a
+                    <b>coverage</b> npm script (that will run your already existing
+                    <b>test</b> npm script):
+                    <div ref="coverageNpmScript" class="code-editor"></div>
+                </li>
+                <li>
+                    Add
+                    <b>.nyc_output/</b> and
+                    <b>coverage/</b> folders to your
+                    <b>.gitignore</b>
+                </li>
+            </ul>
 
             <h4 class="feature">Repository integrity</h4>
 
@@ -140,6 +170,7 @@ import BlogEntry from '../../BlogEntry';
 import { tags } from '../../tags';
 import { createMonacoEditor } from '../monaco-utils';
 import entriesRegistry from '../registry';
+import coverageReport from './coverage-report.png';
 
 const date = 'TODO';
 const entry = entriesRegistry['web-dev-on-steroids-ii'];
@@ -155,7 +186,9 @@ export default {
         return {
             date,
             entry,
-            images: {},
+            images: {
+                coverageReport
+            },
             tags,
             title
         };
@@ -183,7 +216,6 @@ describe('Text component', () => {
     // ...
 });`
         );
-
         createMonacoEditor(
             this.$refs.gherkinTestExample,
             'gherkin',
@@ -196,7 +228,6 @@ describe('Text component', () => {
         Then the text component contains a helper text element
 `
         );
-
         createMonacoEditor(
             this.$refs.cucumberTestExample,
             'javascript',
@@ -225,9 +256,7 @@ Then('the text component contains a helper text element', () => {
 });
 `
         );
-
         createMonacoEditor(this.$refs.cucumberInstall, 'bash', `npm install --save-dev cucumber`);
-
         createMonacoEditor(
             this.$refs.cucumberConfig,
             'javascript',
@@ -235,7 +264,6 @@ Then('the text component contains a helper text element', () => {
     default: \`--format-options '{"snippetInterface": "synchronous"}'\`
 };`
         );
-
         createMonacoEditor(this.$refs.jsdomInstall, 'bash', `npm install --save-dev jsdom`);
         createMonacoEditor(
             this.$refs.jsdomConfig,
@@ -268,13 +296,11 @@ mockDocument();
 
 Before(mockDocument);`
         );
-
         createMonacoEditor(
             this.$refs.cucumberTypescriptInstall,
             'bash',
             `npm install --save-dev @types/cucumber @types/jsdom ts-node`
         );
-
         createMonacoEditor(
             this.$refs.javascriptTest,
             'json',
@@ -286,7 +312,6 @@ Before(mockDocument);`
     },
 }`
         );
-
         createMonacoEditor(
             this.$refs.typescriptTest,
             'json',
@@ -296,6 +321,34 @@ Before(mockDocument);`
         // ...
         "test": "cucumber-js --require-module ts-node/register --require cucumber-environment.ts --require src/**/__step-definitions__/*.step.{ts,tsx} src/**/feature/*.feature",
     },
+}`
+        );
+
+        createMonacoEditor(this.$refs.nycInstall, 'bash', `npm install --save-dev nyc`);
+        createMonacoEditor(
+            this.$refs.coverageNpmScript,
+            'json',
+            `{
+    // ...
+    "scripts": {
+        // ...
+        "coverage": "nyc npm run test",
+    },
+}`
+        );
+        createMonacoEditor(
+            this.$refs.nycConfig,
+            'json',
+            `{
+    "cache": false,
+    "check-coverage": false,
+    "extension": [".ts", ".tsx"],
+    "include": ["src/components/*.ts", "src/components/*.tsx"],
+    "exclude": ["__step-definitions__/"],
+    "sourceMap": true,
+    "reporter": ["html", "text", "text-summary"],
+    "all": true,
+    "instrument": true
 }`
         );
     }
