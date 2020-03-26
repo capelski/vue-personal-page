@@ -90,9 +90,9 @@
                 </li>
             </ul>
 
-            <h4 class="feature">Code Coverage</h4>
+            <h4 class="feature">Code coverage</h4>
 
-            <p>Next natural step after adding tests to your code is making sure that you test all the parts that need to be tested. I don't advice to cover 100% of the lines, but you definitely need to address the business critical logic that might turn in production critical bugs. There is a variety of test coverage tools that will instrument your code before running the tests and will keep track of the lines that are being executed during the tests execution.</p>
+            <p>Next natural step after adding tests to your code is making sure that you test all the parts that need to be tested. I don't advice to cover 100% of the lines, but you definitely need to address the business critical logic that might turn in production critical bugs. There is a variety of test coverage tools that will instrument your code before running the tests and will keep track of the lines that are being addressed during the tests execution.</p>
             <p>
                 Personally, I have only worked with
                 <a
@@ -136,21 +136,42 @@
 
             <h4 class="feature">Repository integrity</h4>
 
-            <p>It is useless to put all these measures into place if they are not automatically enforced in each team member's contributions. Git has a set of hooks that allow firing off custom scripts when certain actions occur. Learn how to use them to always keep your code up to your the quality standards.</p>
-
-            <p>Husky</p>
+            <p>The last thing you want to happen after having defined a quality assurance pipeline (e.g. linting, formatting, testing, etc.) is to forget about it as the time goes by. No matter how careful developer you are, you will fail to remember that checklist some times (specially on busy deadlines), so, running those verifications automatically is quite of a good idea.</p>
 
             <p>
-                Example commit:
+                Git provides a way to fire off custom scripts when certain actions occur (e.g. when a commit is about to be made, when a branch is about to be pushed, etc.). In fact, when you initialize a new repository with
+                <b>git init</b>, Git populates the hooks directory with a bunch of example scripts (see
                 <a
-                    href="https://github.com/L3bowski/bachata-science/commit/904bf9771b20d9527e363d36d87ba2b215f58c0c"
+                    href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks"
                     target="_blank"
-                >chore: add husky</a>
+                >Git documentation</a> for more details).
             </p>
+
+            <p>
+                If you don't want to go that deep when it comes to Git hooks, and certainly you don't need to, there is a tool called
+                <a
+                    href="https://github.com/typicode/husky"
+                    target="_blank"
+                >Husky</a> (woof!) that will deal with that complexity for you. By associating a set of Git actions and commands in your package.json, Husky will run the corresponding commands each time a Git action occurs. This way you can make sure, for example, that you never push failing tests to your branch again.
+            </p>
+
+            <h5>Steps</h5>
+
+            <ul>
+                <li>
+                    Install husky:
+                    <div ref="huskyInstall" class="code-editor"></div>
+                </li>
+                <li>
+                    Create a
+                    <b>husky</b> section in your package.json file specifying the commands to be executed for each Git action. For example:
+                    <div ref="huskyConfig" class="code-editor"></div>
+                </li>
+            </ul>
 
             <h4 class="feature">Conventional commits</h4>
 
-            <p>Make your commit messages more descriptive and your git history more explicit, using the easy set of rules provided by the conventional commits specification. Say goodbye to "minor fixes" like commit messages and get a changelog file for free!</p>
+            <p>Make your commit messages more descriptive and your Git history more explicit, using the easy set of rules provided by the conventional commits specification. Say goodbye to "minor fixes" like commit messages and get a changelog file for free!</p>
 
             <p>commitlint</p>
 
@@ -349,6 +370,23 @@ Before(mockDocument);`
     "reporter": ["html", "text", "text-summary"],
     "all": true,
     "instrument": true
+}`
+        );
+
+        createMonacoEditor(this.$refs.huskyInstall, 'bash', `npm install --save-dev husky`);
+        createMonacoEditor(
+            this.$refs.huskyConfig,
+            'json',
+            `{
+    // ...
+    "husky": {
+        // Ensure each commit message follows the conventional commit standards
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+        // Verify linting and formatting before each commit
+        "pre-commit": "npm run lint && npm run prettier",
+        // Run the tests before pushing the changes to the origin
+        "pre-push": "npm test"
+    },
 }`
         );
     }
