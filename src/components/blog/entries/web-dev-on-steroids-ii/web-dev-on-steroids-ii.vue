@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         description="Some techniques to make web development more efficient and how to put them into practice"
-        duration="TODO"
+        duration="8"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :allTags="allTags"
@@ -36,14 +36,17 @@
                 All we want when it comes to unit tests is having
                 <b>a set of scripts that run our code and ensure the software behaves in the way we expect</b>. As long as we fulfill the objective, any way of implement those scripts will be valid. From here on chosing a test runner or another seems merely a matter of personal preference.
             </p>
-            <p>And, in fact, if you are aware of the importance of the tests and you are already caring about them like they were your beloved child, there is nothing wrong in sticking to Mocha, Jest or whichever test runner you are currently using. Nevertheless, let's have a look at a simple React + Jest + Enzyme example test:</p>
+            <p>
+                And, in fact, if you are aware of the importance of the tests and you are already caring about them like they were your beloved child, there is nothing wrong in sticking to Mocha, Jest or whichever test runner you are currently using. Nevertheless, let's have a look at a simple
+                <i>React + Jest + Enzyme</i> example test:
+            </p>
             <div ref="jestTestExample" class="code-editor"></div>
             <p>
                 This kind of test structure is mixing the what (the behavior we want to test) with the how (the test implementation itself). Now, I must make clear than
                 <b>the test implementation is essential</b>. No magical framework will avoid us having to declare and initialize the component properties, rendering the component and writing an expression to verify the component behaves in the expected way.
             </p>
             <p>
-                The advantage of using natural language is that tests will focus on describing the software behavior, leaving the implementation as a secondary aspect, that will only be accessed when having to fix a failing test or when extending the product functionalities. This is what a natural language version of the previous test could look like (e.g.
+                The advantage of using natural language is that tests will focus on describing the software behavior, leaving the implementation as a secondary aspect, that will only need to be accessed when having to fix a failing test or when extending the product functionalities. This is what a natural language version of the previous test could look like (e.g.
                 <i>text-component.feature</i>):
             </p>
             <div ref="gherkinTestExample" class="code-editor"></div>
@@ -52,11 +55,11 @@
                 <a
                     href="https://www.npmjs.com/package/cucumber"
                     target="_blank"
-                >Cucumber.js</a> is a popular gherkin library that helps as doing so. This is how the previous sentences can be defined through cucumber (e.g.
+                >Cucumber.js</a> is a popular gherkin library that helps us doing so. This is how the previous sentences can be defined through cucumber (e.g.
                 <i>text-component.step.tsx</i>):
             </p>
             <div ref="cucumberTestExample" class="code-editor"></div>
-            <p>As you can see, the test logic remains the same, but wrapped inside a natural language sentence that summarizes it's intention and which can later be used in any number of test cases. It requires some practice to learn how to split a test case into multiple sentences and how to make those sentences as reusable as possible but, once you get used to it, you will not want to test in any other way 💘</p>
+            <p>As you can see, the test logic remains the same, but wrapped inside natural language sentences that summarize their intention and which can later be used in any number of test cases. It requires some practice to learn how to split a test case into multiple sentences and how to make those sentences as reusable as possible but, once you get used to it, you will not want to test in any other way 💘</p>
 
             <h5>Steps</h5>
 
@@ -206,7 +209,9 @@
                 </li>
             </ul>
 
-            <p class="conclusions">TODO Conclusion: Excluded SASS, url loader, etc.</p>
+            <p
+                class="conclusions"
+            >And that's the end of it! Four simple concepts that will help you making your tests more readable (and can even qualify them as public documentation), spotting non tested lines in your code, preventing from commiting/pushing unfinished code and making your Git history more descriptive. Give them a try and don't wait to add any combination of them to your projects 💪 See you in the next post!</p>
         </div>
     </BlogEntry>
 </template>
@@ -218,7 +223,7 @@ import { createMonacoEditor } from '../monaco-utils';
 import entriesRegistry from '../registry';
 import coverageReport from './coverage-report.png';
 
-const date = 'TODO';
+const date = '2020-03-27';
 const entry = entriesRegistry['web-dev-on-steroids-ii'];
 const title = 'Web development on steroids: Vol. 2';
 
