@@ -171,17 +171,42 @@
 
             <h4 class="feature">Conventional commits</h4>
 
-            <p>Make your commit messages more descriptive and your Git history more explicit, using the easy set of rules provided by the conventional commits specification. Say goodbye to "minor fixes" like commit messages and get a changelog file for free!</p>
-
-            <p>commitlint</p>
-
+            <p>Last but not least! Acknowledgement is key when it comes to software quality, and part of the knowledge transfer is done over the Git history. You might already be taking your time to write descriptive commit messages and that's admirable (nothing is more useless than "minor fixes" like messages). You can however take a step further by enforcing a commit convention and take advantage of some additional benefits while keeping your Git history crystal clear.</p>
             <p>
-                Example commit:
                 <a
-                    href="https://github.com/L3bowski/bachata-science/commit/fda822903f720626965ef33e5aab02d9754a2a58"
+                    href="https://www.conventionalcommits.org/en/v1.0.0/"
                     target="_blank"
-                >chore: add commitlint to validate commit messages</a>
+                >Conventional commits</a> is a lightweight convention to make the commit messages more descriptive and the Git history more explicit. In addition, it makes it easier to automate certain aspects of the software releases (e.g., generating a changelog file for free). The convention can be automatically verified in every commit with the help of tools like
+                <a
+                    href="https://commitlint.js.org/"
+                    target="_blank"
+                >commitlint</a> and, once the standard is put into place, you can take advantage of tools that rely on it (e.g.
+                <a
+                    href="https://www.npmjs.com/package/standard-version"
+                    target="_blank"
+                >standard version</a>, a utility for versioning using semver and CHANGELOG generation). Here are some example commit messages:
             </p>
+            <div ref="conventionalCommits" class="code-editor"></div>
+
+            <h5>Steps</h5>
+
+            <ul>
+                <li>
+                    Install commitlint and the conventional commits configuration package (or any other configuration package you prefer):
+                    <div ref="commitlintInstall" class="code-editor"></div>
+                </li>
+                <li>
+                    Create a
+                    <b>commitlint.config.js</b> configuration file, exporting the previously installed configuration:
+                    <div ref="commitlintConfig" class="code-editor"></div>
+                </li>
+                <li>
+                    Finally, run commitlint for every commit. Eventhough there are other ways, you can do that through Husky hooks:
+                    <div ref="commitlintHusky" class="code-editor"></div>
+                </li>
+            </ul>
+
+            <p class="conclusions">TODO Conclusion: Excluded SASS, url loader, etc.</p>
         </div>
     </BlogEntry>
 </template>
@@ -277,7 +302,7 @@ Then('the text component contains a helper text element', () => {
 });
 `
         );
-        createMonacoEditor(this.$refs.cucumberInstall, 'bash', `npm install --save-dev cucumber`);
+        createMonacoEditor(this.$refs.cucumberInstall, 'bash', 'npm install --save-dev cucumber');
         createMonacoEditor(
             this.$refs.cucumberConfig,
             'javascript',
@@ -285,7 +310,7 @@ Then('the text component contains a helper text element', () => {
     default: \`--format-options '{"snippetInterface": "synchronous"}'\`
 };`
         );
-        createMonacoEditor(this.$refs.jsdomInstall, 'bash', `npm install --save-dev jsdom`);
+        createMonacoEditor(this.$refs.jsdomInstall, 'bash', 'npm install --save-dev jsdom');
         createMonacoEditor(
             this.$refs.jsdomConfig,
             'typescript',
@@ -320,7 +345,7 @@ Before(mockDocument);`
         createMonacoEditor(
             this.$refs.cucumberTypescriptInstall,
             'bash',
-            `npm install --save-dev @types/cucumber @types/jsdom ts-node`
+            'npm install --save-dev @types/cucumber @types/jsdom ts-node'
         );
         createMonacoEditor(
             this.$refs.javascriptTest,
@@ -345,7 +370,7 @@ Before(mockDocument);`
 }`
         );
 
-        createMonacoEditor(this.$refs.nycInstall, 'bash', `npm install --save-dev nyc`);
+        createMonacoEditor(this.$refs.nycInstall, 'bash', 'npm install --save-dev nyc');
         createMonacoEditor(
             this.$refs.coverageNpmScript,
             'json',
@@ -373,19 +398,54 @@ Before(mockDocument);`
 }`
         );
 
-        createMonacoEditor(this.$refs.huskyInstall, 'bash', `npm install --save-dev husky`);
+        createMonacoEditor(this.$refs.huskyInstall, 'bash', 'npm install --save-dev husky');
         createMonacoEditor(
             this.$refs.huskyConfig,
             'json',
             `{
     // ...
     "husky": {
-        // Ensure each commit message follows the conventional commit standards
-        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-        // Verify linting and formatting before each commit
-        "pre-commit": "npm run lint && npm run prettier",
-        // Run the tests before pushing the changes to the origin
-        "pre-push": "npm test"
+        "hooks": {
+            // Verify linting and formatting before each commit
+            "pre-commit": "npm run lint && npm run prettier",
+            // Run the tests before pushing commits to any origin branch
+            "pre-push": "npm test"
+        }
+    },
+}`
+        );
+
+        createMonacoEditor(
+            this.$refs.conventionalCommits,
+            'bash',
+            `feat(lang): add polish language
+
+feat: allow provided config object to extend other configs
+
+docs: correct spelling of CHANGELOG`
+        );
+        createMonacoEditor(
+            this.$refs.commitlintInstall,
+            'bash',
+            'npm install --save-dev @commitlint/cli @commitlint/config-conventional'
+        );
+        createMonacoEditor(
+            this.$refs.commitlintConfig,
+            'javascript',
+            `module.exports = {
+    extends: ['@commitlint/config-conventional']
+};`
+        );
+        createMonacoEditor(
+            this.$refs.commitlintHusky,
+            'json',
+            `{
+    // ...
+    "husky": {
+        "hooks": {
+            // ...
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+        }
     },
 }`
         );
@@ -401,6 +461,10 @@ h4.feature {
     margin-top: 40px;
     padding-bottom: 10px;
     border-bottom: 1px solid $light-main-color;
+}
+
+.conclusions {
+    margin-top: 80px;
 }
 
 .dark {
