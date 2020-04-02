@@ -2,6 +2,7 @@
     <div class="container navbar-spacer">
         <BlogOptions :allTags="allTags" />
 
+        <SudokuGeneration :isRenderedFromList="true" :allTags="allTags" />
         <WebDevOnSteroidsII :isRenderedFromList="true" :allTags="allTags" />
         <WebDevOnSteroidsI :isRenderedFromList="true" :allTags="allTags" />
         <Trecember :isRenderedFromList="true" :allTags="allTags" />
@@ -19,6 +20,7 @@
 </template>
 
 <script>
+import SudokuGeneration from './entries/sudoku-generation/sudoku-generation';
 import WebDevOnSteroidsII from './entries/web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 import WebDevOnSteroidsI from './entries/web-dev-on-steroids-i/web-dev-on-steroids-i';
 import Trecember from './entries/trecember/trecember';
@@ -37,6 +39,7 @@ import { tags } from './tags';
 export default {
     name: 'Blog',
     components: {
+        SudokuGeneration,
         WebDevOnSteroidsII,
         WebDevOnSteroidsI,
         Trecember,

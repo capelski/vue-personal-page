@@ -9,25 +9,27 @@ const entries = [
     'kanban-goals-tracking',
     'trecember',
     'web-dev-on-steroids-i',
-    'web-dev-on-steroids-ii'
+    'web-dev-on-steroids-ii',
+    'sudoku-generation'
 ];
 
-const hiddenEntries = [
-    'injusticia-existencial'
-];
+const hiddenEntries = ['injusticia-existencial'];
 
 const linkedEntries = entries
     .map((entry, index) => {
         return {
             following: index < entries.length - 1 ? entries[index + 1] : undefined,
             id: entry,
-            previous: index > 0 ? entries[index - 1] : undefined,
+            previous: index > 0 ? entries[index - 1] : undefined
         };
     })
     .concat(hiddenEntries.map(entry => ({ id: entry })))
-    .reduce((reducedEntries, next) => ({
-        ...reducedEntries,
-        [next.id]: next
-    }), {});
-    
+    .reduce(
+        (reducedEntries, next) => ({
+            ...reducedEntries,
+            [next.id]: next
+        }),
+        {}
+    );
+
 module.exports = linkedEntries;
