@@ -15,7 +15,24 @@
                 Quick recap.
                 <a href="https://en.wikipedia.org/wiki/Sudoku" target="_blank">Sudoku</a> consists of a square grid (usually 9x9 boxes) in which each box must be filled with a digit from 1 to 9, making sure that each row, column and squared region contains all the digits from 1 to 9 and has no repeated numbers. An example is worth more than a thousand words:
             </p>
-            <p>TODO: Sudoku example</p>
+
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[[5,3,' ', ' ', 7], [6, ' ', ' ', 1, 9, 5],[' ',9,8, ' ', ' ', ' ', ' ',6],[8, ' ', ' ', ' ',6, ' ', ' ', ' ',3],[4, ' ', ' ',8, ' ', 3, ' ', ' ',1], [7, ' ', ' ', ' ',2, ' ', ' ', ' ',6],[ ' ',6, ' ', ' ', ' ', ' ',2,8],[ ' ', ' ', ' ',4,1,9, ' ', ' ',5],[ ' ', ' ', ' ', ' ',8, ' ', ' ',7,9]]"
+                    />
+                    <p class="text-center">Sudoku example</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[[5, 3, 4, 6, 7, 8, 9, 1, 2], [6, 7, 2, 1, 9, 5, 3, 4, 8],[1, 9, 8, 3, 4, 2, 5, 6, 7],[8, 5, 9, 7, 6, 1, 4, 2, 3],[4, 2, 6, 8, 5, 3, 7, 9, 1], [7, 1, 3, 9, 2, 4, 8, 5, 6],[9, 6, 1, 5, 3, 7, 2, 8, 4],[2, 8, 7, 4, 1, 9, 6, 3, 5],[ 3, 4, 5, 2, 8, 6, 1, 7, 9]]"
+                    />
+                    <p class="text-center">Sudoku solution</p>
+                </div>
+            </div>
+
             <p>
                 In the particular newspaper my mom was reading that day, the easy sudokdu had 28 filled boxes out of the 81 total whereas the difficult sudoku had 29 filled boxes.
                 <b>How come the more difficult puzzle had more filled boxes!?</b>. Or, in other words, isn't the difficulty of a sudoku based on the number of empty boxes? At least, that was the feeling I had back then. The truth is that I had never taken the time to think about how sudoku works. I had solved a few of them sure, but I had never tried to figure out how to prepare one.
@@ -39,6 +56,7 @@
 import BlogEntry from '../../BlogEntry';
 import { tags } from '../../tags';
 import entriesRegistry from '../registry';
+import Sudoku from './sudoku';
 
 const date = 'TODO';
 const entry = entriesRegistry['sudoku-generation'];
@@ -47,7 +65,8 @@ const title = 'Sudoku generation';
 export default {
     name: entry.id,
     components: {
-        BlogEntry
+        BlogEntry,
+        Sudoku
     },
     props: ['isRenderedFromList', 'allTags'],
     data() {
@@ -61,3 +80,18 @@ export default {
     }
 };
 </script>
+
+<style lang="scss">
+.screen-splitter {
+    display: block;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+
+    & > * {
+        flex-grow: 1;
+        margin: 0 5px;
+    }
+}
+</style>
