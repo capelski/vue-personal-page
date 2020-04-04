@@ -48,7 +48,7 @@
                 <b>I found myself unemployed and locked at my parents home</b>. So, provided with the biggest amount of free hours I had ever had in my life, I decided to investigate the sudoku generation subject for a while.
             </p>
 
-            <h6 class="attempt">First attempt: clear boxes in a full grid</h6>
+            <h5 class="attempt">First attempt: clear boxes in a full grid</h5>
 
             <p>
                 An important property of a well-composed sudoku is that it has a single solution. It might sound obvious, but depending on how the numbers are placed, there can be multiple valid combinations that solve the puzzle. The most famous example was the sudoku that UK Sky TV draw in a hillside offering a £5000 prize; it turned out to have
@@ -87,6 +87,149 @@
                     <p class="text-center">Not very challenging sudoku</p>
                 </div>
             </div>
+
+            <h5 class="attempt">Second attempt: filling random boxes with random candidates</h5>
+
+            <p>
+                Rather than fixing the first attempt issues, I decided to go the other way around. Starting with an empty grid, fill random boxes with random valid possible numbers (from now on, I will call possible numbers
+                <b>candidates</b>) until there is a box which has a single candidate. Again, I didn't think too much about it. I just wanted to quickly check how feasible this approach was.
+            </p>
+            <p>
+                This
+                <a
+                    href="https://github.com/L3bowski/sudoku-generation/blob/master/attempt-2.js"
+                    target="_blank"
+                >second alogrithm</a> works better (i.e. generates solvable unique solution puzzles sometimes) but still presents an issue. I assumed that once there is a box with a single candidate, filling that box will eliminate candidates in other boxes and lead to at least another box having a single candidate (the so called domino effect). This was assuming too much however. Sometimes filling that single candidate box is not reducing the number of candidates to one in any other box (from now on, I will call a box with a single candidate
+                <b>inferable</b>). For the sake of simplicity, the following examples are in a 4x4 grid fashion:
+            </p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[], [2], [3, ' ', 2], [' ', 2, ' ', 4]]" />
+                    <p class="text-center">Valid generated sudoku</p>
+                </div>
+                <div>
+                    <Sudoku :size="4" :values="[[], [' ',' ',' ',3],[' ',2,4]]" />
+                    <p class="text-center">Multiple solution generated sudoku</p>
+                </div>
+            </div>
+            <p>Looks like I am on the right track! However, picking random boxes is a bit risky. I had decided to pick random boxes because I was lazy to come up with a better strategy. It was time to pick paper and pencil and think of a better box picking strategy.</p>
+
+            <h5 class="attempt">Third attempt: searching for the right box and number</h5>
+
+            <p>Here is where logic comes into play. According the sudoku rules, every time a number is assigned to a box, that number can no longer be placed in another box in the same column, row or region. Visually it looks like this (I will use 4x4 grids because it's simpler to understand and the concepts work the same in 9x9 grids):</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[], [], [2], []]" />
+                    <p class="text-center">First filled box</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['≠2'], ['≠2'], [2, '≠2', '≠2', '≠2'], ['≠2', '≠2']]"
+                    />
+                    <p class="text-center">Other affected boxes</p>
+                </div>
+            </div>
+            <p>
+                So, setting the number
+                2 in the first box of the third row eliminates the
+                candidate
+                2 on other seven boxes. From now, and just to give it a catchy name, I will call box
+                <b>impact</b> the number of other boxes in which a candidate is removed by setting a number in the given box. Also, I will call
+                <b>lock</b> the action of setting a number in a box. Next let's try to lock another box. With the random strategy I was using before, the chosen box could have been the second of the third row and the chosen candidate could have been any one other than
+                2. Let's call it lock A:
+            </p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[], [], [2, 3], []]" />
+                    <p class="text-center">Second filled box</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[[' ', '≠3'], ['', '≠3'], [2, 3, '≠3', '≠3'], ['≠3', '≠3']]"
+                    />
+                    <p class="text-center">Other affected boxes</p>
+                </div>
+            </div>
+            <p>The impact of the lock A is 6. Just to understand how each box will have a different impact, let's assume now that the random box that was chosen in the second lock would have been the second box of the first row. Let's call it lock B:</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[' ', 3], [], [2], []]" />
+                    <p class="text-center">Second filled box</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['≠3', 3, '≠3', '≠3'], ['≠3', '≠3'], [2, '≠3'], [' ', '≠3']]"
+                    />
+                    <p class="text-center">Other affected boxes</p>
+                </div>
+            </div>
+            <p>Would it had been the case, the impact of the second lock would have been 7 instead of 6. Intuitively it makes sense because lock B happens in a different row, column and region than the first lock whereas lock A is in the same row and region as the first lock. Lock A gives more information for specific parts of the puzzle while lock B gives more information about the entire puzzle.</p>
+            <p>So, definitely, the impact of a lock depends on the location of the box in reference to the already filled boxes. Ok, so I had just learned which boxes to pick. But what about the box number? Still I was randomly chosing any of the box candidates. To get a feeling for the role that numbers play here, let's assume that the random candidate for the second lock would have been the same number as the one in the first lock. Let's call this possible second lock C:</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[' ', 2], [], [2], []]" />
+                    <p class="text-center">Second filled box</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['≠2', 2, '≠2', '≠2'], ['≠2', '≠2'], [2, '≠2'], [' ', '≠2']]"
+                    />
+                    <p class="text-center">Other affected boxes</p>
+                </div>
+            </div>
+            <p>Apparently the impact of the lock C is 7 too. Paying closer attention however, I realized that candidate 2 had already been removed from a series of boxes in the first lock. So, the real impact of the lock C is the number of boxes where 2 was still a candidate and from which 2 is being effectively removed. This means the impact of lock C is actually 3:</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['≠2'], ['≠2'], [2, '≠2', '≠2', '≠2'], ['≠2', '≠2']]"
+                    />
+                    <p class="text-center">Total removed candidates in first lock</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['≠2', 2, '≠2', '≠2'], ['≠2', '≠2'], [2, '≠2', '≠2', '≠2'], ['≠2', '≠2']]"
+                    />
+                    <p class="text-center">Total removed candidates in second lock</p>
+                </div>
+            </div>
+            <p>
+                So, looked like I had run into something useful! I used these two observations to implement the
+                <a
+                    href="https://github.com/L3bowski/sudoku-generation/blob/master/attempt-3.js"
+                    target="_blank"
+                >third version of the algorithm</a>. In short, the algorithm selects the box and number that eliminates the bigger number of candidates from other boxes. By following this strategy each box candidates set is reduced more and more with each lock in a balanced manner (meaning that all boxes will have a similar number of candidates at any point of time).
+            </p>
+            <p>
+                The algorithm is doing great while there are boxes with multiple candidates but it always ends up generating unsolvable sudoku puzzles (i.e. puzzles for which there is no valid combination that solves them). This happens because the algorithm looks for boxes with the highest impact which, at practice, are also the boxes with the biggest number of candidates. Therefore,
+                <b>non locked boxes with a single candidate are not considered by the algorithm</b>. Example of a bad selection after the forth lock in a 4x4 grid:
+            </p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[' ', 3], [' ', ' ', ' ', 2], [1], [' ', ' ', 4]]" />
+                    <p class="text-center">Valid sudoku after locking the forth box</p>
+                </div>
+                <div>
+                    <Sudoku :size="4" :values="[[' ', 3], [' ', ' ', ' ', 2], [1], [2, ' ', 4]]" />
+                    <p class="text-center">Unvalid sudoku after locking the fifth box</p>
+                </div>
+            </div>
+            <p>I could control this problem by carefully setting the number of boxes to be filled and stop the algorithm from keep choosing boxes before it gets out of control. However, and in order to have a better control over the difficulty of the generated puzzle, I believe the algorithm should be able to fill the entire grid if requested. This takes us to another attempt!</p>
+
+            <h5 class="attempt">Forth attempt: considering inferable boxes</h5>
+
+            <p>As said before, an inferable box is a box with a single candidate.</p>
+
+            <p>DOING: Problem! We are not considering boxes whose value becomes fixed by other restictions</p>
+
+            <p>TODO: When to stop?</p>
+            <p>TODO: Optimization. Choose the highest impact boxes... and the ones with larger number of candidates</p>
+            <p>TODO: How to control the difficulty? Allowing the algorithm to continue filling the grid...</p>
         </div>
     </BlogEntry>
 </template>
@@ -124,6 +267,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../../../scss/globals.scss';
+
 .screen-splitter {
     display: block;
 
@@ -139,5 +284,6 @@ export default {
 
 .attempt {
     margin-top: 35px;
+    border-bottom: 1px solid $light-main-color;
 }
 </style>

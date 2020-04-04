@@ -1,5 +1,5 @@
 <template>
-    <div class="sudoku-grid size-9">
+    <div :class="['sudoku-grid', `size-${size}`]">
         <div v-for="(row, rowIndex) in grid" :key="`row-${rowIndex}`" class="sudoku-row">
             <div
                 v-for="(cell, columnIndex) in row"
@@ -32,6 +32,7 @@ export default {
 
 <style lang="scss">
 @import '../../../../scss/globals.scss';
+$cellSize: 35px;
 
 .sudoku-grid {
     margin-top: 16px;
@@ -42,8 +43,8 @@ export default {
         margin: auto;
 
         .sudoku-cell {
-            width: 35px;
-            height: 35px;
+            width: $cellSize;
+            height: $cellSize;
             border-left: 1px solid $light-main-color;
             border-top: 1px solid $light-main-color;
             display: flex;
@@ -62,9 +63,35 @@ export default {
         }
     }
 
+    &.size-4 {
+        .sudoku-row {
+            width: $cellSize * 4;
+
+            .sudoku-cell {
+                &:nth-child(2n + 3) {
+                    border-left: 2px solid $light-main-color;
+
+                    &:last-child {
+                        border-left: 1px solid $light-main-color;
+                    }
+                }
+            }
+
+            &:nth-child(2n + 3) {
+                .sudoku-cell {
+                    border-top: 2px solid $light-main-color;
+
+                    &:last-child {
+                        border-left: 1px solid $light-main-color;
+                    }
+                }
+            }
+        }
+    }
+
     &.size-9 {
         .sudoku-row {
-            width: calc(35px * 9);
+            width: $cellSize * 9;
 
             .sudoku-cell {
                 &:nth-child(3n + 4) {
