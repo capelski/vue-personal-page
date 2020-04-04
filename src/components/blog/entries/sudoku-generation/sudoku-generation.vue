@@ -47,7 +47,46 @@
                 According to my plan, my outbound flight was supposed to depart March 31st but, because of obvious reasons, the flight got cancelled. No one had any idea about when the borders would be reopened so my aussie adventure starting date became very uncertain and I accepted I would have to wait to reschedule my flight. I didn't get angry but
                 <b>I found myself unemployed and locked at my parents home</b>. So, provided with the biggest amount of free hours I had ever had in my life, I decided to investigate the sudoku generation subject for a while.
             </p>
-            <p>TODO First attempt! Single solution => grid filling</p>
+
+            <h6 class="attempt">First attempt: clear boxes in a full grid</h6>
+
+            <p>
+                An important property of a well-composed sudoku is that it has a single solution. It might sound obvious, but depending on how the numbers are placed, there can be multiple valid combinations that solve the puzzle. The most famous example was the sudoku that UK Sky TV draw in a hillside offering a £5000 prize; it turned out to have
+                <a
+                    href="https://www.sudokuwiki.org/Sudoku_Creation_and_Grading.pdf"
+                    target="_blank"
+                >1905 possible solutions</a>.
+            </p>
+            <p class="text-center">
+                <img
+                    :src="`${images.skyTvHillside}?$modena=vue-personal-page`"
+                    alt="Sky TV hillside sudoku"
+                />
+            </p>
+            <p>
+                So, to avoid the mistakes of the british company, my first attempt consisted in randomly filling a grid with all the numbers (i.e. to make sure the puzzle had a single solution) and, from there on, randomly boxes until the sudoku was challenging enough. I did write the
+                <a
+                    href="https://github.com/L3bowski/sudoku-generation/blob/master/attempt-1.js"
+                    target="_blank"
+                >algorithm to fill the grid</a> to later discover two issues.
+            </p>
+            <p>First, clearing the boxes randomly was not an option since I could have ended up generating multiple solutions sudokus. Second, when could I tell that the sudoku was challenging enough? This is what happens when you start coding without really thinking on what you are trying to do ✌️.</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[[' ', 3, ' ', ' ', ' ', ' ', ' ', 1, 2], [' ', ' ', 2, 1, ' ', ' ', 3, ' ', ' '],[1, ' ', ' ', 3, ' ', 2, ' ', ' ', ' '],[' ', ' ', ' ', ' ', ' ', 1, ' ', 2, 3],[' ', 2, ' ', ' ', ' ', 3, ' ', ' ', 1], [' ', 1, 3, ' ', 2, ' ', ' ', ' ', ' '],[' ', ' ', 1, ' ', 3, ' ', 2, ' ', ' '],[2, ' ', ' ', ' ', 1, ' ', ' ', 3, ' '],[ 3, ' ', ' ', 2, ' ', ' ', 1, ' ', ' ']]"
+                    />
+                    <p class="text-center">Multiple solutions sudoku</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[[5, 3, 4, 6, 7, 8, 9, ' ', 2], [6, 7, ' ', 1, 9, 5, 3, 4, 8],[1, 9, 8, ' ', 4, 2, 5, 6, 7],[8, 5, 9, 7, 6, 1, ' ', 2, 3],[4, 2, 6, 8, ' ', 3, 7, 9, 1], [7, 1, 3, 9, 2, 4, 8, 5, ' '],[9, 6, 1, 5, 3, ' ', 2, 8, 4],[2, ' ', 7, 4, 1, 9, 6, 3, 5],[ 3, 4, 5, 2, 8, 6, 1, 7, ' ']]"
+                    />
+                    <p class="text-center">Not very challenging sudoku</p>
+                </div>
+            </div>
         </div>
     </BlogEntry>
 </template>
@@ -56,6 +95,7 @@
 import BlogEntry from '../../BlogEntry';
 import { tags } from '../../tags';
 import entriesRegistry from '../registry';
+import skyTvHillside from './sky-tv-hillside.jpg';
 import Sudoku from './sudoku';
 
 const date = 'TODO';
@@ -73,7 +113,9 @@ export default {
         return {
             date,
             entry,
-            images: {},
+            images: {
+                skyTvHillside
+            },
             tags,
             title
         };
@@ -93,5 +135,9 @@ export default {
         flex-grow: 1;
         margin: 0 5px;
     }
+}
+
+.attempt {
+    margin-top: 35px;
 }
 </style>
