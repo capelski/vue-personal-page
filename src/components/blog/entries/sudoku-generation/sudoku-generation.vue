@@ -99,8 +99,8 @@
                 <a
                     href="https://github.com/L3bowski/sudoku-generation/blob/master/attempt-2.js"
                     target="_blank"
-                >second alogrithm</a> works better (i.e. generates solvable unique solution puzzles sometimes) but still presents an issue. I assumed that once there is a box with a single candidate, filling that box will eliminate candidates in other boxes and lead to at least another box having a single candidate (the so called domino effect). This was assuming too much however. Sometimes filling that single candidate box is not reducing the number of candidates to one in any other box (from now on, I will call a box with a single candidate
-                <b>inferable</b>). For the sake of simplicity, the following examples are in a 4x4 grid fashion:
+                >second alogrithm</a> works better (i.e. generates solvable unique solution puzzles sometimes) but still presents an issue. I assumed that once there is a box with a single candidate, filling that box will eliminate candidates in other boxes and lead to at least another box having a single candidate (the so called domino effect). This was assuming too much however. Sometimes filling that single candidate box is not leaving a single candidate in any other box. From now on, I will call
+                <b>inferable</b> a box with a single candidate. For the sake of simplicity, the following examples are in a 4x4 grid fashion:
             </p>
             <div class="screen-splitter">
                 <div>
@@ -116,7 +116,7 @@
 
             <h5 class="attempt">Third attempt: searching for the right box and number</h5>
 
-            <p>Here is where logic comes into play. According the sudoku rules, every time a number is assigned to a box, that number can no longer be placed in another box in the same column, row or region. Visually it looks like this (I will use 4x4 grids because it's simpler to understand and the concepts work the same in 9x9 grids):</p>
+            <p>To come up with a good box picking strategy, I first needed to understand how setting a number in a box effects the other boxes. Here is where logic comes into play. According the sudoku rules, every time a number is assigned to a box, that number can no longer be placed in another box in the same column, row or region. Visually it looks like this (I will use 4x4 grids because it's simpler to understand and the concepts work the same in 9x9 grids):</p>
             <div class="screen-splitter">
                 <div>
                     <Sudoku :size="4" :values="[[], [], [2], []]" />
@@ -223,13 +223,94 @@
 
             <h5 class="attempt">Forth attempt: considering inferable boxes</h5>
 
-            <p>As said before, an inferable box is a box with a single candidate.</p>
+            <p>An inferable box is a box which has a single candidate (and it hasn't been locked). A box becomes inferable when, having only two candidates left, one of the box candidates is locked in another box of the same row, column or region (which will cause that candidate to be removed from the given box). Sounds tricky but it is visually easier than it sounds. Assuming the following second and third locks for a given sudoku:</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[' ', ' ', ' ', 4], [' ',  2]]" />
+                    <p class="text-center">Sudoku with two locks</p>
+                </div>
+                <div>
+                    <Sudoku :size="4" :values="[[' ', ' ', ' ', 4], [' ',  2], [' ', ' ', 1]]" />
+                    <p class="text-center">Sudoku with three locks</p>
+                </div>
+            </div>
+            <p>the total eliminated candidates of the respective locks are</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['≠2,4', '≠2,4', '≠4', 4], ['≠2',  2, '≠2,4', '≠2,4'], [' ', '≠2', ' ', '≠4'], [' ', '≠2', ' ', '≠4']]"
+                    />
+                    <p class="text-center">Eliminated candidates with two locks</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['≠2,4', '≠2,4', '≠1,4', 4], ['≠2',  2, '≠1,2,4', '≠2,4'], ['≠1', '≠1,2', 1, '≠1,4'], [' ', '≠2', '≠1', '≠4']]"
+                    />
+                    <p class="text-center">Eliminated candidates with three locks</p>
+                </div>
+            </div>
+            <p>The next step is easier to understand if we consider the candidates that are still valid for each box instead of the eliminated ones. Let's rewrite the same sudoku using equality (=, numbers which can be locked in the box) instead of inequality (≠, numbers wich cannot be locked in the box):</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['=1,3', '=1,3', '=1,2,3', 4], ['=1,3,4',  2, '=1,3', '=1,3'], [' ', '=1,3,4', ' ', '=1,2,3'], [' ', '=1,3,4', ' ', '=1,2,3']]"
+                    />
+                    <p class="text-center">Left candidates with two locks</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['=1,3', '=1,3', '=2,3', 4], ['=1,3,4',  2, '=3', '=1,3'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=2,3,4', '=2,3']]"
+                    />
+                    <p class="text-center">Left candidates with three locks</p>
+                </div>
+            </div>
+            <p>
+                As it can be seen above, locking number 1 in the third box of the third row leaves a single candidate in
+                the third box of the second row. According to the names I'm using, the third box of the second row is now
+                <b>inferable</b>. On one hand, this means that locking any other number in the box will make the sudoku impossible to solve. On the other side, and this is the interesting part, it also means that number 3 is no longer a candidate in any other box in the same row, column or region as the inferable box 🤘 Let's eliminate the candidate 3 from the corresponding boxes:
+            </p>
+            <div>
+                <Sudoku
+                    :size="4"
+                    :values="[['=1,3', '=1,3', '=2', 4], ['=1,4',  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=2,4', '=2,3']]"
+                />
+                <p class="text-center"></p>
+            </div>
+            <p>It is my lucky day! Two more boxes became inferable (TODO Which ones). Let's remove them too:</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['=1,3', '=1,3', '=2', 4], ['=1,4',  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=4', '=2,3']]"
+                    />
+                    <p class="text-center">Removed candidate 2 from applicable boxes</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['=1,3', '=1,3', '=2', 4], ['=4',  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=4', '=2,3']]"
+                    />
+                    <p class="text-center">Removed candidate 1 from applicable boxes</p>
+                </div>
+            </div>
+            <p>
+                This process can go on as long as new boxes become
+                <b>inferable</b>.
+            </p>
 
-            <p>DOING: Problem! We are not considering boxes whose value becomes fixed by other restictions</p>
+            <p>TODO: Put side by side the locked boxes and the inferrable ones</p>
 
-            <p>TODO: When to stop?</p>
+            <p>TODO: In fact, what we are doing now is trying to solve the sudoku. However, we come to a point where there is more than one box that has two possible values, i.e, the sudoku has multiple solutions. Since I won't accept an algorithm that generates multiple solution sudokus, another number must be locked at least</p>
+
+            <h5 class="attempt">Fifth attempt: knowing where to stop</h5>
+
+            <p>TODO: Attempt 5 When to stop? Allowing the algorithm to continue filling the grid...</p>
             <p>TODO: Optimization. Choose the highest impact boxes... and the ones with larger number of candidates</p>
-            <p>TODO: How to control the difficulty? Allowing the algorithm to continue filling the grid...</p>
+            <p>TODO: How to control the difficulty?</p>
         </div>
     </BlogEntry>
 </template>
