@@ -32,7 +32,7 @@ export default {
 
 <style lang="scss">
 @import '../../../../scss/globals.scss';
-$cellSize: 35px;
+$cellSize: 40px;
 
 .sudoku-grid {
     margin-top: 16px;
@@ -109,6 +109,75 @@ $cellSize: 35px;
 
                     &:last-child {
                         border-left: 1px solid $light-main-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dark {
+    .sudoku-grid {
+        .sudoku-row {
+            .sudoku-cell {
+                border-left: 1px solid $dark-main-color;
+                border-top: 1px solid $dark-main-color;
+
+                &:last-child {
+                    border-right: 1px solid $dark-main-color;
+                }
+            }
+
+            &:last-child {
+                .sudoku-cell {
+                    border-bottom: 1px solid $dark-main-color;
+                }
+            }
+        }
+
+        &.size-4 {
+            .sudoku-row {
+                .sudoku-cell {
+                    &:nth-child(2n + 3) {
+                        border-left: 2px solid $dark-main-color;
+
+                        &:last-child {
+                            border-left: 1px solid $dark-main-color;
+                        }
+                    }
+                }
+
+                &:nth-child(2n + 3) {
+                    .sudoku-cell {
+                        border-top: 2px solid $dark-main-color;
+
+                        &:last-child {
+                            border-left: 1px solid $dark-main-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.size-9 {
+            .sudoku-row {
+                .sudoku-cell {
+                    &:nth-child(3n + 4) {
+                        border-left: 2px solid $dark-main-color;
+
+                        &:last-child {
+                            border-left: 1px solid $dark-main-color;
+                        }
+                    }
+                }
+
+                &:nth-child(3n + 4) {
+                    .sudoku-cell {
+                        border-top: 2px solid $dark-main-color;
+
+                        &:last-child {
+                            border-left: 1px solid $dark-main-color;
+                        }
                     }
                 }
             }
