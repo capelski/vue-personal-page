@@ -223,7 +223,7 @@
 
             <h5 class="attempt">Forth attempt: considering inferable boxes</h5>
 
-            <p>An inferable box is a box which has a single candidate (and it hasn't been locked). A box becomes inferable when, having only two candidates left, one of the box candidates is locked in another box of the same row, column or region (which will cause that candidate to be removed from the given box). Sounds tricky but it is visually easier than it sounds. Assuming the following second and third locks for a given sudoku:</p>
+            <p>An inferable box is a non locked box which has a single candidate (i.e, a box that players will be able to fill). A box becomes inferable when, having only two candidates left, one of the box candidates is locked in another box of the same row, column or region (which will cause that candidate to be removed from the given box). Sounds tricky but it is visually easier than it sounds. Assuming the following second and third locks for a given sudoku:</p>
             <div class="screen-splitter">
                 <div>
                     <Sudoku :size="4" :values="[[' ', ' ', ' ', 4], [' ',  2]]" />
@@ -280,7 +280,7 @@
                 />
                 <p class="text-center"></p>
             </div>
-            <p>It is my lucky day! Two more boxes became inferable (TODO Which ones). Let's remove them too:</p>
+            <p>It's my lucky day! By removing the candidate 3 from the applicable boxes, two more boxes became inferable: the third of the first row and the forth of the second row. Let's continue removing candidates from related boxes:</p>
             <div class="screen-splitter">
                 <div>
                     <Sudoku
@@ -299,18 +299,119 @@
             </div>
             <p>
                 This process can go on as long as new boxes become
-                <b>inferable</b>.
+                <b>inferable</b>. When no more boxes become inferable can be either because all the boxes in the sudoku are inferable (which means the sudoku is ready for players to solve it) or because the locked boxes do not restrict enough the candidates of all the empty boxes of the sudoku (which means that the algorithm needs to lock at least another box if we want it to have a single solution). In a 4x4 grid, three locks are never enough to infer all the boxes. It takes at least one more lock to make it possible:
             </p>
-
-            <p>TODO: Put side by side the locked boxes and the inferrable ones</p>
-
-            <p>TODO: In fact, what we are doing now is trying to solve the sudoku. However, we come to a point where there is more than one box that has two possible values, i.e, the sudoku has multiple solutions. Since I won't accept an algorithm that generates multiple solution sudokus, another number must be locked at least</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku :size="4" :values="[[' ', ' ', ' ', 4], [' ',  2], [' ', ' ', 1]]" />
+                    <p class="text-center">Sudoku with three locks</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[[' ', ' ', '=2', 4], ['=4',  2, '=3', '=1'], [' ', ' ', 1], [' ', ' ', '=4']]"
+                    />
+                    <p class="text-center">Inferred boxes with three locks</p>
+                </div>
+            </div>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[[' ', ' ', ' ', 4], [' ',  2], [' ', ' ', 1], [3]]"
+                    />
+                    <p class="text-center">Sudoku with four locks</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="4"
+                        :values="[['=1', '=3', '=2', 4], ['=4',  2, '=3', '=1'], ['=2', '=4', 1, '=3'], [3, '=1', '=4', '=2']]"
+                    />
+                    <p class="text-center">Inferred boxes with four locks</p>
+                </div>
+            </div>
+            <p>In fact, what the algorithm is doing with this strategy is actually trying to solve the sudoku in the same way a player would do. In the moment that all the non locked boxes are inferable, sudoku players can complete it; there is no need to keep locking boxes and the master piece sudoku is finished. Glory sweet glory! A new algorithm is born 😎... isn't it?</p>
+            <p>Unfortunately, the algorithm fails to generate 9x9 grids. The problem comes from the maximum impact strategy, which does not work that well when it has to deal with 9 potential candidates for each box. At some point the candidate with greater impact for a given box turns to block out a number from that box row, column or region. Let's have a look at the following sudoku with 21 locks:</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[ [ '4', ' ', '1', ' ', ' ', ' ', ' ', ' ', ' ' ],
+                            [ ' ', ' ', ' ', ' ', ' ', ' ', '7', '3', ' ' ],
+                            [ ' ', ' ', ' ', '5', '2', ' ', '8', ' ', ' ' ],
+                            [ '8', ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
+                            [ ' ', ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
+                            [ ' ', ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
+                            [ ' ', '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
+                            [ ' ', ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
+                            [ ' ', '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
+                        "
+                    />
+                    <p class="text-center">Sudoku with 21 locked boxes</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[ [ '4', ' ', '1', ' ', ' ', ' ', ' ', ' ', ' ' ],
+                            [ '=2,5,6,9', ' ', ' ', ' ', ' ', ' ', '7', '3', ' ' ],
+                            [ '=3,6,7', '=3,6,7', '=3,6', '5', '2', '=3,7', '8', '=9', '=1,4,6' ],
+                            [ '8', ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
+                            [ '=1,3,9', ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
+                            [ '=2,3,5,6', ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
+                            [ '=1,2,3,6,7', '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
+                            [ '=1,2,7', ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
+                            [ '=1,2,3,6,7', '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
+                        "
+                    />
+                    <p class="text-center">Some candidates for the previous sudoku</p>
+                </div>
+            </div>
+            <p>Next, the algorithm will randomly chose a box and number with the greatest impact. One of the boxes with greater impact is the first of the second row and the number happens to be 6. This is what the sudoku will look like after locking the box and before trying to infer other boxes:</p>
+            <div class="screen-splitter">
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[ [ '4', ' ', '1', ' ', ' ', ' ', ' ', ' ', ' ' ],
+                            [ '6', ' ', ' ', ' ', ' ', ' ', '7', '3', ' ' ],
+                            [ ' ', ' ', ' ', '5', '2', ' ', '8', ' ', ' ' ],
+                            [ '8', ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
+                            [ ' ', ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
+                            [ ' ', ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
+                            [ ' ', '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
+                            [ ' ', ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
+                            [ ' ', '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
+                        "
+                    />
+                    <p class="text-center">Sudoku with 22 locked boxes</p>
+                </div>
+                <div>
+                    <Sudoku
+                        :size="9"
+                        :values="[ [ '4', ' ', '1', ' ', ' ', ' ', ' ', ' ', ' ' ],
+                            [ '6', ' ', ' ', ' ', ' ', ' ', '7', '3', ' ' ],
+                            [ '=3,7', '=3,7', '=3', '5', '2', '=3,7', '8', '=9', '=1,4,6' ],
+                            [ '8', ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
+                            [ '=1,3,9', ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
+                            [ '=2,3,5', ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
+                            [ '=1,2,3,7', '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
+                            [ '=1,2,7', ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
+                            [ '=1,2,3,7', '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
+                        "
+                    />
+                    <p class="text-center">Some candidates for the previous sudoku</p>
+                </div>
+            </div>
+            <p>So far, the sudoku is not valid anymore. TODO Continue here</p>
 
             <h5 class="attempt">Fifth attempt: knowing where to stop</h5>
 
+            <p>TODO: Call group a row, column or region</p>
+            <p>TODO: Call peers the related boxes</p>
             <p>TODO: Attempt 5 When to stop? Allowing the algorithm to continue filling the grid...</p>
             <p>TODO: Optimization. Choose the highest impact boxes... and the ones with larger number of candidates</p>
             <p>TODO: How to control the difficulty?</p>
+
+            <p>TODO Compute the impacts when removing a candidate?</p>
         </div>
     </BlogEntry>
 </template>
