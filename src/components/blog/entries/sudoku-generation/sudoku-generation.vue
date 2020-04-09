@@ -27,7 +27,7 @@
                 <div>
                     <Sudoku
                         :size="9"
-                        :values="[[5, 3, 4, 6, 7, 8, 9, 1, 2], [6, 7, 2, 1, 9, 5, 3, 4, 8],[1, 9, 8, 3, 4, 2, 5, 6, 7],[8, 5, 9, 7, 6, 1, 4, 2, 3],[4, 2, 6, 8, 5, 3, 7, 9, 1], [7, 1, 3, 9, 2, 4, 8, 5, 6],[9, 6, 1, 5, 3, 7, 2, 8, 4],[2, 8, 7, 4, 1, 9, 6, 3, 5],[ 3, 4, 5, 2, 8, 6, 1, 7, 9]]"
+                        :values="[[{number: 5, isHighlighted: true}, {number: 3, isHighlighted: true}, 4, 6, {number: 7, isHighlighted: true}, 8, 9, 1, 2], [{number: 6, isHighlighted: true}, 7, 2, {number: 1, isHighlighted: true}, {number: 9, isHighlighted: true}, {number: 5, isHighlighted: true}, 3, 4, 8],[1, {number: 9, isHighlighted: true}, {number: 8, isHighlighted: true}, 3, 4, 2, 5, {number: 6, isHighlighted: true}, 7],[{number: 8, isHighlighted: true}, 5, 9, 7, {number: 6, isHighlighted: true}, 1, 4, 2, {number: 3, isHighlighted: true}],[{number: 4, isHighlighted: true}, 2, 6, {number: 8, isHighlighted: true}, 5, {number: 3, isHighlighted: true}, 7, 9, {number: 1, isHighlighted: true}], [{number: 7, isHighlighted: true}, 1, 3, 9, {number: 2, isHighlighted: true}, 4, 8, 5,{number: 6, isHighlighted: true}],[9, {number: 6, isHighlighted: true}, 1, 5, 3, 7, {number: 2, isHighlighted: true}, {number: 8, isHighlighted: true}, 4],[2, 8, 7, {number: 4, isHighlighted: true}, {number: 1, isHighlighted: true}, {number: 9, isHighlighted: true}, 6, 3, {number: 5, isHighlighted: true}],[ 3, 4, 5, 2, {number: 8, isHighlighted: true}, 6, 1, {number: 7, isHighlighted: true}, {number: 9, isHighlighted: true}]]"
                     />
                     <p class="text-center">Sudoku solution</p>
                 </div>
@@ -125,7 +125,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['≠2'], ['≠2'], [2, '≠2', '≠2', '≠2'], ['≠2', '≠2']]"
+                        :values="[[{number:'≠2', isHighlighted: true}], [{number:'≠2', isHighlighted: true}], [2, {number:'≠2', isHighlighted: true}, {number:'≠2', isHighlighted: true}, {number:'≠2', isHighlighted: true}], [{number:'≠2', isHighlighted: true}, {number:'≠2', isHighlighted: true}]]"
                     />
                     <p class="text-center">Other affected boxes</p>
                 </div>
@@ -147,7 +147,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[[' ', '≠3'], ['', '≠3'], [2, 3, '≠3', '≠3'], ['≠3', '≠3']]"
+                        :values="[[' ', {number:'≠3', isHighlighted: true}], ['', {number:'≠3', isHighlighted: true}], [2, 3, {number:'≠3', isHighlighted: true}, {number:'≠3', isHighlighted: true}], [{number:'≠3', isHighlighted: true}, {number:'≠3', isHighlighted: true}]]"
                     />
                     <p class="text-center">Other affected boxes</p>
                 </div>
@@ -161,7 +161,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['≠3', 3, '≠3', '≠3'], ['≠3', '≠3'], [2, '≠3'], [' ', '≠3']]"
+                        :values="[[{number:'≠3', isHighlighted: true}, 3, {number:'≠3', isHighlighted: true}, {number:'≠3', isHighlighted: true}], [{number:'≠3', isHighlighted: true}, {number:'≠3', isHighlighted: true}], [2, {number:'≠3', isHighlighted: true}], [' ', {number:'≠3', isHighlighted: true}]]"
                     />
                     <p class="text-center">Other affected boxes</p>
                 </div>
@@ -176,7 +176,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['≠2', 2, '≠2', '≠2'], ['≠2', '≠2'], [2, '≠2'], [' ', '≠2']]"
+                        :values="[[{number:'≠2', isHighlighted: true}, 2, {number:'≠2', isHighlighted: true}, {number:'≠2', isHighlighted: true}], [{number:'≠2', isHighlighted: true}, {number:'≠2', isHighlighted: true}], [2, {number:'≠2', isHighlighted: true}], [' ', {number:'≠2', isHighlighted: true}]]"
                     />
                     <p class="text-center">Other affected boxes</p>
                 </div>
@@ -186,14 +186,14 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['≠2'], ['≠2'], [2, '≠2', '≠2', '≠2'], ['≠2', '≠2']]"
+                        :values="[[{number: '≠2', isHighlighted: true}], [{number: '≠2', isHighlighted: true}], [2, {number: '≠2', isHighlighted: true}, {number: '≠2', isHighlighted: true}, {number: '≠2', isHighlighted: true}], [{number: '≠2', isHighlighted: true}, {number: '≠2', isHighlighted: true}]]"
                     />
                     <p class="text-center">Total removed candidates in first lock</p>
                 </div>
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['≠2', 2, '≠2', '≠2'], ['≠2', '≠2'], [2, '≠2', '≠2', '≠2'], ['≠2', '≠2']]"
+                        :values="[['≠2', 2, {number:'≠2', isHighlighted: true}, {number:'≠2', isHighlighted: true}], ['≠2', {number:'≠2', isHighlighted: true}], [2, '≠2', '≠2', '≠2'], ['≠2', '≠2']]"
                     />
                     <p class="text-center">Total removed candidates in second lock</p>
                 </div>
@@ -215,7 +215,10 @@
                     <p class="text-center">Valid sudoku after locking the forth box</p>
                 </div>
                 <div>
-                    <Sudoku :size="4" :values="[[' ', 3], [' ', ' ', ' ', 2], [1], [2, ' ', 4]]" />
+                    <Sudoku
+                        :size="4"
+                        :values="[[' ', 3], [' ', ' ', ' ', 2], [1], [2, {number: '?', isHighlighted: true}, 4]]"
+                    />
                     <p class="text-center">Unvalid sudoku after locking the fifth box</p>
                 </div>
             </div>
@@ -246,7 +249,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['≠2,4', '≠2,4', '≠1,4', 4], ['≠2',  2, '≠1,2,4', '≠2,4'], ['≠1', '≠1,2', 1, '≠1,4'], [' ', '≠2', '≠1', '≠4']]"
+                        :values="[['≠2,4', '≠2,4', {number:'≠1,4', isHighlighted: true}, 4], ['≠2',  2, {number:'≠1,2,4', isHighlighted: true}, '≠2,4'], [{number:'≠1', isHighlighted: true}, {number:'≠1,2', isHighlighted: true}, 1, {number:'≠1,4', isHighlighted: true}], [' ', '≠2', {number:'≠1', isHighlighted: true}, {number:'≠1,4', isHighlighted: true}]]"
                     />
                     <p class="text-center">Eliminated candidates with three locks</p>
                 </div>
@@ -263,7 +266,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['=1,3', '=1,3', '=2,3', 4], ['=1,3,4',  2, '=3', '=1,3'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=2,3,4', '=2,3']]"
+                        :values="[['=1,3', '=1,3', {number:'=2,3', isHighlighted: true}, 4], ['=1,3,4',  2, {number:'=3', isHighlighted: true}, '=1,3'], [{number:'=2,3,4', isHighlighted: true}, {number:'=3,4', isHighlighted: true}, 1, {number:'=2,3', isHighlighted: true}], [' ', '=1,3,4', {number: '=2,3,4', isHighlighted: true}, {number: '=2,3', isHighlighted: true}]]"
                     />
                     <p class="text-center">Left candidates with three locks</p>
                 </div>
@@ -276,7 +279,7 @@
             <div>
                 <Sudoku
                     :size="4"
-                    :values="[['=1,3', '=1,3', '=2', 4], ['=1,4',  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=2,4', '=2,3']]"
+                    :values="[['=1,3', '=1,3', {number: '=2', isHighlighted: true}, 4], [{number:'=1,4', isHighlighted: true},  2, '=3', {number: '=1', isHighlighted: true}], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', {number:'=2,4', isHighlighted: true}, '=2,3']]"
                 />
                 <p class="text-center"></p>
             </div>
@@ -285,14 +288,14 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['=1,3', '=1,3', '=2', 4], ['=1,4',  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=4', '=2,3']]"
+                        :values="[['=1,3', '=1,3', '=2', 4], ['=1,4',  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', {number:'=4', isHighlighted: true}, '=2,3']]"
                     />
                     <p class="text-center">Removed candidate 2 from applicable boxes</p>
                 </div>
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['=1,3', '=1,3', '=2', 4], ['=4',  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=4', '=2,3']]"
+                        :values="[['=1,3', '=1,3', '=2', 4], [{number:'=4', isHighlighted: true},  2, '=3', '=1'], ['=2,3,4', '=3,4', 1, '=2,3'], [' ', '=1,3,4', '=4', '=2,3']]"
                     />
                     <p class="text-center">Removed candidate 1 from applicable boxes</p>
                 </div>
@@ -309,7 +312,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[[' ', ' ', '=2', 4], ['=4',  2, '=3', '=1'], [' ', ' ', 1], [' ', ' ', '=4']]"
+                        :values="[[' ', ' ', {number:'=2', isHighlighted: true}, 4], [{number:'=4', isHighlighted: true},  2, {number:'=3', isHighlighted: true}, {number:'=1', isHighlighted: true}], [' ', ' ', 1], [' ', ' ', {number:'=4', isHighlighted: true}]]"
                     />
                     <p class="text-center">Inferred boxes with three locks</p>
                 </div>
@@ -325,7 +328,7 @@
                 <div>
                     <Sudoku
                         :size="4"
-                        :values="[['=1', '=3', '=2', 4], ['=4',  2, '=3', '=1'], ['=2', '=4', 1, '=3'], [3, '=1', '=4', '=2']]"
+                        :values="[[{number:'=1', isHighlighted: true}, {number:'=3', isHighlighted: true}, {number:'=2', isHighlighted: true}, 4], [{number:'=4', isHighlighted: true},  2, {number:'=3', isHighlighted: true}, {number:'=1', isHighlighted: true}], [{number:'=2', isHighlighted: true}, {number:'=4', isHighlighted: true}, 1, {number:'=3', isHighlighted: true}], [3, {number:'=1', isHighlighted: true}, {number:'=4', isHighlighted: true}, {number:'=2', isHighlighted: true}]]"
                     />
                     <p class="text-center">Inferred boxes with four locks</p>
                 </div>
@@ -353,14 +356,14 @@
                     <Sudoku
                         :size="9"
                         :values="[ [ '4', ' ', '1', ' ', ' ', ' ', ' ', ' ', ' ' ],
-                            [ '=2,5,6,9', ' ', ' ', ' ', ' ', ' ', '7', '3', ' ' ],
-                            [ '=3,6,7', '=3,6,7', '=3,6', '5', '2', '=3,7', '8', '=9', '=1,4,6' ],
-                            [ '8', ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
-                            [ '=1,3,9', ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
-                            [ '=2,3,5,6', ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
-                            [ '=1,2,3,6,7', '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
-                            [ '=1,2,7', ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
-                            [ '=1,2,3,6,7', '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
+                            [ {number: '=2,5,6,9', isHighlighted: true}, ' ', ' ', ' ', ' ', ' ', '7', '3', ' ' ],
+                            [ {number: '=3,6,7', isHighlighted: true}, {number: '=3,6,7', isHighlighted: true}, {number: '=3,6', isHighlighted: true}, '5', '2', {number: '=3,7', isHighlighted: true}, '8', {number: '=9', isHighlighted: true}, {number: '=1,4,6', isHighlighted: true} ],
+                            [ {number: '8', isHighlighted: true}, ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
+                            [ {number: '=1,3,9', isHighlighted: true}, ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
+                            [ {number: '=2,3,5,6', isHighlighted: true}, ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
+                            [ {number: '=1,2,3,6,7', isHighlighted: true}, '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
+                            [ {number: '=1,2,7', isHighlighted: true}, ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
+                            [ {number: '=1,2,3,6,7', isHighlighted: true}, '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
                         "
                     />
                     <p class="text-center">Some candidates for the previous sudoku</p>
@@ -389,13 +392,13 @@
                         :size="9"
                         :values="[ [ '4', ' ', '1', ' ', ' ', ' ', ' ', ' ', ' ' ],
                             [ '6', ' ', ' ', ' ', ' ', ' ', '7', '3', ' ' ],
-                            [ '=3,7', '=3,7', '=3', '5', '2', '=3,7', '8', '=9', '=1,4,6' ],
-                            [ '8', ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
-                            [ '=1,3,9', ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
-                            [ '=2,3,5', ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
-                            [ '=1,2,3,7', '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
-                            [ '=1,2,7', ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
-                            [ '=1,2,3,7', '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
+                            [ {number: '=3,7', isHighlighted: true}, {number: '=3,7', isHighlighted: true}, {number: '=3', isHighlighted: true}, '5', '2', {number: '=3,7', isHighlighted: true}, '8', {number: '=9', isHighlighted: true}, {number: '=1,4,6', isHighlighted: true} ],
+                            [ {number: '8', isHighlighted: true}, ' ', '7', ' ', ' ', '4', ' ', ' ', ' ' ],
+                            [ {number: '=1,3,9', isHighlighted: true}, ' ', ' ', ' ', ' ', '6', '5', ' ', '2' ],
+                            [ {number: '=2,3,5', isHighlighted: true}, ' ', ' ', ' ', ' ', '1', ' ', ' ', '9' ],
+                            [ {number: '=1,2,3,7', isHighlighted: true}, '5', ' ', ' ', '8', ' ', ' ', ' ', ' ' ],
+                            [ {number: '=1,2,7', isHighlighted: true}, ' ', ' ', '3', ' ', ' ', ' ', '6', ' ' ],
+                            [ {number: '=1,2,3,7', isHighlighted: true}, '9', ' ', ' ', ' ', ' ', ' ', '4', ' ' ] ]
                         "
                     />
                     <p class="text-center">Some candidates for the previous sudoku</p>

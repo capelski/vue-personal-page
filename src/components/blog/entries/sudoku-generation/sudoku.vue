@@ -4,8 +4,8 @@
             <div
                 v-for="(cell, columnIndex) in row"
                 :key="`cell-${rowIndex}-${columnIndex}`"
-                class="sudoku-cell"
-            >{{cell}}</div>
+                :class="{'sudoku-cell': true, 'highlihted-cell': cell && cell.isHighlighted}"
+            >{{(cell && cell.number) || cell || ' '}}</div>
         </div>
     </div>
 </template>
@@ -19,10 +19,7 @@ export default {
             grid: [...Array(this.size)].map((_x, rowIndex) =>
                 [...Array(this.size)].map(
                     (_y, cellIndex) =>
-                        (this.values &&
-                            this.values[rowIndex] &&
-                            this.values[rowIndex][cellIndex]) ||
-                        ' '
+                        this.values && this.values[rowIndex] && this.values[rowIndex][cellIndex]
                 )
             )
         };
@@ -53,6 +50,10 @@ $cellSize: 40px;
 
             &:last-child {
                 border-right: 1px solid $light-main-color;
+            }
+
+            &.highlihted-cell {
+                background-color: $primary-color;
             }
         }
 
@@ -125,6 +126,10 @@ $cellSize: 40px;
 
                 &:last-child {
                     border-right: 1px solid $dark-main-color;
+                }
+
+                &.highlihted-cell {
+                    color: $light-main-color;
                 }
             }
 
