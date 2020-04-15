@@ -4,7 +4,7 @@
             <div
                 v-for="(cell, columnIndex) in row"
                 :key="`cell-${rowIndex}-${columnIndex}`"
-                :class="{'sudoku-cell': true, 'highlihted-cell': cell && cell.isHighlighted}"
+                :class="{'sudoku-cell': true, 'highlighted-cell': cell && cell.isHighlighted}"
             >{{(cell && cell.number) || cell || ' '}}</div>
         </div>
     </div>
@@ -52,7 +52,7 @@ $cellSize: 40px;
                 border-right: 1px solid $light-main-color;
             }
 
-            &.highlihted-cell {
+            &.highlighted-cell {
                 background-color: $primary-color;
             }
         }
@@ -128,7 +128,7 @@ $cellSize: 40px;
                     border-right: 1px solid $dark-main-color;
                 }
 
-                &.highlihted-cell {
+                &.highlighted-cell {
                     color: $light-main-color;
                 }
             }
