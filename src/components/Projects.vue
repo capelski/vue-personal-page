@@ -43,10 +43,18 @@ export default {
         return {
             projects: [
                 {
+                    date: 'March 2020 - April 2020',
+                    name: 'Sudoku generator',
+                    description:
+                        'My mom has always been a fan of sudoku puzzles. Someday we were wondering how the sudoku are generated and I decided to figure it out with this website',
+                    githubUrl: 'https://github.com/L3bowski/sudoku-generator',
+                    url: '/sudoku-generator'
+                },
+                {
                     date: 'December 2019 - January 2020',
                     name: 'Bachata science',
                     description:
-                        'Website for myself to remember bachata steps when I go to the clubs, made out of videos from dance classes. Built with React function components and nicely tested with Cucumber.js. husky, prettier and ts-lint also invited to the party',
+                        'Website for myself to remember bachata steps when I go to the clubs, made out of videos from dance classes. Built with React function components and nicely tested with Cucumber.js. husky, prettier and ts-lint are also invited to the party',
                     githubUrl: 'https://github.com/L3bowski/bachata-science',
                     url: '/bachata-science'
                 },
