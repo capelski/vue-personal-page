@@ -10,7 +10,7 @@ import KanbanGoalsTracking from './kanban-goals-tracking/kanban-goals-tracking';
 import Trecember from './trecember/trecember';
 import WebDevOnSteroidsI from './web-dev-on-steroids-i/web-dev-on-steroids-i';
 import WebDevOnSteroidsII from './web-dev-on-steroids-ii/web-dev-on-steroids-ii';
-// import SudokuGeneration from './sudoku-generation/sudoku-generation';
+import SudokuGeneration from './sudoku-generation/sudoku-generation';
 
 export default {
     AgilityRocks,
@@ -24,6 +24,6 @@ export default {
     KanbanGoalsTracking,
     Trecember,
     WebDevOnSteroidsI,
-    WebDevOnSteroidsII
-    // SudokuGeneration
+    WebDevOnSteroidsII,
+    SudokuGeneration
 };

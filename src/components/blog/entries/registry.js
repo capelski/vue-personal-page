@@ -9,8 +9,8 @@ const entries = [
     'kanban-goals-tracking',
     'trecember',
     'web-dev-on-steroids-i',
-    'web-dev-on-steroids-ii'
-    // 'sudoku-generation'
+    'web-dev-on-steroids-ii',
+    'sudoku-generation'
 ];
 
 const hiddenEntries = ['injusticia-existencial'];
