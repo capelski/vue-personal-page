@@ -29,18 +29,19 @@ export default {
             setTimeout(() => (this.loading = false), 800);
         });
 
-        if (window.location.href.startsWith(process.env.PRODUCTION_URL)) {
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            document.getElementsByTagName('body')[0].appendChild(script);
-            script.onload = function() {
-                (adsbygoogle = window.adsbygoogle || []).push({
-                    google_ad_client: 'ca-pub-3020023783009364',
-                    enable_page_level_ads: true
-                });
-            };
-            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-        }
+        // Google Ads
+        // if (window.location.href.startsWith(process.env.PRODUCTION_URL)) {
+        //     const script = document.createElement('script');
+        //     script.type = 'text/javascript';
+        //     document.getElementsByTagName('body')[0].appendChild(script);
+        //     script.onload = function() {
+        //         (adsbygoogle = window.adsbygoogle || []).push({
+        //             google_ad_client: 'ca-pub-3020023783009364',
+        //             enable_page_level_ads: true
+        //         });
+        //     };
+        //     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+        // }
     },
     metaInfo: {
         titleTemplate: '%s | Carles Capellas'
