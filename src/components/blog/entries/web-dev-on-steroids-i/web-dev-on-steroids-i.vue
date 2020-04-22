@@ -240,15 +240,16 @@ export default {
         };
     },
     mounted() {
-        createMonacoEditor(
-            this.$refs.typescriptInstall,
-            'bash',
-            `npm install --save-dev typescript awesome-typescript-loader`
-        );
-        createMonacoEditor(
-            this.$refs.typescriptConfig,
-            'javascript',
-            `{
+        if (!this.isRenderedFromList) {
+            createMonacoEditor(
+                this.$refs.typescriptInstall,
+                'bash',
+                `npm install --save-dev typescript awesome-typescript-loader`
+            );
+            createMonacoEditor(
+                this.$refs.typescriptConfig,
+                'javascript',
+                `{
     "compilerOptions": {
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
@@ -264,11 +265,11 @@ export default {
     "exclude": ["node_modules/"],
     "include": ["./src"]
 }`
-        );
-        createMonacoEditor(
-            this.$refs.typescriptWebpack,
-            'javascript',
-            `module.exports = {
+            );
+            createMonacoEditor(
+                this.$refs.typescriptWebpack,
+                'javascript',
+                `module.exports = {
     entry: './src/index.tsx',
     module: {
         rules: [
@@ -287,13 +288,17 @@ export default {
         extensions: ['.js', '.ts', '.tsx'],
     }
 };`
-        );
+            );
 
-        createMonacoEditor(this.$refs.prettierInstall, 'bash', `npm install --save-dev prettier`);
-        createMonacoEditor(
-            this.$refs.prettierConfig,
-            'json',
-            `{
+            createMonacoEditor(
+                this.$refs.prettierInstall,
+                'bash',
+                `npm install --save-dev prettier`
+            );
+            createMonacoEditor(
+                this.$refs.prettierConfig,
+                'json',
+                `{
     "bracketSpacing": true,
     "printWidth": 100,
     "semi": true,
@@ -301,11 +306,11 @@ export default {
     "tabWidth": 4,
     "trailingComma": "none"
 }`
-        );
-        createMonacoEditor(
-            this.$refs.prettierNpmScripts,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.prettierNpmScripts,
+                'json',
+                `{
     // ...
     "scripts": {
         // ...
@@ -313,33 +318,33 @@ export default {
         "prettier:fix": "prettier --write \\"src/**/*.{ts,tsx}\\""
     },
 }`
-        );
-        createMonacoEditor(
-            this.$refs.prettierExtension,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.prettierExtension,
+                'json',
+                `{
     "recommendations": [
         "esbenp.prettier-vscode"
         // ...
     ]
 }`
-        );
-        createMonacoEditor(
-            this.$refs.prettierExtensionConfig,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.prettierExtensionConfig,
+                'json',
+                `{
     "editor.formatOnSave": true,
     "prettier.requireConfig": true
     // Rest of the VSCode configuration parameters...
 }`
-        );
+            );
 
-        createMonacoEditor(this.$refs.eslintInstall, 'bash', `npm install --save-dev eslint`);
-        createMonacoEditor(this.$refs.eslintConfig, 'bash', `npx eslint --init`);
-        createMonacoEditor(
-            this.$refs.eslintNpmScripts,
-            'json',
-            `{
+            createMonacoEditor(this.$refs.eslintInstall, 'bash', `npm install --save-dev eslint`);
+            createMonacoEditor(this.$refs.eslintConfig, 'bash', `npx eslint --init`);
+            createMonacoEditor(
+                this.$refs.eslintNpmScripts,
+                'json',
+                `{
     // ...
     "scripts": {
         // ...
@@ -347,16 +352,16 @@ export default {
         "lint:fix": "eslint -c .eslintrc.js --ext ts,tsx --fix ./src",
     },
 }`
-        );
-        createMonacoEditor(
-            this.$refs.eslintPrettierInstall,
-            'bash',
-            `npm install --save-dev eslint-config-prettier eslint-plugin-prettier`
-        );
-        createMonacoEditor(
-            this.$refs.eslintPrettierConfig,
-            'javascript',
-            `// .eslintrc.js
+            );
+            createMonacoEditor(
+                this.$refs.eslintPrettierInstall,
+                'bash',
+                `npm install --save-dev eslint-config-prettier eslint-plugin-prettier`
+            );
+            createMonacoEditor(
+                this.$refs.eslintPrettierConfig,
+                'javascript',
+                `// .eslintrc.js
 module.exports = {
     // ...
     extends: [
@@ -366,35 +371,35 @@ module.exports = {
     ],
 
 };`
-        );
-        createMonacoEditor(
-            this.$refs.eslintExtension,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.eslintExtension,
+                'json',
+                `{
     "recommendations": [
         "dbaeumer.vscode-eslint"
         // ...
     ]
 }`
-        );
-        createMonacoEditor(
-            this.$refs.eslintExtensionConfig,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.eslintExtensionConfig,
+                'json',
+                `{
     "editor.formatOnSave": true,
     "eslint.format.enable": true
     // Rest of the VSCode configuration parameters...
 }`
-        );
-        createMonacoEditor(
-            this.$refs.eslintImportInstall,
-            'bash',
-            `npm install --save-dev eslint-plugin-import`
-        );
-        createMonacoEditor(
-            this.$refs.eslintImportConfig,
-            'javascript',
-            `module.exports = {
+            );
+            createMonacoEditor(
+                this.$refs.eslintImportInstall,
+                'bash',
+                `npm install --save-dev eslint-plugin-import`
+            );
+            createMonacoEditor(
+                this.$refs.eslintImportConfig,
+                'javascript',
+                `module.exports = {
     // ...
     extends: [
         // ...
@@ -407,18 +412,19 @@ module.exports = {
         'import/order': ['error', { alphabetize: { order: 'asc' } }]
     },
 };`
-        );
+            );
 
-        createMonacoEditor(
-            this.$refs.spellCheckExtension,
-            'json',
-            `{
+            createMonacoEditor(
+                this.$refs.spellCheckExtension,
+                'json',
+                `{
     "recommendations": [
         "streetsidesoftware.code-spell-checker"
         // ...
     ]
 }`
-        );
+            );
+        }
     }
 };
 </script>
