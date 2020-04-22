@@ -5,7 +5,7 @@
     >
         <div class="blog-entry">
             <BlogEntryHeader :id="entry.id" :isRenderedFromList="isRenderedFromList">
-                <h4>{{ title }}</h4>
+                <h4 class="blog-title">{{ title }}</h4>
                 <p>
                     <span class="blog-date">📅 {{ date }}</span>
                     <span class="blog-duration">&#x1F550; {{ duration }} mins</span>
@@ -99,9 +99,11 @@ export default {
             this.$router.push(`/blog/${this.entry.id}`);
         },
         translate() {
-            const languageIndex = this.languages.findIndex(l => l === language.current);
-            const nextLanguageIndex = (languageIndex + 1) % this.languages.length;
-            language.current = this.languages[nextLanguageIndex];
+            if (!this.isRenderedFromList) {
+                const languageIndex = this.languages.findIndex(l => l === language.current);
+                const nextLanguageIndex = (languageIndex + 1) % this.languages.length;
+                language.current = this.languages[nextLanguageIndex];
+            }
         }
     }
 };
@@ -129,14 +131,28 @@ export default {
         }
     }
 
+    .blog-title {
+        margin-bottom: 0;
+
+        & + p .blog-date,
+        & + p .blog-duration,
+        & + p .blog-language,
+        & + p .blog-tag {
+            margin-top: 8px;
+        }
+    }
+
+    .blog-date,
     .blog-duration {
-        margin-left: 10px;
+        display: inline-block;
+        margin-right: 10px;
     }
 
     .blog-language {
-        margin-left: 10px;
+        margin-right: 10px;
         padding: 5px;
         border-radius: 5px;
+        white-space: nowrap;
 
         &.selected {
             border: 2px solid $light-main-color;

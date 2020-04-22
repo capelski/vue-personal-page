@@ -5,19 +5,6 @@
         </div>
         <div class="row" v-if="isVisible">
             <div class="col-md-6 blog-options-column">
-                <h5>Calendar view</h5>
-                <VueCal
-                    xsmall
-                    style="height: 300px; max-width: 400px;"
-                    :time="false"
-                    :hide-view-selector="true"
-                    default-view="month"
-                    :disable-views="['years', 'year', 'week']"
-                    :events="events"
-                    :on-event-click="goToEntry"
-                />
-            </div>
-            <div class="col-md-6 blog-options-column">
                 <h5>Selected tags</h5>
                 <div>
                     <span
@@ -36,6 +23,19 @@
                     :class="{'clickable language': true, 'selected': language.current === 'ENG'}"
                     @click="selectLanguage('ENG')"
                 >English</span>
+            </div>
+            <div class="col-md-6 blog-options-column">
+                <h5>Calendar view</h5>
+                <VueCal
+                    xsmall
+                    style="height: 300px; max-width: 400px;"
+                    :time="false"
+                    :hide-view-selector="true"
+                    default-view="month"
+                    :disable-views="['years', 'year', 'week']"
+                    :events="events"
+                    :on-event-click="goToEntry"
+                />
             </div>
         </div>
         <div v-if="noTagsSelected">
@@ -152,7 +152,7 @@ export default {
 }
 
 .blog-tag {
-    margin-left: 10px;
+    margin-right: 10px;
     padding: 1px 7px;
     border-radius: 5px;
     color: white;
