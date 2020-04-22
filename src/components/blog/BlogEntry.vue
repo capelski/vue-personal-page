@@ -14,6 +14,11 @@
                         :key="tag.text"
                         :class="{'blog-tag': true, [tag.className]: true }"
                     >{{ tag.text }}</span>
+                    <span
+                        v-if="languages && ((!isRenderedFromList && languages.length > 1) || (isRenderedFromList && languages.length > 0))"
+                        v-on:click="translate"
+                        class="blog-language clickable"
+                    >🌎 {{ isRenderedFromList ? languages.join(', '): language.current}}</span>
                 </p>
             </BlogEntryHeader>
 
@@ -22,12 +27,7 @@
                 <div v-if="isRenderedFromList" class="faded" v-on:click="navigate"></div>
 
                 <div v-if="!isRenderedFromList">
-                    <BlogEntryFooter
-                        :description="description"
-                        :entry="entry"
-                        :hideNavigation="hideNavigation"
-                        :title="title"
-                    />
+                    <BlogEntryFooter :description="description" :entry="entry" :title="title" />
                 </div>
             </div>
         </div>
@@ -37,6 +37,7 @@
 <script>
 import BlogEntryFooter from './BlogEntryFooter';
 import BlogEntryHeader from './BlogEntryHeader';
+import { language } from './language';
 
 export default {
     name: 'BlogEntry',
@@ -50,11 +51,16 @@ export default {
         'description',
         'duration',
         'entry',
-        'hideNavigation',
         'isRenderedFromList',
+        'languages',
         'tags',
         'title'
     ],
+    data() {
+        return {
+            language
+        };
+    },
     computed: {
         isVisible() {
             return this.allTags.reduce((reducedTags, tag) => {
@@ -84,6 +90,11 @@ export default {
     methods: {
         navigate() {
             this.$router.push(`/blog/${this.entry.id}`);
+        },
+        translate() {
+            const languageIndex = this.languages.findIndex(l => l === language.current);
+            const nextLanguageIndex = (languageIndex + 1) % this.languages.length;
+            language.current = this.languages[nextLanguageIndex];
         }
     }
 };
@@ -112,6 +123,10 @@ export default {
     }
 
     .blog-duration {
+        margin-left: 10px;
+    }
+
+    .blog-language {
         margin-left: 10px;
     }
 

@@ -3,8 +3,7 @@ import LeakedApiKey from './leaked-api-key/leaked-api-key';
 import MeaningOfLife from './meaning-of-life/meaning-of-life';
 import FourCoinChallenge from './four-coin-challenge/four-coin-challenge';
 import ProgressiveWebApps from './progressive-web-apps/progressive-web-apps';
-import InjusticiaExistencial from './existential-injustice/catalan';
-import ExistentialInjustice from './existential-injustice/english';
+import ExistentialInjustice from './existential-injustice/index';
 import SubscribersList from './subscribers-list/subscribers-list';
 import KanbanGoalsTracking from './kanban-goals-tracking/kanban-goals-tracking';
 import Trecember from './trecember/trecember';
@@ -18,7 +17,6 @@ export default {
     MeaningOfLife,
     FourCoinChallenge,
     ProgressiveWebApps,
-    InjusticiaExistencial,
     ExistentialInjustice,
     SubscribersList,
     KanbanGoalsTracking,

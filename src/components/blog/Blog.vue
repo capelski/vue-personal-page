@@ -26,7 +26,7 @@ import WebDevOnSteroidsI from './entries/web-dev-on-steroids-i/web-dev-on-steroi
 import Trecember from './entries/trecember/trecember';
 import KanbanGoalsTracking from './entries/kanban-goals-tracking/kanban-goals-tracking';
 import SubscribersList from './entries/subscribers-list/subscribers-list';
-import ExistentialInjustice from './entries/existential-injustice/english';
+import ExistentialInjustice from './entries/existential-injustice/index';
 import ProgressiveWebApps from './entries/progressive-web-apps/progressive-web-apps';
 import FourCoinChallenge from './entries/four-coin-challenge/four-coin-challenge';
 import MeaningOfLife from './entries/meaning-of-life/meaning-of-life';

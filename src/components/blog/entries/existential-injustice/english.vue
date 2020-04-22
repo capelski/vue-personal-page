@@ -1,18 +1,5 @@
 <template>
-    <BlogEntry
-        :date="date"
-        description="Thoughts about the lack of life purpose that we feel sometimes"
-        duration="15"
-        :entry="entry"
-        :isRenderedFromList="isRenderedFromList"
-        :allTags="allTags"
-        :tags="[tags.Thoughts]"
-        :title="title"
-    >
-        <div v-if="!isRenderedFromList" class="alert alert-warning text-center" role="alert">
-            You can also read this post in
-            <router-link :to="`/blog/injusticia-existencial`">catalan</router-link>
-        </div>
+    <div>
         <p>You are meeting somebody. Maybe some friends. Maybe a date. Maybe your partner. Maybe a group of people you have recently started to hang out with. The first hours go by and you are having fun. You get to a point where the situation cools down. The connection level with the others decreases. You are still talking and laughing, but it doesn't fill you in the same way past occasions did.</p>
         <div v-if="!isRenderedFromList">
             <p>You start feeling you could be doing something else, that you could be making better use of your time. Dedicate a couple of hours to that personal project you are postponing or unnecessary extending over time. Maybe finish the book you are reading. Maybe go to gym. Maybe start your novelist career. You try to forget about the feeling and focus in the moment. You put a bit more emphasis in restoring the synergy between you and the people who you are with.</p>
@@ -54,35 +41,11 @@
             </p>
             <p>That's all for today 👍 See you in the next post!</p>
         </div>
-    </BlogEntry>
+    </div>
 </template>
 
 <script>
-import BlogEntry from '../../BlogEntry';
-import { tags } from '../../tags';
-import entriesRegistry from '../registry';
-import enough from './enough.gif';
-
-const date = '2019-08-28';
-const entry = entriesRegistry['existential-injustice'];
-const title = 'Existential injustice';
-
 export default {
-    name: entry.id,
-    components: {
-        BlogEntry
-    },
-    props: ['isRenderedFromList', 'allTags'],
-    data() {
-        return {
-            date,
-            entry,
-            images: {
-                enough
-            },
-            tags,
-            title
-        };
-    }
+    props: ['isRenderedFromList', 'images']
 };
 </script>
