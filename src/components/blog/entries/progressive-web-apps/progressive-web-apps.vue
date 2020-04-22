@@ -5,6 +5,7 @@
         duration="10"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :languages="['ENG']"
         :allTags="allTags"
         :tags="[tags.WebDevelopment]"
         :title="title"

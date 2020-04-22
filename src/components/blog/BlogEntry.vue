@@ -7,18 +7,21 @@
             <BlogEntryHeader :id="entry.id" :isRenderedFromList="isRenderedFromList">
                 <h4>{{ title }}</h4>
                 <p>
-                    <span class="blog-date">{{ date }}</span>
+                    <span class="blog-date">📅 {{ date }}</span>
                     <span class="blog-duration">&#x1F550; {{ duration }} mins</span>
+                    <span v-if="languages && languages.length > 0">
+                        <span
+                            v-for="thisLanguage in languages"
+                            :key="thisLanguage"
+                            v-on:click="translate"
+                            :class="{'blog-language clickable': true, 'selected': !isRenderedFromList && thisLanguage === language.current}"
+                        >🌎 {{thisLanguage}}</span>
+                    </span>
                     <span
                         v-for="tag in tags"
                         :key="tag.text"
                         :class="{'blog-tag': true, [tag.className]: true }"
                     >{{ tag.text }}</span>
-                    <span
-                        v-if="languages && languages.length > 1"
-                        v-on:click="translate"
-                        class="blog-language clickable"
-                    >🌎 {{ isRenderedFromList ? languages.join(', '): language.current}}</span>
                 </p>
             </BlogEntryHeader>
 
@@ -63,7 +66,7 @@ export default {
     },
     computed: {
         isVisible() {
-            return this.allTags.reduce((reducedTags, tag) => {
+            const hasSelectedTag = this.allTags.reduce((reducedTags, tag) => {
                 return (
                     reducedTags ||
                     this.tags.reduce(
@@ -72,6 +75,10 @@ export default {
                     )
                 );
             }, false);
+            const hasSelectedLanguage =
+                this.languages && this.languages.indexOf(language.current) > -1;
+
+            return hasSelectedTag && hasSelectedLanguage;
         }
     },
     metaInfo() {
@@ -128,6 +135,16 @@ export default {
 
     .blog-language {
         margin-left: 10px;
+        padding: 5px;
+        border-radius: 5px;
+
+        &.selected {
+            border: 2px solid $light-main-color;
+        }
+    }
+
+    .blog-all-languages {
+        margin-left: 10px;
     }
 
     img {
@@ -182,6 +199,10 @@ export default {
 
 .dark {
     .blog-entry {
+        .blog-language.selected {
+            border: 2px solid $dark-main-color;
+        }
+
         .faded-wrapper {
             .faded {
                 background: linear-gradient(

@@ -27,6 +27,15 @@
                         @click="selectTag(tag)"
                     >{{ tag.text }}</span>
                 </div>
+                <h5 class="languages-title">🌎 Language</h5>
+                <span
+                    :class="{'clickable language': true, 'selected': language.current === 'CAT'}"
+                    @click="selectLanguage('CAT')"
+                >Català</span>
+                <span
+                    :class="{'clickable language': true, 'selected': language.current === 'ENG'}"
+                    @click="selectLanguage('ENG')"
+                >English</span>
             </div>
         </div>
         <div v-if="noTagsSelected">
@@ -39,6 +48,7 @@
 <script>
 import VueCal from 'vue-cal';
 import BlogEntries from './entries/components';
+import { language } from './language';
 
 export default {
     name: 'BlogOptions',
@@ -58,12 +68,16 @@ export default {
                 };
             }),
             isVisible: false,
+            language,
             noTagsSelected: false
         };
     },
     methods: {
         goToEntry(event) {
             this.$router.push(`/blog/${event.id}`);
+        },
+        selectLanguage(selectedLanguage) {
+            language.current = selectedLanguage;
         },
         selectTag(targetTag) {
             targetTag.isSelected = !targetTag.isSelected;
@@ -121,10 +135,26 @@ export default {
     cursor: pointer;
 }
 
+.languages-title {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.language {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    &.selected {
+        font-weight: bold;
+        border: 2px solid $light-main-color;
+    }
+}
+
 .blog-tag {
     margin-left: 10px;
     padding: 1px 7px;
-    border-radius: 0.25rem;
+    border-radius: 5px;
     color: white;
     display: inline-block;
     font-weight: bold;
@@ -190,6 +220,10 @@ export default {
 }
 
 .dark {
+    .language.selected {
+        border: 2px solid $dark-main-color;
+    }
+
     .vuecal__arrow {
         color: $dark-main-color;
     }
