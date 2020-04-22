@@ -15,7 +15,7 @@
                         :class="{'blog-tag': true, [tag.className]: true }"
                     >{{ tag.text }}</span>
                     <span
-                        v-if="languages && ((!isRenderedFromList && languages.length > 1) || (isRenderedFromList && languages.length > 0))"
+                        v-if="languages && languages.length > 1"
                         v-on:click="translate"
                         class="blog-language clickable"
                     >🌎 {{ isRenderedFromList ? languages.join(', '): language.current}}</span>
