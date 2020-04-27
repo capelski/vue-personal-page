@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import SudokuGeneration from './entries/sudoku-generation/sudoku-generation';
+import SudokuGeneration from './entries/sudoku-generation/index';
 import WebDevOnSteroidsII from './entries/web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 import WebDevOnSteroidsI from './entries/web-dev-on-steroids-i/web-dev-on-steroids-i';
 import Trecember from './entries/trecember/trecember';

@@ -1,14 +1,5 @@
 <template>
-    <BlogEntry
-        :date="date"
-        description="TODO"
-        duration="TODO"
-        :entry="entry"
-        :isRenderedFromList="isRenderedFromList"
-        :allTags="allTags"
-        :tags="[tags.Dissemination]"
-        :title="title"
-    >
+    <div>
         <p>My mother has always been a fervent newspaper reader and she is in the habit of solving the puzzles that come in the last pages. Between those puzzles you can always find a game called sudoku. Two actually; a reasonably difficult one and an evil one. So mom was in the middle of filling the first sudoku when I came asking her for something. I don't remember what that question was now, but I do remember that we talked about sudoku and it was the difference between the two sudoku levels that caught my attention.</p>
         <div v-if="!isRenderedFromList">
             <p>
@@ -67,7 +58,7 @@
                 />
             </p>
 
-            <p>If you must now, this odyssey had TODO stages:</p>
+            <p>If you must know, this odyssey had TODO stages:</p>
 
             <ul>
                 <li>
@@ -464,65 +455,16 @@
 
             <p>TODO Compute the impacts when removing a candidate?</p>
         </div>
-    </BlogEntry>
+    </div>
 </template>
 
 <script>
-import BlogEntry from '../../BlogEntry';
-import { tags } from '../../tags';
-import entriesRegistry from '../registry';
-import commandLine from './command-line.png';
-import commandLineError from './command-line-error.png';
-import notTerribleNotGreat from './not-terrible-not-great.gif';
-import skyTvHillside from './sky-tv-hillside.jpg';
 import Sudoku from './sudoku';
 
-const date = 'TODO';
-const entry = entriesRegistry['sudoku-generation'];
-const title = 'Sudoku generation';
-
 export default {
-    name: entry.id,
     components: {
-        BlogEntry,
         Sudoku
     },
-    props: ['isRenderedFromList', 'allTags'],
-    data() {
-        return {
-            date,
-            entry,
-            images: {
-                commandLine,
-                commandLineError,
-                notTerribleNotGreat,
-                skyTvHillside
-            },
-            tags,
-            title
-        };
-    }
+    props: ['isRenderedFromList', 'images']
 };
 </script>
-
-<style lang="scss">
-@import '../../../../scss/globals.scss';
-
-.screen-splitter {
-    display: block;
-
-    @media (min-width: 768px) {
-        display: flex;
-    }
-
-    & > * {
-        flex-grow: 1;
-        margin: 0 5px;
-    }
-}
-
-.attempt {
-    margin-top: 35px;
-    border-bottom: 1px solid $light-main-color;
-}
-</style>
