@@ -1,19 +1,5 @@
 <template>
-    <BlogEntry
-        :date="date"
-        description="Reflexió sobre la sensació de falta de propòsit que sentim a vegades"
-        duration="15"
-        :entry="entry"
-        :hideNavigation="true"
-        :isRenderedFromList="isRenderedFromList"
-        :allTags="[]"
-        :tags="[tags.Thoughts]"
-        :title="title"
-    >
-        <div v-if="!isRenderedFromList" class="alert alert-warning text-center" role="alert">
-            També pots llegit aquesta entrada en
-            <router-link :to="`/blog/existential-injustice`">anglès</router-link>
-        </div>
+    <div>
         <p>Has quedat amb algú. Potser uns amics. Potser una cita. Potser la teva parella. Potser un grup de gent que fa poc que coneixes. Les primeres hores flueixen i t'ho passes bé. Arriba un punt que la situació es refreda una mica. El grau de connexió amb les altres persones baixa. Encara parleu i rieu, però notes que no t'omple de la mateixa manera que altres vegades.</p>
         <div v-if="!isRenderedFromList">
             <p>Comences a sentir que podries estar fent alguna altra cosa, aprofitar millor el temps d'una altra manera. Dedicar-te unes hores a aquell projecte personal que estàs ajornant o allargant. Potser acabar el llibre que estàs llegint. Potser anar al gimnàs. Potser començar la teva carrera com a novel·lista. Intentes descartar la idea i centrar-te en el moment. Poses una mica més d'èmfasi en recuperar la sinergia amb les persones que estàs.</p>
@@ -54,35 +40,11 @@
             </p>
             <p>Això és tot per avui 👍 Fins al proper post!</p>
         </div>
-    </BlogEntry>
+    </div>
 </template>
 
 <script>
-import BlogEntry from '../../BlogEntry';
-import { tags } from '../../tags';
-import entriesRegistry from '../registry';
-import enough from './enough.gif';
-
-const date = '2019-08-28';
-const entry = entriesRegistry['injusticia-existencial'];
-const title = 'Injustícia existencial';
-
 export default {
-    name: entry.id,
-    components: {
-        BlogEntry
-    },
-    data() {
-        return {
-            date,
-            entry,
-            images: {
-                enough
-            },
-            isRenderedFromList: false,
-            tags,
-            title
-        };
-    }
+    props: ['isRenderedFromList', 'images']
 };
 </script>

@@ -2,7 +2,7 @@
     <div class="blog-entry-footer">
         <NewsletterForm :hasBorderBottom="true" />
 
-        <div class="navigation-buttons" v-if="!hideNavigation">
+        <div class="navigation-buttons">
             <button
                 type="button"
                 :class="{'btn btn-primary': true, 'btn-disabled': !entry.previous }"
@@ -28,7 +28,7 @@ export default {
     components: {
         NewsletterForm
     },
-    props: ['description', 'entry', 'hideNavigation', 'title'],
+    props: ['description', 'entry', 'title'],
     data() {
         return {
             isShareAvailable: 'share' in navigator

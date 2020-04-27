@@ -5,6 +5,7 @@
         duration="8"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :languages="['ENG']"
         :allTags="allTags"
         :tags="[tags.WebDevelopment]"
         :title="title"
@@ -245,10 +246,11 @@ export default {
         };
     },
     mounted() {
-        createMonacoEditor(
-            this.$refs.jestTestExample,
-            'javascript',
-            `// ...
+        if (!this.isRenderedFromList) {
+            createMonacoEditor(
+                this.$refs.jestTestExample,
+                'javascript',
+                `// ...
 describe('Text component', () => {
     // ...
     let textProperties;
@@ -266,11 +268,11 @@ describe('Text component', () => {
     });
     // ...
 });`
-        );
-        createMonacoEditor(
-            this.$refs.gherkinTestExample,
-            'gherkin',
-            `Feature: Text component
+            );
+            createMonacoEditor(
+                this.$refs.gherkinTestExample,
+                'gherkin',
+                `Feature: Text component
 
     Scenario: should render a helper text when a helper text value is provided
         Given a default set of text propeties
@@ -278,11 +280,11 @@ describe('Text component', () => {
         When rendering the text component
         Then the text component contains a helper text element
 `
-        );
-        createMonacoEditor(
-            this.$refs.cucumberTestExample,
-            'javascript',
-            `import { Given, Then, When } from 'cucumber';
+            );
+            createMonacoEditor(
+                this.$refs.cucumberTestExample,
+                'javascript',
+                `import { Given, Then, When } from 'cucumber';
 // ...
 
 let textProperties;
@@ -306,20 +308,24 @@ Then('the text component contains a helper text element', () => {
     expect(textComponent.find('[data-element="helper-text"]')).toHaveLength(1);
 });
 `
-        );
-        createMonacoEditor(this.$refs.cucumberInstall, 'bash', 'npm install --save-dev cucumber');
-        createMonacoEditor(
-            this.$refs.cucumberConfig,
-            'javascript',
-            `module.exports = {
+            );
+            createMonacoEditor(
+                this.$refs.cucumberInstall,
+                'bash',
+                'npm install --save-dev cucumber'
+            );
+            createMonacoEditor(
+                this.$refs.cucumberConfig,
+                'javascript',
+                `module.exports = {
     default: \`--format-options '{"snippetInterface": "synchronous"}'\`
 };`
-        );
-        createMonacoEditor(this.$refs.jsdomInstall, 'bash', 'npm install --save-dev jsdom');
-        createMonacoEditor(
-            this.$refs.jsdomConfig,
-            'typescript',
-            `import { Before } from 'cucumber';
+            );
+            createMonacoEditor(this.$refs.jsdomInstall, 'bash', 'npm install --save-dev jsdom');
+            createMonacoEditor(
+                this.$refs.jsdomConfig,
+                'typescript',
+                `import { Before } from 'cucumber';
 import { DOMWindow, JSDOM } from 'jsdom';
 
 const parsedGlobal = (global as unknown) as {
@@ -346,51 +352,51 @@ const mockDocument = () => {
 mockDocument();
 
 Before(mockDocument);`
-        );
-        createMonacoEditor(
-            this.$refs.cucumberTypescriptInstall,
-            'bash',
-            'npm install --save-dev @types/cucumber @types/jsdom ts-node'
-        );
-        createMonacoEditor(
-            this.$refs.javascriptTest,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.cucumberTypescriptInstall,
+                'bash',
+                'npm install --save-dev @types/cucumber @types/jsdom ts-node'
+            );
+            createMonacoEditor(
+                this.$refs.javascriptTest,
+                'json',
+                `{
     // ...
     "scripts": {
         // ...
         "test": "cucumber-js --require cucumber-environment.js --require src/**/__step-definitions__/*.step.{js,jsx} src/**/feature/*.feature",
     },
 }`
-        );
-        createMonacoEditor(
-            this.$refs.typescriptTest,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.typescriptTest,
+                'json',
+                `{
     // ...
     "scripts": {
         // ...
         "test": "cucumber-js --require-module ts-node/register --require cucumber-environment.ts --require src/**/__step-definitions__/*.step.{ts,tsx} src/**/feature/*.feature",
     },
 }`
-        );
+            );
 
-        createMonacoEditor(this.$refs.nycInstall, 'bash', 'npm install --save-dev nyc');
-        createMonacoEditor(
-            this.$refs.coverageNpmScript,
-            'json',
-            `{
+            createMonacoEditor(this.$refs.nycInstall, 'bash', 'npm install --save-dev nyc');
+            createMonacoEditor(
+                this.$refs.coverageNpmScript,
+                'json',
+                `{
     // ...
     "scripts": {
         // ...
         "coverage": "nyc npm run test",
     },
 }`
-        );
-        createMonacoEditor(
-            this.$refs.nycConfig,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.nycConfig,
+                'json',
+                `{
     "cache": false,
     "check-coverage": false,
     "extension": [".ts", ".tsx"],
@@ -401,13 +407,13 @@ Before(mockDocument);`
     "all": true,
     "instrument": true
 }`
-        );
+            );
 
-        createMonacoEditor(this.$refs.huskyInstall, 'bash', 'npm install --save-dev husky');
-        createMonacoEditor(
-            this.$refs.huskyConfig,
-            'json',
-            `{
+            createMonacoEditor(this.$refs.huskyInstall, 'bash', 'npm install --save-dev husky');
+            createMonacoEditor(
+                this.$refs.huskyConfig,
+                'json',
+                `{
     // ...
     "husky": {
         "hooks": {
@@ -418,33 +424,33 @@ Before(mockDocument);`
         }
     },
 }`
-        );
+            );
 
-        createMonacoEditor(
-            this.$refs.conventionalCommits,
-            'bash',
-            `feat(lang): add polish language
+            createMonacoEditor(
+                this.$refs.conventionalCommits,
+                'bash',
+                `feat(lang): add polish language
 
 feat: allow provided config object to extend other configs
 
 docs: correct spelling of CHANGELOG`
-        );
-        createMonacoEditor(
-            this.$refs.commitlintInstall,
-            'bash',
-            'npm install --save-dev @commitlint/cli @commitlint/config-conventional'
-        );
-        createMonacoEditor(
-            this.$refs.commitlintConfig,
-            'javascript',
-            `module.exports = {
+            );
+            createMonacoEditor(
+                this.$refs.commitlintInstall,
+                'bash',
+                'npm install --save-dev @commitlint/cli @commitlint/config-conventional'
+            );
+            createMonacoEditor(
+                this.$refs.commitlintConfig,
+                'javascript',
+                `module.exports = {
     extends: ['@commitlint/config-conventional']
 };`
-        );
-        createMonacoEditor(
-            this.$refs.commitlintHusky,
-            'json',
-            `{
+            );
+            createMonacoEditor(
+                this.$refs.commitlintHusky,
+                'json',
+                `{
     // ...
     "husky": {
         "hooks": {
@@ -453,7 +459,8 @@ docs: correct spelling of CHANGELOG`
         }
     },
 }`
-        );
+            );
+        }
     }
 };
 </script>

@@ -5,6 +5,7 @@
         duration="5"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
+        :languages="['ENG']"
         :allTags="allTags"
         :tags="[tags.Entertainment]"
         :title="title"

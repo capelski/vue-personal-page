@@ -5,6 +5,26 @@
         </div>
         <div class="row" v-if="isVisible">
             <div class="col-md-6 blog-options-column">
+                <h5>Selected tags</h5>
+                <div>
+                    <span
+                        v-for="tag in allTags"
+                        :key="tag.text"
+                        :class="{'blog-tag clickable filter': true, [tag.className]: true, 'unselected': !tag.isSelected }"
+                        @click="selectTag(tag)"
+                    >{{ tag.text }}</span>
+                </div>
+                <h5 class="languages-title">🌎 Language</h5>
+                <span
+                    :class="{'clickable language': true, 'selected': language.current === 'CAT'}"
+                    @click="selectLanguage('CAT')"
+                >Català</span>
+                <span
+                    :class="{'clickable language': true, 'selected': language.current === 'ENG'}"
+                    @click="selectLanguage('ENG')"
+                >English</span>
+            </div>
+            <div class="col-md-6 blog-options-column">
                 <h5>Calendar view</h5>
                 <VueCal
                     xsmall
@@ -17,17 +37,6 @@
                     :on-event-click="goToEntry"
                 />
             </div>
-            <div class="col-md-6 blog-options-column">
-                <h5>Selected tags</h5>
-                <div>
-                    <span
-                        v-for="tag in allTags"
-                        :key="tag.text"
-                        :class="{'blog-tag clickable filter': true, [tag.className]: true, 'unselected': !tag.isSelected }"
-                        @click="selectTag(tag)"
-                    >{{ tag.text }}</span>
-                </div>
-            </div>
         </div>
         <div v-if="noTagsSelected">
             <h3>No tags selected</h3>
@@ -39,6 +48,7 @@
 <script>
 import VueCal from 'vue-cal';
 import BlogEntries from './entries/components';
+import { language } from './language';
 
 export default {
     name: 'BlogOptions',
@@ -58,12 +68,16 @@ export default {
                 };
             }),
             isVisible: false,
+            language,
             noTagsSelected: false
         };
     },
     methods: {
         goToEntry(event) {
             this.$router.push(`/blog/${event.id}`);
+        },
+        selectLanguage(selectedLanguage) {
+            language.current = selectedLanguage;
         },
         selectTag(targetTag) {
             targetTag.isSelected = !targetTag.isSelected;
@@ -121,10 +135,26 @@ export default {
     cursor: pointer;
 }
 
-.blog-tag {
+.languages-title {
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+.language {
     margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    &.selected {
+        font-weight: bold;
+        border: 2px solid $light-main-color;
+    }
+}
+
+.blog-tag {
+    margin-right: 10px;
     padding: 1px 7px;
-    border-radius: 0.25rem;
+    border-radius: 5px;
     color: white;
     display: inline-block;
     font-weight: bold;
@@ -190,6 +220,10 @@ export default {
 }
 
 .dark {
+    .language.selected {
+        border: 2px solid $dark-main-color;
+    }
+
     .vuecal__arrow {
         color: $dark-main-color;
     }
