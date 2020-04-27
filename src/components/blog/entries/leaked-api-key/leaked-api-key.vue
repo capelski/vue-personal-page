@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         description="Article on how to import the Google Maps API through npm and Webpack instead of requiring it with a script tag"
-        duration="10"
+        duration="9"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :languages="['ENG']"

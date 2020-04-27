@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         description="Reflection on how the meaning of life is not that relevant and what could we focus on instead"
-        duration="10"
+        duration="5"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :languages="['ENG']"

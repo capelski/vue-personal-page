@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         description="Quick guide on how to turn a single page application into a progressive web app"
-        duration="10"
+        duration="8"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :languages="['ENG']"

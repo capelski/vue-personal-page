@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         :description="descriptions[language.current]"
-        duration="15"
+        duration="6"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :languages="['CAT', 'ENG']"
