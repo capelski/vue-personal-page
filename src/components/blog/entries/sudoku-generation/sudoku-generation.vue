@@ -48,6 +48,54 @@
                 <b>I found myself unemployed and locked at my parents home</b>. So, provided with the biggest amount of free hours I had ever had in my life, I decided to investigate the sudoku generation subject for a while.
             </p>
 
+            <p>
+                What followed next was a much longer journey that I had expected in the beginning. I had to work on it around 75 hours to get some kind of acceptable sudoku generator, which was finally less complete than what I wanted it to be. I was about to quit the project four times but, luckily, I watched
+                <a
+                    href="https://www.imdb.com/title/tt4276820/"
+                    target="_blank"
+                >The Founder</a> in the meanwhile, the movie that tells how Ray Kroc turned McDonald's into the biggest restaurant business in the world through his bulletproof persistence. In my case, I didn't build a hamburger empire, but this what I came up with:
+                <a
+                    href="https://carlescapellas.xyz/sudoku-generator"
+                    target="_blank"
+                >carlescapellas.xyz/sudoku-generator</a>.
+            </p>
+
+            <p class="text-center">
+                <img
+                    :src="`${images.notTerribleNotGreat}?$modena=vue-personal-page`"
+                    alt="Not terrible, but not great"
+                />
+            </p>
+
+            <p>If you must now, this odyssey had TODO stages:</p>
+
+            <ul>
+                <li>
+                    <b>Results, results, results</b>: I couldn't fight the urge of seeing something done whithout thinking much. I assumed that the process of generating a 9x9 sudoku would be the same as generating a 4x4 one and I went for a quick command line algorithm.
+                    <p class="text-center">
+                        <img
+                            :src="`${images.commandLine}?$modena=vue-personal-page`"
+                            alt="Command line generated sudoku"
+                        />
+                    </p>
+                </li>
+                <li>
+                    <b>Damn! I need a graphical tool</b>: Almost there! The command line algorithm was generating valid single solution 4x4 sudokus 🎉 I just needed to adapt it to generate 9x9 sudoku and that would be the end of story. However, 9x9 sudokus have nothing to do with 4x4 sudokus. I couldn't figure out what was failing by reading the command output, so I had to go for a web application.
+                    <p class="text-center">
+                        <img
+                            :src="`${images.commandLineError}?$modena=vue-personal-page`"
+                            alt="Command line generation error"
+                        />
+                    </p>
+                </li>
+                <li>
+                    <b>Frog... this is complicated</b>: So, it didn't take me much time to create a web application that could display 9x9 sudoku grids. The tricky part that forced me to sit down and think for a while was understanding how TODO
+                </li>
+                <li>
+                    <b>There is light at the end of the tunnel!</b>:
+                </li>
+            </ul>
+
             <h5 class="attempt">First attempt: clear boxes in a full grid</h5>
 
             <p>
@@ -423,6 +471,9 @@
 import BlogEntry from '../../BlogEntry';
 import { tags } from '../../tags';
 import entriesRegistry from '../registry';
+import commandLine from './command-line.png';
+import commandLineError from './command-line-error.png';
+import notTerribleNotGreat from './not-terrible-not-great.gif';
 import skyTvHillside from './sky-tv-hillside.jpg';
 import Sudoku from './sudoku';
 
@@ -442,6 +493,9 @@ export default {
             date,
             entry,
             images: {
+                commandLine,
+                commandLineError,
+                notTerribleNotGreat,
                 skyTvHillside
             },
             tags,
