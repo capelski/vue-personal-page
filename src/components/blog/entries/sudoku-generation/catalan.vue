@@ -1,11 +1,11 @@
 <template>
     <div>
         <p>
-            My mother has always been a fervent newspaper reader and she is in the habit of solving the puzzles that come in the last pages. Between those puzzles you can always find a game called
+            La meva mare sempre ha estat una lectora fervent de diaris i, amb els anys, ha cultivat l'afició de completar els jocs que els diaris inclouen a les últimes pàgines. Entre aquests jocs sempre se n'hi troba un anomenat
             <a
                 href="https://en.wikipedia.org/wiki/Sudoku"
                 target="_blank"
-            >sudoku</a>. Two actually; a reasonably difficult one and an evil one. So she was in the middle of filling the first sudoku when I interrupted her. I don't remember what for but I do remember that we talked about sudoku and it was the difference between the two sudoku levels that caught my attention.
+            >sudoku</a>. Dos de fet; un de dificultat raonable i un de completament malvat. Va ser mentre ella estava enfeinada resolent el primer sudoku que la vaig interrompre. No recordo que volia en aquell moment, però si que recordo que vam parlar del sudoku i que em vaig fixar en la diferència de dificultat entre els dos nivells.
         </p>
         <div v-if="!isRenderedFromList">
             <div class="screen-splitter">
@@ -14,29 +14,28 @@
                         :size="9"
                         :values="[[' ', ' ', ' ', 1, 7, ' ', ' ', 5, 3], [3, 5, ' ', ' ', 8, 4, ' ', 7, 9], [8, 9, ' ', 3, ' ', 2],[5, 3, ' ', 4],[7, ' ', ' ', 5, ' ', 6, ' ', ' ', 4], [' ', 1, ' ', ' ', 2, ' ', 5, ' ', 8], [' ', 4, 5, ' ', ' ', 3, ' ', ' ', 7], [ ' ', ' ', ' ', 8, ' ', ' ', ' ', 2, 5], [' ', 2, ' ', 7, 9, ' ', ' ', 4]]"
                     />
-                    <p class="text-center">Easy sudoku</p>
+                    <p class="text-center">Sudoku fàcil</p>
                 </div>
                 <div>
                     <Sudoku
                         :size="9"
                         :values="[[' ', ' ', ' ', ' ', 7, ' ', 8, ' ', 4], [4, ' ', 7], [' ', ' ', ' ', 4, 1, ' ', ' ', ' ', 2], [' ', ' ', ' ', ' ', 2, ' ', ' ', 4], [' ', 8, 1, ' ', 3, ' ', 5], [9, 6], [' ', 9, 8], [5, 1, ' ', 8, ' ', ' ', ' ', ' ', 7], [' ', ' ', ' ', ' ', ' ', 6, ' ', ' ', 1]]"
                     />
-                    <p class="text-center">Hard sudoku</p>
+                    <p class="text-center">Sudoku difícil</p>
                 </div>
             </div>
 
             <p>
-                In the particular newspaper my mom was reading that day, the easy sudokdu had 28 filled boxes out of the 81 total whereas the difficult sudoku had 29 filled boxes.
-                <b>How come the more difficult puzzle had more filled boxes!?</b> Or, in other words, isn't the difficulty of a sudoku based on the number of empty boxes? At least, that was the feeling I had back then. The truth is that I had never taken the time to think about how sudoku are generated. I had solved a few of them sure, but I had never tried to figure out how to generate one.
+                En el diari que la mama llegia aquell dia en concret, el sudoku fàcil tenia 28 caselles omplertes de les 81 caselles totals mentre que el sudoku difícil en tenia 29.
+                <b>Com podia ser que el sudoku més complicat tingués més caselles omplertes!?</b> En altres paraules, no depen del número de caselles omplertes la dificultat del sudoku? Almenys, aquesta és la sensació que jo tenia. La veritat és que mai m'havia parat a pensar com es generen els sudokus. N'havia solucionat alguns es clar, però mai havia provat de generar-ne un.
             </p>
 
             <p>
-                In fact, it turns out is not easy at all. An important property of a well-composed sudoku is that it has only one possible solution. It might sound obvious but, depending on how many and which boxes are filled, there can be multiple valid combinations that solve the puzzle. The most famous example was the sudoku that UK Sky TV draw in a hillside offering a £5000 prize for the solution; it turned out to have
+                De fet, resulta que no és gens fàcil de generar-los. Una propiertat important d'un sudoku ben generat és que només té una solució possible. Pot sonar obvi però, depenent de com i quantes caselles tingui omplertes, un sudoku pot tenir múltiples solucions vàlides. L'exemple més famós és el sudoku que la cadena de televisió britànica Sky TV va dibuixar en un turó oferint un premi de 5000£ per la solució; va resultar que tenia
                 <a
                     href="https://www.sudokuwiki.org/Sudoku_Creation_and_Grading.pdf"
                     target="_blank"
-                >1905 possible solutions</a>. That
-                anecdote aroused my curiosity!
+                >1905 solucions possibles</a>. Aquesta anècdota va aconseguir despertar la meva curiositat!
             </p>
             <p class="text-center">
                 <img
@@ -46,9 +45,9 @@
             </p>
 
             <p>
-                <b>Usually I would have thought about it for a while</b>, realize it is a mathematically complex task, conclude that the amount of spare time required to find a solution was much bigger than the curiosity I had on the subject
-                <b>and finallly gave up</b>. Nevertheless I had just started a sabbatical leave at my company and my one way flight to Australia for March 31st got cancelled because of COVID-19 prevention measures.
-                <b>Given I found myself unemployed, locked at home and provided with the biggest amount of free hours I had ever had in my life</b> (in Spain the coronavirus lockdown started March 15th and it was meant to last at least for one month), I decided to figure out how to generate sudoku 💪
+                <b>Normalment hi hauria rumiat una estona</b>, m'hauria adonat que és una tasca matemàticament complexa, hauria conclòs que la quantitat de temps lliure que requereix trobar una solució al problema excedeix la curiositat que em genera el tema
+                <b>i finalment ho hauria deixat córrer</b>. Tanmateix resulta que acabava de començar un any sabàtic a la feina i que, degut a les measures preventives contra el COVID-19, es va cancelar el vol sense retorn que havia d'agafar el 31 de maig per anar a viure a Australia. Així doncs,
+                <b>com que estava sense feina, tancat a casa i amb la major quantitat de temps lliure de la que mai hagués disposat</b> (a Espanya el confinament pel coronavirus va començar el 15 de maig i havia de durar almenys un més), vaig decidir que descobriria com generar sudokus 💪
             </p>
 
             <p>
@@ -113,7 +112,7 @@
 
             <ul>
                 <li>
-                    If a box has only one possible number left, the number must be placed in that box and it's not valid in any peer box:
+                    Si a una casella X només hi pot anar un número, aquest número ha d'anar a la casella X i no és vàlid en cap altra casella dels grups (fila, columna i regió) de la casella X:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -123,7 +122,7 @@
                     </p>
                 </li>
                 <li>
-                    If a number can only be placed in one box for a given group (column, region or row), the number must be placed in that box and it's not valid in any peer box:
+                    Si per un grup determinat un número només pot anar a la casella X, aquest número ha d'anar a la casella X i no és vàlid en cap altra casella dels grups de la casella X:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -133,7 +132,7 @@
                     </p>
                 </li>
                 <li>
-                    If 2-3 boxes in a group have only the same 2-3 numbers available, those numbers are not valid in the rest of boxes in the group:
+                    Si 2-3 caselles d'un grup només poden tenir els mateixos 2-3 números, aquests números no són vàlids en cap altra casella del mateix grup:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -143,7 +142,7 @@
                     </p>
                 </li>
                 <li>
-                    If the only boxes where a number is available for a given region are in the same row or column, that number is not valid in the rest of boxes of that row or column:
+                    Si, per un grup determinat, les úniques caselles on pot anar un número estan a la mateixa fila o columna, aquest número no és vàlid a cap altra casella de la mateixa fila o columna:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -154,7 +153,7 @@
                 </li>
             </ul>
 
-            <p>That's pretty much it. I had to work on it around 75 hours to get some kind of acceptable sudoku generator. It was finally less complete than what I wanted it to be, but things never turn out the way you expect them to. Feel free to use my tool to generate sudokus but let me warn you: it isn't mobile friendly and I didn't work on configuring the difficulty, which makes the generated puzzles pretty hardcore. Good luck and see you in the next post!</p>
+            <p>I això vindria a ser tot. Vaig haver de dedicar-hi al voltant de 75 hores per aconseguir el que en diriem un generador acceptable. El resultat és menys complet del que m'havia imaginat en un principi, però les coses no són mai com esperes que siguin. Fes servir el generador si vols, però deixa'm avisar-te: no esta adaptat per mòbils i no vaig treballar en regular la dificultat, cosa que genera sudokus refotudament complicats. Bona sort i fins al proper post!</p>
         </div>
     </div>
 </template>

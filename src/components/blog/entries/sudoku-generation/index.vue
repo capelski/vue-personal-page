@@ -5,11 +5,16 @@
         duration="9"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
-        :languages="['ENG']"
+        :languages="['CAT', 'ENG']"
         :allTags="allTags"
         :tags="[tags.Thoughts]"
         :title="titles[language.current]"
     >
+        <catalan
+            v-if="language.current === 'CAT'"
+            :isRenderedFromList="isRenderedFromList"
+            :images="images"
+        />
         <english
             v-if="language.current === 'ENG'"
             :isRenderedFromList="isRenderedFromList"
@@ -23,6 +28,7 @@ import BlogEntry from '../../BlogEntry';
 import { language } from '../../language';
 import { tags } from '../../tags';
 import entriesRegistry from '../registry';
+import catalan from './catalan';
 import english from './english';
 import boxOnlyLeftCandidate from './box-only-left-candidate.png';
 import commandLine from './command-line.png';
@@ -46,6 +52,7 @@ export default {
     name: entry.id,
     components: {
         BlogEntry,
+        catalan,
         english
     },
     props: ['isRenderedFromList', 'allTags'],
