@@ -113,12 +113,12 @@
                 <a
                     href="/sudoku-generator"
                     target="_blank"
-                >sudoku generator</a>. If you are wondering, these are the rules my algorithm uses to generate sudoku puzzles. In fact, these are probably the rules you use when you are solving those puzzles too.
+                >sudoku generator</a>. I must admite that the generation fails sometimes, having to drop the faulty puzzle and starting again, but it always ends up generating valid single solution puzzles. If you are wondering, these are the rules my algorithm uses to generate sudoku. In fact, these are probably the rules you use when you are solving those puzzles too.
             </p>
 
             <ul>
                 <li>
-                    If a box has only one possible number left, the number must be placed in that box and is not valid in any peer box:
+                    If a box has only one possible number left, the number must be placed in that box and it's not valid in any peer box:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -128,7 +128,7 @@
                     </p>
                 </li>
                 <li>
-                    If a number can only be placed in one box for a given group (column, region or row), the number must be placed in that box and is not valid in any peer box:
+                    If a number can only be placed in one box for a given group (column, region or row), the number must be placed in that box and it's not valid in any peer box:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -138,7 +138,7 @@
                     </p>
                 </li>
                 <li>
-                    TODO
+                    If 2-3 boxes in a group have only the same 2-3 numbers available, those numbers are not valid in the rest of boxes in the group
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -148,7 +148,7 @@
                     </p>
                 </li>
                 <li>
-                    TODO
+                    If the only boxes where a number is available for a given group are in the same row or column, that number is not valid in the rest of boxes in that row or column
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -159,9 +159,7 @@
                 </li>
             </ul>
 
-            <!-- TODO: Retake the screenshots and add them to the sudoku-generator repo -->
-
-            <p>That's pretty much it. I had to work on it around 75 hours to get some kind of acceptable sudoku generator. It was finally less complete than what I wanted it to be, but things never turn out the way you expect them to. Feel free to use my tool to generate sudokus but let me warn you: I didn't find the way to configure the difficulty and the generated puzzles are pretty hardcore. Good luck and see you in the next post!</p>
+            <p>That's pretty much it. I had to work on it around 75 hours to get some kind of acceptable sudoku generator. It was finally less complete than what I wanted it to be, but things never turn out the way you expect them to. Feel free to use my tool to generate sudokus but let me warn you: it isn't mobile friendly and I didn't work on configuring the difficulty, which makes the generated puzzles pretty hardcore. Good luck and see you in the next post!</p>
         </div>
     </div>
 </template>
