@@ -40,10 +40,10 @@ import skyTvHillside from './sky-tv-hillside.jpg';
 import webAppFinalApproach from './web-app-final-approach.png';
 import webAppFirstApproach from './web-app-first-approach.png';
 
-const date = 'TODO';
+const date = '2020-04-29';
 const descriptions = {
-    ENG: 'TODO',
-    CAT: 'TODO'
+    ENG: 'All you need to know in order to build a sudoku generator',
+    CAT: 'Tot el que necessites saber per construir un generador de sudokus'
 };
 const entry = entriesRegistry['sudoku-generation'];
 const titles = { ENG: 'Sudoku generation', CAT: 'Generació de sudokus' };
