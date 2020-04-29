@@ -31,11 +31,11 @@
             </p>
 
             <p>
-                De fet, resulta que no és gens fàcil de generar-los. Una propiertat important d'un sudoku ben generat és que només té una solució possible. Pot sonar obvi però, depenent de com i quantes caselles tingui omplertes, un sudoku pot tenir múltiples solucions vàlides. L'exemple més famós és el sudoku que la cadena de televisió britànica Sky TV va dibuixar en un turó oferint un premi de 5000£ per la solució; va resultar que tenia
+                De fet, resulta que no és gens fàcil de generar-los. Una propiertat important d'un sudoku ben generat és que només té una solució possible. Pot sonar obvi però, depenent de com i quantes caselles tingui omplertes, un sudoku pot tenir múltiples solucions vàlides. L'exemple més famós és el sudoku que la cadena de televisió britànica Sky TV va dibuixar en un turó oferint 5000£ de premi per la solució; va resultar que tenia
                 <a
                     href="https://www.sudokuwiki.org/Sudoku_Creation_and_Grading.pdf"
                     target="_blank"
-                >1905 solucions possibles</a>. Aquesta anècdota va aconseguir despertar la meva curiositat!
+                >1905 solucions possibles</a>. Aquesta anècdota va aconseguir despertar la meva curiositat.
             </p>
             <p class="text-center">
                 <img
@@ -51,15 +51,15 @@
             </p>
 
             <p>
-                What followed next was a much longer journey that I had expected in the beginning. I was about to quit the project many times but, luckily, I watched
+                El que va venir a continuació va ser un camí més llarg del que m'havia esperat. Vaig estar apunt de donar el projecte per perdut vàries vegades però, per sort, vaig mirar
                 <a
                     href="https://www.imdb.com/title/tt4276820/"
                     target="_blank"
-                >The Founder</a> in the meanwhile, the movie that explains how Ray Kroc turned McDonald's into the biggest restaurant business in the world thanks to his bulletproof persistence. If you must know, this odyssey had four stages:
+                >The Founder</a> entremig, la pel·lícula que explica com Ray Kroc va transformar McDonald's en la cadena de restaurants més gran del món gràcies a la seva persistència a prova de bales. La veritat sigui dita, aquesta odissea va tenir quatre fases:
             </p>
 
             <p>
-                <b>1. Results, results, results</b>: I couldn't fight the urge of seeing something done whithout thinking much. I assumed that the process of generating a 9x9 sudoku would be the same as generating a 4x4 one and I went for a quick command line algorithm.
+                <b>1. Resultats, resultats, resultats</b>: No vaig poder resistir l'impuls de voler veure part de la feina acabada sense haver de pensar massa. Vaig assumir que el procés de generar un sudoku de 9x9 seria el mateix que el de generar-ne un de 4x4 i vaig tirar per un algorisme de consola ràpid.
             </p>
             <p class="text-center">
                 <img
@@ -70,7 +70,7 @@
             </p>
 
             <p>
-                <b>2. Damn! I need a graphical tool</b>: Almost there! The command line algorithm was generating valid single solution 4x4 sudokus 🎉 I just needed to adapt it to generate 9x9 sudoku and that would be the end of story. However, turns out that 9x9 sudokus have nothing to do with 4x4 sudokus. I couldn't figure out what was failing just by reading the command line output, so I had to go for a web application.
+                <b>2. Punyeta! Necessito una eina gràfica</b>: En teoria, només havia d'adaptar l'algorisme per generar sudokus de 9x9 i aqui acabaria la història. A la pràctica, resulta que els sudokus de 9x9 tenen poc a veure amb els de 4x4. No aconseguia entendre que estava fent malament només amb la informació que l'algorisme escrivia a la consola, així que no vaig tenir més remei que construir una eina gràfica.
             </p>
             <p class="text-center">
                 <img
@@ -81,7 +81,7 @@
             </p>
 
             <p>
-                <b>3. Frog... this is complicated</b>: It didn't take me much time to create a web application that could display 9x9 sudoku grids. With the visual representation of the sudoku and the ability to place numbers back and forth I began to understand what I was missing out. There are additional rules that forbid placing a number in a box apart from having that number in the same column, region or row.
+                <b>3. Cordons... això és complicat</b>: No em va portar gaire estona crear una aplicació web per representar sudokus de 9x9. Amb la representació visual del sudoku i la capacitat de fer i desfer omplint les caselles, vaig començar a entendre què m'havia passat per alt. Hi ha una lògica addicional que prohibeix posar un número en una casella més enllà de tenir el mateix número a la fila, columna o regió de la casella.
             </p>
             <p class="text-center">
                 <img
@@ -92,7 +92,7 @@
             </p>
 
             <p>
-                <b>4. There is light at the end of the tunnel</b>: After sitting down and thinking about it, as I should have done from the beginning, I figured out a set of additional rules that help discarding possible numbers from boxes. Having found out about those little bastards, it was just a matter of rewritting the algorithm to consider them. It took me a number of hours, but I could finally get a working generator.
+                <b>4. La llum al final del túnel</b>: Després de seure i donar-hi unes quantes voltes, com hauria d'haver fet desde el principi, vaig descobrir un conjunt de regles lògiques que permeten descartar números de caselles. Havent trobat aquestes petites malxinades, només era qüestió de reescriure l'algorisme per considerar-les. Em va portar la seva estona, però finalment vaig aconseguir un generador vàlid.
             </p>
             <p class="text-center">
                 <img
@@ -103,16 +103,16 @@
             </p>
 
             <p>
-                Hey look ma, I made it! In my case I didn't build a hamburger empire but this
+                Mira mama, ho he fet! En el meu cas no vaig construir un enorme imperi de les hamburgueses però si aquest humil
                 <a
                     href="/sudoku-generator"
                     target="_blank"
-                >sudoku generator</a>. I must admite that the generation fails sometimes, having to drop the faulty puzzle and starting again, but it always ends up generating valid single solution puzzles. If you are wondering, these are the rules my algorithm uses to generate sudoku. In fact, these are probably the rules you use when you are solving those puzzles too.
+                >generador de sudokus</a>. He d'admetre que a vegades arriba a carrerons sense sortida durant la generació, havent de descartar la feina i començar desde zero, però sempre acaba generant sudokus vàlids amb una única solució. En cas que t'ho estiguis preguntant, aquestes són les regles que utilitza l'algorisme per generar sudokus. De fet, és probable que siguin també les regles que fas servir tu a l'hora de resoldre'ls.
             </p>
 
             <ul>
                 <li>
-                    Si a una casella X només hi pot anar un número, aquest número ha d'anar a la casella X i no és vàlid en cap altra casella dels grups (fila, columna i regió) de la casella X:
+                    Si a una casella X només hi pot anar un número, aquest número ha d'anar a la casella X i no és vàlid en cap altra casella dels grups de la casella X (fila, columna i regió):
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -122,7 +122,7 @@
                     </p>
                 </li>
                 <li>
-                    Si per un grup determinat un número només pot anar a la casella X, aquest número ha d'anar a la casella X i no és vàlid en cap altra casella dels grups de la casella X:
+                    Si, per un grup determinat, un número només pot anar a la casella X, aquest número ha d'anar a la casella X i no és vàlid en cap altra casella dels grups de la casella X:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -142,7 +142,7 @@
                     </p>
                 </li>
                 <li>
-                    Si, per un grup determinat, les úniques caselles on pot anar un número estan a la mateixa fila o columna, aquest número no és vàlid a cap altra casella de la mateixa fila o columna:
+                    Si, per una regió determinada, les úniques caselles on pot anar un número estan a la mateixa fila o columna, aquest número no és vàlid a cap altra casella de la mateixa fila o columna:
                     <p class="text-center">
                         <img
                             class="limited-size-image"
@@ -153,7 +153,7 @@
                 </li>
             </ul>
 
-            <p>I això vindria a ser tot. Vaig haver de dedicar-hi al voltant de 75 hores per aconseguir el que en diriem un generador acceptable. El resultat és menys complet del que m'havia imaginat en un principi, però les coses no són mai com esperes que siguin. Fes servir el generador si vols, però deixa'm avisar-te: no esta adaptat per mòbils i no vaig treballar en regular la dificultat, cosa que genera sudokus refotudament complicats. Bona sort i fins al proper post!</p>
+            <p>I això vindria a ser tot. Vaig haver de dedicar-hi al voltant de 75 hores per aconseguir el que en diriem un generador acceptable. El resultat és menys complet del que m'havia imaginat en un principi, però les coses no són mai com esperes que siguin. Ets lliure de fer servir el generador si vols, però hi ha dues coses que has de saber: no esta adaptat per mòbils i no vaig treballar en regular la dificultat, cosa que genera sudokus refotudament complicats. Bona sort i fins al proper post!</p>
         </div>
     </div>
 </template>

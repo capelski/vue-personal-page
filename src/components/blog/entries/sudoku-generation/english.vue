@@ -27,16 +27,16 @@
 
             <p>
                 In the particular newspaper my mom was reading that day, the easy sudokdu had 28 filled boxes out of the 81 total whereas the difficult sudoku had 29 filled boxes.
-                <b>How come the more difficult puzzle had more filled boxes!?</b> Or, in other words, isn't the difficulty of a sudoku based on the number of empty boxes? At least, that was the feeling I had back then. The truth is that I had never taken the time to think about how sudoku are generated. I had solved a few of them sure, but I had never tried to figure out how to generate one.
+                <b>How come the more difficult puzzle had more filled boxes!?</b> Or, in other words, isn't the difficulty of a sudoku based on the number of filled boxes? At least, that was the feeling I had back then. The truth is that I had never taken the time to think about how sudoku are generated. I had solved a few of them sure, but I had never tried to figure out how to generate one.
             </p>
 
             <p>
-                In fact, it turns out is not easy at all. An important property of a well-composed sudoku is that it has only one possible solution. It might sound obvious but, depending on how many and which boxes are filled, there can be multiple valid combinations that solve the puzzle. The most famous example was the sudoku that UK Sky TV draw in a hillside offering a £5000 prize for the solution; it turned out to have
+                In fact, it turns out is not easy at all. An important property of a well-composed sudoku is that it has only one possible solution. It might sound obvious but, depending on how many and which boxes are filled, there can be multiple valid combinations that solve the puzzle. The most famous example is the sudoku that UK Sky TV draw in a hillside offering a £5000 prize for the solution; it turned out to have
                 <a
                     href="https://www.sudokuwiki.org/Sudoku_Creation_and_Grading.pdf"
                     target="_blank"
                 >1905 possible solutions</a>. That
-                anecdote aroused my curiosity!
+                anecdote aroused my curiosity.
             </p>
             <p class="text-center">
                 <img
@@ -47,7 +47,7 @@
 
             <p>
                 <b>Usually I would have thought about it for a while</b>, realize it is a mathematically complex task, conclude that the amount of spare time required to find a solution was much bigger than the curiosity I had on the subject
-                <b>and finallly gave up</b>. Nevertheless I had just started a sabbatical leave at my company and my one way flight to Australia for March 31st got cancelled because of COVID-19 prevention measures.
+                <b>and finallly gave up</b>. Nevertheless I had just started a sabbatical leave at my company and, due to COVID-19 prevention measures, the one way flight I was supposed to catch on March 31st to go living in Australia got cancelled.
                 <b>Given I found myself unemployed, locked at home and provided with the biggest amount of free hours I had ever had in my life</b> (in Spain the coronavirus lockdown started March 15th and it was meant to last at least for one month), I decided to figure out how to generate sudoku 💪
             </p>
 
@@ -60,7 +60,7 @@
             </p>
 
             <p>
-                <b>1. Results, results, results</b>: I couldn't fight the urge of seeing something done whithout thinking much. I assumed that the process of generating a 9x9 sudoku would be the same as generating a 4x4 one and I went for a quick command line algorithm.
+                <b>1. Results, results, results</b>: I couldn't fight the urge of wanting to see something done whithout thinking much. I assumed that the process of generating a 9x9 sudoku would be the same as generating a 4x4 one and I went for a quick command line algorithm.
             </p>
             <p class="text-center">
                 <img
@@ -71,7 +71,7 @@
             </p>
 
             <p>
-                <b>2. Damn! I need a graphical tool</b>: Almost there! The command line algorithm was generating valid single solution 4x4 sudokus 🎉 I just needed to adapt it to generate 9x9 sudoku and that would be the end of story. However, turns out that 9x9 sudokus have nothing to do with 4x4 sudokus. I couldn't figure out what was failing just by reading the command line output, so I had to go for a web application.
+                <b>2. Damn! I need a graphical tool</b>: In theory, I just needed to adapt the algorithm to generate 9x9 sudoku and that would be the end of story. At practice, turns out that 9x9 sudokus have little to do with 4x4 sudokus. I couldn't figure out what I was doing wrong just by reading the command line output, so I was compelled to built a graphical tool.
             </p>
             <p class="text-center">
                 <img
@@ -82,7 +82,7 @@
             </p>
 
             <p>
-                <b>3. Frog... this is complicated</b>: It didn't take me much time to create a web application that could display 9x9 sudoku grids. With the visual representation of the sudoku and the ability to place numbers back and forth I began to understand what I was missing out. There are additional rules that forbid placing a number in a box apart from having that number in the same column, region or row.
+                <b>3. Frog... this is complicated</b>: It didn't take me much time to create a web application that could display 9x9 sudoku. With the visual representation of the sudoku and the ability to fill boxes back and forth I began to understand what I was missing out. There is additional logic that forbids placing a number in a box apart from having the same number in the column, region or row of that box.
             </p>
             <p class="text-center">
                 <img
@@ -93,7 +93,7 @@
             </p>
 
             <p>
-                <b>4. There is light at the end of the tunnel</b>: After sitting down and thinking about it, as I should have done from the beginning, I figured out a set of additional rules that help discarding possible numbers from boxes. Having found out about those little bastards, it was just a matter of rewritting the algorithm to consider them. It took me a number of hours, but I could finally get a working generator.
+                <b>4. The light at the end of the tunnel</b>: After sitting down and thinking about it, as I should have done from the beginning, I figured out a set of logical rules that help discarding possible numbers from boxes. Having found out about those little bastards, it was just a matter of rewritting the algorithm to consider them. It took me a number of hours, but I could finally get a working generator.
             </p>
             <p class="text-center">
                 <img
@@ -104,11 +104,11 @@
             </p>
 
             <p>
-                Hey look ma, I made it! In my case I didn't build a hamburger empire but this
+                Hey look ma, I made it! In my case I didn't build a massive hamburger empire but this humble
                 <a
                     href="/sudoku-generator"
                     target="_blank"
-                >sudoku generator</a>. I must admite that the generation fails sometimes, having to drop the faulty puzzle and starting again, but it always ends up generating valid single solution puzzles. If you are wondering, these are the rules my algorithm uses to generate sudoku. In fact, these are probably the rules you use when you are solving those puzzles too.
+                >sudoku generator</a>. I must admite that it sometimes reaches dead ends during generation, having to drop the work and start again from scratch, but it always ends up generating valid single solution puzzles. If you are wondering, these are the rules the algorithm uses to generate sudoku. In fact, these are probably the rules you use when you are solving those puzzles too.
             </p>
 
             <ul>
@@ -154,7 +154,7 @@
                 </li>
             </ul>
 
-            <p>That's pretty much it. I had to work on it around 75 hours to get some kind of acceptable sudoku generator. It was finally less complete than what I wanted it to be, but things never turn out the way you expect them to. Feel free to use my tool to generate sudokus but let me warn you: it isn't mobile friendly and I didn't work on configuring the difficulty, which makes the generated puzzles pretty hardcore. Good luck and see you in the next post!</p>
+            <p>That's pretty much it. I had to work on it around 75 hours to get some kind of acceptable sudoku generator. It was finally less complete than what I wanted it to be, but things never turn out the way you expect them to. Feel free to use the generator, but there two things you must know: it isn't mobile friendly and I didn't work on configuring the difficulty, which makes the generated puzzles pretty hardcore. Good luck and see you in the next post!</p>
         </div>
     </div>
 </template>
