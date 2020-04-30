@@ -8,7 +8,7 @@ import 'vue-cal/dist/vuecal.css';
 import Vue from 'vue';
 import VueAnalytics from 'vue-analytics';
 import VueMeta from 'vue-meta';
-import App from './App';
+import App from './app';
 import router from './router';
 
 if (process.env.NODE_ENV === 'production') {

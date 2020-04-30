@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import BlogEntryFooter from './BlogEntryFooter';
-import BlogEntryHeader from './BlogEntryHeader';
+import BlogEntryFooter from './blog-entry-footer';
+import BlogEntryHeader from './blog-entry-header';
 import { language } from './language';
 
 export default {

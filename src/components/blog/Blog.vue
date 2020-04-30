@@ -20,20 +20,20 @@
 </template>
 
 <script>
-import SudokuGeneration from './entries/sudoku-generation/index';
+import SudokuGeneration from './entries/sudoku-generation';
 import WebDevOnSteroidsII from './entries/web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 import WebDevOnSteroidsI from './entries/web-dev-on-steroids-i/web-dev-on-steroids-i';
 import Trecember from './entries/trecember/trecember';
 import KanbanGoalsTracking from './entries/kanban-goals-tracking/kanban-goals-tracking';
 import SubscribersList from './entries/subscribers-list/subscribers-list';
-import ExistentialInjustice from './entries/existential-injustice/index';
+import ExistentialInjustice from './entries/existential-injustice';
 import ProgressiveWebApps from './entries/progressive-web-apps/progressive-web-apps';
 import FourCoinChallenge from './entries/four-coin-challenge/four-coin-challenge';
 import MeaningOfLife from './entries/meaning-of-life/meaning-of-life';
 import LeakedApiKey from './entries/leaked-api-key/leaked-api-key';
 import AgilityRocks from './entries/agility-rocks/agility-rocks';
-import BlogOptions from './BlogOptions';
-import NewsletterForm from './NewsletterForm';
+import BlogOptions from './blog-options';
+import NewsletterForm from './newsletter-form';
 import { tags } from './tags';
 
 export default {

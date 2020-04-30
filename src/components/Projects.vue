@@ -15,7 +15,7 @@
                 <div class="timeline-image">
                     <h4>
                         VB
-                        <br />dark
+                        <br />initial
                         <br />period
                     </h4>
                 </div>
@@ -25,7 +25,8 @@
 </template>
 
 <script>
-import Project from './Project.vue';
+import Project from './project';
+
 export default {
     name: 'Projects',
     components: { Project },

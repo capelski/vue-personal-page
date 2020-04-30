@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import BlogEntry from '../../BlogEntry';
+import BlogEntry from '../../blog-entry';
 import { language } from '../../language';
 import { tags } from '../../tags';
 import entriesRegistry from '../registry';

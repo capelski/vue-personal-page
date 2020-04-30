@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import BlogEntry from '../../BlogEntry';
+import BlogEntry from '../../blog-entry';
 import { tags } from '../../tags';
 import { createMonacoEditor } from '../monaco-utils';
 import entriesRegistry from '../registry';

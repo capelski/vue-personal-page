@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/Home';
-import Projects from '@/components/Projects';
-import Trips from '@/components/Trips';
-import Blog from '@/components/blog/Blog';
+import Home from '@/components/home';
+import Projects from '@/components/projects';
+import Trips from '@/components/trips';
+import Blog from '@/components/blog/blog';
 import BlogEntries from '@/components/blog/entries/components';
 
 Vue.use(Router);

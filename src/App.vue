@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
-import Loader from './components/Loader.vue';
+import Navbar from './components/navbar';
+import Loader from './components/loader';
 import router from './router';
 
 export default {

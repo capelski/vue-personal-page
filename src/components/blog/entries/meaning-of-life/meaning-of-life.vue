@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import BlogEntry from '../../BlogEntry';
+import BlogEntry from '../../blog-entry';
 import { tags } from '../../tags';
 import entriesRegistry from '../registry';
 import crazy from './crazy.gif';

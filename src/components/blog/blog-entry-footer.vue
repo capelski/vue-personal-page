@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import NewsletterForm from './NewsletterForm';
+import NewsletterForm from './newsletter-form';
 import { language } from './language';
 
 export default {
