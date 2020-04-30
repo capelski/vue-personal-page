@@ -26,6 +26,7 @@ export default {
         });
 
         router.afterEach((to, from) => {
+            window.scrollTo({ top: 0 });
             setTimeout(() => (this.loading = false), 800);
         });
 

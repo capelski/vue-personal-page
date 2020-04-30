@@ -22,6 +22,7 @@
 
 <script>
 import NewsletterForm from './NewsletterForm';
+import { language } from './language';
 
 export default {
     name: 'BlogEntryFooter',
@@ -40,7 +41,7 @@ export default {
                 navigator.share({
                     text: this.description,
                     title: this.title,
-                    url: `${process.env.PRODUCTION_URL}/blog/${this.entry.id}`
+                    url: `${process.env.PRODUCTION_URL}/blog/${this.entry.id}/${language.current}`
                 });
             }
             if (this.$ga) {
@@ -50,9 +51,6 @@ export default {
                     eventLabel: this.title
                 });
             }
-        },
-        navigate() {
-            this.$router.push(`/blog/${this.entry.id}`);
         },
         navigateFollowing() {
             if (this.entry.following) {

@@ -13,7 +13,7 @@
                         <span
                             v-for="thisLanguage in languages"
                             :key="thisLanguage"
-                            v-on:click="translate"
+                            v-on:click="() => translate(thisLanguage)"
                             :class="{'blog-language clickable': true, 'selected': !isRenderedFromList && thisLanguage === language.current}"
                         >🌎 {{thisLanguage}}</span>
                     </span>
@@ -59,6 +59,20 @@ export default {
         'tags',
         'title'
     ],
+    mounted() {
+        if (!this.isRenderedFromList) {
+            const selectedLanguage = this.$router.currentRoute.params.language;
+
+            if (selectedLanguage && language.current !== selectedLanguage) {
+                language.current = selectedLanguage;
+            }
+
+            if (this.languages.indexOf(language.current) === -1) {
+                language.current = this.languages[0];
+                this.$router.replace(`/blog/${this.entry.id}/${this.languages[0]}`);
+            }
+        }
+    },
     data() {
         return {
             language
@@ -96,13 +110,12 @@ export default {
     },
     methods: {
         navigate() {
-            this.$router.push(`/blog/${this.entry.id}`);
+            this.$router.push(`/blog/${this.entry.id}/${language.current}`);
         },
-        translate() {
-            if (!this.isRenderedFromList) {
-                const languageIndex = this.languages.findIndex(l => l === language.current);
-                const nextLanguageIndex = (languageIndex + 1) % this.languages.length;
-                language.current = this.languages[nextLanguageIndex];
+        translate(nextLanguage) {
+            if (!this.isRenderedFromList && language.current !== nextLanguage) {
+                language.current = nextLanguage;
+                this.$router.replace(`/blog/${this.entry.id}/${nextLanguage}`);
             }
         }
     }

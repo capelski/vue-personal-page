@@ -35,7 +35,7 @@ const routes = [
 
 Object.values(BlogEntries).forEach(blogEntry => {
     routes.push({
-        path: `/blog/${blogEntry.data().entry.id}` ,
+        path: `/blog/${blogEntry.data().entry.id}/:language?`,
         name: blogEntry.data().title,
         component: blogEntry
     });
@@ -45,10 +45,6 @@ const router = new Router({
     base: process.env.baseUrl,
     mode: 'history',
     routes
-});
-
-router.afterEach((to, from) => {
-    window.scrollTo({ top: 0 });
 });
 
 export default router;

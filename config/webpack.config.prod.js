@@ -1,26 +1,23 @@
 'use strict';
 
-const webpack                  = require('webpack');
-const merge                    = require('webpack-merge');
-const OptimizeCSSAssetsPlugin  = require('optimize-css-assets-webpack-plugin');
-const MiniCSSExtractPlugin     = require('mini-css-extract-plugin');
-const UglifyJSPlugin           = require('uglifyjs-webpack-plugin');
-const CompressionPlugin        = require('compression-webpack-plugin');
-const path                     = require('path');
-const commonConfig             = require('./webpack.config.common');
-const isProd                   = process.env.NODE_ENV === 'production';
-const environment              = require('./env/prod.env');
-const PrerenderSpaPlugin       = require('prerender-spa-plugin');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const path = require('path');
+const commonConfig = require('./webpack.config.common');
+const isProd = process.env.NODE_ENV === 'production';
+const environment = require('./env/prod.env');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 const blogEntries = require('../src/components/blog/entries/registry');
-const prerenderRoutes = [
-    '/',
-    '/blog',
-    '/projects',
-    '/trips'
-];
+const prerenderRoutes = ['/', '/blog', '/projects', '/trips'];
 Object.values(blogEntries).forEach(entry => {
     prerenderRoutes.push(`/blog/${entry.id}`);
+    prerenderRoutes.push(`/blog/${entry.id}/ENG`);
+    prerenderRoutes.push(`/blog/${entry.id}/CAT`);
 });
 
 const webpackConfig = merge(commonConfig, {
@@ -40,7 +37,7 @@ const webpackConfig = merge(commonConfig, {
         minimizer: [
             new OptimizeCSSAssetsPlugin({
                 cssProcessorPluginOptions: {
-                    preset: [ 'default', { discardComments: { removeAll: true } } ],
+                    preset: ['default', { discardComments: { removeAll: true } }]
                 }
             }),
             new UglifyJSPlugin({
@@ -48,7 +45,7 @@ const webpackConfig = merge(commonConfig, {
                 parallel: true,
                 sourceMap: !isProd
             })
-        ],
+        ]
         // splitChunks: {
         //     chunks: 'all',
         //     maxInitialRequests: Infinity,
@@ -73,7 +70,7 @@ const webpackConfig = merge(commonConfig, {
     plugins: [
         new webpack.EnvironmentPlugin(environment),
         new MiniCSSExtractPlugin({
-            filename: 'css/[name].css?$modena=vue-personal-page',
+            filename: 'css/[name].css?$modena=vue-personal-page'
             // filename: 'css/[name].[hash].css?$modena=vue-personal-page',
             // chunkFilename: 'css/[id].[hash].css?$modena=vue-personal-page'
         }),
@@ -87,7 +84,7 @@ const webpackConfig = merge(commonConfig, {
         // new webpack.HashedModuleIdsPlugin(),
         new PrerenderSpaPlugin({
             staticDir: path.join(__dirname, '..', 'dist'),
-            routes: prerenderRoutes,
+            routes: prerenderRoutes
         })
     ]
 });
