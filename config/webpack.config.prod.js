@@ -16,8 +16,8 @@ const blogEntries = require('../src/components/blog/entries/registry');
 const prerenderRoutes = ['/', '/blog', '/projects', '/trips'];
 Object.values(blogEntries).forEach(entry => {
     prerenderRoutes.push(`/blog/${entry.id}`);
-    prerenderRoutes.push(`/blog/${entry.id}/ENG`);
-    prerenderRoutes.push(`/blog/${entry.id}/CAT`);
+    prerenderRoutes.push(`/blog/${entry.id}/eng`);
+    prerenderRoutes.push(`/blog/${entry.id}/cat`);
 });
 
 const webpackConfig = merge(commonConfig, {

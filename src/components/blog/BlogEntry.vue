@@ -15,7 +15,7 @@
                             :key="thisLanguage"
                             v-on:click="() => translate(thisLanguage)"
                             :class="{'blog-language clickable': true, 'selected': !isRenderedFromList && thisLanguage === language.current}"
-                        >🌎 {{thisLanguage}}</span>
+                        >🌎 {{thisLanguage.toUpperCase()}}</span>
                     </span>
                     <span
                         v-for="tag in tags"

@@ -5,18 +5,18 @@
         duration="9"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
-        :languages="['CAT', 'ENG']"
+        :languages="['cat', 'eng']"
         :allTags="allTags"
         :tags="[tags.Thoughts]"
         :title="titles[language.current]"
     >
         <catalan
-            v-if="language.current === 'CAT'"
+            v-if="language.current === 'cat'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
         <english
-            v-if="language.current === 'ENG'"
+            v-if="language.current === 'eng'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
@@ -42,11 +42,11 @@ import webAppFirstApproach from './web-app-first-approach.png';
 
 const date = '2020-04-29';
 const descriptions = {
-    ENG: 'All you need to know in order to build a sudoku generator',
-    CAT: 'Tot el que necessites saber per construir un generador de sudokus'
+    eng: 'All you need to know in order to build a sudoku generator',
+    cat: 'Tot el que necessites saber per construir un generador de sudokus'
 };
 const entry = entriesRegistry['sudoku-generation'];
-const titles = { ENG: 'Sudoku generation', CAT: 'Generació de sudokus' };
+const titles = { eng: 'Sudoku generation', cat: 'Generació de sudokus' };
 
 export default {
     name: entry.id,

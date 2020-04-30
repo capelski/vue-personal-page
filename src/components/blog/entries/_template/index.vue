@@ -5,18 +5,18 @@
         duration="TODO"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
-        :languages="['CAT', 'ENG']"
+        :languages="['cat', 'eng']"
         :allTags="allTags"
         :tags="[tags.Thoughts]"
         :title="titles[language.current]"
     >
         <catalan
-            v-if="language.current === 'CAT'"
+            v-if="language.current === 'cat'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
         <english
-            v-if="language.current === 'ENG'"
+            v-if="language.current === 'eng'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
@@ -33,11 +33,11 @@ import english from './english';
 
 const date = 'TODO';
 const descriptions = {
-    ENG: 'TODO',
-    CAT: 'TODO'
+    eng: 'TODO',
+    cat: 'TODO'
 };
 const entry = entriesRegistry['TODO'];
-const titles = { ENG: 'TODO', CAT: 'TODO' };
+const titles = { eng: 'TODO', cat: 'TODO' };
 
 export default {
     name: entry.id,
