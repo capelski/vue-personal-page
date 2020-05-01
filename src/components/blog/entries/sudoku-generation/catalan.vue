@@ -27,11 +27,11 @@
 
             <p>
                 En el diari que la mama llegia aquell dia en concret, el sudoku fàcil tenia 28 caselles omplertes de les 81 caselles totals mentre que el sudoku difícil en tenia 29.
-                <b>Com podia ser que el sudoku més complicat tingués més caselles omplertes!?</b> En altres paraules, no depen del número de caselles omplertes la dificultat del sudoku? Almenys, aquesta és la sensació que jo tenia. La veritat és que mai m'havia parat a pensar com es generen els sudokus. N'havia solucionat alguns es clar, però mai havia provat de generar-ne un.
+                <b>Com podia ser que el sudoku més complicat tingués més caselles omplertes!?</b> En altres paraules, no depen del número de caselles omplertes la dificultat del sudoku? Almenys, aquesta és la sensació que jo tenia. La veritat és que mai m'havia parat a pensar com es generen els sudokus. N'havia solucionat alguns és clar, però mai havia provat de generar-ne un.
             </p>
 
             <p>
-                De fet, resulta que no és gens fàcil de generar-los. Una propiertat important d'un sudoku ben generat és que només té una solució possible. Pot sonar obvi però, depenent de com i quantes caselles tingui omplertes, un sudoku pot tenir múltiples solucions vàlides. L'exemple més famós és el sudoku que la cadena de televisió britànica Sky TV va dibuixar en un turó oferint 5000£ de premi per la solució; va resultar que tenia
+                De fet, resulta que no és gens fàcil de generar-los. Una propietat important d'un sudoku ben generat és que només té una solució possible. Pot sonar obvi però, depenent de com i quantes caselles tingui omplertes, un sudoku pot tenir múltiples solucions vàlides. L'exemple més famós és el sudoku que la cadena de televisió britànica Sky TV va dibuixar en un turó oferint 5000£ de premi per la solució; va resultar que tenia
                 <a
                     href="https://www.sudokuwiki.org/Sudoku_Creation_and_Grading.pdf"
                     target="_blank"
@@ -46,8 +46,8 @@
 
             <p>
                 <b>Normalment hi hauria rumiat una estona</b>, m'hauria adonat que és una tasca matemàticament complexa, hauria conclòs que la quantitat de temps lliure que requereix trobar una solució al problema excedeix la curiositat que em genera el tema
-                <b>i finalment ho hauria deixat córrer</b>. Tanmateix resulta que acabava de començar un any sabàtic a la feina i que, degut a les measures preventives contra el COVID-19, es va cancelar el vol sense retorn que havia d'agafar el 31 de maig per anar a viure a Australia. Així doncs,
-                <b>com que estava sense feina, tancat a casa i amb la major quantitat de temps lliure de la que mai hagués disposat</b> (a Espanya el confinament pel coronavirus va començar el 15 de maig i havia de durar almenys un més), vaig decidir que descobriria com generar sudokus 💪
+                <b>i finalment ho hauria deixat córrer</b>. Tanmateix resulta que acabava de començar un any sabàtic a la feina i que, degut a les mesures preventives contra el COVID-19, es va cancelar el vol sense retorn que havia d'agafar el 31 de març per anar a viure a Austràlia. Així doncs,
+                <b>com que estava sense feina, tancat a casa i amb la major quantitat de temps lliure de la que mai hagués disposat</b> (a Espanya el confinament pel coronavirus va començar el 15 de març i havia de durar almenys un mes), vaig decidir que descobriria com generar sudokus 💪
             </p>
 
             <p>
@@ -59,7 +59,7 @@
             </p>
 
             <p>
-                <b>1. Resultats, resultats, resultats</b>: No vaig poder resistir l'impuls de voler veure part de la feina acabada sense haver de pensar massa. Vaig assumir que el procés de generar un sudoku de 9x9 seria el mateix que el de generar-ne un de 4x4 i vaig tirar per un algorisme de consola ràpid.
+                <b>1. Resultats, resultats, resultats</b>: No vaig poder resistir l'impuls de voler veure part de la feina acabada sense haver de pensar massa. Vaig assumir que el procés de generar un sudoku de 9x9 seria el mateix que el de generar-ne un de 4x4 i vaig tirar per un algoritme de consola ràpid.
             </p>
             <p class="text-center">
                 <img
@@ -70,7 +70,7 @@
             </p>
 
             <p>
-                <b>2. Punyeta! Necessito una eina gràfica</b>: En teoria, només havia d'adaptar l'algorisme per generar sudokus de 9x9 i aqui acabaria la història. A la pràctica, resulta que els sudokus de 9x9 tenen poc a veure amb els de 4x4. No aconseguia entendre que estava fent malament només amb la informació que l'algorisme escrivia a la consola, així que no vaig tenir més remei que construir una eina gràfica.
+                <b>2. Punyeta! Necessito una eina gràfica</b>: En teoria, només havia d'adaptar l'algoritme per generar sudokus de 9x9 i aquí acabaria la història. A la pràctica, resulta que els sudokus de 9x9 tenen poc a veure amb els de 4x4. No aconseguia entendre que estava fent malament només amb la informació que l'algoritme escrivia a la consola, així que no vaig tenir més remei que construir una eina gràfica.
             </p>
             <p class="text-center">
                 <img
@@ -92,7 +92,7 @@
             </p>
 
             <p>
-                <b>4. La llum al final del túnel</b>: Després de seure i donar-hi unes quantes voltes, com hauria d'haver fet desde el principi, vaig descobrir un conjunt de regles lògiques que permeten descartar números de caselles. Havent trobat aquestes petites malxinades, només era qüestió de reescriure l'algorisme per considerar-les. Em va portar la seva estona, però finalment vaig aconseguir un generador vàlid.
+                <b>4. La llum al final del túnel</b>: Després de seure i donar-hi unes quantes voltes, com hauria d'haver fet des del principi, vaig descobrir un conjunt de regles lògiques que permeten descartar números de caselles. Havent trobat aquestes petites malxinades, només era qüestió de reescriure l'algoritme per considerar-les. Em va portar la seva estona, però finalment vaig aconseguir un generador vàlid.
             </p>
             <p class="text-center">
                 <img
@@ -107,7 +107,7 @@
                 <a
                     href="/sudoku-generator"
                     target="_blank"
-                >generador de sudokus</a>. He d'admetre que a vegades arriba a carrerons sense sortida durant la generació, havent de descartar la feina i començar desde zero, però sempre acaba generant sudokus vàlids amb una única solució. En cas que t'ho estiguis preguntant, aquestes són les regles que utilitza l'algorisme per generar sudokus. De fet, és probable que siguin també les regles que fas servir tu a l'hora de resoldre'ls.
+                >generador de sudokus</a>. He d'admetre que a vegades arriba a carrerons sense sortida durant la generació, havent de descartar la feina i començar des de zero, però sempre acaba generant sudokus vàlids amb una única solució. En cas que t'ho estiguis preguntant, aquestes són les regles que utilitza l'algoritme per generar sudokus. De fet, és probable que siguin també les regles que fas servir tu a l'hora de resoldre'ls.
             </p>
 
             <ul>
