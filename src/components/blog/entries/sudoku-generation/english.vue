@@ -82,7 +82,7 @@
             </p>
 
             <p>
-                <b>3. Frog... this is complicated</b>: It didn't take me much time to create a web application that could display 9x9 sudoku. With the visual representation of the sudoku and the ability to fill boxes back and forth I began to understand what I was missing out. There is additional logic that forbids placing a number in a box apart from having the same number in the column, region or row of that box.
+                <b>3. Frog... this is complicated</b>: It didn't take me much time to create a web application that could display 9x9 sudoku. With the visual representation of the sudoku and the ability to fill boxes back and forth I began to understand what I was missing out. The sudoku basic rules (e.g., a number can't be placed in a box if the same number is already placed in the column, region or row of that box) contain a set of derived rules, which are not easy to see at first glance.
             </p>
             <p class="text-center">
                 <img
@@ -93,7 +93,7 @@
             </p>
 
             <p>
-                <b>4. The light at the end of the tunnel</b>: After sitting down and thinking about it, as I should have done from the beginning, I figured out a set of logical rules that help discarding possible numbers from boxes. Having found out about those little bastards, it was just a matter of rewritting the algorithm to consider them. It took me a number of hours, but I could finally get a working generator.
+                <b>4. The light at the end of the tunnel</b>: After sitting down and thinking about it, as I should have done from the beginning, I figured out some of those dervied rules that help discarding possible numbers from boxes. Having found out about those little bastards, it was just a matter of rewritting the algorithm to consider them. It took me a number of hours, but I could finally get a working generator.
             </p>
             <p class="text-center">
                 <img

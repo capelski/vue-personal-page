@@ -81,7 +81,7 @@
             </p>
 
             <p>
-                <b>3. Cordons... això és complicat</b>: No em va portar gaire estona crear una aplicació web per representar sudokus de 9x9. Amb la representació visual del sudoku i la capacitat de fer i desfer omplint les caselles, vaig començar a entendre què m'havia passat per alt. Hi ha una lògica addicional que prohibeix posar un número en una casella més enllà de tenir el mateix número a la fila, columna o regió de la casella.
+                <b>3. Cordons... això és complicat</b>: No em va portar gaire estona crear una aplicació web per representar sudokus de 9x9. Amb la representació visual del sudoku i la capacitat de fer i desfer omplint les caselles, vaig començar a entendre què m'havia passat per alt. Les regles bàsqies del sudoku (és a dir, un número no pot anar a una casella si ja hi ha el mateix número a la fila, columna o regió de la casella) contenen un conjunt de regles derivades que no son òbvies a primer cop d'ull.
             </p>
             <p class="text-center">
                 <img
@@ -92,7 +92,7 @@
             </p>
 
             <p>
-                <b>4. La llum al final del túnel</b>: Després de seure i donar-hi unes quantes voltes, com hauria d'haver fet des del principi, vaig descobrir un conjunt de regles lògiques que permeten descartar números de caselles. Havent trobat aquestes petites malxinades, només era qüestió de reescriure l'algoritme per considerar-les. Em va portar la seva estona, però finalment vaig aconseguir un generador vàlid.
+                <b>4. La llum al final del túnel</b>: Després de seure i donar-hi unes quantes voltes, com hauria d'haver fet des del principi, vaig trobar unes quantes d'aquestes regles derivades, que permeten descartar números de caselles. Havent descobert aquestes petites malxinades, només era qüestió de reescriure l'algoritme per considerar-les. Em va portar la seva estona, però finalment vaig aconseguir un generador vàlid.
             </p>
             <p class="text-center">
                 <img
