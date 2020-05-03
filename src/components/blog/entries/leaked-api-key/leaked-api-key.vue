@@ -60,7 +60,7 @@
                 And that's how to remove google maps hardcoded API keys from public repositories and keep Google happy. Please contact me at
                 <b>capellas.carles@gmail.com</b> or check
                 <a
-                    href="https://github.com/L3bowski/vue-personal-page/commit/fcf068af000ad02b5a38583e44b104edeaeb25cc"
+                    href="https://github.com/capelski/vue-personal-page/commit/fcf068af000ad02b5a38583e44b104edeaeb25cc"
                     target="_blank"
                 >this Github commit</a> if you have any doubts on specific details (other than how does Google detect that their API keys are being uploaded to public repositories... isn't it a bit scary?). See you in the next post!
             </p>
