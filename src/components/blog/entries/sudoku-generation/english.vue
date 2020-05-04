@@ -108,7 +108,7 @@
                 <a
                     href="/sudoku-generator"
                     target="_blank"
-                >sudoku generator</a>. I must admite that it sometimes reaches dead ends during generation, having to drop the work and start again from scratch, but it always ends up generating valid single solution puzzles. If you are wondering, these are the rules the algorithm uses to generate sudoku. In fact, these are probably the rules you use when you are solving those puzzles too.
+                >sudoku generator</a>. I must admit that it sometimes reaches dead ends during generation, having to drop the work and start again from scratch, but it always ends up generating valid single solution puzzles. If you are wondering, these are the rules the algorithm uses to generate sudoku. In fact, these are probably the rules you use when you are solving those puzzles too.
             </p>
 
             <ul>
