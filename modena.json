@@ -1,7 +1,4 @@
 {
-	"publicDomains": [
-		"carlescapellas.xyz",
-		"me.carlescapellas.xyz"
-	],
+    "publicDomains": ["carlescapellas.xyz"],
     "publicDomainCrossAccess": true
 }
