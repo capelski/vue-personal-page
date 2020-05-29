@@ -2,6 +2,7 @@
     <div class="container navbar-spacer">
         <BlogOptions :allTags="allTags" />
 
+        <CommunicationVisualGuide :isRenderedFromList="true" :allTags="allTags" />
         <SudokuGeneration :isRenderedFromList="true" :allTags="allTags" />
         <WebDevOnSteroidsII :isRenderedFromList="true" :allTags="allTags" />
         <WebDevOnSteroidsI :isRenderedFromList="true" :allTags="allTags" />
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+import CommunicationVisualGuide from './entries/communication-visual-guide';
 import SudokuGeneration from './entries/sudoku-generation';
 import WebDevOnSteroidsII from './entries/web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 import WebDevOnSteroidsI from './entries/web-dev-on-steroids-i/web-dev-on-steroids-i';
@@ -39,6 +41,7 @@ import { tags } from './tags';
 export default {
     name: 'Blog',
     components: {
+        CommunicationVisualGuide,
         SudokuGeneration,
         WebDevOnSteroidsII,
         WebDevOnSteroidsI,

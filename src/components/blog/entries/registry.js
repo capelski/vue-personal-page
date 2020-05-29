@@ -10,7 +10,8 @@ const entries = [
     'trecember',
     'web-dev-on-steroids-i',
     'web-dev-on-steroids-ii',
-    'sudoku-generation'
+    'sudoku-generation',
+    'communication-visual-guide'
 ];
 
 const linkedEntries = entries
