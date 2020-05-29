@@ -59,7 +59,6 @@ export default {
     border-top: 1px solid $light-main-color;
 
     &.has-border-bottom {
-        margin-bottom: 40px;
         padding-bottom: 30px;
         border-bottom: 1px solid $light-main-color;
     }

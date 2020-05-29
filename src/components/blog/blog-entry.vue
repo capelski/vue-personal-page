@@ -23,6 +23,12 @@
                         :class="{'blog-tag': true, [tag.className]: true }"
                     >{{ tag.text }}</span>
                 </p>
+                <BlogEntryNavigation
+                    v-if="!isRenderedFromList"
+                    :description="description"
+                    :entry="entry"
+                    :title="title"
+                />
             </BlogEntryHeader>
 
             <div :class="{'article-container' : true, 'faded-wrapper': isRenderedFromList}">
@@ -40,13 +46,15 @@
 <script>
 import BlogEntryFooter from './blog-entry-footer';
 import BlogEntryHeader from './blog-entry-header';
+import BlogEntryNavigation from './blog-entry-navigation';
 import { language } from './language';
 
 export default {
     name: 'BlogEntry',
     components: {
         BlogEntryFooter,
-        BlogEntryHeader
+        BlogEntryHeader,
+        BlogEntryNavigation
     },
     props: [
         'allTags',
@@ -213,6 +221,7 @@ export default {
     .navigation-buttons {
         display: flex;
         justify-content: space-between;
+        margin: 30px 0;
 
         .btn-disabled,
         .btn-disabled:focus,
