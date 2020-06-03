@@ -25,6 +25,27 @@ import { tags } from '../../tags';
 import entriesRegistry from '../registry';
 import english from './english';
 
+import adopt from './adopt.png';
+import allowance from './allowance.png';
+import amplify from './amplify.png';
+import avoid from './avoid.png';
+import bullseye from './bullseye.png';
+import clarify from './clarify.png';
+import consistency from './consistency.png';
+import dazzle from './dazzle.png';
+import discovery from './discovery.png';
+import encounter from './encounter.png';
+import explore from './explore.png';
+import forge from './forge.png';
+import metaphors from './metaphors.png';
+import obstacles from './obstacles.png';
+import pacifier from './pacifier.png';
+import preach from './preach.png';
+import questions from './questions.png';
+import stories from './stories.png';
+import suggest from './suggest.png';
+import understand from './understand.png';
+
 const date = 'TODO';
 const descriptions = {
     eng: 'TODO'
@@ -44,7 +65,28 @@ export default {
             descriptions,
             date,
             entry,
-            images: {},
+            images: {
+                adopt,
+                allowance,
+                amplify,
+                avoid,
+                bullseye,
+                clarify,
+                consistency,
+                dazzle,
+                discovery,
+                encounter,
+                explore,
+                forge,
+                metaphors,
+                obstacles,
+                pacifier,
+                preach,
+                questions,
+                stories,
+                suggest,
+                understand
+            },
             language,
             tags,
             titles
