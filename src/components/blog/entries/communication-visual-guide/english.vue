@@ -58,14 +58,14 @@
                 </div>
                 <div class="col-sm-10 col-6">
                     <h4>Adopt</h4>
-                    <p>You can lead people to an answer, but you can't give it to them. Get used to this three elements to reach people</p>
+                    <p>You can lead people to an answer, but you can't give it to them. The following three elements address the subconscious rather than the rational mind, so they are more likely to be accepted by the other person</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
+                        description="Maybe you think you have the answer to someone's problems but giving the answer straight away meets rational resistance from the other person. Maybe you think the other person is mistaking and you are the one who got it wrong. Questions are a great way to get/provide deeper explanations and sometimes help realizing about wrong assumptions"
                         :image="images.questions"
                         imageAlt="Question mark in the shape of a lightbulb"
                         title="Questions"
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
+                        description="Stories are more objective than ideas and beliefs. By expressing your points in the form of an story, you separate your opinions from the concepts, letting the other person look at the subject through impartial lenses and understanding it according to their own beliefs"
                         :image="images.stories"
                         imageAlt="Binoculars"
                         title="Stories"
@@ -81,7 +81,7 @@
                 </div>
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
+                        description="The best way to explain a concept to someone is by using the knowledge they already have, even if is not directly connected to the subject. Metaphors are a great technique to translate your ideas into another field where the person might feel more comfortable"
                         :image="images.metaphors"
                         imageAlt="Translation representation"
                         title="Metaphors"
@@ -89,7 +89,11 @@
                 </div>
             </div>
 
-            <h4>Persuasion stages</h4>
+            <h4 class="persuasion-header">Persuasion stages</h4>
+
+            <p>If you think of the last time somebody convinced you to do something, they probably went through some of the following stages. Covering them all will help you showing the other person that you care about them rather than getting them thinking you are trying to manipulate them for your own selfish reasons.</p>
+
+            <p>You can split the stages throughout multiple conversations or cover them all in a row if the other person is connecting with you enough. You can also skip stages if you have already been there before with the person you are trying to convince.</p>
 
             <PersuasionStage
                 description="Meet the other person at their emotional level. If you can't empathize with them, leave the persuasion for another moment"
@@ -104,19 +108,19 @@
             />
 
             <PersuasionStage
-                description="Listen to other person emotions and point of view. Connect yourself to that emotions if possible. If you can see derived problems from the current situation, expose them so you prove to the other person that you feel their pain"
+                description="Listen to other person emotions and point of view. Connect yourself to that emotions if possible. If you can see negative consequences from the current situation, expose them so you prove to the other person that you feel their pain"
                 :image="images.understand"
                 title="Understand"
             />
 
             <PersuasionStage
-                description="Find out about the ideal situation, the real reasons"
+                description="Find out about the ideal situation the other person would like to be in"
                 :image="images.explore"
                 title="Explore"
             />
 
             <PersuasionStage
-                description="Find out the motivation level"
+                description="Find out the motivation level, how likely is the other person to take action in order to improve their current situation"
                 :image="images.discover"
                 title="Discover"
             />
@@ -140,7 +144,7 @@
             />
 
             <PersuasionStage
-                description="Appreciate for making the decision and set the expectations on the next step"
+                description="At this point, the person might feel they made a wrong decision. Thank them for making the decision and set the expectations on the next steps"
                 :image="images.clarify"
                 title="Clarify"
             />
@@ -151,7 +155,60 @@
                 title="Dazzle"
             />
 
-            <h4>Persuasive traits development</h4>
+            <h4 class="persuasion-header">Persuasive traits development</h4>
+
+            <p>Understanding the previous stages will give you some advantage next time you try to convince someone but the best way to do so is by generating trust. The following exercises will help you developing personality traits that most people appreciate, making it easier for you to reach them</p>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <PersuasionResource
+                        description="TODO"
+                        :image="images.TODO"
+                        imageAlt="TODO"
+                        title="Caring"
+                    />
+                </div>
+                <div class="col-sm-4">
+                    <PersuasionResource
+                        description="TODO"
+                        :image="images.TODO"
+                        imageAlt="TODO"
+                        title="Motivated"
+                    />
+                </div>
+                <div class="col-sm-4">
+                    <PersuasionResource
+                        description="TODO"
+                        :image="images.TODO"
+                        imageAlt="TODO"
+                        title="Certain"
+                    />
+                </div>
+                <div class="col-sm-4">
+                    <PersuasionResource
+                        description="TODO"
+                        :image="images.TODO"
+                        imageAlt="TODO"
+                        title="Calmed"
+                    />
+                </div>
+                <div class="col-sm-4">
+                    <PersuasionResource
+                        description="TODO"
+                        :image="images.TODO"
+                        imageAlt="TODO"
+                        title="Contagious"
+                    />
+                </div>
+                <div class="col-sm-4">
+                    <PersuasionResource
+                        description="TODO"
+                        :image="images.consistency"
+                        imageAlt="TODO"
+                        title="Consistent"
+                    />
+                </div>
+            </div>
         </div>
     </div>
 </template>
