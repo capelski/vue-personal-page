@@ -114,7 +114,7 @@ export default {
 .persuasion-header img,
 img.persuasion-stage {
     margin-top: 0;
-    width: 75px;
+    width: 85px;
 }
 
 @media (max-width: $small) {
