@@ -157,54 +157,54 @@
 
             <h4 class="persuasion-header">Persuasive traits development</h4>
 
-            <p>Understanding the previous stages will give you some advantage next time you try to convince someone but the best way to do so is by generating trust. The following exercises will help you developing personality traits that most people appreciate, making it easier for you to reach them</p>
+            <p>Understanding the previous stages will give you some advantage next time you try to convince someone but the best way to do so is by generating trust. The following exercises will help you developing personality traits that most people appreciate, making it easier for you to reach people</p>
 
             <div class="row">
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
-                        :image="images.TODO"
-                        imageAlt="TODO"
+                        description="People will listen to you almost unconditionally if they know you truly care about them. Practice demonstrating you care by searching for 3 things to appreciate in people that surrounds you"
+                        :image="images.care"
+                        imageAlt="Band-aids"
                         title="Caring"
                     />
                 </div>
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
-                        :image="images.TODO"
-                        imageAlt="TODO"
+                        description="You need to be the best version of yourself in order to inspire other people. Find what gets you feeling at your best and promote it in your life. Might be swimming, playing the guitar, running, reading, uploading videos to your YouTube channel, etc. Get yourself as motivated as you need to be!"
+                        :image="images.motivation"
+                        imageAlt="Flexing biceps"
                         title="Motivated"
                     />
                 </div>
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
-                        :image="images.TODO"
-                        imageAlt="TODO"
-                        title="Certain"
+                        description="We usually like to listen to people who sound convinced about what they say. Improve your confidence by putting a mirror in front of you and telling yourself how you want to behave. It might sound stupid, but it can help you understanding how convincent you sound when you speak"
+                        :image="images.confidence"
+                        imageAlt="Raised fist"
+                        title="Confident"
                     />
                 </div>
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
-                        :image="images.TODO"
-                        imageAlt="TODO"
+                        description="Haste and jitters make you look anxious and people feel uncomfortable. Accepting the reality as is helps controlling the urge and realizing that you don't need anything from anyone. Meditate regularly to improve the inner calm. 10 minutes a day can be enough"
+                        :image="images.calm"
+                        imageAlt="Person meditating"
                         title="Calmed"
                     />
                 </div>
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
-                        :image="images.TODO"
-                        imageAlt="TODO"
+                        description="Persuasion happens when your emotions are transmitted in their purest form to the listener. You can be more contagious by regularly singing or dancing, at closed doors if you like. Another good exercise is to read out loud with entusiasm for 10 minutes every day"
+                        :image="images.contagion"
+                        imageAlt="Lightning"
                         title="Contagious"
                     />
                 </div>
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="TODO"
+                        description="Your word is your value. Practice what you preach and you will generate trust. Practice being consistent by sticking to some good habit of your choice, e.g., go to bed at the same time for 15 days in a row, read half an hour everyday with no excuses, etc."
                         :image="images.consistency"
-                        imageAlt="TODO"
+                        imageAlt="Gear"
                         title="Consistent"
                     />
                 </div>
