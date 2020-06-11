@@ -74,6 +74,7 @@ export default {
             },
             language,
             tags,
+            title: titles['eng'],
             titles
         };
     }

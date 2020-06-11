@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         :description="descriptions[language.current]"
-        duration="TODO"
+        duration="4"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :languages="['eng']"
@@ -42,20 +42,20 @@ import explore from './explore.png';
 import forge from './forge.png';
 import metaphors from './metaphors.png';
 import motivation from './motivation.png';
+import offer from './offer.png';
 import pacifier from './pacifier.png';
 import preach from './preach.png';
 import questions from './questions.png';
 import stories from './stories.png';
-import suggest from './suggest.png';
 import understand from './understand.png';
 import workaround from './workaround.png';
 
-const date = 'TODO';
+const date = '2020-06-06';
 const descriptions = {
-    eng: 'TODO'
+    eng: 'A visual cheatsheet to communicate more efficiently with people'
 };
-const entry = entriesRegistry['communication-visual-guide'];
-const titles = { eng: 'Visual guide to efficient communication' };
+const entry = entriesRegistry['efficient-communication-pictures'];
+const titles = { eng: 'Efficient communication in pictures' };
 
 export default {
     name: entry.id,
@@ -87,16 +87,17 @@ export default {
                 forge,
                 metaphors,
                 motivation,
+                offer,
                 pacifier,
                 preach,
                 questions,
                 stories,
-                suggest,
                 understand,
                 workaround
             },
             language,
             tags,
+            title: titles['eng'],
             titles
         };
     }

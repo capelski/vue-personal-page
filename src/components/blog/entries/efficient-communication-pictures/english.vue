@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>
-            What would I know about efficient communication? Well, not that much to be honest. That's why I used this confinement time to improve my skills through Brandon Hakim's
+            What would I know about efficient communication? Well, not that much to be honest. That's why I used this confinement time to improve my social skills through Brandon Hakim's
             <a
                 href="https://www.udemy.com/course/persuasion-masterclass-how-to-powerfully-influence-anyone/"
                 target="_blank"
@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <PersuasionResource
-                        description="Maybe you think you have the answer to someone's problems but giving the answer straight away meets rational resistance from the other person. Maybe you think the other person is mistaking and you are the one who got it wrong. Questions are a great way to get/provide deeper explanations and sometimes help realizing about wrong assumptions"
+                        description="Maybe you think you have the answer to someone's problems but giving the answer straight away meets rational resistance from the other person. Maybe you think the other person is mistaking but you are the one who got it wrong. Questions are a great way to get/provide deeper explanations and sometimes help realizing about wrong assumptions"
                         :image="images.questions"
                         imageAlt="Question mark in the shape of a lightbulb"
                         title="Questions"
@@ -114,21 +114,21 @@
             />
 
             <PersuasionStage
-                description="Find out about the ideal situation the other person would like to be in"
+                description="Find out about the ideal situation the other person would like to be in. Often we chase some self imposed goals and we don't realize why we feel certain desires. Questions are the best way to go deeper and discover the real reasons of a person"
                 :image="images.explore"
                 title="Explore"
             />
 
             <PersuasionStage
-                description="Find out the motivation level, how likely is the other person to take action in order to improve their current situation"
+                description="Find out the other person motivation level, how ready are them from 0 to 10 to take action in order to improve their current situation"
                 :image="images.discover"
                 title="Discover"
             />
 
             <PersuasionStage
-                description="Introduce your purpose sincerely. Give an honest option to decline the offer, so the other person doesn't feel pressed. If possible, keep a positive aspect of your suggestion untold, to reveal it at the end of the persuasion"
-                :image="images.suggest"
-                title="Suggest"
+                description="Introduce your purpose sincerely. Give an honest option to decline the offer, so the other person doesn't feel pressed. If possible, keep a positive aspect of your offer untold, to reveal it at the end of the persuasion"
+                :image="images.offer"
+                title="Offer"
             />
 
             <PersuasionStage
@@ -209,6 +209,8 @@
                     />
                 </div>
             </div>
+
+            <p>And that's about it! As usual when writting about such subjective and abstract topics, I can't help feeling it all sounds like dime-store psychology. In an attempt to make it more bearable I decided to draw some visuals, but still I am not sure I did succeed. Maybe someone will now think which aspects they can apply to their interactions to become more persuasive. Maybe it will help someone realizing it is in their hands to make a better impression on other people. In the worst case, you can always make fun of my drawing skills 😃 See you in the next post!</p>
         </div>
     </div>
 </template>
