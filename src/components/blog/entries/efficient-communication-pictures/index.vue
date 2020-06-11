@@ -50,7 +50,7 @@ import stories from './stories.png';
 import understand from './understand.png';
 import workaround from './workaround.png';
 
-const date = '2020-06-06';
+const date = '2020-06-11';
 const descriptions = {
     eng: 'A visual cheatsheet to communicate more efficiently with people'
 };
