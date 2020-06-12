@@ -82,10 +82,10 @@ const webpackConfig = merge(commonConfig, {
             minRatio: 0.8
         }),
         // new webpack.HashedModuleIdsPlugin(),
-        new PrerenderSpaPlugin({
-            staticDir: path.join(__dirname, '..', 'dist'),
-            routes: prerenderRoutes
-        })
+        new PrerenderSpaPlugin(
+            path.join(__dirname, '..', 'dist'),
+            prerenderRoutes
+        )
     ]
 });
 
