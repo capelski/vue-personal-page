@@ -5,7 +5,7 @@
         duration="TODO"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
-        :languages="['cat', 'eng']"
+        :languages="entry.languages"
         :allTags="allTags"
         :tags="[tags.Thoughts]"
         :title="titles[language.current]"
@@ -55,6 +55,7 @@ export default {
             images: {},
             language,
             tags,
+            title: titles['eng'],
             titles
         };
     }

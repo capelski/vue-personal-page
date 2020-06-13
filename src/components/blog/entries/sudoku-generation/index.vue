@@ -5,7 +5,7 @@
         duration="9"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
-        :languages="['cat', 'eng']"
+        :languages="entry.languages"
         :allTags="allTags"
         :tags="[tags.Thoughts]"
         :title="titles[language.current]"

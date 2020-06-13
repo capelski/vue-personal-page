@@ -1,25 +1,27 @@
-const entries = [
-    'agility-rocks',
-    'leaked-api-key',
-    'meaning-of-life',
-    'four-coin-challenge',
-    'progressive-web-apps',
-    'existential-injustice',
-    'subscribers-list',
-    'kanban-goals-tracking',
-    'trecember',
-    'web-dev-on-steroids-i',
-    'web-dev-on-steroids-ii',
-    'sudoku-generation',
-    'efficient-communication-pictures'
-];
+const entriesDictionary = {
+    'agility-rocks': ['eng'],
+    'leaked-api-key': ['eng'],
+    'meaning-of-life': ['eng'],
+    'four-coin-challenge': ['eng'],
+    'progressive-web-apps': ['eng'],
+    'existential-injustice': ['cat', 'eng'],
+    'subscribers-list': ['eng'],
+    'kanban-goals-tracking': ['eng'],
+    'trecember': ['eng'],
+    'web-dev-on-steroids-i': ['eng'],
+    'web-dev-on-steroids-ii': ['eng'],
+    'sudoku-generation': ['cat', 'eng'],
+    'efficient-communication-pictures': ['eng']
+};
+const entriesKeys = Object.keys(entriesDictionary);
 
-const linkedEntries = entries
-    .map((entry, index) => {
+const linkedEntries = entriesKeys
+    .map((entryKey, index) => {
         return {
-            following: index < entries.length - 1 ? entries[index + 1] : undefined,
-            id: entry,
-            previous: index > 0 ? entries[index - 1] : undefined
+            following: index < entriesKeys.length - 1 ? entriesKeys[index + 1] : undefined,
+            id: entryKey,
+            languages: entriesDictionary[entryKey],
+            previous: index > 0 ? entriesKeys[index - 1] : undefined
         };
     })
     .reduce(
