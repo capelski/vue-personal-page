@@ -2,6 +2,7 @@
     <div class="container navbar-spacer">
         <BlogOptions :allTags="allTags" />
 
+        <StadiaPlatform :isRenderedFromList="true" :allTags="allTags" />
         <PersuasionInPictures :isRenderedFromList="true" :allTags="allTags" />
         <SudokuGeneration :isRenderedFromList="true" :allTags="allTags" />
         <WebDevOnSteroidsII :isRenderedFromList="true" :allTags="allTags" />
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+import StadiaPlatform from './entries/stadia-platform';
 import PersuasionInPictures from './entries/persuasion-in-pictures';
 import SudokuGeneration from './entries/sudoku-generation';
 import WebDevOnSteroidsII from './entries/web-dev-on-steroids-ii/web-dev-on-steroids-ii';
@@ -41,6 +43,7 @@ import { tags } from './tags';
 export default {
     name: 'Blog',
     components: {
+        StadiaPlatform,
         PersuasionInPictures,
         SudokuGeneration,
         WebDevOnSteroidsII,

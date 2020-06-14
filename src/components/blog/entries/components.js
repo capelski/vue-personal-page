@@ -11,6 +11,7 @@ import WebDevOnSteroidsI from './web-dev-on-steroids-i/web-dev-on-steroids-i';
 import WebDevOnSteroidsII from './web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 import SudokuGeneration from './sudoku-generation/index';
 import PersuasionInPictures from './persuasion-in-pictures/index';
+import StadiaPlatform from './stadia-platform/index';
 
 export default {
     AgilityRocks,
@@ -25,5 +26,6 @@ export default {
     WebDevOnSteroidsI,
     WebDevOnSteroidsII,
     SudokuGeneration,
-    PersuasionInPictures
+    PersuasionInPictures,
+    StadiaPlatform
 };

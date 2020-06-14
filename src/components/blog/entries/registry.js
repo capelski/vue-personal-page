@@ -11,7 +11,8 @@ const entriesDictionary = {
     'web-dev-on-steroids-i': ['eng'],
     'web-dev-on-steroids-ii': ['eng'],
     'sudoku-generation': ['cat', 'eng'],
-    'persuasion-in-pictures': ['eng']
+    'persuasion-in-pictures': ['eng'],
+    'stadia-platform': ['eng']
 };
 const entriesKeys = Object.keys(entriesDictionary);
 
