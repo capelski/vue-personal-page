@@ -1,11 +1,11 @@
 <template>
     <div>
         <p>
-            What would I know about efficient communication? Well, not that much to be honest. That's why I used this confinement time to improve my social skills through Brandon Hakim's
+            What would I know about persuasion? Well, not that much to be honest. That's why I used this confinement time to improve my social skills through Brandon Hakim's persuasion
             <a
                 href="https://www.udemy.com/course/persuasion-masterclass-how-to-powerfully-influence-anyone/"
                 target="_blank"
-            >persuasion</a> udemy course. Regardless how much I learned, I do recommend the course because it made me ponder about how people communicates effectively (and it inspired me to draw the pictures below). Here is a quick summary of the course main points. Did you already know them all?
+            >udemy course</a>. Regardless how much I learned, I do recommend the course because it made me ponder about how people communicates effectively (and it inspired me to draw the pictures below). Here is a quick summary of the course main points. Did you already know them all?
         </p>
 
         <div v-if="!isRenderedFromList">

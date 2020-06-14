@@ -7,11 +7,11 @@ const entriesDictionary = {
     'existential-injustice': ['cat', 'eng'],
     'subscribers-list': ['eng'],
     'kanban-goals-tracking': ['eng'],
-    'trecember': ['eng'],
+    trecember: ['eng'],
     'web-dev-on-steroids-i': ['eng'],
     'web-dev-on-steroids-ii': ['eng'],
     'sudoku-generation': ['cat', 'eng'],
-    'efficient-communication-pictures': ['eng']
+    'persuasion-in-pictures': ['eng']
 };
 const entriesKeys = Object.keys(entriesDictionary);
 

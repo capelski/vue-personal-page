@@ -10,7 +10,7 @@ import Trecember from './trecember/trecember';
 import WebDevOnSteroidsI from './web-dev-on-steroids-i/web-dev-on-steroids-i';
 import WebDevOnSteroidsII from './web-dev-on-steroids-ii/web-dev-on-steroids-ii';
 import SudokuGeneration from './sudoku-generation/index';
-import EfficientCommunicationPictures from './efficient-communication-pictures/index';
+import PersuasionInPictures from './persuasion-in-pictures/index';
 
 export default {
     AgilityRocks,
@@ -25,5 +25,5 @@ export default {
     WebDevOnSteroidsI,
     WebDevOnSteroidsII,
     SudokuGeneration,
-    EfficientCommunicationPictures
+    PersuasionInPictures
 };

@@ -50,12 +50,12 @@ import stories from './stories.png';
 import understand from './understand.png';
 import workaround from './workaround.png';
 
-const date = '2020-06-11';
+const date = '2020-06-14';
 const descriptions = {
-    eng: 'A visual cheatsheet to communicate more efficiently with people'
+    eng: 'A graphical cheatsheet to become a better persuader'
 };
-const entry = entriesRegistry['efficient-communication-pictures'];
-const titles = { eng: 'Efficient communication in pictures' };
+const entry = entriesRegistry['persuasion-in-pictures'];
+const titles = { eng: 'Persuasion in pictures' };
 
 export default {
     name: entry.id,
