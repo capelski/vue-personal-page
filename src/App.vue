@@ -161,6 +161,19 @@ img::-moz-selection {
     cursor: pointer;
 }
 
+.screen-splitter {
+    display: block;
+
+    @media (min-width: $medium) {
+        display: flex;
+    }
+
+    & > * {
+        flex-grow: 1;
+        margin: 0 5px;
+    }
+}
+
 .dark {
     background-color: $light-main-color;
     color: $dark-main-color;

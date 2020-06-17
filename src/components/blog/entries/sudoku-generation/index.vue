@@ -84,20 +84,7 @@ export default {
 <style lang="scss">
 @import '../../../../scss/globals.scss';
 
-.screen-splitter {
-    display: block;
-
-    @media (min-width: 768px) {
-        display: flex;
-    }
-
-    & > * {
-        flex-grow: 1;
-        margin: 0 5px;
-    }
-}
-
-@media (min-width: 768px) {
+@media (min-width: $medium) {
     .blog-entry img.limited-size-image {
         max-width: 650px;
     }

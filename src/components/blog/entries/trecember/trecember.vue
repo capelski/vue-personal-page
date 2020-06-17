@@ -202,16 +202,6 @@ export default {
 
 <style lang="scss">
 .screen-splitter {
-    display: block;
     margin: 30px 0;
-
-    @media (min-width: 768px) {
-        display: flex;
-    }
-
-    & > * {
-        flex-grow: 1;
-        margin: 0 5px;
-    }
 }
 </style>
