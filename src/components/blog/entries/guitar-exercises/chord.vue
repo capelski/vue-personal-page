@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>{{name}}</h3>
+        <h5 class="chord-title">{{name}}</h5>
         <div class="chord">
             <div class="fret-numbers">
                 <div
@@ -56,13 +56,18 @@ export default {
 <style lang="scss">
 @import '../../../../scss/globals.scss';
 
-$fretNumbersWidth: 25px;
-$fretSlotWidth: 75px;
+$fretNumbersWidth: 24px;
+$fretSlotWidth: 48px;
 $stringSlotHeight: 32px;
 $stringsWidth: 2px;
 
+.chord-title {
+    text-align: center;
+}
+
 .chord {
     display: flex;
+    justify-content: center;
 
     .fret-numbers {
         width: $fretNumbersWidth;
