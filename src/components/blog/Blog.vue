@@ -2,6 +2,7 @@
     <div class="container navbar-spacer">
         <BlogOptions :allTags="allTags" />
 
+        <GuitarExercises :isRenderedFromList="true" :allTags="allTags" />
         <StadiaPlatform :isRenderedFromList="true" :allTags="allTags" />
         <PersuasionInPictures :isRenderedFromList="true" :allTags="allTags" />
         <SudokuGeneration :isRenderedFromList="true" :allTags="allTags" />
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+import GuitarExercises from './entries/guitar-exercises';
 import StadiaPlatform from './entries/stadia-platform';
 import PersuasionInPictures from './entries/persuasion-in-pictures';
 import SudokuGeneration from './entries/sudoku-generation';
@@ -43,6 +45,7 @@ import { tags } from './tags';
 export default {
     name: 'Blog',
     components: {
+        GuitarExercises,
         StadiaPlatform,
         PersuasionInPictures,
         SudokuGeneration,
