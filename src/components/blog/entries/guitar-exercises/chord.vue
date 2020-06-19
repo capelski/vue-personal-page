@@ -44,7 +44,6 @@ export default {
     name: 'Chord',
     props: ['name', 'pressedStrings'],
     data() {
-        console.log(this.pressedStrings);
         return {
             frets,
             strings
@@ -86,7 +85,7 @@ $stringsWidth: 2px;
             width: $stringsWidth;
             top: $stringSlotHeight / 2;
             right: 0;
-            background-color: black;
+            background-color: $light-main-color;
         }
     }
 
@@ -120,7 +119,7 @@ $stringsWidth: 2px;
                     height: $stringsWidth;
                     width: 100%;
                     top: 50%;
-                    background-color: black;
+                    background-color: $light-main-color;
                 }
             }
 
@@ -129,7 +128,42 @@ $stringsWidth: 2px;
                 height: $stringSlotHeight * 5 + $stringsWidth;
                 width: $stringsWidth;
                 top: $stringSlotHeight / 2;
-                background-color: black;
+                background-color: $light-main-color;
+            }
+        }
+    }
+}
+
+.dark {
+    .chord-title,
+    .chord {
+        color: $dark-main-color;
+    }
+
+    .chord {
+        .fret-numbers {
+            .frets-start {
+                background-color: $dark-main-color;
+            }
+        }
+
+        .frets {
+            .fret-slot {
+                .string-slot {
+                    .finger {
+                        span {
+                            background-color: $light-main-color;
+                        }
+                    }
+
+                    .string {
+                        background-color: $dark-main-color;
+                    }
+                }
+            }
+
+            .fret {
+                background-color: $dark-main-color;
             }
         }
     }
