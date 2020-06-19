@@ -3,7 +3,17 @@
         <p>TODO</p>
         <div v-if="!isRenderedFromList">
             <p>TODO</p>
-            <p>TODO Strumming legends</p>
+
+            <p>Leyenda de rasgeos</p>
+            <div>👍 = Tocar todas las cuerdas con el pulgar</div>
+            <div>💅 = Tocar todas las cuerdas con las uñas</div>
+            <div>☝️ = Tocar las tres primeras cuerdas con el indice</div>
+            <div>🅱️ = Tocar solo el bajo del acuerdo con el pulgar</div>
+            <div>3️⃣ = Tocar solo la tercera cuerda con el dedo indice</div>
+            <div>2️⃣ = Tocar solo la segunda cuerda con el dedo medio</div>
+            <div>1️⃣ = Tocar solo la primera cuerda con el dedo aunlar</div>
+            <div>👌 = Tocar las tres primeras cuerdas con los dedos indice, medio y anular</div>
+            <div>✊ = Golpear todas las cuerdas con las uñas, teniendo el puño cerrado</div>
 
             <h4 class="guitar-lesson">Lección 4: Acordes de tres dedos</h4>
             <div class="screen-splitter">
