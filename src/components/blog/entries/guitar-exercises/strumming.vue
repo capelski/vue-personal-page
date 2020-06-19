@@ -4,7 +4,7 @@
             v-for="(hit, hitIndex) in hits"
             :key="`hit-${hitIndex}`"
             class="hit"
-            :style="{left: (hit.percent + 1) + '%'}"
+            :style="{left: hit.percent  + '%'}"
         >{{hit.symbol}}{{hit.direction}}</div>
     </div>
 </template>
@@ -26,7 +26,8 @@ export default {
 
 .strumming {
     margin: 24px 0;
-    border: 1px solid $light-main-color;
+    border-top: 1px solid $light-main-color;
+    border-bottom: 1px solid $light-main-color;
     padding: 4px;
     box-sizing: content-box;
     height: 40px;

@@ -3,7 +3,9 @@
         <p>TODO</p>
         <div v-if="!isRenderedFromList">
             <p>TODO</p>
-            <h2>Lección 4: Acordes de tres dedos</h2>
+            <p>TODO Strumming legends</p>
+
+            <h4 class="guitar-lesson">Lección 4: Acordes de tres dedos</h4>
             <div class="screen-splitter">
                 <chord name="G6 (sol 6)" :pressedStrings="{5: {2: 1}, 6: {3: 2}}" />
                 <chord name="Em (mi menor)" :pressedStrings="{5: {2: 2}, 4: {2: 3}}" />
@@ -15,18 +17,22 @@
             </div>
             <p>Sequencia: G6 - Em - Cmaj7 - D</p>
 
-            <p>Primer rasgeo</p>
-            <strumming
-                :hits="[{percent: 0, symbol: '💅', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '💅', direction: '⬇'}, {percent: 75, symbol: '💅', direction: '⬇'}]"
-            />
+            <div class="screen-splitter">
+                <div>
+                    <p>Primer rasgeo</p>
+                    <strumming
+                        :hits="[{percent: 0, symbol: '💅', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '💅', direction: '⬇'}, {percent: 75, symbol: '💅', direction: '⬇'}]"
+                    />
+                </div>
+                <div>
+                    <p>Segundo rasgeo</p>
+                    <strumming
+                        :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 20, symbol: '☝️', direction: '⬆'}, {percent: 35, symbol: '☝️', direction: '⬆'}, {percent: 45, symbol: '💅', direction: '⬇'}, {percent: 60, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '☝️', direction: '⬆'}, {percent: 85, symbol: '💅', direction: '⬇'}]"
+                    />
+                </div>
+            </div>
 
-            <p>Segundo rasgeo</p>
-            <strumming
-                :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 20, symbol: '☝️', direction: '⬆'}, {percent: 35, symbol: '☝️', direction: '⬆'}, {percent: 45, symbol: '💅', direction: '⬇'}, {percent: 60, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '☝️', direction: '⬆'}, {percent: 85, symbol: '💅', direction: '⬇'}]"
-            />
-
-            <h2>Lección 5: El rasgeo más útil +</h2>
-            <h2>Lección 6: Arpegios</h2>
+            <h4 class="guitar-lesson">Lección 5: El rasgeo más útil + Lección 6: Arpegios</h4>
             <div class="screen-splitter">
                 <chord name="Asusp2" :pressedStrings="{3: {2: 3}, 4: {2: 2}}" />
                 <chord name="F#m11" :pressedStrings="{3: {2: 3}, 4: {2: 2}, 6: {2: 1}}" />
@@ -36,15 +42,22 @@
 
             <p>Sequencia: Asusp2 - Asusp2 - F#m11 - F#m11 - D - E - Asusp2 - Asusp2</p>
 
-            <p>Rasgeo lección 5</p>
-            <strumming
-                :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 30, symbol: '💅', direction: '⬇'}, {percent: 40, symbol: '☝️', direction: '⬆'}, {percent: 70, symbol: '☝️', direction: '⬆'}, {percent: 80, symbol: '💅', direction: '⬇'}]"
-            />
+            <div class="screen-splitter">
+                <div>
+                    <p>Rasgeo lección 5</p>
+                    <strumming
+                        :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 30, symbol: '💅', direction: '⬇'}, {percent: 40, symbol: '☝️', direction: '⬆'}, {percent: 70, symbol: '☝️', direction: '⬆'}, {percent: 80, symbol: '💅', direction: '⬇'}]"
+                    />
+                </div>
+                <div>
+                    <p>Rasgeo lección 6</p>
+                    <strumming
+                        :hits="[{percent: 0, symbol: '🅱️'}, {percent: 16, symbol: '3️⃣'}, {percent: 32, symbol: '2️⃣'}, {percent: 48, symbol: '1️⃣'}, {percent: 64, symbol: '2️⃣'}, {percent: 80, symbol: '3️⃣'}]"
+                    />
+                </div>
+            </div>
 
-            <p>Rasgeo lección 6</p>
-            <p>TODO Single arpegio</p>
-
-            <h2>Lección 7: Estirar los dedos</h2>
+            <h4 class="guitar-lesson">Lección 7: Estirar los dedos</h4>
             <div class="screen-splitter">
                 <chord name="C (do)" :pressedStrings="{2: {1: 1}, 4: {2: 2}, 5: {3: 3}}" />
                 <chord name="G (sol)" :pressedStrings="{1: {3: 3}, 5: {2: 1}, 6: {3: 2}}" />
@@ -58,13 +71,22 @@
 
             <p>Sequencia: C - C - G - G - Dm - Dm - Fmaj7 - Em</p>
 
-            <p>Primer rasgeo</p>
-            <p>TODO Single arpegio</p>
+            <div class="screen-splitter">
+                <div>
+                    <p>Primer rasgeo</p>
+                    <strumming
+                        :hits="[{percent: 0, symbol: '🅱️'}, {percent: 16, symbol: '3️⃣'}, {percent: 32, symbol: '2️⃣'}, {percent: 48, symbol: '1️⃣'}, {percent: 64, symbol: '2️⃣'}, {percent: 80, symbol: '3️⃣'}]"
+                    />
+                </div>
+                <div>
+                    <p>Segundo rasgeo</p>
+                    <strumming
+                        :hits="[{percent: 0, symbol: '🅱️+👌'}, {percent: 16, symbol: '👌'}, {percent: 32, symbol: '👌'}, {percent: 48, symbol: '👌'}, {percent: 64, symbol: '👌'}, {percent: 80, symbol: '👌'}]"
+                    />
+                </div>
+            </div>
 
-            <p>Segundo rasgeo</p>
-            <p>TODO Triple arpegio</p>
-
-            <h2>Lección 8: Cambios rápidos</h2>
+            <h4 class="guitar-lesson">Lección 8: Cambios rápidos</h4>
             <div class="screen-splitter">
                 <chord name="C (do)" :pressedStrings="{2: {1: 1}, 4: {2: 2}, 5: {3: 3}}" />
                 <chord name="G (sol)" :pressedStrings="{1: {3: 3}, 5: {2: 1}, 6: {3: 2}}" />
@@ -72,31 +94,23 @@
                 <chord name="Em (mi menor)" :pressedStrings="{5: {2: 2}, 4: {2: 3}}" />
             </div>
 
-            <p>Primera sequencia: C - G - D - Em</p>
-            <p>Primer rasgeo (60 beats por minuto)</p>
-            <strumming
-                :hits="[{percent: 0, symbol: '💅', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '💅', direction: '⬇'}, {percent: 75, symbol: '💅', direction: '⬇'}]"
-            />
+            <p>Primera sequencia (60 beats por minuto): C - G - D - Em</p>
+            <p>Segunda sequencia (110 beats por minuto): C - C - G - G - D - D - Em - Em</p>
 
-            <p>Segunda sequencia: C - C - G - G - D - D - Em - Em</p>
-            <p>Segundo rasgeo (110 beats por minuto)</p>
+            <p>Primer y segundo rasgeo</p>
             <strumming
                 :hits="[{percent: 0, symbol: '💅', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '💅', direction: '⬇'}, {percent: 75, symbol: '💅', direction: '⬇'}]"
             />
 
             <p>Tercera sequencia: C - C - G - G - D - D - Em - Em</p>
-            <p>Tercer rasgeo (110 beats por minuto)</p>
-            <p>TODO Triple arpegio</p>
+            <p>Cuarta sequencia: C - G - D - Em</p>
 
-            <p>
-                <i>(Modo kamikaze)</i> Cuarta sequencia: C - G - D - Em
-            </p>
-            <p>
-                <i>(Modo kamikaze)</i> Cuarto rasgeo (110 beats por minuto)
-            </p>
-            <p>TODO Triple arpegio</p>
+            <p>Tercer y cuarto rasgeo</p>
+            <strumming
+                :hits="[{percent: 0, symbol: '🅱️'}, {percent: 40, symbol: '👌'}, {percent: 60, symbol: '🅱️'}, {percent: 80, symbol: '👌'}]"
+            />
 
-            <h2>Lección 9: Acordes con cejilla</h2>
+            <h4 class="guitar-lesson">Lección 9: Tu primer acorde con cejilla</h4>
             <div class="screen-splitter">
                 <chord name="D (re)" :pressedStrings="{1: {2: 2}, 2: {3: 3}, 3: {2: 1}}" />
                 <chord
@@ -114,7 +128,7 @@
                 :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 60, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '💅', direction: '⬇'}, {percent: 85, symbol: '💅', direction: '⬇'}]"
             />
 
-            <h2>Lección 10: Ritmo latino</h2>
+            <h4 class="guitar-lesson">Lección 10: Ritmo latino</h4>
             <div class="screen-splitter">
                 <chord name="Am (la menor)" :pressedStrings="{2: {1: 1}, 3: {2: 3}, 4: {2: 2}}" />
                 <chord
@@ -132,7 +146,7 @@
                 :hits="[ {percent: 0, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 70, symbol: '✊'}, {percent: 90, symbol: '💅', direction: '⬇'}]"
             />
 
-            <h2>Lección 11: Rasgueo latino</h2>
+            <h4 class="guitar-lesson">Lección 11: Rasgueo latino</h4>
             <div class="screen-splitter">
                 <chord name="Am (la menor)" :pressedStrings="{2: {1: 1}, 3: {2: 3}, 4: {2: 2}}" />
                 <chord name="Dm (re menor)" :pressedStrings="{1: {1: 1}, 2: {3: 3}, 3: {2: 2}}" />
@@ -149,15 +163,20 @@
 
             <p>Segunda sequencia: Am - Dm - E7 - E7</p>
 
-            <p>Segundo rasgeo (1r acorde)</p>
-            <strumming
-                :hits="[ {percent: 0, symbol: '👍', direction: '⬇'}, {percent: 33, symbol: '☝️', direction: '⬆'}, {percent: 66, symbol: '✊'}]"
-            />
-
-            <p>Segundo rasgeo (2n y 3r acorde)</p>
-            <strumming
-                :hits="[ {percent: 0, symbol: '☝️', direction: '⬆'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '✊'}]"
-            />
+            <div class="screen-splitter">
+                <div>
+                    <p>Segundo rasgeo (1r acorde)</p>
+                    <strumming
+                        :hits="[ {percent: 0, symbol: '👍', direction: '⬇'}, {percent: 33, symbol: '☝️', direction: '⬆'}, {percent: 66, symbol: '✊'}]"
+                    />
+                </div>
+                <div>
+                    <p>Segundo rasgeo (2n y 3r acorde)</p>
+                    <strumming
+                        :hits="[ {percent: 0, symbol: '☝️', direction: '⬆'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '✊'}]"
+                    />
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -174,3 +193,9 @@ export default {
     }
 };
 </script>
+
+<style>
+.guitar-lesson {
+    margin-top: 40px;
+}
+</style>
