@@ -13,8 +13,20 @@
                 />
                 <chord name="D (re)" :pressedStrings="{1: {2: 2}, 2: {3: 3}, 3: {2: 1}}" />
             </div>
+            <p>Sequencia: G6 - Em - Cmaj7 - D</p>
 
-            <h2>Lección 5: El clásico rasgeo</h2>
+            <p>Primer rasgeo</p>
+            <strumming
+                :hits="[{percent: 0, symbol: '💅', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '💅', direction: '⬇'}, {percent: 75, symbol: '💅', direction: '⬇'}]"
+            />
+
+            <p>Segundo rasgeo</p>
+            <strumming
+                :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 20, symbol: '☝️', direction: '⬆'}, {percent: 35, symbol: '☝️', direction: '⬆'}, {percent: 45, symbol: '💅', direction: '⬇'}, {percent: 60, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '☝️', direction: '⬆'}, {percent: 85, symbol: '💅', direction: '⬇'}]"
+            />
+
+            <h2>Lección 5: El rasgeo más útil +</h2>
+            <h2>Lección 6: Arpegios</h2>
             <div class="screen-splitter">
                 <chord name="Asusp2" :pressedStrings="{3: {2: 3}, 4: {2: 2}}" />
                 <chord name="F#m11" :pressedStrings="{3: {2: 3}, 4: {2: 2}, 6: {2: 1}}" />
@@ -22,8 +34,15 @@
                 <chord name="E (mi)" :pressedStrings="{3: {1: 1}, 5: {2: 2}, 4: {2: 3}}" />
             </div>
 
-            <h2>Lección 6: Arpegios</h2>
-            <p>Mismos acordes que la lección anterior</p>
+            <p>Sequencia: Asusp2 - Asusp2 - F#m11 - F#m11 - D - E - Asusp2 - Asusp2</p>
+
+            <p>Rasgeo lección 5</p>
+            <strumming
+                :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 30, symbol: '💅', direction: '⬇'}, {percent: 40, symbol: '☝️', direction: '⬆'}, {percent: 70, symbol: '☝️', direction: '⬆'}, {percent: 80, symbol: '💅', direction: '⬇'}]"
+            />
+
+            <p>Rasgeo lección 6</p>
+            <p>TODO Single arpegio</p>
 
             <h2>Lección 7: Estirar los dedos</h2>
             <div class="screen-splitter">
@@ -37,6 +56,14 @@
             </div>
             <chord name="Em (mi menor)" :pressedStrings="{5: {2: 2}, 4: {2: 3}}" />
 
+            <p>Sequencia: C - C - G - G - Dm - Dm - Fmaj7 - Em</p>
+
+            <p>Primer rasgeo</p>
+            <p>TODO Single arpegio</p>
+
+            <p>Segundo rasgeo</p>
+            <p>TODO Triple arpegio</p>
+
             <h2>Lección 8: Cambios rápidos</h2>
             <div class="screen-splitter">
                 <chord name="C (do)" :pressedStrings="{2: {1: 1}, 4: {2: 2}, 5: {3: 3}}" />
@@ -44,6 +71,30 @@
                 <chord name="D (re)" :pressedStrings="{1: {2: 2}, 2: {3: 3}, 3: {2: 1}}" />
                 <chord name="Em (mi menor)" :pressedStrings="{5: {2: 2}, 4: {2: 3}}" />
             </div>
+
+            <p>Primera sequencia: C - G - D - Em</p>
+            <p>Primer rasgeo (60 beats por minuto)</p>
+            <strumming
+                :hits="[{percent: 0, symbol: '💅', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '💅', direction: '⬇'}, {percent: 75, symbol: '💅', direction: '⬇'}]"
+            />
+
+            <p>Segunda sequencia: C - C - G - G - D - D - Em - Em</p>
+            <p>Segundo rasgeo (110 beats por minuto)</p>
+            <strumming
+                :hits="[{percent: 0, symbol: '💅', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '💅', direction: '⬇'}, {percent: 75, symbol: '💅', direction: '⬇'}]"
+            />
+
+            <p>Tercera sequencia: C - C - G - G - D - D - Em - Em</p>
+            <p>Tercer rasgeo (110 beats por minuto)</p>
+            <p>TODO Triple arpegio</p>
+
+            <p>
+                <i>(Modo kamikaze)</i> Cuarta sequencia: C - G - D - Em
+            </p>
+            <p>
+                <i>(Modo kamikaze)</i> Cuarto rasgeo (110 beats por minuto)
+            </p>
+            <p>TODO Triple arpegio</p>
 
             <h2>Lección 9: Acordes con cejilla</h2>
             <div class="screen-splitter">
@@ -55,17 +106,71 @@
                 <chord name="G (sol)" :pressedStrings="{1: {3: 3}, 5: {2: 1}, 6: {3: 2}}" />
                 <chord name="A (la)" :pressedStrings="{2: {2: 3}, 3: {2: 1}, 4: {2: 2}}" />
             </div>
+
+            <p>Sequencia: D - D - Bm - Bm - G - A - D - D</p>
+
+            <p>Rasgeo</p>
+            <strumming
+                :hits="[{percent: 0, symbol: '👍', direction: '⬇'}, {percent: 25, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 60, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '💅', direction: '⬇'}, {percent: 85, symbol: '💅', direction: '⬇'}]"
+            />
+
+            <h2>Lección 10: Ritmo latino</h2>
+            <div class="screen-splitter">
+                <chord name="Am (la menor)" :pressedStrings="{2: {1: 1}, 3: {2: 3}, 4: {2: 2}}" />
+                <chord
+                    name="F (fa)"
+                    :pressedStrings="{1: {1: 1}, 2: {1: 1}, 3: {1: 1, 2: 2}, 4: {1: 1, 3: 4}, 5: {1: 1, 3: 3}, 6: {1: 1}}"
+                />
+                <chord name="C (do)" :pressedStrings="{2: {1: 1}, 4: {2: 2}, 5: {3: 3}}" />
+                <chord name="E7" :pressedStrings="{3: {1: 1}, 5: {2: 2}}" />
+            </div>
+
+            <p>Sequencia: Am - Am - F - F - C - C - E7 - E7</p>
+
+            <p>Rasgeo</p>
+            <strumming
+                :hits="[ {percent: 0, symbol: '💅', direction: '⬇'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 70, symbol: '✊'}, {percent: 90, symbol: '💅', direction: '⬇'}]"
+            />
+
+            <h2>Lección 11: Rasgueo latino</h2>
+            <div class="screen-splitter">
+                <chord name="Am (la menor)" :pressedStrings="{2: {1: 1}, 3: {2: 3}, 4: {2: 2}}" />
+                <chord name="Dm (re menor)" :pressedStrings="{1: {1: 1}, 2: {3: 3}, 3: {2: 2}}" />
+                <chord name="E7" :pressedStrings="{3: {1: 1}, 5: {2: 2}}" />
+            </div>
+
+            <p>
+                Primera sequencia: Am - Dm - E7 -
+                <i>(silencio)</i>
+            </p>
+
+            <p>Primer rasgeo</p>
+            <strumming :hits="[ {percent: 0, symbol: '💅', direction: '⬇'}]" />
+
+            <p>Segunda sequencia: Am - Dm - E7 - E7</p>
+
+            <p>Segundo rasgeo (1r acorde)</p>
+            <strumming
+                :hits="[ {percent: 0, symbol: '👍', direction: '⬇'}, {percent: 33, symbol: '☝️', direction: '⬆'}, {percent: 66, symbol: '✊'}]"
+            />
+
+            <p>Segundo rasgeo (2n y 3r acorde)</p>
+            <strumming
+                :hits="[ {percent: 0, symbol: '☝️', direction: '⬆'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '✊'}]"
+            />
         </div>
     </div>
 </template>
 
 <script>
 import chord from './chord';
+import strumming from './strumming';
 
 export default {
     props: ['isRenderedFromList', 'images'],
     components: {
-        chord
+        chord,
+        strumming
     }
 };
 </script>
