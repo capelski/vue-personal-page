@@ -11,13 +11,13 @@ const commonConfig = require('./webpack.config.common');
 const isProd = process.env.NODE_ENV === 'production';
 const environment = require('./env/prod.env');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
-// const Renderer = PrerenderSpaPlugin.PuppeteerRenderer;
+const Renderer = PrerenderSpaPlugin.PuppeteerRenderer;
 
 const blogEntries = require('../src/components/blog/entries/registry');
 const prerenderRoutes = ['/', '/blog', '/projects', '/trips'];
 Object.values(blogEntries).forEach(entry => {
     entry.languages.forEach(language => {
-        prerenderRoutes.push(`/blog/${entry.id}/${language}`); 
+        prerenderRoutes.push(`/blog/${entry.id}/${language}`);
     });
 });
 
@@ -89,9 +89,9 @@ const webpackConfig = merge(commonConfig, {
         new PrerenderSpaPlugin({
             staticDir: path.join(__dirname, '..', 'dist'),
             routes: prerenderRoutes,
-            // renderer: new Renderer({
-            //     headless: false
-            // })
+            renderer: new Renderer({
+                headless: false
+            })
         })
     ]
 });
