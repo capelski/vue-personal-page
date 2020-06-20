@@ -38,7 +38,7 @@ import stadiaMobile1 from './stadia-mobile-1.jpg';
 import stadiaMobile2 from './stadia-mobile-2.jpg';
 import stadiaSubscription from './stadia-subscription.png';
 
-const date = 'TODO';
+const date = '2020-06-20';
 const descriptions = {
     eng: 'A brief description of the Stadia gaming platform experience'
 };

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Looking for fresh entertainment? Google is here with a new gaming platform that delivers 4K and doesn't require a console. Give it a chance and try it for free in your computer by just signing up with your google account. You will be playing in 5 minutes and the graphics will blow your mind 🤯 Have a look at the screenshots if you still have any doubt!</p>
+        <p>Looking for fresh entertainment? Google is here with a new gaming platform that delivers 4K and doesn't require a console. Give it a chance and try it for free in your computer by just signing up with your google account. You will be playing in 5 minutes and the graphics will blow your mind 🤯 Have a look at the screenshots at the end of the post if you still have any doubt!</p>
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
@@ -54,12 +54,12 @@
             </div>
             <p>
                 On the other hand,
-                <b>Stadia has a few downsides</b>. First and more important:
+                <b>Stadia has a couple downsides</b>. First and more important:
                 <b>the games still need to purchased one by one</b>. You will get some for free when you sign up so you can test the platform, but if you want to play any game out of that selection you will need to pay for it separately. I didn't care much about which game to play so I tested out the four of them, beeing
                 <a
                     href="https://en.wikipedia.org/wiki/Destiny_2"
                     target="_blank"
-                >Destiny 2</a> the only one I really enjoyed (and got addicted to 🙈). I found other interesting titles, but too expensive in my opinion. I was expecting Stadia to go for a Spotify-like approach and include all the titles in the monthly subscription.
+                >Destiny 2</a> the only one I really enjoyed (and almost got addicted to). I found other interesting titles, but too expensive in my opinion. I was expecting Stadia to go for a Spotify-like approach and include all the titles in the monthly subscription. I won't argue whether there are enough available videogames or not because I trust the list will grow as the time goes by, as well as the number of players in the community
             </p>
             <p class="text-center">
                 <img
@@ -68,7 +68,7 @@
                 />
             </p>
             <p>
-                We could argue whether there are enough available videogames or not but I trust the list will grow as the time goes by, as well as the number of players in the community. Another issue I do must point out are the
+                Another issue I do must point out are the
                 <b>recurrent disconnections</b> I've been suffering
                 <b>while playing</b>, most of the times getting a black screen with no error message at all. I couldn't find a way to solve it in Stadia forum and, while it just forced my to refresh the browser in a
                 <a
@@ -78,7 +78,7 @@
                 <a
                     href="https://www.laptopmag.com/reviews/laptops/hppavilion-x-360"
                     target="_blank"
-                >HP Pavilion 13 x360</a>. I was using a 92Mpbs wired internet connection in both cases, so bandwidth was clearly not the problem here. This issue is particulary annoying because the game keeps running in Stadia servers in the meanwhile, so you can be sure you will have died by the time you reconnect.
+                >HP Pavilion 13 x360</a>. I was using a 92Mbps wired internet connection in both cases, so bandwidth was clearly not the problem here. This issue is particulary annoying because the game keeps running in Stadia servers in the meanwhile, so you can be sure you will have died by the time you reconnect.
             </p>
             <p class="text-center">
                 <img
@@ -86,24 +86,43 @@
                     alt="Stadia glitch while playing Destiny 2"
                 />
             </p>
-            <p>Maybe Stadia won't reach Netflix success, but it can definitely shift the videogames industry direction for good. No matter you are a tech enthusiast, an unconditional videogame player or just a curious person, taking advantage of this free month won't hurt you and it will give you a clue of what the future of the videogames might look like. In any case, if you are not willing to pay for their services you can easily cancel the subscription when the time arrives:</p>
+            <p>That being said I still belive is worth giving Stadia a chance. Maybe it won't reach Netflix success, but it can definitely shift the videogames industry direction for good. No matter you are a tech enthusiast, an unconditional videogame player or just a curious person, taking advantage of this free month won't hurt you (you can easily cancel the subscription when the time arrives) and it will give you a clue of what the future of the videogames might look like.</p>
             <p class="text-center">
                 <img
                     :src="`${images.stadiaSubscription}?$modena=vue-personal-page`"
                     alt="Stadia subscriptions page"
                 />
             </p>
+
+            <p>
+                Last but not least, an image is supposed to be worth thousand words. Have a look at these
+                <b>screenshots</b> (you can capture them at any moment by pressing F12) from my charming experience with the incredibly well-crafted
+                <b>Destiny 2</b> and stop hesitating. Try out Stadia, enjoy your gaming session and see you in the next post 🎮
+            </p>
+
             <p class="text-center">
-                <img :src="`${images.destinyGraphics1}?$modena=vue-personal-page`" alt="TODO" />
+                <img
+                    :src="`${images.destinyGraphics1}?$modena=vue-personal-page`"
+                    alt="Destiny 2 spaceship"
+                />
             </p>
             <p class="text-center">
-                <img :src="`${images.destinyGraphics2}?$modena=vue-personal-page`" alt="TODO" />
+                <img
+                    :src="`${images.destinyGraphics2}?$modena=vue-personal-page`"
+                    alt="Destiny 2 snowed landscape"
+                />
             </p>
             <p class="text-center">
-                <img :src="`${images.destinyGraphics3}?$modena=vue-personal-page`" alt="TODO" />
+                <img
+                    :src="`${images.destinyGraphics3}?$modena=vue-personal-page`"
+                    alt="Destiny 2 fantasy scene"
+                />
             </p>
             <p class="text-center">
-                <img :src="`${images.destinyGraphics4}?$modena=vue-personal-page`" alt="TODO" />
+                <img
+                    :src="`${images.destinyGraphics4}?$modena=vue-personal-page`"
+                    alt="Destiny 2 fantasy scene"
+                />
             </p>
             <p class="text-center">
                 <video
