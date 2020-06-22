@@ -1,9 +1,7 @@
 <template>
     <div>
-        <p>TODO</p>
+        <p>En construcción...</p>
         <div v-if="!isRenderedFromList">
-            <p>TODO</p>
-
             <p>Leyenda de rasgeos</p>
             <div>👍 = Tocar todas las cuerdas con el pulgar</div>
             <div>💅 = Tocar todas las cuerdas con las uñas</div>

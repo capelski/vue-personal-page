@@ -2,7 +2,7 @@
     <div class="container navbar-spacer">
         <BlogOptions :allTags="allTags" />
 
-        <GuitarExercises :isRenderedFromList="true" :allTags="allTags" />
+        <!-- <GuitarExercises :isRenderedFromList="true" :allTags="allTags" /> -->
         <StadiaPlatform :isRenderedFromList="true" :allTags="allTags" />
         <PersuasionInPictures :isRenderedFromList="true" :allTags="allTags" />
         <SudokuGeneration :isRenderedFromList="true" :allTags="allTags" />
