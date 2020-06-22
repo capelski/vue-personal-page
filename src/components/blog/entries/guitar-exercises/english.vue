@@ -187,6 +187,33 @@
                     />
                 </div>
             </div>
+
+            <h4 class="guitar-lesson">Lección 16: Cambios rápidos</h4>
+            <div class="screen-splitter">
+                <chord name="Em (mi menor)" :pressedStrings="{5: {2: 2}, 4: {2: 3}}" />
+                <chord name="C (do)" :pressedStrings="{2: {1: 1}, 4: {2: 2}, 5: {3: 3}}" />
+                <chord name="D (re)" :pressedStrings="{1: {2: 2}, 2: {3: 3}, 3: {2: 1}}" />
+            </div>
+
+            <p>Sequencia: C - Em - D - Em</p>
+
+            <p>Primer rasgeo</p>
+            <strumming :hits="[ {percent: 0, symbol: '💅', direction: '⬇'}]" />
+
+            <div class="screen-splitter">
+                <div>
+                    <p>Segundo rasgeo (1r y 3r acorde)</p>
+                    <strumming
+                        :hits="[ {percent: 0, symbol: '👍', direction: '⬇'}, {percent: 60, symbol: '☝️', direction: '⬆'}, {percent: 90, symbol: '💅'}]"
+                    />
+                </div>
+                <div>
+                    <p>Segundo rasgeo (2n y 4o acorde)</p>
+                    <strumming
+                        :hits="[ {percent: 0, symbol: '👍', direction: '⬆'}, {percent: 50, symbol: '☝️', direction: '⬆'}, {percent: 75, symbol: '💅'}, {percent: 90, symbol: '💅'}]"
+                    />
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -206,6 +233,6 @@ export default {
 
 <style>
 .guitar-lesson {
-    margin-top: 40px;
+    margin-top: 48px;
 }
 </style>
