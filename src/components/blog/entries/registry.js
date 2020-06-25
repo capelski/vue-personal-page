@@ -1,18 +1,18 @@
 const entriesDictionary = {
-    'agility-rocks': ['eng'],
-    'leaked-api-key': ['eng'],
-    'meaning-of-life': ['eng'],
-    'four-coin-challenge': ['eng'],
-    'progressive-web-apps': ['eng'],
-    'existential-injustice': ['cat', 'eng'],
-    'subscribers-list': ['eng'],
-    'kanban-goals-tracking': ['eng'],
-    trecember: ['eng'],
-    'web-dev-on-steroids-i': ['eng'],
-    'web-dev-on-steroids-ii': ['eng'],
-    'sudoku-generation': ['cat', 'eng'],
-    'persuasion-in-pictures': ['eng'],
-    'stadia-platform': ['eng']
+    'agility-rocks': ['en'],
+    'leaked-api-key': ['en'],
+    'meaning-of-life': ['en'],
+    'four-coin-challenge': ['en'],
+    'progressive-web-apps': ['en'],
+    'existential-injustice': ['ca', 'en'],
+    'subscribers-list': ['en'],
+    'kanban-goals-tracking': ['en'],
+    trecember: ['en'],
+    'web-dev-on-steroids-i': ['en'],
+    'web-dev-on-steroids-ii': ['en'],
+    'sudoku-generation': ['ca', 'en'],
+    'persuasion-in-pictures': ['en'],
+    'stadia-platform': ['en']
 };
 const entriesKeys = Object.keys(entriesDictionary);
 

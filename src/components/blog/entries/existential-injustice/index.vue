@@ -11,12 +11,12 @@
         :title="titles[language.current]"
     >
         <catalan
-            v-if="language.current === 'cat'"
+            v-if="language.current === 'ca'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
         <english
-            v-if="language.current === 'eng'"
+            v-if="language.current === 'en'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
@@ -34,11 +34,11 @@ import enough from './enough.gif';
 
 const date = '2019-08-28';
 const descriptions = {
-    eng: 'Thoughts about the lack of life purpose that we feel sometimes',
-    cat: 'Reflexió sobre la sensació de falta de propòsit que sentim a vegades'
+    en: 'Thoughts about the lack of life purpose that we feel sometimes',
+    ca: 'Reflexió sobre la sensació de falta de propòsit que sentim a vegades'
 };
 const entry = entriesRegistry['existential-injustice'];
-const titles = { eng: 'Existential injustice', cat: 'Injustícia existencial' };
+const titles = { en: 'Existential injustice', ca: 'Injustícia existencial' };
 
 export default {
     name: entry.id,

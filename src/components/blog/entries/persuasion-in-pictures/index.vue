@@ -11,7 +11,7 @@
         :title="titles[language.current]"
     >
         <english
-            v-if="language.current === 'eng'"
+            v-if="language.current === 'en'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
@@ -52,10 +52,10 @@ import workaround from './workaround.png';
 
 const date = '2020-06-14';
 const descriptions = {
-    eng: 'A graphical cheatsheet to become a better persuader'
+    en: 'A graphical cheatsheet to become a better persuader'
 };
 const entry = entriesRegistry['persuasion-in-pictures'];
-const titles = { eng: 'Persuasion in pictures' };
+const titles = { en: 'Persuasion in pictures' };
 
 export default {
     name: entry.id,
@@ -97,7 +97,7 @@ export default {
             },
             language,
             tags,
-            title: titles['eng'],
+            title: titles['en'],
             titles
         };
     }

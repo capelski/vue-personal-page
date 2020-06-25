@@ -16,12 +16,16 @@
                 </div>
                 <h5 class="languages-title">🌎 Language</h5>
                 <span
-                    :class="{'clickable language': true, 'selected': language.current === 'cat'}"
-                    @click="selectLanguage('cat')"
+                    :class="{'clickable language': true, 'selected': language.current === 'ca'}"
+                    @click="selectLanguage('ca')"
                 >Català</span>
                 <span
-                    :class="{'clickable language': true, 'selected': language.current === 'eng'}"
-                    @click="selectLanguage('eng')"
+                    :class="{'clickable language': true, 'selected': language.current === 'es'}"
+                    @click="selectLanguage('es')"
+                >Español</span>
+                <span
+                    :class="{'clickable language': true, 'selected': language.current === 'en'}"
+                    @click="selectLanguage('en')"
                 >English</span>
             </div>
             <div class="col-md-6 blog-options-column">

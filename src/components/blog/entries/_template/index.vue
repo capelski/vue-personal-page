@@ -11,12 +11,12 @@
         :title="titles[language.current]"
     >
         <catalan
-            v-if="language.current === 'cat'"
+            v-if="language.current === 'ca'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
         <english
-            v-if="language.current === 'eng'"
+            v-if="language.current === 'en'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
@@ -33,11 +33,11 @@ import english from './english';
 
 const date = 'TODO';
 const descriptions = {
-    eng: 'TODO',
-    cat: 'TODO'
+    en: 'TODO',
+    ca: 'TODO'
 };
 const entry = entriesRegistry['TODO'];
-const titles = { eng: 'TODO', cat: 'TODO' };
+const titles = { en: 'TODO', ca: 'TODO' };
 
 export default {
     name: entry.id,
@@ -55,7 +55,7 @@ export default {
             images: {},
             language,
             tags,
-            title: titles['eng'],
+            title: titles['en'],
             titles
         };
     }

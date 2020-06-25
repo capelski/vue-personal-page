@@ -11,7 +11,7 @@
         :title="titles[language.current]"
     >
         <english
-            v-if="language.current === 'eng'"
+            v-if="language.current === 'en'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
@@ -40,10 +40,10 @@ import stadiaSubscription from './stadia-subscription.png';
 
 const date = '2020-06-20';
 const descriptions = {
-    eng: 'A brief description of the Stadia gaming platform experience'
+    en: 'A brief description of the Stadia gaming platform experience'
 };
 const entry = entriesRegistry['stadia-platform'];
-const titles = { eng: 'Stadia: cloud gaming' };
+const titles = { en: 'Stadia: cloud gaming' };
 
 export default {
     name: entry.id,
@@ -73,7 +73,7 @@ export default {
             },
             language,
             tags,
-            title: titles['eng'],
+            title: titles['en'],
             titles
         };
     }

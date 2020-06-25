@@ -1,3 +1,3 @@
 export const language = {
-    current: 'eng'
+    current: 'en'
 };
