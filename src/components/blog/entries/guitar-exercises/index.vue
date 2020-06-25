@@ -7,11 +7,11 @@
         :isRenderedFromList="isRenderedFromList"
         :languages="entry.languages"
         :allTags="allTags"
-        :tags="[tags.Thoughts]"
+        :tags="[tags.Dissemination]"
         :title="titles[language.current]"
     >
-        <english
-            v-if="language.current === 'eng'"
+        <spanish
+            v-if="language.current === 'es'"
             :isRenderedFromList="isRenderedFromList"
             :images="images"
         />
@@ -23,20 +23,20 @@ import BlogEntry from '../../blog-entry';
 import { language } from '../../language';
 import { tags } from '../../tags';
 import entriesRegistry from '../registry';
-import english from './english';
+import spanish from './spanish';
 
 const date = 'TODO';
 const descriptions = {
-    eng: 'TODO'
+    es: 'TODO'
 };
 const entry = entriesRegistry['guitar-exercises'];
-const titles = { eng: 'TODO' };
+const titles = { es: 'TODO' };
 
 export default {
     name: entry.id,
     components: {
         BlogEntry,
-        english
+        spanish
     },
     props: ['isRenderedFromList', 'allTags'],
     data() {
@@ -47,7 +47,7 @@ export default {
             images: {},
             language,
             tags,
-            title: titles['eng'],
+            title: titles['es'],
             titles
         };
     }
