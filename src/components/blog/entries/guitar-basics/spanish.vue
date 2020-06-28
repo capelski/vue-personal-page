@@ -3,13 +3,13 @@
         <p>Aprender a tocar un instrumento musical lleva en mis lista de futuros proyectos mucho tiempo. Encontrándome pues en la infinidad de tiempo libre de un año sabático decidí pedir prestada una de las guitarras de mi tío y ponerme manos a la obra. Teniendo el combustible, la guitarra, y el oxígeno, tiempo libre, solo me faltaba una fuente de calor para prender la llama de mi prometedora carrera musical 🔥🎸 ¿Dónde buscar dicha chispa? ¡En YouTube por supuesto!</p>
         <div v-if="!isRenderedFromList">
             <p>
-                Accedí pues a la popular plataforma de video, en busca y captura de un tutorial de guitarra que pudiera completar con nula experiencia instrumental y el enorme entusiasmo de quién finalmente decide lanzarse a una nueva aventura. Encontré varios tutoriales interesantes de los cuáles me quedó con el curso de principiante de
+                Accedí pues a la popular plataforma de video, en busca y captura de un tutorial de guitarra que yo pudiera completar con nula experiencia instrumental y el enorme entusiasmo de quién finalmente decide lanzarse a una nueva aventura. Encontré varios tutoriales interesantes de los cuáles me quedo con el curso de principiante de
                 <a
                     href=" https://www.youtube.com/user/guitarsimple"
                     target="_blank"
                 >guitarsimple</a>.
             </p>
-            <p>Para algunas personas resultará un curso inadmisiblemente lento debido a las múltiples explicaciones del profesor, Álvaro Ávila. A mi sin embargo dichas explicaciones me parecierion interesantes dada mi ignorancia absoluta sobre el tema, y también me gusto su forma de expresarse, tranquila y paciente, desde el primer video hasta el último. A continuación listo los ejercicios de guitarra que se presentan durante el curso, nombrados análogamente al video de la lección correspondiente.</p>
+            <p>Para algunas personas resultará un curso inadmisiblemente lento debido a las múltiples explicaciones del profesor, Álvaro Ávila. A mi sin embargo dichas explicaciones me parecieron interesantes dada mi ignorancia absoluta sobre el tema, y también me gustó su forma de expresarse, tranquila y paciente, desde el primer video hasta el último. A continuación listo los ejercicios de guitarra que se presentan durante el curso, nombrados análogamente al video de la lección correspondiente.</p>
             <p>Los acordes de cada ejercicio estan representados de manera más o menos estandard, pero para representar visualmente los rasgueos de la mano derecha me he tenido que inventar un código de símbolos que detallo a continuación. Y sin más dilaciones, aquí tienes los ejercicios. Espero que te ayuden a mejorar tu dominio del instrumento y nos vemos en el siguiente post!</p>
             <div>👍 = Tocar todas las cuerdas con el pulgar</div>
             <div>💅 = Tocar todas las cuerdas con las uñas</div>
