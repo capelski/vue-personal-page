@@ -12,7 +12,7 @@ import WebDevOnSteroidsII from './web-dev-on-steroids-ii/web-dev-on-steroids-ii'
 import SudokuGeneration from './sudoku-generation/index';
 import PersuasionInPictures from './persuasion-in-pictures/index';
 import StadiaPlatform from './stadia-platform/index';
-import GuitarExercises from './guitar-exercises/index';
+import GuitarBasics from './guitar-basics/index';
 
 export default {
     AgilityRocks,
@@ -29,5 +29,5 @@ export default {
     SudokuGeneration,
     PersuasionInPictures,
     StadiaPlatform,
-    GuitarExercises
+    GuitarBasics
 };

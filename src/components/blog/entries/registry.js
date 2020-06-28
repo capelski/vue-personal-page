@@ -13,7 +13,7 @@ const entriesDictionary = {
     'sudoku-generation': ['ca', 'en'],
     'persuasion-in-pictures': ['en'],
     'stadia-platform': ['en'],
-    'guitar-exercises': ['es']
+    'guitar-basics': ['es']
 };
 const entriesKeys = Object.keys(entriesDictionary);
 

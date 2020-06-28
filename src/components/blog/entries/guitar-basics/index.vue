@@ -2,7 +2,7 @@
     <BlogEntry
         :date="date"
         :description="descriptions[language.current]"
-        duration="TODO"
+        duration="2"
         :entry="entry"
         :isRenderedFromList="isRenderedFromList"
         :languages="entry.languages"
@@ -25,12 +25,12 @@ import { tags } from '../../tags';
 import entriesRegistry from '../registry';
 import spanish from './spanish';
 
-const date = 'TODO';
+const date = '2020-06-28';
 const descriptions = {
-    es: 'TODO'
+    es: 'Ejercicios básicos para aprender a tocar la guitarra'
 };
-const entry = entriesRegistry['guitar-exercises'];
-const titles = { es: 'TODO' };
+const entry = entriesRegistry['guitar-basics'];
+const titles = { es: 'Básicos de guitarra' };
 
 export default {
     name: entry.id,
