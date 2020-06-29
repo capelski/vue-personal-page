@@ -12,13 +12,13 @@ const isProd = process.env.NODE_ENV === 'production';
 const environment = require('./env/prod.env');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
-const blogEntries = require('../src/components/blog/entries/registry');
-const prerenderRoutes = ['/', '/blog', '/projects', '/trips'];
-Object.values(blogEntries).forEach(entry => {
-    entry.languages.forEach(language => {
-        prerenderRoutes.push(`/blog/${entry.id}/${language}`);
-    });
-});
+// const blogEntries = require('../src/components/blog/entries/registry');
+const prerenderRoutes = ['/', '/blog', '/projects' /*, '/trips'*/];
+// Object.values(blogEntries).forEach(entry => {
+//     entry.languages.forEach(language => {
+//         prerenderRoutes.push(`/blog/${entry.id}/${language}`);
+//     });
+// });
 
 console.log('Will prerender the following routes');
 prerenderRoutes.forEach(route => console.log(`\t${route}`));
