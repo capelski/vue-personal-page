@@ -118,32 +118,28 @@ export default {
                     name: 'Skills matrix VII: Typescript',
                     description:
                         '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting from the Vue.js version, adding type safety through Typescript. Never get an exception in run time again!',
-                    githubUrl: 'https://github.com/capelski/skills-matrix-client-typescript',
-                    url: '/skills-matrix-client-typescript'
+                    githubUrl: 'https://github.com/capelski/skills-matrix-client-typescript'
                 },
                 {
                     date: 'June 2017 - December 2017',
                     name: 'Skills matrix VI: Vue.js',
                     description:
                         '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting from scratch, new version of the web application based on the Vue.js framework, which implements all of the previous concepts plus efficient DOM elements manipulation and allowing to split the HTML code in multiple files',
-                    githubUrl: 'https://github.com/capelski/skills-matrix-client-vue',
-                    url: '/skills-matrix-client-vue'
+                    githubUrl: 'https://github.com/capelski/skills-matrix-client-vue'
                 },
                 {
                     date: 'June 2017 - December 2017',
                     name: 'Skills matrix V: Webpack',
                     description:
                         '<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting off from the Redux version, adding Webpack to manage the dependencies through import statements rather than relying on the order sensitive index.html script tags',
-                    githubUrl: 'https://github.com/capelski/skills-matrix-client-webpack',
-                    url: '/skills-matrix-client-webpack'
+                    githubUrl: 'https://github.com/capelski/skills-matrix-client-webpack'
                 },
                 {
                     date: 'June 2017 - December 2017',
                     name: 'Skills matrix IV: Redux',
                     description:
                         "<i>Simple web with representative features used in modern applications (e.g. lists pagination and referenced entities) meant to illustrate the evolution of web development.</i><br /><br />Starting off from the jQuery version, I introudce ECMA Script 6 and add Redux to manage the application state (as the excuse to justify the usage of ECMA 6). Don't miss the time travel debbuging!",
-                    githubUrl: 'https://github.com/capelski/skills-matrix-client-redux',
-                    url: '/skills-matrix-client-redux'
+                    githubUrl: 'https://github.com/capelski/skills-matrix-client-redux'
                 },
                 {
                     date: 'June 2017 - December 2017',
@@ -196,7 +192,6 @@ export default {
                     name: 'Dragon Pong',
                     description:
                         "The company where I worked back then had a ping pong table but not a ranking system to track the scores. How could we possibly know who was the best player? I had to implement this website using Angular and PHP + Excel to find it out! (No, I wasn't working at Dragon Ball Inc. I have changed the name to avoid mentioning the company)",
-                    url: '/dragon-pong',
                     githubUrl: 'https://github.com/capelski/dragon-pong'
                 },
                 {
@@ -212,7 +207,6 @@ export default {
                     name: 'Vrokil',
                     description:
                         'Failed attempt! A friend of mine had the idea to import Matterport 3D technology to Spain since back then it had not arrived yet. This website had to be the official webpage of the plane to success that we did not catch',
-                    url: '/vrokil',
                     githubUrl: 'https://github.com/capelski/vrokil'
                 },
                 {
@@ -238,14 +232,6 @@ export default {
                         'Poliester Pelegrina SCP website, requested by one of the two company owners. Originally built in PHP (now migrated to Node.js). After trying many approaches the different views are managed with jQuery; no server page loads',
                     url: '/poliester-pelegrina',
                     githubUrl: 'https://github.com/capelski/poliester-pelegrina'
-                },
-                {
-                    date: 'September 2013',
-                    name: 'D.O. Vic Responsive',
-                    description:
-                        'Responsive version of the D.O. Vic restaurant version. Unfortunately, the owner of the restaurant decided to close before finishing it',
-                    url: '/responsive-do-vic',
-                    githubUrl: 'https://github.com/capelski/responsive-do-vic'
                 },
                 {
                     date: 'April 2013',
