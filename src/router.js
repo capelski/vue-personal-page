@@ -11,8 +11,6 @@ Vue.use(Router);
 const routes = [
     {
         path: '/',
-        // The following alias is necessary to resolve the home route in personal-server
-        alias: '/vue-personal-page',
         name: 'Home',
         component: Home
     },
@@ -42,7 +40,7 @@ Object.values(BlogEntries).forEach(blogEntry => {
 });
 
 const router = new Router({
-    base: process.env.baseUrl,
+    base: '/vue-personal-page',
     mode: 'history',
     routes
 });
