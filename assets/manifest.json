@@ -1,14 +1,16 @@
 {
     "short_name": "cc.xyz",
     "name": "Carles Capellas",
-    "icons": [{
-        "src": "/favicon.png",
-        "sizes": "72x72 96x96 128x128 256x256 512x512",
-        "type": "image/png"
-    }],
-    "start_url": "/",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "72x72 96x96 128x128 256x256 512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/vue-personal-page",
     "background_color": "#FFFFFF",
     "display": "standalone",
-    "scope": "/",
+    "scope": "/vue-personal-page",
     "theme_color": "#FFFFFF"
-} 
+}

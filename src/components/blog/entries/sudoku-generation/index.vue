@@ -7,7 +7,7 @@
         :isRenderedFromList="isRenderedFromList"
         :languages="entry.languages"
         :allTags="allTags"
-        :tags="[tags.Thoughts]"
+        :tags="[tags.WebDevelopment]"
         :title="titles[language.current]"
     >
         <catalan
