@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Carles Capellas</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="author" content="Carles Capellas" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="robots" content="index, follow">
-    
-    <script type="text/javascript">
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/sw.js?$modena=vue-personal-page', {
-                    scope: '/'
+    <head>
+        <title>Carles Capellas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <meta name="author" content="Carles Capellas" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="robots" content="index, follow" />
+
+        <script type="text/javascript">
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('/sw.js?$modena=vue-personal-page', {
+                        scope: '/vue-personal-page'
+                    });
                 });
-            });
-        }
-    </script>
-    <link rel="manifest" href="/manifest.json?$modena=vue-personal-page">
-    <link rel="icon" type="image/png" href="/favicon.png?$modena=vue-personal-page">
-</head>
-<body id="page-top">
-    <noscript>
-        <h1>Carles Capellas</h1>
-        <p>JavaScript is required to load my page</p>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-</body>
+            }
+        </script>
+        <link rel="manifest" href="/manifest.json?$modena=vue-personal-page" />
+        <link rel="icon" type="image/png" href="/favicon.png?$modena=vue-personal-page" />
+    </head>
+    <body id="page-top">
+        <noscript>
+            <h1>Carles Capellas</h1>
+            <p>JavaScript is required to load my page</p>
+        </noscript>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+    </body>
 </html>

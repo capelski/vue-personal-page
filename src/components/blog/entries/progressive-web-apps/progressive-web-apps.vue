@@ -28,7 +28,7 @@
                 The magic behind the progressive web apps are the
                 <a
                     href="https://developers.google.com/web/fundamentals/primers/service-workers/"
-                    _target="blank"
+                    target="_blank"
                 >service workers</a>. To cut a long story short, a service worker is a script that the browser runs in the background, in a separate thread from the UI, providing additional features such as the ability to intercept and handle network requests as well as managing a cache of responses. In fact, this is the only feature we will need to make our website available offline.
             </p>
             <p>
@@ -44,7 +44,7 @@
                 There are multiple caching strategies to choose from when it comes to service workers and they are all very well explained in
                 <a
                     href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#serving-suggestions"
-                    _target="blank"
+                    target="_blank"
                 >the offline cookbook</a>. Take a look at them to know which patterns there are and which ones suit better your application needs (you might apply different strategies depending on the type of resource being cached and how often they get updated). I chose the
                 <b>Network falling back to cache</b> strategy for my webpage for the following reasons:
             </p>
@@ -100,7 +100,7 @@
                 Congratulations &#127881; Your application just turned offline friendly! You are free to go playing now but stick around because I still have something cool to show you. See that
                 <a
                     href="https://developers.google.com/web/fundamentals/web-app-manifest/"
-                    _target="blank"
+                    target="_blank"
                 >manifest.json file</a> inside the head tag of the HTML page? It has nothing to do with the service worker, but it will make your application installable in mobile devices for free and it only takes a few mintues to add it. It's content is self-explanatory and here are some screenshots of how professional your app will look like when installed in a mobile device:
             </p>
             <div ref="manifest" class="code-editor"></div>

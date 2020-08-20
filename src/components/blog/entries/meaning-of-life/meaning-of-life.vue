@@ -10,10 +10,7 @@
         :tags="[tags.Thoughts]"
         :title="title"
     >
-        <p>
-            From time to time I used to wonder about the meaning of life. Or more exactly which is the goal of life. Why are we here for? If you have wondered about it too without getting to any satisfactory conclusion, I'm sorry to tell you that I don't have an specific answer. However, as the time goes by, I am less worried about finding it.
-            <b>Yes, this is going to be a dense post.</b>
-        </p>
+        <p>From time to time I used to wonder about the meaning of life. Or more exactly which is the goal of life. Why are we here for? If you have wondered about it too without getting to any satisfactory conclusion, I'm sorry to tell you that I don't have an specific answer. However, as the time goes by, I am less worried about finding it.</p>
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
@@ -22,7 +19,7 @@
                 />
             </p>
             <p>In my opinion the fact that we don't know which is the objective of life (or if there is one in first place) makes life beautiful. It allows the life of each person in the planet to be unique and different. Which sense would make to plant peppers on the backyard if the life is meant to, let's say, eat as much chocolate as possible? But still, there is beauty in planting the peppers and we can enjoy and learn by doing it. In the same line why would we play football, listen to music, cut our hair, develop software or dance salsa if that doesn't help us getting more chocolate?</p>
-            <p>If life had a goal, it would be simpler and we wouldn't feel so lost sometimes, but it would have a downside too because we wouldn't explore as many possibilites as we do now (e.g. to quota an extravagant experiment, we sent a Tesla across the universe, can you believe it!?).</p>
+            <p>If life had a goal, it would be simpler and we wouldn't feel so lost sometimes, but it would have a drawback too because we wouldn't explore as many possibilites as we do now (e.g. to quote an extravagant experiment, we sent a Tesla across the universe, can you believe it!?).</p>
             <p class="text-center">
                 <img
                     :src="`${images.teslaInSpace}?$modena=vue-personal-page`"
