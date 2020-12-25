@@ -3,9 +3,9 @@ const { join } = require('path');
 
 module.exports = () => {
     const app = express();
-    app.use('/', express.static(join(__dirname, 'dist')));
+    app.use('/', express.static(join(__dirname, 'docs')));
     app.use('*', (req, res, next) => {
-        return res.sendFile(join(__dirname, 'dist', 'index.html'));
+        return res.sendFile(join(__dirname, 'docs', 'index.html'));
     });
     return app;
 };

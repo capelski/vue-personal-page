@@ -26,7 +26,7 @@ const environment = require('./env/prod.env');
 const webpackConfig = merge(commonConfig, {
     mode: 'production',
     output: {
-        path: path.resolve(__dirname, '..', 'dist'),
+        path: path.resolve(__dirname, '..', 'docs'),
         publicPath: '/',
         filename: 'js/[name].bundle.js?$modena=vue-personal-page',
         // Chunks optimization seem to break monaco editor
@@ -86,7 +86,7 @@ const webpackConfig = merge(commonConfig, {
         })
         // new webpack.HashedModuleIdsPlugin(),
         // new PrerenderSpaPlugin({
-        //     staticDir: path.join(__dirname, '..', 'dist'),
+        //     staticDir: path.join(__dirname, '..', 'docs'),
         //     routes: prerenderRoutes
         // })
     ]
