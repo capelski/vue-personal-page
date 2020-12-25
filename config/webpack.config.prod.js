@@ -10,18 +10,20 @@ const path = require('path');
 const commonConfig = require('./webpack.config.common');
 const isProd = process.env.NODE_ENV === 'production';
 const environment = require('./env/prod.env');
-// const PrerenderSpaPlugin = require('prerender-spa-plugin');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
-// const blogEntries = require('../src/components/blog/entries/registry');
-// const prerenderRoutes = ['/', '/blog', '/projects' /*, '/trips'*/];
-// Object.values(blogEntries).forEach(entry => {
-//     entry.languages.forEach(language => {
-//         prerenderRoutes.push(`/blog/${entry.id}/${language}`);
-//     });
-// });
+const blogEntries = require('../src/components/blog/entries/registry');
+const prerenderRoutes = ['/', '/blog', '/projects' /*, '/trips'*/];
+Object.values(blogEntries)
+    .slice(-10) // Seems prerendering fails after a certain number of pre-rendered pages
+    .forEach((entry) => {
+        entry.languages.forEach((language) => {
+            prerenderRoutes.push(`/blog/${entry.id}/${language}`);
+        });
+    });
 
-// console.log('Will prerender the following routes');
-// prerenderRoutes.forEach(route => console.log(`\t${route}`));
+console.log('Will prerender the following routes');
+prerenderRoutes.forEach((route) => console.log(`\t${route}`));
 
 const webpackConfig = merge(commonConfig, {
     mode: 'production',
@@ -83,12 +85,12 @@ const webpackConfig = merge(commonConfig, {
             test: new RegExp('\\.(js|css)$'),
             threshold: 10240,
             minRatio: 0.8
-        })
+        }),
         // new webpack.HashedModuleIdsPlugin(),
-        // new PrerenderSpaPlugin({
-        //     staticDir: path.join(__dirname, '..', 'docs'),
-        //     routes: prerenderRoutes
-        // })
+        new PrerenderSpaPlugin({
+            staticDir: path.join(__dirname, '..', 'docs'),
+            routes: prerenderRoutes
+        })
     ]
 });
 
