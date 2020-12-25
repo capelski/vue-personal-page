@@ -2,17 +2,21 @@
     <div class="navigation-buttons">
         <button
             type="button"
-            :class="{'btn btn-primary': true, 'btn-disabled': !entry.previous }"
+            :class="{ 'btn btn-primary': true, 'btn-disabled': !entry.previous }"
             v-on:click="navigatePrevious"
-        >Previous</button>
+        >
+            Previous
+        </button>
         <a v-if="isShareAvailable" v-on:click="sharePost" class="share-link">
-            <img src="/img/share.png?$modena=vue-personal-page" width="40px" height="40px" />
+            <img src="/vue-personal-page/img/share.png" width="40px" height="40px" />
         </a>
         <button
             type="button"
-            :class="{'btn btn-primary': true, 'btn-disabled': !entry.following }"
+            :class="{ 'btn btn-primary': true, 'btn-disabled': !entry.following }"
             v-on:click="navigateFollowing"
-        >Following</button>
+        >
+            Following
+        </button>
     </div>
 </template>
 

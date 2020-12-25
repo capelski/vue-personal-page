@@ -14,14 +14,20 @@
         <script type="text/javascript">
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/sw.js?$modena=vue-personal-page', {
+                    navigator.serviceWorker.register('/vue-personal-page/sw.js', {
                         scope: '/vue-personal-page'
                     });
                 });
             }
         </script>
-        <link rel="manifest" href="/manifest.json?$modena=vue-personal-page" />
-        <link rel="icon" type="image/png" href="/favicon.png?$modena=vue-personal-page" />
+        <link rel="manifest" href="/vue-personal-page/manifest.json" />
+        <link rel="icon" type="image/png" href="/vue-personal-page/favicon.png" />
+        <link href="/vue-personal-page/css/index.css" rel="stylesheet" />
+        <script
+            async=""
+            src="https://www.google-analytics.com/analytics.js"
+            charset="utf-8"
+        ></script>
     </head>
     <body id="page-top">
         <noscript>
@@ -30,5 +36,11 @@
         </noscript>
         <div id="app"></div>
         <!-- built files will be auto injected -->
+        <script type="text/javascript" src="/vue-personal-page/js/index.bundle.js"></script>
+        <script type="text/javascript" src="/vue-personal-page/js/editor.worker.bundle.js"></script>
+        <script type="text/javascript" src="/vue-personal-page/js/json.worker.bundle.js"></script>
+        <script type="text/javascript" src="/vue-personal-page/js/css.worker.bundle.js"></script>
+        <script type="text/javascript" src="/vue-personal-page/js/html.worker.bundle.js"></script>
+        <script type="text/javascript" src="/vue-personal-page/js/ts.worker.bundle.js"></script>
     </body>
 </html>

@@ -14,6 +14,6 @@ $font-secondary: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     @font-face {
         font-family: $fontFamily;
         font-weight: $fontWeight;
-        src: url('/fonts/#{$fontPath}?$modena=vue-personal-page');
+        src: url('/vue-personal-page/fonts/#{$fontPath}?');
     }
 }

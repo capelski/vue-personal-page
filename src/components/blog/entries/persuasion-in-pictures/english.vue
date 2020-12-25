@@ -1,24 +1,30 @@
 <template>
     <div>
         <p>
-            What would I know about persuasion? Well, not that much to be honest. That's why I used this confinement time to improve my social skills through Brandon Hakim's persuasion
+            What would I know about persuasion? Well, not that much to be honest. That's why I used
+            this confinement time to improve my social skills through Brandon Hakim's persuasion
             <a
                 href="https://www.udemy.com/course/persuasion-masterclass-how-to-powerfully-influence-anyone/"
                 target="_blank"
-            >udemy course</a>. Regardless how much I learned, I do recommend the course because it made me ponder about how people communicates effectively (and it inspired me to draw the pictures below). Here is a quick summary of the course main points. Did you already know them all?
+                >udemy course</a
+            >. Regardless how much I learned, I do recommend the course because it made me ponder
+            about how people communicates effectively (and it inspired me to draw the pictures
+            below). Here is a quick summary of the course main points. Did you already know them
+            all?
         </p>
 
         <div v-if="!isRenderedFromList">
             <div class="row persuasion-header">
                 <div class="col-sm-2 col-6 text-center">
-                    <img
-                        :src="`${images.avoid}?$modena=vue-personal-page`"
-                        alt="Arrow avoiding object"
-                    />
+                    <img :src="`/vue-personal-page/${images.avoid}`" alt="Arrow avoiding object" />
                 </div>
                 <div class="col-sm-10 col-6">
                     <h4>Avoid</h4>
-                    <p>The following three patterns are usual in irritating conversations. They make sense from a rational point of view, but they are not effective to emphatize with the other person. Try to stay away from them</p>
+                    <p>
+                        The following three patterns are usual in irritating conversations. They
+                        make sense from a rational point of view, but they are not effective to
+                        emphatize with the other person. Try to stay away from them
+                    </p>
                 </div>
             </div>
 
@@ -52,13 +58,17 @@
             <div class="row persuasion-header">
                 <div class="col-sm-2 col-6 text-center">
                     <img
-                        :src="`${images.adopt}?$modena=vue-personal-page`"
+                        :src="`/vue-personal-page/${images.adopt}`"
                         alt="Hand waiting to receive something"
                     />
                 </div>
                 <div class="col-sm-10 col-6">
                     <h4>Adopt</h4>
-                    <p>You can lead people to an answer, but you can't give it to them. The following three elements address the subconscious rather than the rational mind, so they are more likely to be accepted by the other person</p>
+                    <p>
+                        You can lead people to an answer, but you can't give it to them. The
+                        following three elements address the subconscious rather than the rational
+                        mind, so they are more likely to be accepted by the other person
+                    </p>
                 </div>
             </div>
 
@@ -91,9 +101,18 @@
 
             <h4 class="persuasion-header">Persuasion stages</h4>
 
-            <p>If you think of the last time somebody convinced you to do something, they probably went through some of the following stages. Covering them all will help you showing the other person that you care about them rather than getting them thinking you are trying to manipulate them for your own selfish reasons.</p>
+            <p>
+                If you think of the last time somebody convinced you to do something, they probably
+                went through some of the following stages. Covering them all will help you showing
+                the other person that you care about them rather than getting them thinking you are
+                trying to manipulate them for your own selfish reasons.
+            </p>
 
-            <p>You can split the stages throughout multiple conversations or cover them all in a row if the other person is connecting with you enough. You can also skip stages if you have already been there before with the person you are trying to convince.</p>
+            <p>
+                You can split the stages throughout multiple conversations or cover them all in a
+                row if the other person is connecting with you enough. You can also skip stages if
+                you have already been there before with the person you are trying to convince.
+            </p>
 
             <PersuasionStage
                 description="Meet the other person at their emotional level. If you can't empathize with them, leave the persuasion for another moment"
@@ -157,7 +176,12 @@
 
             <h4 class="persuasion-header">Persuasive traits development</h4>
 
-            <p>Understanding the previous stages will give you some advantage next time you try to convince someone but the best way to do so is by generating trust. The following exercises will help you developing personality traits that most people appreciate, making it easier for you to reach people</p>
+            <p>
+                Understanding the previous stages will give you some advantage next time you try to
+                convince someone but the best way to do so is by generating trust. The following
+                exercises will help you developing personality traits that most people appreciate,
+                making it easier for you to reach people
+            </p>
 
             <div class="row">
                 <div class="col-sm-4">
@@ -210,7 +234,15 @@
                 </div>
             </div>
 
-            <p>And that's about it! As usual when writting about such subjective and abstract topics, I can't help feeling it all sounds like dime-store psychology. In an attempt to make it more bearable I decided to draw some visuals, but still I am not sure I did succeed. Maybe someone will now think which aspects they can apply to their interactions to become more persuasive. Maybe it will help someone realizing it is in their hands to make a better impression on other people. In the worst case, you can always make fun of my drawing skills 😃 See you in the next post!</p>
+            <p>
+                And that's about it! As usual when writting about such subjective and abstract
+                topics, I can't help feeling it all sounds like dime-store psychology. In an attempt
+                to make it more bearable I decided to draw some visuals, but still I am not sure I
+                did succeed. Maybe someone will now think which aspects they can apply to their
+                interactions to become more persuasive. Maybe it will help someone realizing it is
+                in their hands to make a better impression on other people. In the worst case, you
+                can always make fun of my drawing skills 😃 See you in the next post!
+            </p>
         </div>
     </div>
 </template>

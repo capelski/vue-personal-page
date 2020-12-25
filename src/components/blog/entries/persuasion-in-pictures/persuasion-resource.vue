@@ -1,14 +1,10 @@
 <template>
     <div>
-        <h6 class="text-center">{{title}}</h6>
+        <h6 class="text-center">{{ title }}</h6>
         <p class="text-center">
-            <img
-                class="persuasion-resource"
-                :src="`${image}?$modena=vue-personal-page`"
-                :alt="imageAlt"
-            />
+            <img class="persuasion-resource" :src="`/vue-personal-page/${image}`" :alt="imageAlt" />
         </p>
-        <p>{{description}}</p>
+        <p>{{ description }}</p>
     </div>
 </template>
 

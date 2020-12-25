@@ -26,18 +26,18 @@ Vue.use(VueMeta, {
 self.MonacoEnvironment = {
     getWorkerUrl: function(moduleId, label) {
         if (label === 'json') {
-            return '/js/json.worker.bundle.js?$modena=vue-personal-page';
+            return '/vue-personal-page/js/json.worker.bundle.js?';
         }
         if (label === 'css') {
-            return '/js/css.worker.bundle.js?$modena=vue-personal-page';
+            return '/vue-personal-page/js/css.worker.bundle.js?';
         }
         if (label === 'html') {
-            return '/js/html.worker.bundle.js?$modena=vue-personal-page';
+            return '/vue-personal-page/js/html.worker.bundle.js?';
         }
         if (label === 'typescript' || label === 'javascript') {
-            return '/js/ts.worker.bundle.js?$modena=vue-personal-page';
+            return '/vue-personal-page/js/ts.worker.bundle.js?';
         }
-        return '/js/editor.worker.bundle.js?$modena=vue-personal-page';
+        return '/vue-personal-page/js/editor.worker.bundle.js?';
     }
 };
 

@@ -79,7 +79,8 @@ const webpackConfig = {
         new VueLoaderPlugin(),
         new HtmlPlugin({
             filename: 'index.html',
-            template: 'index.html'
+            template: 'index.html',
+            inject: false
             /*chunksSortMode: 'dependency' */
         }),
         new CopyWebpackPlugin([

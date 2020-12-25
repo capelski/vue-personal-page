@@ -16,24 +16,24 @@ const blogEntries = require('../src/components/blog/entries/registry');
 const prerenderRoutes = ['/', '/blog', '/projects' /*, '/trips'*/];
 Object.values(blogEntries)
     .slice(-10) // Seems prerendering fails after a certain number of pre-rendered pages
-    .forEach((entry) => {
-        entry.languages.forEach((language) => {
+    .forEach(entry => {
+        entry.languages.forEach(language => {
             prerenderRoutes.push(`/blog/${entry.id}/${language}`);
         });
     });
 
 console.log('Will prerender the following routes');
-prerenderRoutes.forEach((route) => console.log(`\t${route}`));
+prerenderRoutes.forEach(route => console.log(`\t${route}`));
 
 const webpackConfig = merge(commonConfig, {
     mode: 'production',
     output: {
         path: path.resolve(__dirname, '..', 'docs'),
         publicPath: '/',
-        filename: 'js/[name].bundle.js?$modena=vue-personal-page',
+        filename: 'js/[name].bundle.js',
         // Chunks optimization seem to break monaco editor
-        // filename: 'js/[hash].js?$modena=vue-personal-page',
-        // chunkFilename: 'js/[id].[hash].chunk.js?$modena=vue-personal-page',
+        // filename: 'js/[hash].js',
+        // chunkFilename: 'js/[id].[hash].chunk.js',
         // Necessary for monaco editor
         globalObject: 'self'
     },
@@ -75,9 +75,9 @@ const webpackConfig = merge(commonConfig, {
     plugins: [
         new webpack.EnvironmentPlugin(environment),
         new MiniCSSExtractPlugin({
-            filename: 'css/[name].css?$modena=vue-personal-page'
-            // filename: 'css/[name].[hash].css?$modena=vue-personal-page',
-            // chunkFilename: 'css/[id].[hash].css?$modena=vue-personal-page'
+            filename: 'css/[name].css'
+            // filename: 'css/[name].[hash].css',
+            // chunkFilename: 'css/[id].[hash].css'
         }),
         new CompressionPlugin({
             filename: '[path].gz[query]',

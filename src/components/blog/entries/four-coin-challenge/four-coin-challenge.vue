@@ -12,51 +12,89 @@
     >
         <p>
             In contrast to my abstract esoteric last post on the
-            <router-link :to="`/blog/meaning-of-life`">meaning of life</router-link>, today I bring a light and enjoyable post that will make you think in a different manner; you will need to find a way to lay four coins in a row. Doesn't sound complicated, does it? Just let me add a couple of restrictions so that the word
-            <b>challenge</b> on the title is not used in vain and in order for you to feel proud of yourself if you are able to find out a solution.
+            <router-link :to="`/blog/meaning-of-life`">meaning of life</router-link>, today I bring
+            a light and enjoyable post that will make you think in a different manner; you will need
+            to find a way to lay four coins in a row. Doesn't sound complicated, does it? Just let
+            me add a couple of restrictions so that the word <b>challenge</b> on the title is not
+            used in vain and in order for you to feel proud of yourself if you are able to find out
+            a solution.
         </p>
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
-                    :src="`${images.initialPosition}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.initialPosition}`"
                     alt="4-coin challenge initial position"
                 />
             </p>
             <p>
                 To start with the coins must placed in the
-                <b>initial position</b> displayed above. I will use the bitcoin logo to cause confusion and get some more views by mistake (catching the attention of the distracted minds), but you can use any kind of coin as long as they have the same size.
+                <b>initial position</b> displayed above. I will use the bitcoin logo to cause
+                confusion and get some more views by mistake (catching the attention of the
+                distracted minds), but you can use any kind of coin as long as they have the same
+                size.
             </p>
-            <p>The goal of the challenge is to put the coins on a row by moving just one coin at a time, not lifting it from the surface where they are laying. The tricky part that will make you struggle with the challenge is that each time you move a coin, it can only be left in a position where it touches at least two other coins. A picture is worth a thousand words: the first movement is invalid while the second one is perfectly accepted.</p>
+            <p>
+                The goal of the challenge is to put the coins on a row by moving just one coin at a
+                time, not lifting it from the surface where they are laying. The tricky part that
+                will make you struggle with the challenge is that each time you move a coin, it can
+                only be left in a position where it touches at least two other coins. A picture is
+                worth a thousand words: the first movement is invalid while the second one is
+                perfectly accepted.
+            </p>
             <p class="text-center">
                 <img
-                    :src="`${images.invalidMovement}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.invalidMovement}`"
                     alt="4-coin challenge invalid movement"
                 />
             </p>
             <p class="text-center">
                 <img
-                    :src="`${images.validMovement}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.validMovement}`"
                     alt="4-coin challenge valid movement"
                 />
             </p>
-            <p>That's all you need to know! So go get some coins and don't come back until you have a solution or the closest thing you can get before you get tired of trying. Regardless what happens first, here you will find the solution when the moment arrives:</p>
+            <p>
+                That's all you need to know! So go get some coins and don't come back until you have
+                a solution or the closest thing you can get before you get tired of trying.
+                Regardless what happens first, here you will find the solution when the moment
+                arrives:
+            </p>
             <p class="text-center">
                 <img
-                    :src="`${images['solution' + (solutionStep > 9 ? solutionStep : '0' + solutionStep)]}?$modena=vue-personal-page`"
+                    :src="
+                        `/vue-personal-page/${
+                            images[
+                                'solution' + (solutionStep > 9 ? solutionStep : '0' + solutionStep)
+                            ]
+                        }`
+                    "
                     alt="4-coin challenge solution"
                 />
                 <button
                     type="button"
-                    :class="{'btn btn-primary btn-lg coins spaced': true, 'btn-disabled': !isPreviousEnabled }"
+                    :class="{
+                        'btn btn-primary btn-lg coins spaced': true,
+                        'btn-disabled': !isPreviousEnabled
+                    }"
                     v-on:click="previousStep"
-                >Back</button>
+                >
+                    Back
+                </button>
                 <button
                     type="button"
-                    :class="{'btn btn-primary btn-lg coins': true, 'btn-disabled': !isNextEnabled }"
+                    :class="{
+                        'btn btn-primary btn-lg coins': true,
+                        'btn-disabled': !isNextEnabled
+                    }"
                     v-on:click="nextStep"
-                >Next</button>
+                >
+                    Next
+                </button>
             </p>
-            <p>Hope you enjoy the challenge and you were able to solve it. See you in the next post!</p>
+            <p>
+                Hope you enjoy the challenge and you were able to solve it. See you in the next
+                post!
+            </p>
         </div>
     </BlogEntry>
 </template>

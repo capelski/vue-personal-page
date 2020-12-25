@@ -4,9 +4,9 @@
             <h1 class="intro-heading text-uppercase">Carles Capellas</h1>
             <h2 class="intro-subheading">Get to know something about me</h2>
             <div class="technologies">
-                <img src="/img/node.png?$modena=vue-personal-page" alt="Node.js logo" />
-                <img src="/img/docker.png?$modena=vue-personal-page" alt="Docker logo" />
-                <img src="/img/azure.png?$modena=vue-personal-page" alt="Windows Azure logo" />
+                <img src="/vue-personal-page/img/node.png" alt="Node.js logo" />
+                <img src="/vue-personal-page/img/docker.png" alt="Docker logo" />
+                <img src="/vue-personal-page/img/azure.png" alt="Windows Azure logo" />
             </div>
         </header>
     </div>
@@ -35,7 +35,7 @@ export default {
     text-align: center;
     flex-direction: column;
     color: $light-main-color;
-    background-image: url('/img/header-bg.jpg?$modena=vue-personal-page');
+    background-image: url('/vue-personal-page/img/header-bg.jpg?');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;

@@ -21,28 +21,33 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/" class="nav-link" @click.native="closeMenu">Home</router-link>
+                        <router-link to="/" class="nav-link" @click.native="closeMenu"
+                            >Home</router-link
+                        >
                     </li>
                     <li class="nav-item">
-                        <router-link to="/blog" class="nav-link" @click.native="closeMenu">Blog</router-link>
+                        <router-link to="/blog" class="nav-link" @click.native="closeMenu"
+                            >Blog</router-link
+                        >
                     </li>
                     <li class="nav-item">
-                        <router-link
-                            to="/projects"
-                            class="nav-link"
-                            @click.native="closeMenu"
-                        >Projects</router-link>
+                        <router-link to="/projects" class="nav-link" @click.native="closeMenu"
+                            >Projects</router-link
+                        >
                     </li>
                     <li class="nav-item">
-                        <router-link to="/trips" class="nav-link" @click.native="closeMenu">Trips</router-link>
+                        <router-link to="/trips" class="nav-link" @click.native="closeMenu"
+                            >Trips</router-link
+                        >
                     </li>
                     <li class="nav-item">
                         <a
                             class="nav-link"
                             target="_blank"
                             @click="closeMenu"
-                            href="/pdf/cv.pdf?$modena=vue-personal-page"
-                        >CV</a>
+                            href="/vue-personal-page/pdf/cv.pdf"
+                            >CV</a
+                        >
                     </li>
                 </ul>
             </div>

@@ -11,16 +11,19 @@
         :title="title"
     >
         <p>
-            If you are visiting this website from a mobile device, you might have seen the following message at the bottom of the screen. No, I am not trying to hack you. I have made my website a
-            <a
-                href="https://developers.google.com/web/progressive-web-apps/"
-                target="_blank"
-            >progressive web app</a> and, as such, it can be installed in Android and iOS devices and it can be accessed offline. Keep reading if you want to turn your website in a PWA in less than 15 minutes!
+            If you are visiting this website from a mobile device, you might have seen the following
+            message at the bottom of the screen. No, I am not trying to hack you. I have made my
+            website a
+            <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank"
+                >progressive web app</a
+            >
+            and, as such, it can be installed in Android and iOS devices and it can be accessed
+            offline. Keep reading if you want to turn your website in a PWA in less than 15 minutes!
         </p>
         <div v-if="!isRenderedFromList">
             <p class="text-center">
                 <img
-                    :src="`${images.addHome}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.addHome}`"
                     alt="Add PWA to home screen prompt"
                 />
             </p>
@@ -29,101 +32,153 @@
                 <a
                     href="https://developers.google.com/web/fundamentals/primers/service-workers/"
                     target="_blank"
-                >service workers</a>. To cut a long story short, a service worker is a script that the browser runs in the background, in a separate thread from the UI, providing additional features such as the ability to intercept and handle network requests as well as managing a cache of responses. In fact, this is the only feature we will need to make our website available offline.
+                    >service workers</a
+                >. To cut a long story short, a service worker is a script that the browser runs in
+                the background, in a separate thread from the UI, providing additional features such
+                as the ability to intercept and handle network requests as well as managing a cache
+                of responses. In fact, this is the only feature we will need to make our website
+                available offline.
             </p>
             <p>
-                A service worker lifecycle is completely separate from the web application so, first, it must be registered through the browser
-                <b>navigator API</b>. You will want to register the service worker as soon as possible so all the application requests are intercepted and handled (including the application Javascript files themselves). For that reason, I place the service worker registration in a script tag inside the head tag of the HTML page:
+                A service worker lifecycle is completely separate from the web application so,
+                first, it must be registered through the browser
+                <b>navigator API</b>. You will want to register the service worker as soon as
+                possible so all the application requests are intercepted and handled (including the
+                application Javascript files themselves). For that reason, I place the service
+                worker registration in a script tag inside the head tag of the HTML page:
             </p>
             <div ref="registration" class="code-editor"></div>
             <p>
                 The register method tells the browser to search for a service worker in the
-                <b>sw.js</b> file and will start the install step in the background. Thus the next thing to be done is to tell the service worker what to do during the install step which, typically, will consist in caching some static assets.
+                <b>sw.js</b> file and will start the install step in the background. Thus the next
+                thing to be done is to tell the service worker what to do during the install step
+                which, typically, will consist in caching some static assets.
             </p>
             <p>
-                There are multiple caching strategies to choose from when it comes to service workers and they are all very well explained in
+                There are multiple caching strategies to choose from when it comes to service
+                workers and they are all very well explained in
                 <a
                     href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#serving-suggestions"
                     target="_blank"
-                >the offline cookbook</a>. Take a look at them to know which patterns there are and which ones suit better your application needs (you might apply different strategies depending on the type of resource being cached and how often they get updated). I chose the
-                <b>Network falling back to cache</b> strategy for my webpage for the following reasons:
+                    >the offline cookbook</a
+                >. Take a look at them to know which patterns there are and which ones suit better
+                your application needs (you might apply different strategies depending on the type
+                of resource being cached and how often they get updated). I chose the
+                <b>Network falling back to cache</b> strategy for my webpage for the following
+                reasons:
             </p>
             <ul>
                 <li>
                     <b>Simplicity</b>. There are better performing strategies (e.g.
-                    <b>Cache then network</b> or
-                    <b>Cache & network race</b>) but they add more complexity to the service worker implementation. Let's keep in mind that the only goal of this exercise is to make the website available offline, not to optimize the time to content
+                    <b>Cache then network</b> or <b>Cache & network race</b>) but they add more
+                    complexity to the service worker implementation. Let's keep in mind that the
+                    only goal of this exercise is to make the website available offline, not to
+                    optimize the time to content
                 </li>
                 <li>
                     I first started with
-                    <b>cache falling back to network</b> for better performance but, given I frequently update the application, I was getting errors due to old versions of static assets being cached. Feel free to dedicate some time to solve those errors but, again, the purpose of this tutorial is just to make the website available offline
+                    <b>cache falling back to network</b> for better performance but, given I
+                    frequently update the application, I was getting errors due to old versions of
+                    static assets being cached. Feel free to dedicate some time to solve those
+                    errors but, again, the purpose of this tutorial is just to make the website
+                    available offline
                 </li>
             </ul>
-            <p>So, without further ado, let's implement the service worker. First we need to add a specific set of files to the cache during installation. If all the files are cached successfully, then the service worker becomes installed and we get those static assets available in the cache. If any of the files fail to download and cache, then the install step will fail and the service worker won't activate (not the end of the world though, it will try to install again the next time the page is loaded).</p>
             <p>
-                The shorter the list is the least chances the installation has to fail (and the rest of assets can be cached later on anyway). In my case, I am only caching the landing page of my site. The
-                <a
-                    href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self"
-                >self property</a> is a reference to the WorkerGlobalScope (available only in service worker threads):
+                So, without further ado, let's implement the service worker. First we need to add a
+                specific set of files to the cache during installation. If all the files are cached
+                successfully, then the service worker becomes installed and we get those static
+                assets available in the cache. If any of the files fail to download and cache, then
+                the install step will fail and the service worker won't activate (not the end of the
+                world though, it will try to install again the next time the page is loaded).
+            </p>
+            <p>
+                The shorter the list is the least chances the installation has to fail (and the rest
+                of assets can be cached later on anyway). In my case, I am only caching the landing
+                page of my site. The
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/self"
+                    >self property</a
+                >
+                is a reference to the WorkerGlobalScope (available only in service worker threads):
             </p>
             <div ref="serviceWorker" class="code-editor"></div>
             <p>
                 Now let's get the work done! The most important part of our service worker is the
-                <b>fetch</b> listener. This handler will intercept every network request and will allow us to serve a cached version of a given resource, which, due to the
-                <b>Network falling back to cache</b> strategy, will happen only if the corresponding network request fails (lines 35-37). Don't forget to add the asset to the cache on a successful network response in order to keep the cache content updated (line 31). The
-                <b>clone</b> method is required because the responses can only be consumed once.
+                <b>fetch</b> listener. This handler will intercept every network request and will
+                allow us to serve a cached version of a given resource, which, due to the
+                <b>Network falling back to cache</b> strategy, will happen only if the corresponding
+                network request fails (lines 35-37). Don't forget to add the asset to the cache on a
+                successful network response in order to keep the cache content updated (line 31).
+                The <b>clone</b> method is required because the responses can only be consumed once.
             </p>
             <p>
                 Optionally, an
-                <b>activate</b> listener can also be defined in order to run some tasks each time the service worker is successfully installed. This feature comes handy to clear the application cache every time the service worker is updated. You don't need to do this but remember the
-                <b>universe tends to disorder</b> and is our duty to keep the application clean and tidy; remove the files you are no longer going to need and make the users happier by freeing space up in their devices.
+                <b>activate</b> listener can also be defined in order to run some tasks each time
+                the service worker is successfully installed. This feature comes handy to clear the
+                application cache every time the service worker is updated. You don't need to do
+                this but remember the <b>universe tends to disorder</b> and is our duty to keep the
+                application clean and tidy; remove the files you are no longer going to need and
+                make the users happier by freeing space up in their devices.
             </p>
             <p>
-                Once the server worker is put into place the browser will start caching every network request. You can have a look at the contents of your application cache in the
-                <b>Application</b> tab of the Chrome
-                <b>Developer Tools</b>. Once all the content you need has been cached, you can also test the application offline behaviour by checking the
-                <b>Offline</b> box and refreshing the page. Notice how the network requests fail and the assets are served from the service worker:
+                Once the server worker is put into place the browser will start caching every
+                network request. You can have a look at the contents of your application cache in
+                the
+                <b>Application</b> tab of the Chrome <b>Developer Tools</b>. Once all the content
+                you need has been cached, you can also test the application offline behaviour by
+                checking the <b>Offline</b> box and refreshing the page. Notice how the network
+                requests fail and the assets are served from the service worker:
             </p>
             <p class="text-center">
                 <img
-                    :src="`${images.cacheContent}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.cacheContent}`"
                     alt="Service worker cache content"
                 />
             </p>
             <p class="text-center">
                 <img
-                    :src="`${images.offlineDesktop}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.offlineDesktop}`"
                     alt="Service worker cache content"
                 />
             </p>
             <p>
-                Congratulations &#127881; Your application just turned offline friendly! You are free to go playing now but stick around because I still have something cool to show you. See that
+                Congratulations &#127881; Your application just turned offline friendly! You are
+                free to go playing now but stick around because I still have something cool to show
+                you. See that
                 <a
                     href="https://developers.google.com/web/fundamentals/web-app-manifest/"
                     target="_blank"
-                >manifest.json file</a> inside the head tag of the HTML page? It has nothing to do with the service worker, but it will make your application installable in mobile devices for free and it only takes a few mintues to add it. It's content is self-explanatory and here are some screenshots of how professional your app will look like when installed in a mobile device:
+                    >manifest.json file</a
+                >
+                inside the head tag of the HTML page? It has nothing to do with the service worker,
+                but it will make your application installable in mobile devices for free and it only
+                takes a few mintues to add it. It's content is self-explanatory and here are some
+                screenshots of how professional your app will look like when installed in a mobile
+                device:
             </p>
             <div ref="manifest" class="code-editor"></div>
             <p class="text-center">
                 <img
-                    :src="`${images.installed}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.installed}`"
                     alt="PWA installed notification"
                     style="width: 350px;"
                 />
                 <img
-                    :src="`${images.starting}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.starting}`"
                     alt="Starting PWA"
                     style="width: 350px; border: 1px solid beige;"
                 />
                 <img
-                    :src="`${images.offlineMobile}?$modena=vue-personal-page`"
+                    :src="`/vue-personal-page/${images.offlineMobile}`"
                     alt="Offline PWA in mobile device"
                     style="width: 350px;"
                 />
             </p>
             <p>
-                That's the end of it! As promised, you can turn your website into an offline available progressive web app in less than 15 minutes. Reach me at
-                <b>capellas.carles@gmail.com</b> if I haven't been clear enough about any aspect and see you in the next post!
+                That's the end of it! As promised, you can turn your website into an offline
+                available progressive web app in less than 15 minutes. Reach me at
+                <b>capellas.carles@gmail.com</b> if I haven't been clear enough about any aspect and
+                see you in the next post!
             </p>
         </div>
     </BlogEntry>
