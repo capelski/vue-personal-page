@@ -4,20 +4,17 @@
             v-for="(hit, hitIndex) in hits"
             :key="`hit-${hitIndex}`"
             class="hit"
-            :style="{left: hit.percent  + '%'}"
-        >{{hit.symbol}}{{hit.direction}}</div>
+            :style="{ left: hit.percent + '%' }"
+        >
+            {{ hit.symbol }}{{ hit.direction }}
+        </div>
     </div>
 </template>
 
 <script>
 export default {
     name: 'Strumming',
-    props: ['hits'],
-    data() {
-        return {
-            beats
-        };
-    }
+    props: ['hits']
 };
 </script>
 
